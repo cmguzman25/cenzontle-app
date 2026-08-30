@@ -1,0 +1,16 @@
+[
+  {
+    "id": "peppa-01",
+    "title": "Peppa y los túneles secretos (Parte 1)",
+    "level": "A1",
+    "youtubeId": "CO7UBkoPHhk",
+    "description": "Peppa descubre que los conejos tienen túneles secretos por todo el pueblo. 0:00 – 3:07."
+  },
+  {
+    "id": "demo",
+    "title": "Lección de prueba: pedir un café",
+    "level": "A2",
+    "youtubeId": "jNQXAC9IVRw",
+    "description": "Lección de ejemplo para comprobar que la app funciona (texto inventado)."
+  }
+]

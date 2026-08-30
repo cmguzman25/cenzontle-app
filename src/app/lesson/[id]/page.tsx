@@ -1,0 +1,81 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+
+import LessonView, { type SavedWord } from "@/components/LessonView";
+import { getLesson } from "@/lib/lessons";
+import { createClient } from "@/lib/supabase/server";
+
+export default async function LessonPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const lesson = await getLesson(id);
+
+  if (!lesson) notFound();
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let initialWords: SavedWord[] = [];
+  let history: { score: number; completed_at: string }[] = [];
+
+  if (user) {
+    const [wordsResult, progressResult] = await Promise.all([
+      supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
+      supabase
+        .from("progress")
+        .select("score, completed_at")
+        .eq("lesson_id", lesson.id)
+        .order("completed_at", { ascending: false })
+        .limit(5),
+    ]);
+
+    initialWords = (wordsResult.data ?? []).map((row) => ({
+      word: row.word as string,
+      meaning: (row.meaning as string) ?? "",
+      lessonId: (row.lesson_id as string) ?? lesson.id,
+      sentenceId: (row.sentence_id as number) ?? 0,
+    }));
+
+    history = (progressResult.data ?? []) as typeof history;
+  }
+
+  return (
+    <main className="mx-auto max-w-7xl px-4 py-6">
+      <header className="mb-6">
+        <Link
+          href="/"
+          className="text-sm text-neutral-500 hover:underline dark:text-neutral-400"
+        >
+          ← Todas las lecciones
+        </Link>
+        <h1 className="mt-2 text-2xl font-semibold">{lesson.title}</h1>
+        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+          Nivel {lesson.level} · {lesson.sentences.length} frases
+        </p>
+
+        {history.length > 0 && (
+          <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+            Intentos anteriores:{" "}
+            {history
+              .map(
+                (h) =>
+                  `${h.score}% (${new Date(h.completed_at).toLocaleDateString("es")})`,
+              )
+              .join(" · ")}
+          </p>
+        )}
+      </header>
+
+      <LessonView
+        lesson={lesson}
+        isLoggedIn={Boolean(user)}
+        initialWords={initialWords}
+      />
+    </main>
+  );
+}

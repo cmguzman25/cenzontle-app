@@ -1,0 +1,406 @@
+{
+  "id": "peppa-01",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "Peppa y los túneles secretos (Parte 1)",
+  "level": "A1",
+  "description": "Peppa descubre que la familia de Rebecca Rabbit tiene túneles secretos por todo el pueblo. 0:00 – 3:07.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 0,
+  "endAt": 187,
+  "annotations": [
+    {
+      "start": 0,
+      "en": "Peppa Pig Tales.",
+      "es": "Cuentos de Peppa Pig.",
+      "note": "\"Tales\" es el plural de \"tale\" (cuento). Es el título de la serie.",
+      "tip": "\"Tale\" aparece mucho en el mundo de los cuentos: \"fairy tale\" es un cuento de hadas.",
+      "watch": "\"Tales\" y \"tails\" (colas) se pronuncian exactamente igual. Por eso el subtítulo automático escribió \"tail\", que está mal.",
+      "vocab": [
+        {
+          "word": "tale",
+          "meaning": "cuento, historia",
+          "example": "My favourite fairy tale is Cinderella."
+        }
+      ]
+    },
+    {
+      "start": 8,
+      "es": "¿Eh?",
+      "tip": "Sonido que se hace cuando algo te sorprende o no entiendes bien. Se usa muchísimo al hablar."
+    },
+    {
+      "start": 12,
+      "es": "A ver, ¿dónde está mi lista de tareas? Ay,",
+      "note": "\"where's\" es \"where is\" juntado. En inglés hablado casi siempre se juntan así.",
+      "tip": "\"Now...\" al principio de una frase no significa \"ahora\". Es como decir \"a ver...\" cuando piensas en voz alta.",
+      "vocab": [
+        {
+          "word": "to-do list",
+          "meaning": "lista de tareas pendientes",
+          "example": "I have three things on my to-do list."
+        },
+        { "word": "where's", "meaning": "where is → ¿dónde está?" }
+      ]
+    },
+    {
+      "start": 17,
+      "es": "ustedes dos.",
+      "note": "En inglés \"you\" vale para \"tú\" y para \"ustedes\". Por eso añaden \"two\" para dejar claro que habla con dos personas.",
+      "tip": "También se dice \"you guys\" o \"you all\" cuando hablas con un grupo."
+    },
+    {
+      "start": 19,
+      "es": "Hoy Peppa Pig ha venido a jugar a la madriguera de Rebecca Rabbit. Ajá. Yo me llevo eso.",
+      "note": "\"has come\" es present perfect: algo que acaba de pasar y todavía importa ahora.",
+      "tip": "El narrador siempre presenta la escena así. Si entiendes al narrador, entiendes el episodio entero. Vale la pena repetir sus frases en bucle.",
+      "vocab": [
+        {
+          "word": "burrow",
+          "meaning": "madriguera (la casa de los conejos)",
+          "example": "Rabbits live in a burrow under the ground."
+        },
+        { "word": "has come", "meaning": "ha venido" },
+        { "word": "I'll take that", "meaning": "yo me llevo eso" }
+      ]
+    },
+    {
+      "start": 28,
+      "es": "¿Cómo hiciste eso? ¿Eres mágica?",
+      "note": "En \"How did you do that?\" el pasado lo lleva \"did\". Por eso el otro verbo (\"do\") se queda igual.",
+      "tip": "Frase utilísima: se dice cuando alguien hace algo que te impresiona.",
+      "watch": "No digas \"How did you did that?\". Solo un verbo lleva el pasado, y es \"did\".",
+      "vocab": [
+        {
+          "word": "How did you...?",
+          "meaning": "¿cómo hiciste...?",
+          "example": "How did you find my house?"
+        },
+        { "word": "magic", "meaning": "magia, mágico" }
+      ]
+    },
+    {
+      "start": 31,
+      "es": "Los conejos tenemos túneles secretos especiales por todas partes. Guau.",
+      "note": "\"We rabbits\" es \"nosotros los conejos\": se pone el sustantivo justo detrás de \"we\".",
+      "tip": "Funciona igual con otros grupos: \"we kids\" (nosotros los niños), \"we students\".",
+      "vocab": [
+        {
+          "word": "everywhere",
+          "meaning": "por todas partes",
+          "example": "There are toys everywhere!"
+        },
+        { "word": "tunnel", "meaning": "túnel" },
+        { "word": "secret", "meaning": "secreto" }
+      ]
+    },
+    {
+      "start": 36,
+      "es": "¿Qué tal si te los enseño mientras vamos tachando cosas de mi lista?",
+      "note": "\"How about I + verbo\" sirve para proponer algo: \"¿qué tal si yo...?\".",
+      "tip": "Guárdala, es de las más útiles: \"How about I help you?\", \"How about we go to the park?\".",
+      "watch": "\"show\" aquí es enseñar en el sentido de mostrar, no de dar clase.",
+      "vocab": [
+        {
+          "word": "How about...?",
+          "meaning": "¿qué tal si...?",
+          "example": "How about we watch a film?"
+        },
+        {
+          "word": "show",
+          "meaning": "enseñar, mostrar",
+          "example": "Let me show you my room."
+        },
+        {
+          "word": "tick off",
+          "meaning": "tachar (de una lista)",
+          "example": "I ticked off three tasks today."
+        },
+        { "word": "while", "meaning": "mientras" }
+      ]
+    },
+    {
+      "start": 41,
+      "es": "Vale. Uy. Guau.",
+      "tip": "\"Ooh\" y \"Wow\" son sonidos de sorpresa. \"Wow\" se usa cuando algo te impresiona mucho."
+    },
+    {
+      "start": 49,
+      "es": "Vaya, la madriguera de Mamá Coneja sí que tiene un túnel secreto. Hola.",
+      "note": "\"really does have\" lleva un \"does\" de más que no se traduce: solo da énfasis, como nuestro \"sí que\".",
+      "tip": "Lo oirás cuando alguien confirma algo sorprendente: \"He does like pizza!\" = ¡sí que le gusta la pizza!",
+      "vocab": [
+        { "word": "really", "meaning": "de verdad, realmente" },
+        { "word": "does have", "meaning": "sí que tiene (con énfasis)" }
+      ]
+    },
+    {
+      "start": 58,
+      "es": "Vamos, ustedes dos. La primera parada es el supermercado.",
+      "note": "\"Come on\" cambia de significado según el tono. Aquí es \"vamos, síganme\".",
+      "tip": "También sirve para animar (\"Come on, you can do it!\") o para quejarse (\"Oh, come on!\" = ¡venga ya!).",
+      "vocab": [
+        { "word": "Come on", "meaning": "vamos, venga" },
+        { "word": "first stop", "meaning": "primera parada" },
+        { "word": "supermarket", "meaning": "supermercado" }
+      ]
+    },
+    {
+      "start": 64,
+      "es": "Pero ¿el supermercado no está encima del suelo? Sí y no. Hola.",
+      "note": "\"isn't...?\" es una pregunta negativa. Se usa cuando ya crees saber la respuesta y buscas confirmación.",
+      "tip": "\"Yes and no\" se dice cuando algo es verdad solo en parte. Muy útil para no comprometerse.",
+      "vocab": [
+        {
+          "word": "above",
+          "meaning": "encima de, sobre",
+          "example": "The lamp is above the table."
+        },
+        { "word": "the ground", "meaning": "el suelo, la tierra" }
+      ]
+    },
+    {
+      "start": 72,
+      "es": "El túnel secreto de Mamá Coneja los ha llevado al supermercado. Hola, señorita Coneja. Peppa, tú no eres un conejo.",
+      "note": "\"has led\" viene de \"lead\" (llevar, guiar). Es irregular: lead → led. No existe \"leaded\".",
+      "tip": "Miss Rabbit trabaja en todos los sitios del pueblo. Es un chiste que se repite en toda la serie: aparece de cajera, de conductora, de bombera...",
+      "vocab": [
+        {
+          "word": "lead / led",
+          "meaning": "llevar, conducir (a un sitio)",
+          "example": "This road leads to the beach."
+        },
+        { "word": "Miss", "meaning": "señorita" }
+      ]
+    },
+    {
+      "start": 80,
+      "es": "¿Cómo sabes de nuestros túneles secretos? Peppa me está ayudando con mi lista.",
+      "note": "\"Peppa's helping\" es \"Peppa is helping\": presente continuo, algo que pasa ahora mismo.",
+      "watch": "Cuidado con el apóstrofo: aquí \"Peppa's\" es \"Peppa is\", no \"de Peppa\". Solo el contexto lo aclara.",
+      "vocab": [
+        { "word": "know about", "meaning": "saber de, enterarse de" },
+        {
+          "word": "help with",
+          "meaning": "ayudar con",
+          "example": "Can you help me with my homework?"
+        }
+      ]
+    },
+    {
+      "start": 86,
+      "es": "Así que los túneles son la única forma de viajar.",
+      "note": "\"the only way to + verbo\" = la única forma de hacer algo.",
+      "tip": "Muy útil para dar opiniones: \"The only way to learn English is to listen a lot.\"",
+      "vocab": [
+        { "word": "the only way", "meaning": "la única forma" },
+        { "word": "travel", "meaning": "viajar" }
+      ]
+    },
+    {
+      "start": 97,
+      "es": "Ahora tenemos que recoger la ropa lavada.",
+      "note": "\"need to\" es \"tener que / necesitar\".",
+      "tip": "\"Next...\" al empezar la frase es \"lo siguiente es...\". Se usa mucho cuando vas siguiendo una lista.",
+      "watch": "\"the washing\" es inglés británico (Peppa es de Reino Unido). En Estados Unidos dirían \"the laundry\".",
+      "vocab": [
+        {
+          "word": "collect",
+          "meaning": "recoger",
+          "example": "I collect my brother from school."
+        },
+        { "word": "the washing", "meaning": "la ropa (para lavar o ya lavada)" },
+        { "word": "next", "meaning": "lo siguiente, después" }
+      ]
+    },
+    {
+      "start": 100,
+      "en": "Ah, so we're headed to the launderette.",
+      "es": "Ah, entonces vamos rumbo a la lavandería.",
+      "note": "\"be headed to\" es ir rumbo a un sitio. También se dice \"be heading to\".",
+      "tip": "Se usa mucho para decir a dónde vas: \"Where are you headed?\" = ¿a dónde vas?",
+      "watch": "El subtítulo automático escribió mal \"launderette\". Pasa a menudo con palabras poco frecuentes.",
+      "vocab": [
+        {
+          "word": "headed to",
+          "meaning": "rumbo a, camino de",
+          "example": "We're headed to the beach."
+        },
+        { "word": "launderette", "meaning": "lavandería" },
+        { "word": "so", "meaning": "entonces, así que" }
+      ]
+    },
+    {
+      "start": 108,
+      "en": "Hi, Mr. B.",
+      "es": "Hola, señor B.",
+      "watch": "Aquí el subtítulo automático se pierde con el ruido de fondo y escribe cosas sin sentido. No te preocupes si no lo entiendes: en el audio solo se están saludando.",
+      "vocab": [{ "word": "Mr.", "meaning": "señor" }]
+    },
+    {
+      "start": 115,
+      "en": "Oh, I think this one's yours.",
+      "es": "Ah, creo que esta es tuya.",
+      "note": "\"this one\" evita repetir el sustantivo. En vez de \"this shirt\" dices \"this one\".",
+      "tip": "Buenísimo para las tiendas: \"I like this one\" (me gusta esta), \"How much is this one?\".",
+      "vocab": [
+        { "word": "this one", "meaning": "esta, este (sin repetir la cosa)" },
+        {
+          "word": "yours",
+          "meaning": "tuyo, tuya",
+          "example": "Is this bag yours?"
+        }
+      ]
+    },
+    {
+      "start": 118,
+      "en": "Oh, I do like pink. Right. Just need to pick up Daddy Rabbit from the optician's.",
+      "es": "Ay, cómo me gusta el rosa. Bien. Solo falta recoger a Papá Conejo de la óptica.",
+      "note": "Otra vez el \"do\" de énfasis: \"I do like\" es \"cómo me gusta\", no solo \"me gusta\".",
+      "tip": "\"pick up\" es recoger a alguien o algo: \"My mum picks me up at three.\" Y \"Right\" aquí es \"bien, listo\", para cambiar de tema.",
+      "watch": "\"the optician's\" con apóstrofo significa \"la tienda del óptico\". Funciona igual con \"the baker's\" (la panadería) o \"the doctor's\".",
+      "vocab": [
+        {
+          "word": "pick up",
+          "meaning": "recoger (a alguien o algo)",
+          "example": "Can you pick up the kids?"
+        },
+        { "word": "optician", "meaning": "óptico, óptica (la tienda)" },
+        { "word": "Right", "meaning": "bien, listo (para pasar a otra cosa)" },
+        { "word": "pink", "meaning": "rosa" }
+      ]
+    },
+    {
+      "start": 127,
+      "es": "Sí. Gracias por las gafas nuevas.",
+      "note": "\"Thanks for + cosa\" = gracias por algo. Si va un verbo detrás, se le pone -ing: \"Thanks for helping\".",
+      "watch": "\"glasses\" siempre va en plural, igual que \"trousers\" o \"scissors\". Ojo: \"a glass\" en singular es un vaso, no unas gafas.",
+      "vocab": [
+        { "word": "glasses", "meaning": "gafas, lentes" },
+        {
+          "word": "Thanks for",
+          "meaning": "gracias por",
+          "example": "Thanks for the help!"
+        },
+        { "word": "new", "meaning": "nuevo, nueva" }
+      ]
+    },
+    {
+      "start": 136,
+      "es": "Hola, papá. Hola, Rebecca. No se lo esperaban, ¿verdad?",
+      "note": "\"..., did they?\" es una question tag: se pega al final para pedir confirmación, como nuestro \"¿verdad?\".",
+      "tip": "\"I didn't see that coming\" es una frase hecha muy común: no me lo esperaba, me pilló por sorpresa.",
+      "watch": "Es un chiste doble: la frase habla de \"ver\" y Papá Conejo acaba de estrenar gafas.",
+      "vocab": [
+        {
+          "word": "see it coming",
+          "meaning": "verlo venir, esperárselo",
+          "example": "I didn't see that coming!"
+        },
+        { "word": "did they?", "meaning": "¿verdad?, ¿a que no?" }
+      ]
+    },
+    {
+      "start": 146,
+      "es": "Ahora lo único que queda es llegar a casa antes de que Mamá Pig venga a recoger a Peppa. ¿Por dónde es?",
+      "note": "\"the only thing left\" es \"lo único que queda\". Aquí \"left\" no es izquierda: significa \"que sobra, que queda\".",
+      "tip": "\"Which way?\" se pregunta para saber la dirección: ¿por dónde?",
+      "watch": "\"left\" tiene dos significados muy distintos: izquierda y \"lo que queda\". Se distinguen por el contexto.",
+      "vocab": [
+        {
+          "word": "left",
+          "meaning": "que queda, que sobra",
+          "example": "There is only one cookie left."
+        },
+        { "word": "get home", "meaning": "llegar a casa" },
+        { "word": "Which way?", "meaning": "¿por dónde?" },
+        { "word": "before", "meaning": "antes de que" }
+      ]
+    },
+    {
+      "start": 154,
+      "es": "Mmm, quizá podamos cavar un túnel nuevo como Molly y su mamá.",
+      "note": "\"maybe we can + verbo\" = quizá podamos...",
+      "tip": "\"Um\" es el sonido de dudar mientras piensas, como nuestro \"emmm\". Es normal usarlo, no es un error.",
+      "vocab": [
+        {
+          "word": "dig",
+          "meaning": "cavar, excavar",
+          "example": "Dogs like to dig holes."
+        },
+        { "word": "maybe", "meaning": "quizá, tal vez" },
+        { "word": "like", "meaning": "como (comparación)" }
+      ]
+    },
+    {
+      "start": 171,
+      "es": "Hola, mamá. Peppa, ¿de dónde saliste?",
+      "note": "Otra pregunta en pasado con \"did\": \"Where did you come from?\".",
+      "tip": "Fíjate que \"from\" queda al final. En inglés es totalmente normal terminar una pregunta con preposición.",
+      "vocab": [
+        {
+          "word": "come from",
+          "meaning": "venir de, ser de",
+          "example": "Where do you come from?"
+        }
+      ]
+    },
+    {
+      "start": 178,
+      "es": "Es un secreto.",
+      "tip": "Frase perfecta para repetir en bucle: es cortita y se construye igual que en español.",
+      "vocab": [
+        {
+          "word": "secret",
+          "meaning": "secreto",
+          "example": "Can you keep a secret?"
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿A dónde fue Peppa a jugar?",
+      "options": [
+        "A la madriguera de Rebecca Rabbit",
+        "Al parque",
+        "A casa de Suzy Sheep"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué tienen los conejos por todas partes?",
+      "options": ["Zanahorias", "Túneles secretos", "Bicicletas"],
+      "answer": 1
+    },
+    {
+      "q": "¿Cuál fue la primera parada de la lista?",
+      "options": ["La lavandería", "La óptica", "El supermercado"],
+      "answer": 2
+    },
+    {
+      "q": "¿A quién recogieron de la óptica?",
+      "options": ["A Papá Conejo", "A Miss Rabbit", "A Mamá Pig"],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué estrenaba Papá Conejo?",
+      "options": ["Unos zapatos", "Unas gafas nuevas", "Un sombrero"],
+      "answer": 1
+    },
+    {
+      "q": "Al final, ¿qué le contesta Peppa a su mamá?",
+      "options": ["\"Es un secreto\"", "\"No lo sé\"", "\"Del supermercado\""],
+      "answer": 0
+    },
+    {
+      "q": "\"burrow\" significa...",
+      "options": ["túnel", "madriguera", "supermercado"],
+      "answer": 1
+    },
+    {
+      "q": "\"How about I show you?\" sirve para...",
+      "options": ["proponer algo", "pedir perdón", "dar las gracias"],
+      "answer": 0
+    }
+  ]
+}
