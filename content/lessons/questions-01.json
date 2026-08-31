@@ -1,0 +1,385 @@
+{
+  "id": "questions-01",
+  "youtubeId": "uezGdrm9XI8",
+  "title": "Las tres preguntas de Nikolai",
+  "level": "A2",
+  "description": "Nikolai quiere ser buena persona y les hace tres preguntas a sus amigos animales. Como no le convencen, sube a la montaña a buscar a Leo, la tortuga. 0:00 – 4:45.",
+  "transcript": "three-questions.txt",
+  "startAt": 0,
+  "endAt": 285,
+  "annotations": [
+    {
+      "start": 6,
+      "es": "Hola, bienvenidos a Storyline Online. Os lo trae la Fundación SAG-AFTRA. Soy Meryl Streep.",
+      "note": "\"Brought to you by...\" es la fórmula de \"presentado por\". Sale al principio de muchísimos programas y videos.",
+      "vocab": [
+        { "word": "brought to you by", "meaning": "presentado por, os lo trae" },
+        { "word": "welcome to", "meaning": "bienvenido a" }
+      ]
+    },
+    {
+      "start": 14,
+      "es": "y hoy vamos a leer Las tres preguntas, basado en un cuento de Leo Tolstói.",
+      "note": "\"we're going to read\" — el \"going to\" del plan que ya está decidido.",
+      "vocab": [
+        { "word": "based on", "meaning": "basado en" },
+        { "word": "story", "meaning": "cuento, historia" }
+      ]
+    },
+    {
+      "start": 21,
+      "es": "Escrito e ilustrado por Jon J Muth. Había una vez un niño llamado Nikolai que a veces no estaba seguro de cuál era la forma correcta de actuar.",
+      "note": "\"There once was a boy...\" es el \"Había una vez...\" de los cuentos en inglés. También se dice \"Once upon a time\".",
+      "tip": "\"a boy named Nikolai\" — \"named\" es \"llamado\". Se usa igual que \"called\".",
+      "vocab": [
+        { "word": "there once was", "meaning": "había una vez" },
+        { "word": "uncertain", "meaning": "inseguro, no seguro" },
+        { "word": "to act", "meaning": "actuar, comportarse" }
+      ]
+    },
+    {
+      "start": 35,
+      "es": "«Quiero ser una buena persona», les dijo a sus amigos.",
+      "note": "\"he told his friends\" — con \"tell\" la persona va detrás sin \"to\". Con \"say\" sería \"he said to his friends\".",
+      "watch": "No se dice \"he told to his friends\". Es tell somebody / say something.",
+      "vocab": [
+        { "word": "to tell", "meaning": "decir a alguien (tell → told → told)" }
+      ]
+    },
+    {
+      "start": 39,
+      "es": "«Pero no siempre sé cuál es la mejor manera de hacerlo». Los amigos de Nikolai lo entendieron y quisieron ayudarle.",
+      "note": "\"I don't always know\" — el \"always\" va entre el auxiliar y el verbo. \"No siempre sé\".",
+      "vocab": [
+        { "word": "the best way to", "meaning": "la mejor manera de" },
+        {
+          "word": "to understand",
+          "meaning": "entender (understand → understood)"
+        }
+      ]
+    },
+    {
+      "start": 49,
+      "es": "«Si tan solo pudiera encontrar las respuestas a mis tres preguntas», siguió Nikolai, «entonces siempre sabría qué hacer». ¿Cuándo es el mejor momento para hacer las cosas?",
+      "note": "\"If only I could... then I would...\" es el condicional de lo imaginado: si pudiera..., sabría... Los dos verbos van en pasado aunque hable del presente.",
+      "tip": "\"what to do\", \"when to go\", \"where to sit\": pregunta + infinitivo, sin sujeto. Utilísimo.",
+      "vocab": [
+        { "word": "if only", "meaning": "si tan solo, ojalá" },
+        { "word": "answer", "meaning": "respuesta" },
+        { "word": "what to do", "meaning": "qué hacer" }
+      ]
+    },
+    {
+      "start": 62,
+      "es": "¿Quién es el más importante? ¿Qué es lo correcto que hay que hacer?",
+      "note": "\"the most important\" — con los adjetivos largos el superlativo se hace con \"the most\", no con -est.",
+      "tip": "Estas son las tres preguntas del título. Se repiten varias veces en el cuento: apréndetelas y entenderás medio video.",
+      "vocab": [
+        { "word": "the right thing", "meaning": "lo correcto" },
+        { "word": "important", "meaning": "importante" }
+      ]
+    },
+    {
+      "start": 69,
+      "es": "Los amigos de Nikolai se pusieron a pensar en su primera pregunta. Entonces habló Sonya, la garza.",
+      "vocab": [
+        { "word": "to consider", "meaning": "pensar en, considerar" },
+        { "word": "heron", "meaning": "garza" }
+      ]
+    },
+    {
+      "start": 77,
+      "es": "«Para saber cuál es el mejor momento de hacer las cosas, hay que planear con antelación», dijo.",
+      "note": "\"one must plan\" — ese \"one\" no es \"uno\" de contar: significa \"uno, cualquiera, todo el mundo\". Suena formal, de libro.",
+      "vocab": [
+        { "word": "to plan in advance", "meaning": "planear con antelación" },
+        { "word": "must", "meaning": "deber, hay que" }
+      ]
+    },
+    {
+      "start": 84,
+      "es": "Gogol, el mono, que había estado rebuscando entre las hojas algo bueno que comer, dijo:",
+      "note": "\"who had been rooting\" — llevaba un buen rato haciéndolo antes de hablar.",
+      "vocab": [
+        { "word": "to root through", "meaning": "rebuscar entre" },
+        { "word": "leaves", "meaning": "hojas (plural de leaf)" }
+      ]
+    },
+    {
+      "start": 91,
+      "es": "«Sabrás cuándo hacer las cosas si miras y prestas mucha atención». Entonces Pushkin, el perro, que se estaba quedando dormido, se dio la vuelta y dijo: «No puedes prestar atención a todo tú solo».",
+      "note": "\"if you watch\" va en presente aunque hable del futuro. Detrás de \"if\" nunca se pone \"will\".",
+      "vocab": [
+        { "word": "to pay attention", "meaning": "prestar atención" },
+        { "word": "to doze off", "meaning": "quedarse dormido" },
+        { "word": "to roll over", "meaning": "darse la vuelta" }
+      ]
+    },
+    {
+      "start": 105,
+      "es": "Necesitas una manada que vigile y te ayude a decidir cuándo hacer las cosas.",
+      "tip": "\"A pack\" es la manada de perros o de lobos. Pushkin es un perro: por eso su respuesta va de ir en grupo.",
+      "vocab": [
+        { "word": "pack", "meaning": "manada" },
+        { "word": "to keep watch", "meaning": "vigilar, estar atento" }
+      ]
+    },
+    {
+      "start": 110,
+      "es": "Por ejemplo, Gogol, ¡un coco está a punto de caerte en la cabeza! Nikolai se quedó pensando un momento.",
+      "note": "\"to be about to\" es \"estar a punto de\": algo que va a pasar ahora mismo.",
+      "vocab": [
+        {
+          "word": "to be about to",
+          "meaning": "estar a punto de",
+          "example": "The film is about to start."
+        },
+        { "word": "coconut", "meaning": "coco" }
+      ]
+    },
+    {
+      "start": 119,
+      "es": "Entonces hizo su segunda pregunta.",
+      "note": "\"to ask a question\" — en inglés las preguntas se \"preguntan\", no se \"hacen\".",
+      "watch": "Nunca se dice \"do a question\" ni \"make a question\"."
+    },
+    {
+      "start": 123,
+      "es": "«¿Quién es el más importante?» «Los que están más cerca del cielo», dijo Sonya, subiendo en círculos hacia el cielo.",
+      "note": "\"Those who...\" es \"los que, aquellos que\". Las tres respuestas empiezan igual.",
+      "vocab": [
+        { "word": "those who", "meaning": "los que, aquellos que" },
+        { "word": "heaven", "meaning": "cielo (el de arriba del todo)" },
+        { "word": "to circle", "meaning": "volar en círculos" }
+      ]
+    },
+    {
+      "start": 135,
+      "es": "«Los que saben curar a los enfermos», dijo Gogol, frotándose el coco magullado.",
+      "note": "\"know how to heal\" — \"know how to\" es \"saber hacer algo\".",
+      "tip": "\"Noggin\" es una palabra graciosa para \"cabeza\", como decir \"el coco\" o \"la chola\". Le acaba de caer el coco de verdad.",
+      "vocab": [
+        { "word": "to heal", "meaning": "curar, sanar" },
+        { "word": "the sick", "meaning": "los enfermos" },
+        { "word": "noggin", "meaning": "cabeza (coloquial y gracioso)" }
+      ]
+    },
+    {
+      "start": 143,
+      "es": "«Los que ponen las reglas», gruñó Pushkin. Nikolai pensó un poco más. Entonces hizo la tercera pregunta.",
+      "note": "\"make the rules\" — las reglas en inglés se \"hacen\", no se \"ponen\".",
+      "vocab": [
+        { "word": "to growl", "meaning": "gruñir" },
+        { "word": "rule", "meaning": "regla, norma" }
+      ]
+    },
+    {
+      "start": 152,
+      "es": "«¿Qué es lo correcto?» «Volar», dijo Sonya. «Divertirse todo el rato», rió Gogol.",
+      "note": "Los tres contestan con un verbo en -ing: flying, having fun, fighting. Ahí el -ing funciona como nombre: volar, divertirse, pelear.",
+      "vocab": [
+        { "word": "to have fun", "meaning": "divertirse" },
+        { "word": "all the time", "meaning": "todo el rato" }
+      ]
+    },
+    {
+      "start": 163,
+      "es": "«Pelear», ladró Pushkin al instante. Entonces el niño estuvo pensando un buen rato.",
+      "tip": "Fíjate en cómo cambian el \"dijo\": said, growled, laughed, barked. En inglés casi nunca se repite \"said\" dos veces seguidas.",
+      "vocab": [
+        { "word": "right away", "meaning": "al instante, enseguida" },
+        { "word": "to bark", "meaning": "ladrar" }
+      ]
+    },
+    {
+      "start": 175,
+      "es": "Quería a sus amigos. Sabía que todos estaban haciendo lo posible por ayudarle a responder sus preguntas. Pero sus respuestas no le parecían del todo acertadas.",
+      "note": "\"to try their best\" es \"hacer todo lo que uno puede\".",
+      "tip": "\"not quite right\" es \"no del todo bien\". Ese \"quite\" suaviza: no está mal, pero tampoco es exacto.",
+      "vocab": [
+        { "word": "to try one's best", "meaning": "hacer todo lo posible" },
+        { "word": "not quite", "meaning": "no del todo" }
+      ]
+    },
+    {
+      "start": 186,
+      "es": "Entonces se le ocurrió una idea. ¡Ya sé!, pensó. Se lo preguntaré a Leo, la tortuga.",
+      "note": "\"an idea came to him\" — en inglés las ideas \"vienen\": se le ocurrió una idea.",
+      "tip": "\"I will ask\" es el \"will\" de la decisión que se toma justo en ese momento.",
+      "vocab": [
+        { "word": "an idea came to him", "meaning": "se le ocurrió una idea" },
+        { "word": "turtle", "meaning": "tortuga" }
+      ]
+    },
+    {
+      "start": 195,
+      "es": "Ha vivido muchísimo tiempo. Seguro que sabe las respuestas que estoy buscando.",
+      "note": "\"He has lived a very long time\" — present perfect: empezó hace mucho y sigue vivo hoy.",
+      "vocab": [
+        { "word": "to look for", "meaning": "buscar" },
+        { "word": "surely", "meaning": "seguro que, sin duda" }
+      ]
+    },
+    {
+      "start": 204,
+      "es": "Nikolai subió caminando hasta lo alto de las montañas, donde la vieja tortuga vivía completamente sola.",
+      "vocab": [
+        { "word": "to hike", "meaning": "caminar por el monte, hacer senderismo" },
+        { "word": "all alone", "meaning": "completamente solo" }
+      ]
+    },
+    {
+      "start": 212,
+      "es": "Cuando Nikolai llegó, encontró a Leo cavando un huerto.",
+      "note": "\"found Leo digging\" — find + verbo en -ing: encontrar a alguien haciendo algo.",
+      "vocab": [
+        { "word": "to dig", "meaning": "cavar (dig → dug → dug)" },
+        { "word": "garden", "meaning": "huerto, jardín" }
+      ]
+    },
+    {
+      "start": 217,
+      "es": "La tortuga era vieja y cavar le costaba mucho.",
+      "note": "\"digging was hard for him\" — el -ing puede ser el sujeto de la frase: \"cavar era difícil\"."
+    },
+    {
+      "start": 223,
+      "es": "«Tengo tres preguntas y he venido a pedirte ayuda», dijo Nikolai. «¿Cuándo es el mejor momento para hacer las cosas?»",
+      "note": "\"I came to ask your help\" — \"came to\" + verbo dice a qué vino: vine a pedir.",
+      "vocab": [
+        { "word": "to ask for help", "meaning": "pedir ayuda" },
+        { "word": "to come to do something", "meaning": "venir a hacer algo" }
+      ]
+    },
+    {
+      "start": 233,
+      "es": "«¿Quién es el más importante?»",
+      "tip": "Vuelven las tres preguntas, palabra por palabra. Aprovecha para repetirlas en voz alta con el audio."
+    },
+    {
+      "start": 236,
+      "es": "«¿Qué es lo correcto?» Leo escuchó con atención, pero solo sonrió.",
+      "note": "\"carefully\" — el -ly convierte careful (cuidadoso) en carefully (con cuidado, con atención). Es la terminación de los adverbios.",
+      "vocab": [
+        { "word": "carefully", "meaning": "con atención, con cuidado" },
+        { "word": "to smile", "meaning": "sonreír" }
+      ]
+    },
+    {
+      "start": 245,
+      "es": "Luego siguió cavando. «Debes de estar cansado», dijo Nikolai por fin.",
+      "note": "\"You must be tired\" — aquí \"must\" no es obligación, es deducción: \"debes de estar cansado\".",
+      "vocab": [
+        { "word": "to go on with", "meaning": "seguir con" },
+        { "word": "at last", "meaning": "por fin" }
+      ]
+    },
+    {
+      "start": 253,
+      "es": "«Déjame ayudarte». La tortuga le dio su pala y le dio las gracias.",
+      "note": "\"Let me help you\" — después de \"let\" el verbo va sin \"to\". Igual que make: let me go, make me laugh.",
+      "vocab": [
+        {
+          "word": "Let me...",
+          "meaning": "déjame...",
+          "example": "Let me try!"
+        },
+        { "word": "shovel", "meaning": "pala" }
+      ]
+    },
+    {
+      "start": 259,
+      "es": "Y como cavar le resultaba más fácil a un niño que a una tortuga vieja, Nikolai siguió cavando hasta terminar los surcos.",
+      "note": "\"easier ... than\" — comparativo de los adjetivos cortos: -er + than.",
+      "tip": "\"keep on + -ing\" es \"seguir haciendo algo\". Muy común: keep on trying, keep on walking.",
+      "vocab": [
+        { "word": "to keep on doing", "meaning": "seguir haciendo algo" },
+        { "word": "row", "meaning": "surco, fila" }
+      ]
+    },
+    {
+      "start": 268,
+      "es": "Pero justo cuando terminaba, el viento sopló con furia y la lluvia estalló desde unas nubes oscuras.",
+      "note": "\"just as he finished\" es \"justo cuando terminaba\": dos cosas que pasan a la vez.",
+      "vocab": [
+        { "word": "to blow", "meaning": "soplar (blow → blew → blown)" },
+        { "word": "to burst", "meaning": "estallar, salir de golpe" },
+        { "word": "cloud", "meaning": "nube" }
+      ]
+    },
+    {
+      "start": 277,
+      "es": "Mientras iban hacia la casita a resguardarse, Nikolai oyó de pronto un grito pidiendo ayuda.",
+      "tip": "Aquí termina la parte 1, justo en el grito. La historia sigue en la parte 2.",
+      "vocab": [
+        { "word": "shelter", "meaning": "refugio, resguardo" },
+        { "word": "cottage", "meaning": "casita de campo" },
+        { "word": "a cry for help", "meaning": "un grito pidiendo ayuda" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué quiere ser Nikolai?",
+      "options": ["Una buena persona", "El más fuerte", "Un explorador"],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuántas preguntas tiene Nikolai?",
+      "options": ["Dos", "Tres", "Cinco"],
+      "answer": 1
+    },
+    {
+      "q": "¿Quiénes son sus tres amigos?",
+      "options": [
+        "Una garza, un mono y un perro",
+        "Un gato, un pato y un oso",
+        "Una tortuga, un mono y un pez"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿A quién decide preguntarle Nikolai al final?",
+      "options": ["A su madre", "A Leo, la tortuga", "Al panda"],
+      "answer": 1
+    },
+    {
+      "q": "¿Qué está haciendo Leo cuando Nikolai llega?",
+      "options": ["Durmiendo", "Cavando un huerto", "Leyendo"],
+      "answer": 1
+    },
+    {
+      "q": "¿Qué hace Nikolai al ver que a Leo le cuesta cavar?",
+      "options": ["Se va", "Le ayuda a cavar", "Se ríe de él"],
+      "answer": 1
+    },
+    {
+      "q": "\"a coconut is about to fall\" significa...",
+      "options": [
+        "un coco está a punto de caer",
+        "un coco se cayó ayer",
+        "un coco puede caer algún día"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"Let me help you\" — después de \"let\" el verbo va...",
+      "options": ["sin \"to\"", "con \"to\"", "con -ing"],
+      "answer": 0
+    },
+    {
+      "q": "\"You must be tired\" aquí significa...",
+      "options": [
+        "debes cansarte",
+        "debes de estar cansado",
+        "tienes que descansar"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"to pay attention\" significa...",
+      "options": ["pagar la entrada", "prestar atención", "tener cuidado"],
+      "answer": 1
+    }
+  ]
+}

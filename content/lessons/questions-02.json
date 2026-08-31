@@ -1,0 +1,320 @@
+{
+  "id": "questions-02",
+  "youtubeId": "uezGdrm9XI8",
+  "title": "Las respuestas de Leo",
+  "level": "B1",
+  "description": "Nikolai salva a una panda y a su cría en plena tormenta, y descubre que sus tres preguntas ya estaban respondidas. 4:45 – 8:52.",
+  "transcript": "three-questions.txt",
+  "startAt": 285,
+  "endAt": 532,
+  "annotations": [
+    {
+      "start": 285,
+      "es": "Bajando corriendo por el camino, encontró a una panda con la pata herida por un árbol caído.",
+      "note": "\"a panda whose leg had been injured\" — \"whose\" es \"cuyo\": la panda cuya pata estaba herida.",
+      "vocab": [
+        { "word": "path", "meaning": "camino, sendero" },
+        { "word": "to injure", "meaning": "herir, lesionar" },
+        { "word": "fallen tree", "meaning": "árbol caído" }
+      ]
+    },
+    {
+      "start": 292,
+      "es": "Con cuidado, Nikolai la llevó a la casa de Leo y le hizo una tablilla para la pata con un palo de bambú.",
+      "note": "\"carry\" es llevar algo en brazos o encima. \"Take\" sería llevar a un sitio, sin decir cómo.",
+      "vocab": [
+        { "word": "to carry", "meaning": "llevar en brazos" },
+        { "word": "splint", "meaning": "tablilla, férula" },
+        { "word": "stick", "meaning": "palo" }
+      ]
+    },
+    {
+      "start": 302,
+      "es": "La tormenta seguía rugiendo, golpeando las puertas y las ventanas. La panda se despertó.",
+      "note": "\"raged on\" — ese \"on\" añade la idea de \"seguir y seguir\". Igual que en \"keep on\" de la parte 1.",
+      "vocab": [
+        { "word": "storm", "meaning": "tormenta" },
+        { "word": "to bang", "meaning": "golpear con estruendo" },
+        { "word": "to wake up", "meaning": "despertarse (wake → woke → woken)" }
+      ]
+    },
+    {
+      "start": 310,
+      "es": "«¿Dónde estoy?», dijo.",
+      "note": "\"Where am I?\" — en la pregunta el verbo va delante del sujeto: am I, y no I am."
+    },
+    {
+      "start": 312,
+      "es": "«¿Y dónde está mi cría?» El niño salió corriendo de la casita y bajó por el camino.",
+      "note": "\"ran out of\", \"down the path\" — el verbo dice cómo se mueve (corriendo) y la preposición dice hacia dónde.",
+      "vocab": [
+        { "word": "child", "meaning": "cría, niño (plural: children)" },
+        { "word": "to run out of", "meaning": "salir corriendo de" }
+      ]
+    },
+    {
+      "start": 319,
+      "es": "El rugido de la tormenta era ensordecedor.",
+      "vocab": [
+        { "word": "roar", "meaning": "rugido" },
+        { "word": "deafening", "meaning": "ensordecedor" }
+      ]
+    },
+    {
+      "start": 322,
+      "es": "Empujando contra el viento que aullaba y la lluvia que lo empapaba todo, corrió más adentro del bosque.",
+      "note": "\"howling wind\", \"drenching rain\" — el -ing delante del nombre dice lo que hace esa cosa: viento que aúlla, lluvia que cala.",
+      "vocab": [
+        { "word": "to howl", "meaning": "aullar" },
+        { "word": "farther", "meaning": "más lejos" },
+        { "word": "forest", "meaning": "bosque" }
+      ]
+    },
+    {
+      "start": 329,
+      "es": "Allí encontró a la cría de la panda, con frío y temblando en el suelo.",
+      "vocab": [
+        { "word": "to shiver", "meaning": "temblar de frío" },
+        { "word": "ground", "meaning": "suelo" }
+      ]
+    },
+    {
+      "start": 336,
+      "es": "La panda pequeña estaba mojada y asustada, pero viva. Nikolai la llevó dentro y la secó y la abrigó.",
+      "note": "\"made her warm and dry\" — make + adjetivo: dejar a alguien caliente y seco.",
+      "vocab": [
+        { "word": "scared", "meaning": "asustado" },
+        { "word": "alive", "meaning": "vivo" },
+        { "word": "dry", "meaning": "seco" }
+      ]
+    },
+    {
+      "start": 345,
+      "es": "Luego la puso en los brazos de su madre. Leo sonrió al ver lo que había hecho el niño.",
+      "note": "\"what the boy had done\" — pasado perfecto: lo había hecho antes del momento en que Leo mira.",
+      "vocab": [
+        { "word": "to lay", "meaning": "poner, tumbar (lay → laid → laid)" },
+        { "word": "arms", "meaning": "brazos" }
+      ]
+    },
+    {
+      "start": 359,
+      "es": "A la mañana siguiente el sol calentaba, los pájaros cantaban y todo iba bien en el mundo.",
+      "tip": "\"All was well with the world\" es una frase de cuento: \"todo iba bien\". Marca que ha pasado la tormenta.",
+      "vocab": [
+        { "word": "to sing", "meaning": "cantar (sing → sang → sung)" },
+        { "word": "all was well", "meaning": "todo iba bien" }
+      ]
+    },
+    {
+      "start": 366,
+      "es": "La pata de la panda se estaba curando bien, y ella le dio las gracias a Nikolai por salvarla a ella y a su bebé de la tormenta.",
+      "note": "\"thank someone FOR + -ing\" — dar las gracias por hacer algo. Siempre con \"for\" y el verbo en -ing.",
+      "watch": "No se dice \"thank you for save me\": es \"thank you for saving me\".",
+      "vocab": [
+        {
+          "word": "to thank someone for",
+          "meaning": "dar las gracias a alguien por",
+          "example": "Thank you for helping me."
+        },
+        { "word": "to save", "meaning": "salvar" }
+      ]
+    },
+    {
+      "start": 373,
+      "es": "En ese momento llegaron Sonya, Gogol y Pushkin para asegurarse de que todos estaban bien.",
+      "note": "\"to make sure\" es \"asegurarse de\".",
+      "vocab": [
+        { "word": "to make sure", "meaning": "asegurarse de" },
+        { "word": "all right", "meaning": "bien, en buen estado" }
+      ]
+    },
+    {
+      "start": 381,
+      "es": "Nikolai sintió una gran paz por dentro. Tenía unos amigos maravillosos.",
+      "vocab": [
+        { "word": "peace", "meaning": "paz" },
+        { "word": "within himself", "meaning": "por dentro, dentro de sí" }
+      ]
+    },
+    {
+      "start": 387,
+      "es": "Y había salvado a la panda y a su cría. Pero también se sentía decepcionado.",
+      "note": "\"he had saved\" — otra vez el pasado perfecto: lo de salvarlas ya había pasado antes de este momento.",
+      "vocab": [
+        { "word": "disappointed", "meaning": "decepcionado" },
+        { "word": "to feel", "meaning": "sentirse (feel → felt → felt)" }
+      ]
+    },
+    {
+      "start": 397,
+      "es": "Todavía no había encontrado las respuestas a sus tres preguntas. Así que se lo preguntó a Leo una vez más.",
+      "note": "\"still had not found\" — \"still\" en una frase negativa es \"todavía no\".",
+      "vocab": [
+        { "word": "still", "meaning": "todavía" },
+        { "word": "one more time", "meaning": "una vez más" }
+      ]
+    },
+    {
+      "start": 406,
+      "es": "La vieja tortuga miró al niño. «¡Pero si tus preguntas ya están respondidas!», dijo.",
+      "note": "\"have been answered\" es pasiva: alguien las respondió, pero lo importante es que ya están respondidas, no quién lo hizo.",
+      "vocab": [
+        { "word": "to answer", "meaning": "responder" },
+        { "word": "to look at", "meaning": "mirar a" }
+      ]
+    },
+    {
+      "start": 416,
+      "es": "«¿Ah, sí?», preguntó el niño.",
+      "tip": "\"They have?\" es una respuesta corta de sorpresa: solo se repite el auxiliar. Igual que \"Do you?\", \"Is it?\", \"Did he?\"."
+    },
+    {
+      "start": 420,
+      "es": "«Ayer, si no te hubieras quedado a ayudarme a cavar el huerto, no habrías oído los gritos de ayuda de la panda en la tormenta».",
+      "note": "Condicional del pasado: if + had + participio → would have + participio. Habla de algo que no ocurrió.",
+      "watch": "Detrás de \"if\" no se pone \"would\": es \"if you had not stayed\", nunca \"if you wouldn't have stayed\".",
+      "vocab": [
+        { "word": "to stay", "meaning": "quedarse" },
+        { "word": "cries for help", "meaning": "gritos pidiendo ayuda" }
+      ]
+    },
+    {
+      "start": 430,
+      "es": "«Por lo tanto, el momento más importante fue el tiempo que pasaste cavando el huerto».",
+      "note": "\"spend time + -ing\" — pasar tiempo haciendo algo. El verbo detrás siempre va en -ing.",
+      "vocab": [
+        { "word": "therefore", "meaning": "por lo tanto" },
+        {
+          "word": "to spend time doing",
+          "meaning": "pasar tiempo haciendo algo",
+          "example": "She spent the day reading."
+        }
+      ]
+    },
+    {
+      "start": 437,
+      "es": "«El más importante en ese momento era yo, y lo más importante que hacer era ayudarme con el huerto».",
+      "tip": "Aquí Leo empieza a responder las tres preguntas en orden. Escucha con la parte 1 en la cabeza: son las mismas tres.",
+      "vocab": [{ "word": "at that moment", "meaning": "en ese momento" }]
+    },
+    {
+      "start": 450,
+      "es": "«Después, cuando encontraste a la panda herida, el momento más importante fue el tiempo que pasaste curándole la pata y salvando a su cría».",
+      "vocab": [
+        { "word": "to mend", "meaning": "arreglar, curar" },
+        { "word": "injured", "meaning": "herido" }
+      ]
+    },
+    {
+      "start": 461,
+      "es": "«Los más importantes eran la panda y su bebé».",
+      "note": "\"the most important ones\" — ese \"ones\" evita repetir el sustantivo. En español diríamos solo \"los más importantes\"."
+    },
+    {
+      "start": 466,
+      "es": "«Y lo más importante que hacer era cuidarlas y ponerlas a salvo».",
+      "note": "\"take care of\" es \"cuidar de\". De las expresiones más útiles del inglés.",
+      "vocab": [
+        {
+          "word": "to take care of",
+          "meaning": "cuidar de",
+          "example": "Take care of your little brother."
+        },
+        { "word": "safe", "meaning": "a salvo, seguro" }
+      ]
+    },
+    {
+      "start": 477,
+      "es": "«Recuerda entonces que solo hay un momento importante, y ese momento es ahora».",
+      "tip": "Aquí empieza la moraleja. Estas tres frases son el corazón del cuento: merece la pena repetirlas en bucle.",
+      "vocab": [{ "word": "there is only one", "meaning": "solo hay uno" }]
+    },
+    {
+      "start": 490,
+      "es": "«La persona más importante es siempre la que está contigo».",
+      "note": "\"the one you are with\" — el inglés deja la preposición al final de la frase. En español la pondríamos delante: \"con la que estás\".",
+      "vocab": [{ "word": "to be with someone", "meaning": "estar con alguien" }]
+    },
+    {
+      "start": 497,
+      "es": "«Y lo más importante es hacer el bien a quien está a tu lado».",
+      "vocab": [
+        { "word": "to do good", "meaning": "hacer el bien" },
+        { "word": "at your side", "meaning": "a tu lado" },
+        { "word": "to stand", "meaning": "estar de pie (stand → stood → stood)" }
+      ]
+    },
+    {
+      "start": 506,
+      "es": "«Porque estas, mi querido niño, son las respuestas a qué es lo más importante en este mundo».",
+      "note": "\"For these are...\" — ese \"for\" antiguo significa \"porque\". Suena a cuento y a libro viejo.",
+      "vocab": [{ "word": "my dear boy", "meaning": "mi querido niño" }]
+    },
+    {
+      "start": 520,
+      "es": "«Para esto estamos aquí».",
+      "tip": "\"This is why we are here\" es la última frase del cuento. Con ella termina la parte 2."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿A quién encuentra Nikolai herida en el camino?",
+      "options": ["A una panda", "A un mono", "A una garza"],
+      "answer": 0
+    },
+    {
+      "q": "¿Con qué le hace la tablilla para la pata?",
+      "options": ["Con una cuerda", "Con un palo de bambú", "Con una manta"],
+      "answer": 1
+    },
+    {
+      "q": "¿Qué sale a buscar Nikolai bajo la tormenta?",
+      "options": ["Su pala", "A la cría de la panda", "El camino de vuelta"],
+      "answer": 1
+    },
+    {
+      "q": "Según Leo, ¿cuál es el momento más importante?",
+      "options": ["Mañana", "Ahora", "El pasado"],
+      "answer": 1
+    },
+    {
+      "q": "Según Leo, ¿quién es la persona más importante?",
+      "options": [
+        "La que está contigo",
+        "La que manda",
+        "La que sabe más"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Según Leo, ¿qué es lo más importante que hacer?",
+      "options": [
+        "Hacer el bien a quien está a tu lado",
+        "Planear con antelación",
+        "Divertirse"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"Thank you for ___ me\" — ¿qué forma va después de \"for\"?",
+      "options": ["helping", "help", "to help"],
+      "answer": 0
+    },
+    {
+      "q": "\"If you had not stayed, you wouldn't have heard...\" habla de algo que...",
+      "options": ["pasará mañana", "no llegó a pasar", "pasa siempre"],
+      "answer": 1
+    },
+    {
+      "q": "\"to take care of\" significa...",
+      "options": ["tener cuidado", "cuidar de", "llevarse algo"],
+      "answer": 1
+    },
+    {
+      "q": "\"the time you spent digging\" — después de \"spend time\" el verbo va...",
+      "options": ["en -ing", "en infinitivo con to", "en pasado"],
+      "answer": 0
+    }
+  ]
+}

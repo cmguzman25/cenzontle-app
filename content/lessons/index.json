@@ -108,5 +108,27 @@
     "order": 10,
     "categories": ["Dibujos animados", "Inglés británico", "Vida diaria", "Animales"],
     "description": "El pato de juguete se cae al embalse y Peppa lo persigue hasta las entrañas de la potabilizadora. 27:03 – 30:10."
+  },
+  {
+    "id": "questions-01",
+    "title": "Las tres preguntas de Nikolai",
+    "level": "A2",
+    "youtubeId": "uezGdrm9XI8",
+    "seriesId": "three-questions",
+    "seriesTitle": "The Three Questions (Storyline Online)",
+    "order": 1,
+    "categories": ["Cuentos", "Inglés americano", "Valores", "Animales"],
+    "description": "Nikolai quiere ser buena persona y les hace tres preguntas a sus amigos animales. Como no le convencen, sube a la montaña a buscar a Leo, la tortuga. 0:00 – 4:45."
+  },
+  {
+    "id": "questions-02",
+    "title": "Las respuestas de Leo",
+    "level": "B1",
+    "youtubeId": "uezGdrm9XI8",
+    "seriesId": "three-questions",
+    "seriesTitle": "The Three Questions (Storyline Online)",
+    "order": 2,
+    "categories": ["Cuentos", "Inglés americano", "Valores", "Animales"],
+    "description": "Nikolai salva a una panda y a su cría en plena tormenta, y descubre que sus tres preguntas ya estaban respondidas. 4:45 – 8:52."
   }
 ]
