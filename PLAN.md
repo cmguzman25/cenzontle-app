@@ -16,6 +16,11 @@ No usamos ninguna API de IA dentro de la app. El flujo es:
    `categories` (una lección puede estar en varias). Los filtros de la portada
    se construyen solos a partir de lo que haya en ese archivo.
 
+Las partes de un mismo video se agrupan en un **capítulo**: comparten
+`seriesId` y `seriesTitle`, y se ordenan por `order`. La portada muestra una
+tarjeta por capítulo y `/capitulo/<seriesId>` lista sus partes. Una lección sin
+`seriesId` sale suelta en la portada.
+
 **El inglés no se copia al JSON.** La app lee el archivo de transcripción y le
 pega encima las anotaciones, enlazándolas por el segundo de inicio:
 

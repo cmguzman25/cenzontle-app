@@ -1,0 +1,319 @@
+{
+  "id": "peppa-05",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El paquete perdido",
+  "level": "A2",
+  "description": "Papá Pig se cansa de esperar y persigue a la furgoneta de reparto hasta el almacén. 12:12 – 15:11.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 732,
+  "endAt": 911,
+  "annotations": [
+    {
+      "start": 732,
+      "es": "Vamos. Casi. Hoy Papá Pig está esperando un paquete.",
+      "note": "\"is expecting\" no es \"esperar sentado\". Es esperar algo que sabes que va a llegar.",
+      "watch": "No confundas \"expect\" (esperar algo que llegará) con \"wait\" (esperar de pie, pasando el tiempo). Papá Pig hace las dos cosas en este cuento.",
+      "vocab": [
+        { "word": "parcel", "meaning": "paquete (británico; en EE. UU. \"package\")" },
+        {
+          "word": "to expect",
+          "meaning": "esperar algo que va a llegar",
+          "example": "I'm expecting a call."
+        }
+      ]
+    },
+    {
+      "start": 740,
+      "es": "¡Voy! No es un paquete muy grande.",
+      "note": "\"Coming!\" es lo que se grita cuando llaman a la puerta. En español decimos \"¡voy!\", en inglés \"¡vengo!\".",
+      "tip": "Fíjate en el orden: \"a very big parcel\". El adjetivo va siempre delante del nombre, nunca detrás."
+    },
+    {
+      "start": 749,
+      "en": "Sorry, we missed you. It says they'll try again in one to seven business days.",
+      "es": "Lo sentimos, no le encontramos. Dice que lo intentarán otra vez en un plazo de uno a siete días laborables.",
+      "note": "\"we missed you\" aquí es \"no le encontramos en casa\". Es la fórmula exacta de las notas de reparto.",
+      "tip": "\"Business days\" son días laborables: no cuentan sábados, domingos ni festivos. Lo verás en cualquier envío.",
+      "vocab": [
+        { "word": "business days", "meaning": "días laborables" },
+        { "word": "to try again", "meaning": "intentarlo de nuevo" }
+      ]
+    },
+    {
+      "start": 756,
+      "es": "No puedo esperar tanto.",
+      "note": "\"that long\" = \"tanto tiempo\". Ese \"that\" delante de un adjetivo significa \"tan\".",
+      "vocab": [
+        { "word": "to wait", "meaning": "esperar (dejar pasar el tiempo)" },
+        { "word": "that long", "meaning": "tanto tiempo" }
+      ]
+    },
+    {
+      "start": 759,
+      "es": "No pasa nada. Querer es poder. ¿Por qué no vamos y lo recogemos?",
+      "note": "\"Why don't we...?\" no es una pregunta de verdad: es la forma normal de proponer un plan. Detrás va el verbo sin \"to\".",
+      "tip": "\"Where there's a will, there's a way\" es el refrán que sostiene todo el cuento. Literalmente es \"donde hay voluntad, hay un camino\"; nosotros decimos \"querer es poder\". Cuéntalas: sale cinco veces.",
+      "vocab": [
+        {
+          "word": "Where there's a will, there's a way",
+          "meaning": "querer es poder",
+          "example": "It won't be easy, but where there's a will, there's a way."
+        },
+        {
+          "word": "Why don't we...?",
+          "meaning": "¿por qué no...? (para proponer)",
+          "example": "Why don't we go to the park?"
+        },
+        { "word": "will", "meaning": "voluntad, ganas de hacer algo" }
+      ]
+    },
+    {
+      "start": 766,
+      "es": "Es genial. Podemos seguir a la furgoneta hasta el almacén. ¡Ya vamos, paquete!",
+      "note": "\"follow the van back to\" = seguirla en su camino de vuelta. Ese \"back\" indica que vuelve por donde vino.",
+      "vocab": [
+        { "word": "van", "meaning": "furgoneta" },
+        { "word": "warehouse", "meaning": "almacén, nave" },
+        { "word": "genius", "meaning": "genial, una genialidad" }
+      ]
+    },
+    {
+      "start": 773,
+      "es": "Papá Pig y Peppa han llegado al almacén donde se guardan todos los paquetes. Por aquí, Peppa. Querer es poder.",
+      "note": "\"where all the parcels are kept\" está en pasiva: no dice quién los guarda porque da igual. Se forma con \"are\" + participio.",
+      "tip": "\"This way\" es \"por aquí\" señalando una dirección. Lo usan los camareros, los guías y todo el que te lleva a algún sitio.",
+      "vocab": [
+        { "word": "to arrive at", "meaning": "llegar a" },
+        { "word": "to keep", "meaning": "guardar (keep → kept → kept)" }
+      ]
+    },
+    {
+      "start": 782,
+      "es": "Hola, ¿en qué puedo ayudarle? Papá busca a un Will. Ah. Eh, vengo a recoger un paquete.",
+      "note": "\"I've got a parcel to collect\" = \"tengo un paquete que recoger\". Ese \"to + verbo\" explica para qué es la cosa.",
+      "tip": "Aquí está el chiste del episodio: \"a will\" (voluntad) suena igual que Will, el nombre de persona. Peppa ha entendido que su padre busca a un señor llamado Will. Por eso el refrán da tanto juego.",
+      "vocab": [
+        { "word": "How can I help you?", "meaning": "¿en qué puedo ayudarle?" },
+        { "word": "to collect", "meaning": "recoger" },
+        { "word": "to look for", "meaning": "buscar" }
+      ]
+    },
+    {
+      "start": 792,
+      "es": "De verdad debería intentar estar en casa cuando repartimos. Sí que estaba.",
+      "note": "\"should\" es \"debería\": un consejo o un reproche suave. \"You really should\" ya suena a regañina.",
+      "tip": "\"to be in\" significa estar en casa. Lo contrario es \"to be out\" (haber salido).",
+      "vocab": [
+        { "word": "to be in", "meaning": "estar en casa" },
+        { "word": "to deliver", "meaning": "repartir, entregar" },
+        { "word": "should", "meaning": "debería" }
+      ]
+    },
+    {
+      "start": 797,
+      "es": "Mmm. Bueno, puede echar un vistazo si quiere. Estará en la zona de la estrella azul.",
+      "note": "\"It'll be\" es \"it will be\", pero aquí no es futuro: es una suposición. \"Estará\", como en español.",
+      "tip": "\"You're welcome to...\" es dar permiso con amabilidad: \"puede usted, si quiere\".",
+      "vocab": [
+        { "word": "to have a look", "meaning": "echar un vistazo" },
+        { "word": "You're welcome to...", "meaning": "puede usted... (si quiere)" },
+        { "word": "area", "meaning": "zona" }
+      ]
+    },
+    {
+      "start": 803,
+      "es": "Bueno, ¿y dónde está eso? Ay, nunca lo vamos a encontrar aquí. Vamos, papá. Querer es poder.",
+      "note": "\"We'll never find it\" usa \"never\" para negar. Con \"never\" ya no hace falta poner \"not\".",
+      "tip": "Ahora es Peppa quien le suelta el refrán a su padre. Los papeles se han cambiado: ella le da ánimos a él.",
+      "vocab": [{ "word": "never", "meaning": "nunca" }]
+    },
+    {
+      "start": 812,
+      "es": "Buena observación, Peppa.",
+      "tip": "\"Good point\" se dice cuando alguien dice algo con razón. Utilísimo en cualquier conversación.",
+      "vocab": [{ "word": "Good point", "meaning": "buena observación, tienes razón" }]
+    },
+    {
+      "start": 813,
+      "es": "Peppa y Papá Pig se ponen a buscar su paquete por el almacén.",
+      "note": "\"are off to\" = ponerse en marcha para hacer algo. \"Off\" da la idea de salir hacia algún sitio.",
+      "vocab": [
+        { "word": "to be off to", "meaning": "irse a, ponerse en marcha para" },
+        { "word": "to search", "meaning": "buscar, registrar" }
+      ]
+    },
+    {
+      "start": 818,
+      "es": "¿Por aquí? Eh, no. Eh, por aquí. Eh, eh, de vuelta por allá.",
+      "tip": "Todo el diálogo son direcciones: this way, that way, back that way. Repítelo en bucle: son las palabras que necesitas para orientarte."
+    },
+    {
+      "start": 824,
+      "es": "Pero el almacén es muy grande y confuso.",
+      "watch": "\"Confusing\" es lo que confunde (el almacén). \"Confused\" es quien está confundido (ellos). Es un error clásico decir \"I am confusing\".",
+      "vocab": [
+        { "word": "confusing", "meaning": "confuso, lioso" }
+      ]
+    },
+    {
+      "start": 828,
+      "es": "Eh, hola. ¿Hay alguna persona con la que pueda hablar?",
+      "note": "\"a person I can speak to\": la preposición se queda al final. En inglés hablado es lo normal, no un error.",
+      "tip": "\"Is there...?\" es \"¿hay...?\". En plural sería \"Are there...?\".",
+      "vocab": [
+        { "word": "Is there...?", "meaning": "¿hay...?" },
+        { "word": "to speak to", "meaning": "hablar con" }
+      ]
+    },
+    {
+      "start": 832,
+      "es": "Señorita Rabbit, ¿puede ayudarla? Ay, ¿dónde se ha metido la señorita Rabbit de verdad? Estoy aquí, y aquí, y aquí, y aquí, y aquí.",
+      "note": "\"Where's ... gone?\" es present perfect: \"¿dónde se ha metido?\". Se pregunta por algo que desapareció y sigue sin aparecer.",
+      "tip": "Chiste recurrente de la serie: la señorita Rabbit tiene todos los trabajos del pueblo. Aquí son varias a la vez.",
+      "vocab": [{ "word": "real", "meaning": "de verdad, auténtico" }]
+    },
+    {
+      "start": 842,
+      "es": "¿En qué podemos ayudarles?",
+      "tip": "La misma fórmula de antes pero en plural: \"How can WE help you?\". Es la frase de atención al cliente por excelencia."
+    },
+    {
+      "start": 844,
+      "es": "Ah, eh, bueno, eh... Mira, papá, una estrella azul. Ajá. Muy bien, Peppa.",
+      "tip": "Todos esos \"um\", \"uh\", \"well\" son muletillas. No significan nada, sirven para ganar tiempo mientras piensas. Aprende a ignorarlas al escuchar."
+    },
+    {
+      "start": 852,
+      "es": "Roja. Ahí está. Ah, no, de eso nada.",
+      "note": "\"There it is\" es \"ahí está\", cuando por fin encuentras algo. Ojo al orden: no es \"there is it\".",
+      "tip": "\"Oh, no you don't\" es \"de eso nada\": se dice para impedir que alguien haga algo.",
+      "vocab": [{ "word": "There it is", "meaning": "ahí está" }]
+    },
+    {
+      "start": 863,
+      "es": "¡Sigue ese gancho!",
+      "note": "\"Follow that...\" es una orden clásica de película: \"¡siga a ese coche!\".",
+      "vocab": [{ "word": "hook", "meaning": "gancho" }]
+    },
+    {
+      "start": 867,
+      "es": "Querer es poder... hasta que por fin.",
+      "note": "\"eventually\" no es \"eventualmente\". Significa \"al final, con el tiempo\". Es un falso amigo puro.",
+      "watch": "Cuidado con este: si quieres decir \"eventualmente\" (de vez en cuando), en inglés es \"occasionally\".",
+      "vocab": [
+        { "word": "eventually", "meaning": "al final, con el tiempo (¡falso amigo!)" }
+      ]
+    },
+    {
+      "start": 878,
+      "es": "¡Pare! Ay, justo iba a volver a repartir esto, pero supongo que podría dárselo ahora.",
+      "note": "\"I was just about to...\" = \"justo iba a...\". Se usa para algo que estabas a punto de hacer y se interrumpió.",
+      "tip": "\"I suppose I could\" es aceptar de mala gana. Muy británico: no dice que no, pero tampoco lo dice con ganas.",
+      "vocab": [
+        { "word": "to be about to", "meaning": "estar a punto de" },
+        { "word": "to redeliver", "meaning": "volver a repartir" },
+        { "word": "I suppose", "meaning": "supongo" }
+      ]
+    },
+    {
+      "start": 886,
+      "es": "Sí. ¿Tiene algún documento de identidad?",
+      "tip": "\"ID\" se pronuncia diciendo las dos letras: ai-di. Es la abreviatura de \"identification\".",
+      "vocab": [{ "word": "ID", "meaning": "documento de identidad" }]
+    },
+    {
+      "start": 888,
+      "es": "Ah, eh, aquí tiene. Papá Pig por fin tiene su paquete. Y es un libro.",
+      "note": "\"finally\" es \"por fin\", después de mucho esperar. Encaja con toda la historia.",
+      "tip": "\"Here you go\" es lo que dices al entregarle algo a alguien. También vale \"here you are\".",
+      "vocab": [
+        { "word": "Here you go", "meaning": "aquí tiene, toma" },
+        { "word": "finally", "meaning": "por fin, finalmente" }
+      ]
+    },
+    {
+      "start": 898,
+      "es": "El arte de la paciencia. Llevo queriendo leer esto una eternidad. Dos días por lo menos.",
+      "note": "\"I've been wanting to read this\" es present perfect continuo: algo que empezó antes y sigue ahora. Se traduce con \"llevo + gerundio\".",
+      "tip": "Aquí está el chiste final: el libro se llama El arte de la paciencia, y él no ha sido capaz de esperar siete días. \"For ages\" resulta ser dos días.",
+      "vocab": [
+        { "word": "for ages", "meaning": "hace un montón, una eternidad" },
+        { "word": "at least", "meaning": "por lo menos" },
+        { "word": "patience", "meaning": "paciencia" }
+      ]
+    },
+    {
+      "start": 905,
+      "es": "A Papá Pig le encantan los libros. A todo el mundo le encantan los libros.",
+      "tip": "El narrador cierra la historia con su fórmula de siempre. Aquí acaba esta parte."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué está esperando Papá Pig?",
+      "options": ["Un paquete", "Una carta", "A un amigo"],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuánto dice la nota que tardarán en volver a intentarlo?",
+      "options": [
+        "De uno a siete días laborables",
+        "Un mes",
+        "Al día siguiente"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué se le ocurre a Papá Pig?",
+      "options": [
+        "Llamar por teléfono",
+        "Seguir a la furgoneta hasta el almacén",
+        "Esperar sentado"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Por qué Peppa cree que buscan a un señor llamado Will?",
+      "options": [
+        "Porque lo dijo el repartidor",
+        "Porque es un amigo de la familia",
+        "Porque \"a will\" suena igual que el nombre Will"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Qué había dentro del paquete?",
+      "options": ["Un libro", "Unas gafas", "Una tarta"],
+      "answer": 0
+    },
+    {
+      "q": "¿Por qué es gracioso el título del libro?",
+      "options": [
+        "Porque Papá Pig no sabe leer",
+        "Porque es \"El arte de la paciencia\" y él no pudo esperar",
+        "Porque ya tenía ese libro"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"Where there's a will, there's a way\" significa...",
+      "options": ["querer es poder", "el camino es largo", "más vale tarde que nunca"],
+      "answer": 0
+    },
+    {
+      "q": "\"eventually\" significa...",
+      "options": ["eventualmente, a veces", "al final, con el tiempo", "posiblemente"],
+      "answer": 1
+    },
+    {
+      "q": "Para proponer un plan se dice...",
+      "options": ["Why don't we go?", "Why we don't go?", "Why not we go?"],
+      "answer": 0
+    },
+    {
+      "q": "El almacén era \"confusing\". Y ellos estaban...",
+      "options": ["confusing", "confuse", "confused"],
+      "answer": 2
+    }
+  ]
+}

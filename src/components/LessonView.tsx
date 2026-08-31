@@ -54,6 +54,8 @@ export default function LessonView({
   const [selection, setSelection] = useState<TextSelection | null>(null);
   const [saveError, setSaveError] = useState("");
   const [showQuiz, setShowQuiz] = useState(false);
+  /** Llegamos al final del tramo: el play ahora significa "repetir". */
+  const [finished, setFinished] = useState(false);
   /** Frase marcada con 📍 en la lista: la última que guardamos en Supabase. */
   const [savedPositionId, setSavedPositionId] = useState(initialSentenceId);
 
@@ -82,13 +84,26 @@ export default function LessonView({
     [words],
   );
 
+  /**
+   * Segundo en el que se acaba esta parte. Usamos el final de la última frase,
+   * no `endAt`: entre una cosa y otra puede quedar audio sin transcribir, y
+   * ahí el estudiante se queda oyendo algo que no tiene delante.
+   * Si la lección es el video entero (`endAt` vacío), no hay límite.
+   */
+  const limit = useMemo(() => {
+    if (lesson.endAt == null) return null;
+    const last = lesson.sentences[lesson.sentences.length - 1];
+    return last ? Math.min(lesson.endAt, last.end) : lesson.endAt;
+  }, [lesson.endAt, lesson.sentences]);
+
   const handleTime = useCallback(
     (seconds: number) => {
       setTime(seconds);
 
-      // Si la lección es solo un trozo del video, paramos al llegar al final.
-      if (lesson.endAt != null && seconds >= lesson.endAt) {
+      // Fin del tramo: paramos y ofrecemos la evaluación.
+      if (limit != null && seconds >= limit) {
         playerRef.current?.pauseVideo();
+        setFinished(true);
         setShowQuiz(true);
         return;
       }
@@ -131,33 +146,54 @@ export default function LessonView({
         setActiveId(current.id);
       }
     },
-    [lesson.endAt, lesson.sentences, sentenceById],
+    [limit, lesson.sentences, sentenceById],
   );
 
   const goToSentence = useCallback((sentence: Sentence) => {
     awaitingNextRef.current = null;
     setAwaitingNext(null);
     resumeTargetRef.current = null;
+    setFinished(false);
     activeIdRef.current = sentence.id;
     setActiveId(sentence.id);
     playerRef.current?.seekTo(sentence.start, true);
     playerRef.current?.playVideo();
   }, []);
 
+  /** Vuelve al principio del tramo. Es lo que hace el play una vez terminado. */
+  const restart = useCallback(() => {
+    const first = lesson.sentences[0];
+    awaitingNextRef.current = null;
+    setAwaitingNext(null);
+    resumeTargetRef.current = null;
+    setFinished(false);
+    if (first) {
+      activeIdRef.current = first.id;
+      setActiveId(first.id);
+      playerRef.current?.seekTo(first.start, true);
+    }
+    playerRef.current?.playVideo();
+  }, [lesson.sentences]);
+
   const togglePlay = useCallback(() => {
     if (!playerRef.current) return;
     if (playerRef.current.getPlayerState() === YT_STATE.PLAYING) {
       playerRef.current.pauseVideo();
+    } else if (finished) {
+      // Sin esto el video arrancaría pasado el límite, en la parte que ya no
+      // tiene transcripción.
+      restart();
     } else {
       playerRef.current.playVideo();
     }
-  }, []);
+  }, [finished, restart]);
 
   const toggleLoop = useCallback(
     (id: number) => {
       awaitingNextRef.current = null;
       setAwaitingNext(null);
       resumeTargetRef.current = null;
+      setFinished(false);
       setLoopId((current) => {
         if (current === id) return null;
         const s = sentenceById.get(id);
@@ -333,6 +369,7 @@ export default function LessonView({
             }
           }}
           onTime={handleTime}
+          onRequestPlay={togglePlay}
           onStateChange={(state) => {
             setPlaying(state === YT_STATE.PLAYING);
 
@@ -413,6 +450,22 @@ export default function LessonView({
             </button>
           )}
         </div>
+
+        {finished && (
+          <div className="flex flex-wrap items-center gap-3 rounded-lg bg-emerald-50 p-3 text-sm text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200">
+            <span>
+              ✅ Fin de esta parte. El resto del video no tiene transcripción
+              todavía.
+            </span>
+            <button
+              type="button"
+              onClick={restart}
+              className="rounded-lg bg-emerald-600 px-3 py-1.5 font-medium text-white hover:bg-emerald-700"
+            >
+              🔁 Repetir desde el principio
+            </button>
+          </div>
+        )}
 
         {awaitingNext != null && (
           <p className="rounded-lg bg-emerald-50 p-3 text-sm text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200">

@@ -1,28 +1,28 @@
 import Link from "next/link";
 
-import LessonList, { type LessonCard } from "@/components/LessonList";
-import { getLesson, getLessons } from "@/lib/lessons";
+import Catalog from "@/components/Catalog";
+import { buildCatalog, NO_PROGRESS, type Progress } from "@/lib/catalog";
+import { getLessons } from "@/lib/lessons";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function Home() {
-  const summaries = await getLessons();
+  const lessons = await getLessons();
 
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Resolvemos cada lección solo para saber cuántas frases tiene.
-  const resolved = await Promise.all(summaries.map((s) => getLesson(s.id)));
-
-  const positions = new Map<string, number>();
-  const bestScores = new Map<string, number>();
+  let progress: Progress = NO_PROGRESS;
 
   if (user) {
     const [positionResult, progressResult] = await Promise.all([
       supabase.from("lesson_position").select("lesson_id, sentence_id"),
       supabase.from("progress").select("lesson_id, score"),
     ]);
+
+    const positions = new Map<string, number>();
+    const bestScores = new Map<string, number>();
 
     for (const row of positionResult.data ?? []) {
       positions.set(row.lesson_id as string, row.sentence_id as number);
@@ -33,14 +33,9 @@ export default async function Home() {
       const score = row.score as number;
       bestScores.set(lessonId, Math.max(bestScores.get(lessonId) ?? 0, score));
     }
-  }
 
-  const lessons: LessonCard[] = summaries.map((summary, i) => ({
-    ...summary,
-    totalSentences: resolved[i]?.sentences.length ?? 0,
-    positionId: positions.get(summary.id) ?? null,
-    bestScore: bestScores.get(summary.id) ?? null,
-  }));
+    progress = { positions, bestScores };
+  }
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
@@ -60,7 +55,10 @@ export default async function Home() {
         </p>
       )}
 
-      <LessonList lessons={lessons} isLoggedIn={Boolean(user)} />
+      <Catalog
+        items={buildCatalog(lessons, progress)}
+        isLoggedIn={Boolean(user)}
+      />
     </main>
   );
 }

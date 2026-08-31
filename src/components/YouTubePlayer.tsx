@@ -85,6 +85,12 @@ type Props = {
   onTime?: (seconds: number) => void;
   /** Se llama cuando cambia el estado (reproduciendo, pausado, terminado...). */
   onStateChange?: (state: number) => void;
+  /**
+   * Qué hacer cuando el usuario pulsa el play de la pantalla de pausa. Si no se
+   * pasa, se reanuda sin más. La lección lo usa para no arrancar pasado el
+   * final del tramo.
+   */
+  onRequestPlay?: () => void;
 };
 
 export default function YouTubePlayer({
@@ -93,6 +99,7 @@ export default function YouTubePlayer({
   onReady,
   onTime,
   onStateChange,
+  onRequestPlay,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<YTPlayer | null>(null);
@@ -176,7 +183,10 @@ export default function YouTubePlayer({
       {covered && (
         <button
           type="button"
-          onClick={() => playerRef.current?.playVideo()}
+          onClick={() => {
+            if (onRequestPlay) onRequestPlay();
+            else playerRef.current?.playVideo();
+          }}
           aria-label="Reproducir"
           className="absolute inset-0 flex items-center justify-center bg-neutral-900 text-white transition-colors hover:bg-neutral-800"
         >

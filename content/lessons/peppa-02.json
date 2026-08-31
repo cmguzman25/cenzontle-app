@@ -1,0 +1,337 @@
+{
+  "id": "peppa-02",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El videojuego de las zanahorias",
+  "level": "A1",
+  "description": "Peppa juega a Carrot Catcher con Rebecca Rabbit y aprende que presumir es más fácil que ganar. 3:07 – 6:11.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 187,
+  "endAt": 375,
+  "annotations": [
+    {
+      "start": 192,
+      "es": "Hola.",
+      "tip": "\"Hi\" es el saludo normal entre amigos. \"Hello\" suena un poco más formal."
+    },
+    {
+      "start": 193,
+      "en": "Today, Peppa is going to Rebecca Rabbit's burrow. Hi, Mummy.",
+      "es": "Hoy Peppa va a la madriguera de Rebecca Rabbit. Hola, mamá.",
+      "note": "\"is going\" es presente continuo: algo que pasa ahora mismo o está a punto de pasar.",
+      "watch": "El subtítulo automático escribió \"boat\" (barco) y \"Mommy\". Lo correcto es \"burrow\" y \"Mummy\": Peppa es británica y en Reino Unido se dice \"Mummy\", no \"Mommy\".",
+      "vocab": [
+        { "word": "Mummy", "meaning": "mamá (británico; en EE. UU. dicen Mommy)" }
+      ]
+    },
+    {
+      "start": 201,
+      "es": "Hoy Peppa ya está en la madriguera de Rebecca Rabbit. Ha venido a jugar a un videojuego nuevo llamado Cazazanahorias. ¿Quieres jugar?",
+      "note": "\"called\" aquí significa \"llamado\", no \"llamó\". Sirve para dar el nombre de algo: \"a game called...\".",
+      "tip": "El narrador repite la estructura de la parte 1. Si te suena, es buena señal: ya lo aprendiste.",
+      "vocab": [
+        { "word": "called", "meaning": "llamado, que se llama" },
+        {
+          "word": "Do you want to...?",
+          "meaning": "¿Quieres...?",
+          "example": "Do you want to play with me?"
+        }
+      ]
+    },
+    {
+      "start": 213,
+      "es": "Sí, por favor. Se me dan increíblemente bien los juegos.",
+      "note": "\"I'm excellent at games\" = \"se me dan muy bien los juegos\". En inglés se dice \"ser bueno EN algo\" con la preposición \"at\", nunca \"in\".",
+      "tip": "Esta frase es la clave del episodio: Peppa presume antes de saber jugar. Fíjate en cuántas veces la repite.",
+      "vocab": [
+        {
+          "word": "to be good at",
+          "meaning": "dársele bien a uno algo",
+          "example": "She is good at maths."
+        },
+        { "word": "amazingly", "meaning": "increíblemente" }
+      ]
+    },
+    {
+      "start": 219,
+      "es": "Vaya. Peppa no sabe cómo empezar el juego.",
+      "note": "\"doesn't know how to\" = \"no sabe cómo\". Después de \"how to\" el verbo va sin conjugar: \"how to begin\", \"how to play\".",
+      "tip": "\"Oh, dear\" no se traduce literal. Es lo que dices cuando algo sale mal, entre la pena y la burla suave.",
+      "vocab": [
+        { "word": "Oh, dear", "meaning": "vaya, ay" },
+        { "word": "to begin", "meaning": "empezar (más formal que \"start\")" }
+      ]
+    },
+    {
+      "start": 224,
+      "es": "Eh, se me dan increíblemente bien los juegos, pero a lo mejor sería más divertido si empezaras tú, Rebecca.",
+      "note": "\"it would be more fun if you started\" es el condicional: \"would\" en una parte, pasado en la otra. Se usa para cosas imaginadas o para pedir algo con suavidad.",
+      "tip": "Peppa lo usa para disimular que no sabe. Es un truco muy inglés: en vez de admitir algo, propones otra cosa.",
+      "vocab": [
+        { "word": "maybe", "meaning": "a lo mejor, quizás" },
+        { "word": "more fun", "meaning": "más divertido" }
+      ]
+    },
+    {
+      "start": 237,
+      "es": "Ah, sí. Ya lo sabía. Primero eliges tu conejito.",
+      "note": "\"I knew that\" es el pasado de \"I know\". \"Know\" es irregular: know → knew.",
+      "watch": "\"knew\" se pronuncia igual que \"new\". La k del principio no suena, como en \"know\" o \"knee\".",
+      "vocab": [
+        { "word": "first", "meaning": "primero" },
+        { "word": "to pick", "meaning": "elegir, escoger" },
+        { "word": "bunny", "meaning": "conejito (forma cariñosa de \"rabbit\")" }
+      ]
+    },
+    {
+      "start": 244,
+      "es": "Luego saltas por ahí y cazas las zanahorias.",
+      "note": "\"then\" encadena pasos: first... then... Es la forma normal de explicar instrucciones.",
+      "tip": "\"hop\" es el salto corto de un conejo o un pájaro. Para una persona saltando se usa \"jump\".",
+      "vocab": [
+        { "word": "to hop", "meaning": "dar saltitos" },
+        { "word": "to catch", "meaning": "atrapar, cazar" },
+        { "word": "carrot", "meaning": "zanahoria" }
+      ]
+    },
+    {
+      "start": 248,
+      "es": "Ah, sí. Mmm. A Peppa se le dan increíblemente bien",
+      "tip": "La frase se corta aquí y sigue en la siguiente. En el habla real las frases se parten así todo el rato."
+    },
+    {
+      "start": 255,
+      "es": "los videojuegos, pero puede que necesite un poquito de ayuda con este.",
+      "note": "\"might\" significa \"puede que\". Es más flojo que \"will\": deja la puerta abierta a que no pase.",
+      "tip": "El narrador se está riendo de Peppa sin decirlo. \"A bit of help\" suaviza mucho: no dice que no sepa, dice que necesita \"un poquito\" de ayuda.",
+      "vocab": [
+        { "word": "might", "meaning": "puede que, quizá" },
+        { "word": "a bit of", "meaning": "un poco de" }
+      ]
+    },
+    {
+      "start": 261,
+      "es": "¿Cómo se cazan las zanahorias, por favor, Rebecca? ¿Así? ¡Bien!",
+      "note": "\"How do you...?\" no siempre es \"¿cómo haces tú...?\". Aquí es impersonal: \"¿cómo se hace?\".",
+      "tip": "\"Like this?\" es utilísimo: lo dices señalando o probando, para que te confirmen si vas bien.",
+      "vocab": [
+        { "word": "Like this?", "meaning": "¿Así?" },
+        { "word": "Yay!", "meaning": "¡bien!, ¡yupi! (alegría)" }
+      ]
+    },
+    {
+      "start": 269,
+      "es": "Se me da bien esto.",
+      "note": "Otra vez \"good at\". Ya van tres. Cuando algo se repite tanto en un episodio, es lo que toca aprender.",
+      "tip": "\"I'm good at this\" se dice tal cual cuando te sale bien algo que estás haciendo en ese momento."
+    },
+    {
+      "start": 272,
+      "es": "Ah, me toca. Guau.",
+      "note": "\"My turn\" = \"me toca\". Es una frase hecha, sin verbo. También existe \"Your turn\" (te toca).",
+      "vocab": [
+        {
+          "word": "turn",
+          "meaning": "turno",
+          "example": "It's your turn now."
+        }
+      ]
+    },
+    {
+      "start": 279,
+      "es": "A Rebecca Rabbit se le da increíblemente bien este juego.",
+      "tip": "El narrador usa la misma frase que Peppa presumía, pero ahora sobre Rebecca. Ahí está el chiste del episodio."
+    },
+    {
+      "start": 284,
+      "es": "Guau, se te da muy bien cazar zanahorias, Rebecca.",
+      "note": "Fíjate: \"good at CATCHING\". Después de \"at\" el verbo siempre lleva -ing. Nunca \"good at catch\".",
+      "tip": "Este es el patrón más útil de toda la lección. Pruébalo contigo: \"I'm good at cooking\", \"I'm not good at running\".",
+      "vocab": [
+        {
+          "word": "good at + -ing",
+          "meaning": "que se te da bien hacer algo",
+          "example": "I'm good at swimming."
+        }
+      ]
+    },
+    {
+      "start": 290,
+      "es": "He practicado mucho. ¿Quieres que juguemos juntas ahora? Podemos ser un equipo.",
+      "note": "\"I've had lots of practice\" es present perfect: pasado que explica el presente. Ha practicado antes, y por eso ahora juega bien.",
+      "tip": "\"Lots of\" es lo que se dice al hablar; \"a lot of\" también vale. \"Many\" suena más de libro.",
+      "vocab": [
+        { "word": "practice", "meaning": "práctica" },
+        { "word": "lots of", "meaning": "mucho, un montón de" },
+        { "word": "team", "meaning": "equipo" }
+      ]
+    },
+    {
+      "start": 298,
+      "es": "Sí. ¡Yujuu!",
+      "tip": "\"Woohoo\" es un grito de celebración, como \"¡yujuu!\"."
+    },
+    {
+      "start": 302,
+      "es": "Lo tengo. ¡Bien! Aquí hay una. Ahí hay otra. ¡Yuju! Nuevo récord. ¡Hurra!",
+      "note": "\"Here's one\" y \"There's one\" se diferencian por la distancia: \"here\" es aquí cerca, \"there\" es allí.",
+      "tip": "\"Got it\" lo dirás mucho: sirve para \"lo tengo\" y también para \"entendido\".",
+      "vocab": [
+        { "word": "Got it", "meaning": "lo tengo / entendido" },
+        { "word": "high score", "meaning": "récord de puntuación" }
+      ]
+    },
+    {
+      "start": 312,
+      "es": "Peppa y Rebecca hacen muy buen equipo. Rosie, Robbie, ¿qué hacéis?",
+      "note": "\"make a good team\" usa \"make\", no \"do\". En inglés se \"hace\" un equipo con make.",
+      "vocab": [
+        { "word": "to make a team", "meaning": "formar un equipo" }
+      ]
+    },
+    {
+      "start": 322,
+      "es": "Hola, vosotros dos. ¿Habéis visto a los gemelos? Se han escapado con nuestra comida.",
+      "note": "\"They've run off\" es otro present perfect: acaban de escaparse y el problema sigue.",
+      "tip": "\"Run off\" es un verbo con partícula: \"run\" es correr, pero \"run off\" es escaparse. La partícula lo cambia todo.",
+      "vocab": [
+        { "word": "to run off", "meaning": "escaparse, salir corriendo" },
+        { "word": "twins", "meaning": "gemelos, mellizos" },
+        { "word": "lunch", "meaning": "comida, almuerzo" }
+      ]
+    },
+    {
+      "start": 328,
+      "es": "Los atraparemos. Se nos da bien cazar zanahorias y conejitos bebés.",
+      "note": "\"We'll catch them\" es futuro: \"we will\" juntado en \"we'll\". Se decide en el momento.",
+      "tip": "Aquí está el chiste: usan lo que aprendieron en el videojuego para la vida real. Y otra vez \"good at catching\".",
+      "vocab": [
+        { "word": "we'll", "meaning": "we will → lo haremos" }
+      ]
+    },
+    {
+      "start": 341,
+      "es": "Encontré uno. Rosie.",
+      "note": "\"Found one\" es \"I found one\" sin el sujeto. Al hablar rápido se comen el \"I\".",
+      "vocab": [
+        { "word": "found", "meaning": "encontré (pasado de find)" }
+      ]
+    },
+    {
+      "start": 344,
+      "es": "Te pillé. Aquí hay otro. Robbie lo atrapó.",
+      "note": "\"Another one\" = \"otro más\". Con \"one\" se evita repetir el nombre de la cosa.",
+      "tip": "\"Gotcha\" es \"got you\" dicho rápido. Muy coloquial: \"te pillé\".",
+      "vocab": [
+        { "word": "Gotcha", "meaning": "te pillé (got you)" },
+        { "word": "another one", "meaning": "otro más" }
+      ]
+    },
+    {
+      "start": 353,
+      "es": "Sigue bien.",
+      "tip": "\"Still\" significa \"todavía, aún\". Marca que algo no ha cambiado."
+    },
+    {
+      "start": 354,
+      "es": "Peppa y Rebecca son muy buenas cazando zanahorias. ¡Bien! ¡Hurra! La comida está salvada.",
+      "note": "\"carrot catchers\" convierte el verbo en persona: catch → catcher (el que atrapa). Igual que teach → teacher.",
+      "tip": "Ese -er para decir \"el que hace algo\" te sirve con casi cualquier verbo: play → player, sing → singer.",
+      "vocab": [
+        { "word": "-er", "meaning": "terminación para \"el que hace algo\"" },
+        { "word": "saved", "meaning": "salvada, a salvo" }
+      ]
+    },
+    {
+      "start": 365,
+      "es": "De hecho, Peppa y Rebecca son cazadoras de zanahorias increíblemente buenas.",
+      "note": "\"In fact\" sirve para reforzar lo que acabas de decir: \"de hecho\", \"es más\".",
+      "tip": "El narrador cierra devolviéndole a Peppa la frase con la que presumía al principio, pero esta vez ganada de verdad. Ahí acaba esta parte.",
+      "vocab": [
+        { "word": "in fact", "meaning": "de hecho, es más" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿A qué juegan Peppa y Rebecca?",
+      "options": [
+        "A un videojuego de zanahorias",
+        "Al escondite",
+        "Al fútbol"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué le pasa a Peppa al principio del juego?",
+      "options": [
+        "Gana enseguida",
+        "No sabe ni cómo empezar",
+        "No quiere jugar"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Cómo disimula Peppa que no sabe jugar?",
+      "options": [
+        "Dice que le duele la cabeza",
+        "Se va a casa",
+        "Propone que empiece Rebecca"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Por qué Rebecca juega tan bien?",
+      "options": [
+        "Ha practicado mucho",
+        "Hace trampa",
+        "Es su cumpleaños"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué han hecho los gemelos?",
+      "options": [
+        "Romper el videojuego",
+        "Escaparse con la comida",
+        "Esconder las zanahorias"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Después de \"good at\", el verbo va...",
+      "options": [
+        "en infinitivo (catch)",
+        "en pasado (caught)",
+        "con -ing (catching)"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"to run off\" significa...",
+      "options": [
+        "escaparse",
+        "correr rápido",
+        "apagar"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"Gotcha\" es la forma rápida de decir...",
+      "options": [
+        "Go to child",
+        "Got you",
+        "Get charge"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "En inglés británico, a la madre se le dice...",
+      "options": [
+        "Mummy",
+        "Mommy",
+        "Mama"
+      ],
+      "answer": 0
+    }
+  ]
+}

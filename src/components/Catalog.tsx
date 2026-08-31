@@ -4,38 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-export type LessonCard = {
-  id: string;
-  title: string;
-  level: string;
-  /** Para sacar la miniatura del video. */
-  youtubeId: string;
-  /** Temas de la lección. Una lección puede estar en varias. */
-  categories?: string[];
-  description?: string;
-  /** Cuántas frases tiene la lección. */
-  totalSentences: number;
-  /** Frase por la que va el usuario, si ya la empezó. */
-  positionId: number | null;
-  /** Mejor resultado del quiz, si ya lo hizo alguna vez. */
-  bestScore: number | null;
-};
+import type { CatalogItem, Status } from "@/lib/catalog";
 
-type Status = "progreso" | "terminada" | "nueva";
 type Filter = "todas" | Status;
 
 /** Valor que usan los filtros de nivel y tema cuando no filtran nada. */
 const ALL = "__todos__";
 
-function statusOf(lesson: LessonCard): Status {
-  if (lesson.bestScore != null) return "terminada";
-  if (lesson.positionId != null) return "progreso";
-  return "nueva";
-}
-
 const BADGES: Record<Status, { label: string; className: string }> = {
-  progreso: { label: "En progreso", className: "bg-sky-500 text-white" },
-  terminada: { label: "Terminada", className: "bg-emerald-500 text-white" },
+  progreso: { label: "En curso", className: "bg-sky-500 text-white" },
+  terminada: { label: "Terminado", className: "bg-emerald-500 text-white" },
   nueva: { label: "Sin empezar", className: "bg-black/70 text-white" },
 };
 
@@ -61,73 +39,74 @@ function ChipRow({
         {label}
       </span>
 
-      {[{ value: ALL, label: allLabel }, ...options.map((o) => ({ value: o, label: o }))].map(
-        (option) => (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => onChange(option.value)}
-            aria-pressed={value === option.value}
-            className={[
-              "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
-              value === option.value
-                ? "bg-sky-600 text-white"
-                : "border border-neutral-300 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800",
-            ].join(" ")}
-          >
-            {option.label}
-          </button>
-        ),
-      )}
+      {[
+        { value: ALL, label: allLabel },
+        ...options.map((o) => ({ value: o, label: o })),
+      ].map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => onChange(option.value)}
+          aria-pressed={value === option.value}
+          className={[
+            "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+            value === option.value
+              ? "bg-sky-600 text-white"
+              : "border border-neutral-300 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800",
+          ].join(" ")}
+        >
+          {option.label}
+        </button>
+      ))}
     </div>
   );
 }
 
 type Props = {
-  lessons: LessonCard[];
+  items: CatalogItem[];
   /** Sin sesión no hay progreso que filtrar. */
   isLoggedIn: boolean;
 };
 
-export default function LessonList({ lessons, isLoggedIn }: Props) {
+export default function Catalog({ items, isLoggedIn }: Props) {
   const [filter, setFilter] = useState<Filter>("todas");
   const [level, setLevel] = useState(ALL);
   const [category, setCategory] = useState(ALL);
   const [query, setQuery] = useState("");
 
   const levels = useMemo(
-    () => [...new Set(lessons.map((l) => l.level))].sort(),
-    [lessons],
+    () => [...new Set(items.flatMap((i) => i.levels))].sort(),
+    [items],
   );
 
   const categories = useMemo(
     () =>
-      [...new Set(lessons.flatMap((l) => l.categories ?? []))].sort((a, b) =>
+      [...new Set(items.flatMap((i) => i.categories))].sort((a, b) =>
         a.localeCompare(b, "es"),
       ),
-    [lessons],
+    [items],
   );
 
-  /** Cuántas hay de cada estado, para poner el número en el botón. */
+  /** Cuántos hay de cada estado, para poner el número en el botón. */
   const counts = useMemo(() => {
-    const result = { todas: lessons.length, progreso: 0, terminada: 0, nueva: 0 };
-    for (const lesson of lessons) result[statusOf(lesson)] += 1;
+    const result = { todas: items.length, progreso: 0, terminada: 0, nueva: 0 };
+    for (const item of items) result[item.status] += 1;
     return result;
-  }, [lessons]);
+  }, [items]);
 
   const visible = useMemo(() => {
     const search = query.trim().toLowerCase();
 
-    return lessons
-      .filter((lesson) => {
-        if (filter !== "todas" && statusOf(lesson) !== filter) return false;
-        if (level !== ALL && lesson.level !== level) return false;
-        if (category !== ALL && !(lesson.categories ?? []).includes(category)) {
+    return items
+      .filter((item) => {
+        if (filter !== "todas" && item.status !== filter) return false;
+        if (level !== ALL && !item.levels.includes(level)) return false;
+        if (category !== ALL && !item.categories.includes(category)) {
           return false;
         }
         if (
           search &&
-          !`${lesson.title} ${lesson.description ?? ""}`
+          !`${item.title} ${item.description ?? ""}`
             .toLowerCase()
             .includes(search)
         ) {
@@ -138,18 +117,19 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
       // Lo que está a medias primero: es lo que el usuario vino a seguir.
       .sort((a, b) => {
         const order = { progreso: 0, nueva: 1, terminada: 2 };
-        return order[statusOf(a)] - order[statusOf(b)];
+        return order[a.status] - order[b.status];
       });
-  }, [category, filter, level, lessons, query]);
+  }, [category, filter, items, level, query]);
 
   const filters: { value: Filter; label: string; count: number }[] = [
-    { value: "todas", label: "Todas", count: counts.todas },
-    { value: "progreso", label: "En progreso", count: counts.progreso },
+    { value: "todas", label: "Todos", count: counts.todas },
+    { value: "progreso", label: "En curso", count: counts.progreso },
     { value: "nueva", label: "Sin empezar", count: counts.nueva },
-    { value: "terminada", label: "Terminadas", count: counts.terminada },
+    { value: "terminada", label: "Terminados", count: counts.terminada },
   ];
 
-  const filtering = filter !== "todas" || level !== ALL || category !== ALL || query !== "";
+  const filtering =
+    filter !== "todas" || level !== ALL || category !== ALL || query !== "";
 
   return (
     <div className="mt-8">
@@ -180,7 +160,7 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Buscar una lección…"
+          placeholder="Buscar un capítulo…"
           className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-sky-500 dark:border-neutral-700 dark:bg-neutral-900"
         />
 
@@ -202,25 +182,20 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
       </div>
 
       <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((lesson) => {
-          const status = statusOf(lesson);
-          const badge = BADGES[status];
-          const percent =
-            lesson.positionId != null && lesson.totalSentences > 0
-              ? Math.round((lesson.positionId / lesson.totalSentences) * 100)
-              : null;
+        {visible.map((item) => {
+          const badge = BADGES[item.status];
 
           return (
-            <li key={lesson.id}>
+            <li key={item.key}>
               <Link
-                href={`/lesson/${lesson.id}`}
+                href={item.href}
                 className="group flex h-full flex-col overflow-hidden rounded-xl border border-neutral-200 transition-all hover:-translate-y-0.5 hover:border-sky-400 hover:shadow-lg dark:border-neutral-800 dark:hover:border-sky-500"
               >
                 <div className="relative aspect-video overflow-hidden bg-neutral-200 dark:bg-neutral-800">
                   <Image
                     // hqdefault viene en 4:3 con bandas negras; al recortarlo a
                     // 16:9 las bandas desaparecen solas.
-                    src={`https://i.ytimg.com/vi/${lesson.youtubeId}/hqdefault.jpg`}
+                    src={`https://i.ytimg.com/vi/${item.youtubeId}/hqdefault.jpg`}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
@@ -228,10 +203,10 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
                   />
 
                   <span className="absolute left-2 top-2 rounded-full bg-black/70 px-2 py-0.5 text-xs font-semibold text-white">
-                    {lesson.level}
+                    {item.levels.join(" · ")}
                   </span>
 
-                  {isLoggedIn && status !== "nueva" && (
+                  {isLoggedIn && item.status !== "nueva" && (
                     <span
                       className={`absolute right-2 top-2 rounded-full px-2 py-0.5 text-xs font-semibold ${badge.className}`}
                     >
@@ -240,28 +215,37 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
                   )}
 
                   {/* Barra de avance pegada al borde inferior, como en YouTube. */}
-                  {percent != null && status === "progreso" && (
+                  {isLoggedIn && item.percent != null && item.percent > 0 && (
                     <div className="absolute inset-x-0 bottom-0 h-1 bg-black/40">
                       <div
                         className="h-full bg-sky-500"
-                        style={{ width: `${percent}%` }}
+                        style={{ width: `${item.percent}%` }}
                       />
                     </div>
                   )}
                 </div>
 
                 <div className="flex flex-1 flex-col p-4">
-                  <h3 className="font-medium leading-snug">{lesson.title}</h3>
+                  <h3 className="font-medium leading-snug">{item.title}</h3>
 
-                  {lesson.description && (
-                    <p className="mt-1 line-clamp-2 text-sm text-neutral-500 dark:text-neutral-400">
-                      {lesson.description}
+                  {item.parts != null && (
+                    <p className="mt-0.5 text-xs text-neutral-500 dark:text-neutral-400">
+                      {item.parts} partes
+                      {isLoggedIn && item.partsDone > 0 && (
+                        <> · {item.partsDone} terminadas</>
+                      )}
                     </p>
                   )}
 
-                  {lesson.categories && lesson.categories.length > 0 && (
+                  {item.description && (
+                    <p className="mt-1 line-clamp-2 text-sm text-neutral-500 dark:text-neutral-400">
+                      {item.description}
+                    </p>
+                  )}
+
+                  {item.categories.length > 0 && (
                     <ul className="mt-2 flex flex-wrap gap-1">
-                      {lesson.categories.map((name) => (
+                      {item.categories.map((name) => (
                         <li
                           key={name}
                           className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
@@ -272,13 +256,11 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
                     </ul>
                   )}
 
-                  <p className="mt-auto pt-3 text-xs text-neutral-500 dark:text-neutral-400">
-                    {lesson.totalSentences} frases
-                    {status === "progreso" && (
-                      <> · 📍 vas por la {lesson.positionId}</>
-                    )}
-                    {lesson.bestScore != null && <> · {lesson.bestScore}%</>}
-                  </p>
+                  {isLoggedIn && item.hint && (
+                    <p className="mt-auto pt-3 text-xs font-medium text-sky-700 dark:text-sky-400">
+                      ▸ {item.hint}
+                    </p>
+                  )}
                 </div>
               </Link>
             </li>
@@ -289,12 +271,12 @@ export default function LessonList({ lessons, isLoggedIn }: Props) {
       {visible.length === 0 && (
         <div className="mt-6 rounded-xl border border-dashed border-neutral-300 p-6 text-center dark:border-neutral-700">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            {lessons.length === 0
-              ? "Todavía no hay lecciones."
-              : "Ninguna lección coincide con el filtro."}
+            {items.length === 0
+              ? "Todavía no hay capítulos."
+              : "Nada coincide con el filtro."}
           </p>
 
-          {filtering && lessons.length > 0 && (
+          {filtering && items.length > 0 && (
             <button
               type="button"
               onClick={() => {

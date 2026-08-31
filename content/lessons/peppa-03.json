@@ -1,0 +1,361 @@
+{
+  "id": "peppa-03",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El restaurante secreto",
+  "level": "A1",
+  "description": "Mamá Pig se saca una sorpresa de la manga: un restaurante escondido dentro de una tienda. 6:15 – 9:12.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 375,
+  "endAt": 552,
+  "annotations": [
+    {
+      "start": 375,
+      "es": "Espera y verás.",
+      "note": "\"Wait and see\" son dos órdenes seguidas con \"and\" en medio. Es una frase hecha entera.",
+      "tip": "Se dice cuando no quieres contar algo todavía. Es el \"ya lo verás\" de toda la vida.",
+      "vocab": [
+        { "word": "Wait and see", "meaning": "espera y verás, ya lo verás" }
+      ]
+    },
+    {
+      "start": 376,
+      "en": "Today, Mummy Pig has a special surprise planned for everyone. Are we going to the cinema?",
+      "es": "Hoy Mamá Pig tiene preparada una sorpresa especial para todos. ¿Vamos al cine?",
+      "note": "\"Are we going...?\" es presente continuo usado para el futuro: planes que ya están decididos.",
+      "tip": "Así se pregunta por planes en inglés hablado. Nadie dice \"Will we go to the cinema?\" para esto.",
+      "vocab": [
+        { "word": "surprise", "meaning": "sorpresa" },
+        { "word": "cinema", "meaning": "cine (británico; en EE. UU. dicen \"movie theater\")" }
+      ]
+    },
+    {
+      "start": 384,
+      "es": "No. ¿A los bolos? Me temo que no. ¿Vamos a...?",
+      "note": "Tres formas de decir que no: \"No\" a secas, \"Nope\" informal, y \"Afraid not\" que suaviza y da un poco de pena.",
+      "tip": "\"Afraid not\" es \"I'm afraid not\" acortado. Sirve para negar algo sin sonar seco.",
+      "vocab": [
+        { "word": "Nope", "meaning": "no (muy informal)" },
+        { "word": "Afraid not", "meaning": "me temo que no" },
+        { "word": "bowling", "meaning": "bolos" }
+      ]
+    },
+    {
+      "start": 390,
+      "es": "¿Qué? Ah. Eh, no. Pero ya no quedan más sorpresas.",
+      "note": "\"There aren't any ... left\" = \"ya no queda ningún...\". Ese \"left\" al final significa \"que sobre, que quede\".",
+      "watch": "En negativo se usa \"any\", no \"some\": \"there aren't any surprises\". Es un error clásico decir \"there aren't some\".",
+      "vocab": [
+        { "word": "left", "meaning": "que queda, restante" }
+      ]
+    },
+    {
+      "start": 396,
+      "es": "Creo que verás que me guardo unas cuantas en la manga. Peppa, ¿qué mangas? Ajá, ya llegamos. Anda, es una tienda.",
+      "note": "\"I've got a few\" = \"tengo unas cuantas\". \"A few\" es poco pero suficiente.",
+      "tip": "\"Up my sleeve\" es una expresión: guardarse algo en la manga, como un mago. Peppa la entiende literal y por eso pregunta por las mangas: ese es el chiste.",
+      "vocab": [
+        { "word": "up my sleeve", "meaning": "guardado en la manga (algo escondido)" },
+        { "word": "a few", "meaning": "unos cuantos, unas pocas" },
+        { "word": "shop", "meaning": "tienda (británico; en EE. UU. \"store\")" }
+      ]
+    },
+    {
+      "start": 405,
+      "es": "¿Eh? ¿O no lo es?",
+      "note": "\"Or is it?\" se pone al final para sembrar la duda sobre lo que se acaba de decir.",
+      "tip": "Es un recurso de narrador muy común en cuentos y series. Te avisa de que algo no es lo que parece."
+    },
+    {
+      "start": 410,
+      "es": "Hola. Bienvenidos a mi tienda totalmente normal y muy aburrida.",
+      "note": "\"totally normal and very boring\": dos adjetivos unidos con \"and\", cada uno con su adverbio delante.",
+      "tip": "Dice justo lo contrario de la verdad. En inglés esa ironía se marca exagerando: \"totally\", \"very\".",
+      "vocab": [
+        { "word": "Welcome to...", "meaning": "Bienvenido a..." },
+        { "word": "boring", "meaning": "aburrido" }
+      ]
+    },
+    {
+      "start": 416,
+      "es": "Hola, señorita Rabbit. Quisiera tres pollos de goma y una bota de natillas. Frito por un lado, por favor.",
+      "note": "\"I'd like\" es \"I would like\": la forma educada de pedir. Suena mucho mejor que \"I want\".",
+      "tip": "\"Sunny side up\" es cómo se pide un huevo frito que se hace solo por abajo, con la yema mirando arriba. Aquí es parte de la contraseña absurda.",
+      "vocab": [
+        {
+          "word": "I'd like",
+          "meaning": "quisiera (I would like)",
+          "example": "I'd like a coffee, please."
+        },
+        { "word": "rubber", "meaning": "goma" },
+        { "word": "sunny side up", "meaning": "huevo frito por un solo lado" }
+      ]
+    },
+    {
+      "start": 426,
+      "en": "Um, Mummy Pig. Okie dokie. Mummy Pig has said a secret password.",
+      "es": "Eh, Mamá Pig. Vale, vale. Mamá Pig ha dicho una contraseña secreta.",
+      "note": "\"has said\" es present perfect: acaba de decirlo y por eso ahora pasa lo siguiente.",
+      "watch": "El subtítulo automático escribió \"Mommy\". Peppa es británica: se dice \"Mummy\".",
+      "vocab": [
+        { "word": "Okie dokie", "meaning": "vale, de acuerdo (muy informal)" },
+        { "word": "password", "meaning": "contraseña" }
+      ]
+    },
+    {
+      "start": 434,
+      "es": "Bienvenidos al restaurante secreto.",
+      "vocab": [{ "word": "secret", "meaning": "secreto" }]
+    },
+    {
+      "start": 438,
+      "en": "Follow me and I'll take you to your table. What's a secret restaurant, Mummy? It's",
+      "es": "Síganme y les llevo a su mesa. ¿Qué es un restaurante secreto, mamá? Es",
+      "note": "\"I'll take you\" es futuro decidido en el momento: \"te llevo\".",
+      "tip": "\"Follow me\" lo oirás en cualquier restaurante al llegar. Igual que \"this way, please\".",
+      "vocab": [
+        { "word": "to follow", "meaning": "seguir" },
+        { "word": "table", "meaning": "mesa" }
+      ]
+    },
+    {
+      "start": 447,
+      "en": "a restaurant that looks like something else. And this one looks just like a supermarket. Whoa!",
+      "es": "un restaurante que parece otra cosa. Y este parece justo un supermercado. ¡Hala!",
+      "note": "\"looks like\" = \"parece, se parece a\". Detrás va un nombre: \"looks like a supermarket\".",
+      "tip": "Ojo a la diferencia: \"It looks like a shop\" (parece una tienda) frente a \"It looks nice\" (se ve bonito). Con \"like\" comparas; sin \"like\" describes.",
+      "vocab": [
+        {
+          "word": "to look like",
+          "meaning": "parecerse a",
+          "example": "You look like your father."
+        },
+        { "word": "something else", "meaning": "otra cosa" }
+      ]
+    },
+    {
+      "start": 455,
+      "es": "Muy ingenioso.",
+      "tip": "\"Clever\" es listo o ingenioso. En Reino Unido se usa muchísimo para elogiar una buena idea.",
+      "vocab": [{ "word": "clever", "meaning": "listo, ingenioso" }]
+    },
+    {
+      "start": 456,
+      "es": "Primero eligen sus bebidas de las estanterías. ¿Me pones un zumo de naranja, por favor? Para mí una limonada.",
+      "note": "\"Can I have...?\" es la forma normal de pedir algo en una tienda o un bar. Educada y natural.",
+      "tip": "\"Lemonade for me\" se salta el verbo. Al pedir en grupo se hace mucho: \"a coffee for me\", \"water for her\".",
+      "vocab": [
+        {
+          "word": "Can I have...?",
+          "meaning": "¿Me pones...? ¿Me da...?",
+          "example": "Can I have a glass of water, please?"
+        },
+        { "word": "shelves", "meaning": "estanterías (plural de shelf)" },
+        { "word": "orange juice", "meaning": "zumo de naranja" }
+      ]
+    },
+    {
+      "start": 463,
+      "es": "Yo también.",
+      "note": "\"Me too\" sirve para sumarte a algo positivo. Si la frase fuera negativa se dice \"Me neither\".",
+      "vocab": [{ "word": "Me too", "meaning": "yo también" }]
+    },
+    {
+      "start": 466,
+      "es": "Excelente elección. Ahora, vamos a elegir su comida. Usted primero.",
+      "note": "\"let's\" es \"let us\": sirve para proponer hacer algo juntos.",
+      "tip": "\"After you\" es lo que dices al ceder el paso. Muy educado y muy británico.",
+      "vocab": [
+        { "word": "choice", "meaning": "elección" },
+        { "word": "After you", "meaning": "usted primero, pase usted" }
+      ]
+    },
+    {
+      "start": 474,
+      "es": "Pero eso es solo ella.",
+      "tip": "Frase suelta de Peppa. Sirve para acostumbrar el oído a lo que dicen los niños entre ellos, que no siempre tiene lógica."
+    },
+    {
+      "start": 477,
+      "es": "El restaurante secreto está lleno de puertas secretas. Anda, es como el pasillo de la fruta y la verdura.",
+      "note": "\"full of\" = \"lleno de\". La preposición siempre es \"of\".",
+      "vocab": [
+        { "word": "full of", "meaning": "lleno de" },
+        { "word": "aisle", "meaning": "pasillo (de un supermercado)" },
+        { "word": "veg", "meaning": "verdura (abreviatura de \"vegetables\")" }
+      ]
+    },
+    {
+      "start": 485,
+      "es": "Bien, vamos a elegir la comida que queremos comer.",
+      "note": "\"the food we want to eat\": aquí se han comido el \"that\". En inglés se puede quitar cuando une dos partes así.",
+      "tip": "\"Right,\" al principio de la frase no es \"correcto\". Es \"bien,\" o \"venga,\" para arrancar algo."
+    },
+    {
+      "start": 488,
+      "es": "Peppa y su familia están eligiendo ingredientes para su comida. Ñam.",
+      "note": "\"are choosing\" es presente continuo: pasando ahora mismo.",
+      "vocab": [
+        { "word": "ingredients", "meaning": "ingredientes" },
+        { "word": "meal", "meaning": "comida (el plato, no el alimento)" },
+        { "word": "Yum", "meaning": "ñam (qué rico)" }
+      ]
+    },
+    {
+      "start": 498,
+      "es": "Brocheta de fruta para la señora.",
+      "vocab": [
+        { "word": "skewer", "meaning": "brocheta, pincho" },
+        { "word": "lady", "meaning": "señora, dama" }
+      ]
+    },
+    {
+      "start": 500,
+      "es": "Uy, perdón. Este sitio sí que está lleno de sorpresas.",
+      "note": "\"really is\" con ese orden refuerza: no es \"está lleno\", es \"sí que está lleno\".",
+      "tip": "\"Sorry\" se usa en Reino Unido para todo: chocar con alguien, pedir perdón o pedir que repitan.",
+      "vocab": [{ "word": "place", "meaning": "sitio, lugar" }]
+    },
+    {
+      "start": 511,
+      "es": "Muy bien, George.",
+      "tip": "\"Well done\" es como se felicita a alguien por algo que ha hecho bien. También significa \"muy hecho\" hablando de carne.",
+      "vocab": [{ "word": "Well done", "meaning": "muy bien, bien hecho" }]
+    },
+    {
+      "start": 513,
+      "es": "Y ahora George ha encontrado otra puerta secreta. Pero esta sala está muy fría.",
+      "note": "\"has found\" es otra vez present perfect: lo acaba de encontrar.",
+      "watch": "\"found\" es el pasado y el participio de \"find\". No existe \"finded\".",
+      "vocab": [
+        { "word": "to find", "meaning": "encontrar (find → found → found)" },
+        { "word": "cold", "meaning": "frío" }
+      ]
+    },
+    {
+      "start": 522,
+      "es": "Con permiso. No nos hagan caso. Hola, Penny.",
+      "note": "\"Don't mind us\" = \"no nos hagan caso\". Se dice al pasar por donde estorbas.",
+      "tip": "\"Excuse me\" sirve para tres cosas: pedir paso, llamar la atención de alguien y pedir que repitan.",
+      "vocab": [
+        { "word": "Excuse me", "meaning": "perdón, con permiso" },
+        { "word": "Don't mind us", "meaning": "no nos hagan caso" }
+      ]
+    },
+    {
+      "start": 525,
+      "es": "Buen trabajo a todos. Llevo esto a la cocina para que lo cocinen. Aquí tienen su mesa. Bueno, ¿qué les parece?",
+      "note": "\"What do you think?\" es \"¿qué te parece?\", no \"¿qué piensas?\". Se pregunta así para pedir una opinión.",
+      "tip": "\"Here's your table\" es el \"aquí tienen\" del camarero. Con \"here's\" entregas o señalas algo.",
+      "vocab": [
+        { "word": "kitchen", "meaning": "cocina" },
+        { "word": "What do you think?", "meaning": "¿qué te parece?" }
+      ]
+    },
+    {
+      "start": 533,
+      "en": "I think you're very good at surprises, Mummy. The very best.",
+      "es": "Creo que se te dan muy bien las sorpresas, mamá. La mejor de todas.",
+      "note": "Otra vez \"good at\", el patrón de la parte 2. Aquí va con un nombre (\"surprises\"), no con un verbo en -ing.",
+      "tip": "Después de \"good at\" puedes poner un nombre (good at English) o un verbo con -ing (good at cooking). Las dos formas valen.",
+      "vocab": [
+        { "word": "the very best", "meaning": "la mejor de todas" }
+      ]
+    },
+    {
+      "start": 540,
+      "es": "Queda una sorpresa más.",
+      "note": "\"one more\" = \"uno más\". Y otra vez ese \"left\" del principio: lo que queda.",
+      "vocab": [{ "word": "one more", "meaning": "uno más" }]
+    },
+    {
+      "start": 545,
+      "en": "Everyone loves secret surprises, and Mummy Pig is full of them.",
+      "es": "A todos les encantan las sorpresas secretas, y Mamá Pig está llena de ellas.",
+      "note": "\"Everyone\" va con verbo en singular: \"everyone loves\", no \"everyone love\".",
+      "tip": "El narrador cierra la historia repitiendo \"full of\", que salió antes con las puertas secretas. Ahí acaba esta parte."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué adivina Peppa al principio sobre la sorpresa?",
+      "options": [
+        "El cine y los bolos",
+        "La piscina",
+        "El parque"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué esconde la tienda \"normal y aburrida\"?",
+      "options": [
+        "Un tren",
+        "Un restaurante secreto",
+        "Una piscina"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Cómo entran al restaurante?",
+      "options": [
+        "Con una llave",
+        "Pagando la entrada",
+        "Diciendo una contraseña secreta"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿A qué se parece el restaurante por dentro?",
+      "options": [
+        "A un supermercado",
+        "A un colegio",
+        "A una estación"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"up my sleeve\" significa...",
+      "options": [
+        "encima de la mesa",
+        "guardado en secreto",
+        "en el bolsillo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Para pedir algo con educación se dice...",
+      "options": [
+        "I want a coffee",
+        "Give me a coffee",
+        "I'd like a coffee, please"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"It looks like a supermarket\" significa...",
+      "options": [
+        "parece un supermercado",
+        "mira el supermercado",
+        "le gusta el supermercado"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"Afraid not\" se usa para...",
+      "options": [
+        "decir que tienes miedo",
+        "decir que no, con suavidad",
+        "pedir ayuda"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Después de \"good at\" puede ir...",
+      "options": [
+        "solo un nombre",
+        "solo un verbo",
+        "un nombre o un verbo con -ing"
+      ],
+      "answer": 2
+    }
+  ]
+}

@@ -98,4 +98,12 @@ export type LessonSummary = {
   /** Temas de la lección. Una lección puede estar en varias. */
   categories?: string[];
   description?: string;
+  /**
+   * Capítulo al que pertenece. Cuando un video es largo lo partimos en varias
+   * lecciones: todas comparten `seriesId` y se ordenan por `order`.
+   * Sin `seriesId`, la lección va suelta en la portada.
+   */
+  seriesId?: string;
+  seriesTitle?: string;
+  order?: number;
 };

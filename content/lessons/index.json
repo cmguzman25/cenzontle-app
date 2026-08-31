@@ -1,10 +1,57 @@
 [
   {
     "id": "peppa-01",
-    "title": "Peppa y los túneles secretos (Parte 1)",
+    "title": "Los túneles secretos",
     "level": "A1",
     "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 1,
     "categories": ["Dibujos animados", "Inglés británico", "Vida diaria", "Animales"],
     "description": "Peppa descubre que los conejos tienen túneles secretos por todo el pueblo. 0:00 – 3:07."
+  },
+  {
+    "id": "peppa-02",
+    "title": "El videojuego de las zanahorias",
+    "level": "A1",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 2,
+    "categories": ["Dibujos animados", "Inglés británico", "Vida diaria", "Animales"],
+    "description": "Peppa juega a Carrot Catcher con Rebecca Rabbit y aprende que presumir es más fácil que ganar. 3:07 – 6:11."
+  },
+  {
+    "id": "peppa-03",
+    "title": "El restaurante secreto",
+    "level": "A1",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 3,
+    "categories": ["Dibujos animados", "Inglés británico", "Vida diaria", "Comida"],
+    "description": "Mamá Pig se saca una sorpresa de la manga: un restaurante escondido dentro de una tienda. 6:15 – 9:12."
+  },
+  {
+    "id": "peppa-04",
+    "title": "El tren elegante",
+    "level": "A2",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 4,
+    "categories": ["Dibujos animados", "Inglés británico", "Viajes"],
+    "description": "La familia gana billetes para un tren de lujo que no va a ninguna parte. 9:12 – 12:12."
+  },
+  {
+    "id": "peppa-05",
+    "title": "El paquete perdido",
+    "level": "A2",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 5,
+    "categories": ["Dibujos animados", "Inglés británico", "Vida diaria"],
+    "description": "Papá Pig se cansa de esperar y persigue a la furgoneta de reparto hasta el almacén. 12:12 – 15:11."
   }
 ]

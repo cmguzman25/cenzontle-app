@@ -1,0 +1,380 @@
+{
+  "id": "peppa-04",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El tren elegante",
+  "level": "A2",
+  "description": "La familia gana billetes para un tren de lujo que no va a ninguna parte. 9:12 – 12:12.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 552,
+  "endAt": 732,
+  "annotations": [
+    {
+      "start": 552,
+      "es": "No te vayas. Para. He dicho que pares.",
+      "note": "\"Don't go\" es una orden en negativo: \"don't\" + verbo. Igual que \"don't stop\", \"don't look\".",
+      "tip": "\"I said stop\" es lo que dices cuando repites algo que ya habías pedido y no te hicieron caso.",
+      "vocab": [
+        { "word": "to stop", "meaning": "parar, detenerse" }
+      ]
+    },
+    {
+      "start": 560,
+      "es": "Uy. Perdón. Uf. Gracias.",
+      "tip": "\"Phew\" es el soplido de alivio cuando algo casi sale mal. \"Whoops\" es el \"uy\" de cuando metes la pata.",
+      "vocab": [
+        { "word": "Whoops", "meaning": "uy (al equivocarse)" },
+        { "word": "Phew", "meaning": "uf (alivio)" }
+      ]
+    },
+    {
+      "start": 565,
+      "es": "Hoy Peppa y su familia han ganado billetes para viajar en un tren elegante. Bienvenidos a bordo, señor y señoras.",
+      "note": "\"have won\" es present perfect: lo han ganado y por eso están aquí ahora.",
+      "tip": "\"Welcome aboard\" es la fórmula de bienvenida en trenes, barcos y aviones. La oirás tal cual si viajas.",
+      "vocab": [
+        { "word": "to win", "meaning": "ganar (win → won → won)" },
+        { "word": "ticket", "meaning": "billete, entrada" },
+        { "word": "aboard", "meaning": "a bordo" },
+        { "word": "fancy", "meaning": "elegante, de lujo" }
+      ]
+    },
+    {
+      "start": 573,
+      "es": "Gracias.",
+      "tip": "Fíjate en cuántas veces se dan las gracias en este tramo. En inglés británico se agradece todo, hasta lo más pequeño."
+    },
+    {
+      "start": 574,
+      "es": "Y nuestros amigos peluditos y feroces, por supuesto. Gracias. ¿Quieren ver esto?",
+      "note": "\"Would you like...?\" es la forma educada de ofrecer. Más fina que \"Do you want...?\".",
+      "tip": "\"Ta\" es \"gracias\" en inglés británico muy coloquial. Se oye muchísimo en el día a día y no aparece en los libros.",
+      "vocab": [
+        {
+          "word": "Would you like...?",
+          "meaning": "¿Le apetece...? ¿Quiere...?",
+          "example": "Would you like some tea?"
+        },
+        { "word": "Ta", "meaning": "gracias (británico, muy informal)" },
+        { "word": "fluffy", "meaning": "peludito, esponjoso" }
+      ]
+    },
+    {
+      "start": 582,
+      "es": "Los escaneas ahí.",
+      "vocab": [{ "word": "to scan", "meaning": "escanear" }]
+    },
+    {
+      "start": 584,
+      "en": "Ooh, and I can put those in there.",
+      "es": "Ooh, y yo puedo poner esos ahí dentro.",
+      "note": "\"these\" y \"those\": \"these\" es esto de aquí cerca, \"those\" es aquello de allí.",
+      "vocab": [
+        { "word": "these / those", "meaning": "estos / aquellos" }
+      ]
+    },
+    {
+      "start": 592,
+      "es": "Y sus asientos están justo por aquí. Que lo disfruten. Guau.",
+      "note": "\"just through here\" = \"justo por aquí\". \"Through\" es atravesar algo: una puerta, un pasillo.",
+      "vocab": [
+        { "word": "seat", "meaning": "asiento" },
+        { "word": "Enjoy", "meaning": "que lo disfrute" }
+      ]
+    },
+    {
+      "start": 597,
+      "en": "The very fancy train is, well, very fancy indeed. So where are we going, Mummy?",
+      "es": "El tren muy elegante es, bueno, muy elegante desde luego. ¿Y a dónde vamos, mamá?",
+      "note": "\"indeed\" refuerza lo que acabas de decir: \"very fancy indeed\" es \"elegante de verdad\".",
+      "watch": "El subtítulo automático puso \"Mommy\". Peppa es británica: \"Mummy\".",
+      "vocab": [{ "word": "indeed", "meaning": "desde luego, en efecto" }]
+    },
+    {
+      "start": 604,
+      "es": "Ah, a ningún sitio en particular. Pero tenemos que ir a algún sitio, ¿no?",
+      "note": "\"don't we?\" es una coletilla: repites el verbo en negativo al final para pedir confirmación. Como el \"¿no?\" o el \"¿verdad?\" del español.",
+      "tip": "La regla: si la frase es afirmativa, la coletilla va en negativo. \"We have to go, don't we?\" / \"You're tired, aren't you?\"",
+      "vocab": [
+        { "word": "nowhere", "meaning": "a ningún sitio" },
+        { "word": "somewhere", "meaning": "a algún sitio" },
+        { "word": "in particular", "meaning": "en particular, en concreto" }
+      ]
+    },
+    {
+      "start": 611,
+      "es": "No se trata de a dónde vamos, sino de cómo vamos. Estamos aquí solo para disfrutar del viaje.",
+      "note": "\"It's not about X, but Y\" sirve para corregir a alguien sobre lo que de verdad importa.",
+      "tip": "Esta es la moraleja del cuento. Vuelve a salir casi igual al final: si la repites en bucle ahora, luego la reconocerás sola.",
+      "vocab": [
+        { "word": "It's not about...", "meaning": "no se trata de..." },
+        { "word": "ride", "meaning": "viaje, paseo (en un vehículo)" }
+      ]
+    },
+    {
+      "start": 618,
+      "es": "Todo lo que necesites con solo tocar una pantalla. ¿Y esto qué hace?",
+      "note": "\"What does this do?\" lleva \"does\" porque es una pregunta en presente con \"this\". El otro verbo se queda sin conjugar.",
+      "tip": "\"At the touch of a screen\" es lenguaje de anuncio publicitario. Suena moderno y elegante a propósito.",
+      "vocab": [
+        { "word": "screen", "meaning": "pantalla" },
+        { "word": "everything you need", "meaning": "todo lo que necesitas" }
+      ]
+    },
+    {
+      "start": 626,
+      "es": "Hace frío. Un poquito demasiado frío, quizá.",
+      "note": "\"too cold\" es \"demasiado frío\". Ojo: \"too\" es demasiado (algo malo), \"very\" es solo mucho.",
+      "watch": "No confundas \"It's cold\" (hace frío) con \"I'm cold\" (tengo frío). En inglés la persona \"está\" fría, no \"tiene\" frío.",
+      "vocab": [
+        { "word": "too", "meaning": "demasiado" },
+        { "word": "a little", "meaning": "un poco" }
+      ]
+    },
+    {
+      "start": 633,
+      "es": "Asientos con calefacción. Mucho mejor. Ahora tengo el trasero calentito.",
+      "note": "\"Much better\" = \"mucho mejor\". Para reforzar un comparativo se usa \"much\", no \"very\".",
+      "tip": "\"Toasty\" viene de \"toast\" (tostada): calentito y a gusto. Es una palabra muy cariñosa.",
+      "vocab": [
+        { "word": "heated", "meaning": "con calefacción, calentado" },
+        { "word": "much better", "meaning": "mucho mejor" },
+        { "word": "toasty", "meaning": "calentito" }
+      ]
+    },
+    {
+      "start": 641,
+      "es": "¿Bebidas y algo de picar? Ah, no diremos que no.",
+      "note": "\"Don't mind if we do\" es una frase hecha para aceptar algo que te ofrecen, con un poco de humor.",
+      "tip": "\"Anyone?\" al final de una oferta es \"¿alguien quiere?\". Muy útil cuando ofreces algo a un grupo.",
+      "vocab": [
+        { "word": "snacks", "meaning": "algo de picar, aperitivos" },
+        { "word": "Don't mind if I do", "meaning": "pues no le digo que no" }
+      ]
+    },
+    {
+      "start": 646,
+      "es": "Gracias. Espera, si estás aquí, ¿quién conduce el tren? Yo, todavía.",
+      "note": "\"if you're here, who's driving...\" junta una condición con una pregunta. \"Who's\" es \"who is\".",
+      "tip": "\"Still me\" es una respuesta cortísima: \"sigo siendo yo\". En inglés hablado se responde así, sin frase completa.",
+      "vocab": [
+        { "word": "to drive", "meaning": "conducir" },
+        { "word": "still", "meaning": "todavía, aún" }
+      ]
+    },
+    {
+      "start": 653,
+      "es": "Uf. Ay.",
+      "tip": "Sonidos, no palabras. Aun así conviene reconocerlos: dicen tanto como una frase."
+    },
+    {
+      "start": 657,
+      "es": "Eh, George, ya puedes parar. ¿Has visto qué vistas?",
+      "note": "\"Would you look at that\" no es una pregunta de verdad. Es una forma de decir \"¡mira eso!\" con admiración.",
+      "tip": "\"You can stop now\" es más suave que \"stop\". Con \"can\" la orden suena a permiso.",
+      "vocab": [
+        { "word": "view", "meaning": "vista, paisaje" }
+      ]
+    },
+    {
+      "start": 664,
+      "es": "Veo, veo una cosita que empieza por T. Mmm, árboles.",
+      "note": "\"beginning with T\" = \"que empieza por T\". Se usa \"with\" para la letra, no \"by\".",
+      "tip": "\"I spy with my little eye\" es el \"veo, veo\" inglés: uno mira algo y dice la letra por la que empieza, y los demás adivinan. Es el juego clásico de los viajes largos.",
+      "vocab": [
+        { "word": "I spy", "meaning": "veo veo (el juego)" },
+        { "word": "to begin with", "meaning": "empezar por" },
+        { "word": "trees", "meaning": "árboles" }
+      ]
+    },
+    {
+      "start": 671,
+      "es": "Sí. Y otra cosa que empieza por T. ¿Son más árboles?",
+      "tip": "El chiste del episodio: van en tren por el campo y todo lo que se ve son árboles. Por eso la respuesta siempre es la misma."
+    },
+    {
+      "start": 676,
+      "en": "Yeah. And also something else beginning with T. It's trees again, isn't it? How did you know?",
+      "es": "Sí. Y otra cosa más que empieza por T. Son árboles otra vez, ¿verdad? ¿Cómo lo sabías?",
+      "note": "\"isn't it?\" es otra coletilla, igual que el \"don't we?\" de antes. La frase es afirmativa, así que la coletilla va en negativo.",
+      "tip": "\"How did you know?\" se dice cuando alguien acierta algo que parecía imposible de adivinar.",
+      "vocab": [
+        { "word": "isn't it?", "meaning": "¿verdad?, ¿no?" },
+        { "word": "again", "meaning": "otra vez" }
+      ]
+    },
+    {
+      "start": 685,
+      "es": "Si miran por la ventana, el tren más rápido del mundo pasará dentro de poco.",
+      "note": "\"the world's fastest train\": el superlativo se forma con -est. fast → fastest.",
+      "tip": "\"Shortly\" significa \"en breve\". Es palabra de anuncio: la oirás en estaciones y aeropuertos.",
+      "vocab": [
+        { "word": "shortly", "meaning": "en breve, dentro de poco" },
+        { "word": "to pass by", "meaning": "pasar (por delante)" },
+        { "word": "fastest", "meaning": "el más rápido" }
+      ]
+    },
+    {
+      "start": 694,
+      "es": "¿Me lo he perdido?",
+      "note": "\"to miss\" aquí no es echar de menos, es perderse algo que ya pasó.",
+      "watch": "\"Miss\" tiene tres significados según el contexto: perderse algo, echar de menos, y fallar un tiro.",
+      "vocab": [
+        {
+          "word": "to miss",
+          "meaning": "perderse algo",
+          "example": "I missed the bus."
+        }
+      ]
+    },
+    {
+      "start": 695,
+      "es": "Disculpen. Habrá un breve retraso en nuestro trayecto debido a hojas inesperadas.",
+      "note": "\"There will be\" es \"habrá\". \"Due to\" es \"debido a\", lenguaje formal.",
+      "tip": "Esta frase es un anuncio de tren de verdad, palabra por palabra. Si viajas en tren en Reino Unido la vas a oír igual, cambiando el motivo.",
+      "vocab": [
+        { "word": "delay", "meaning": "retraso" },
+        { "word": "journey", "meaning": "trayecto, viaje" },
+        { "word": "due to", "meaning": "debido a" },
+        { "word": "unexpected", "meaning": "inesperado" }
+      ]
+    },
+    {
+      "start": 701,
+      "es": "Ay, perdón. Una hoja inesperada en la vía.",
+      "note": "\"leaf\" en plural es \"leaves\", no \"leafs\". Cambia la f por ves.",
+      "tip": "Aquí hay una broma que solo se pilla si conoces Reino Unido: los trenes británicos se retrasan de verdad por \"leaves on the line\", y es un chiste nacional. Por eso la excusa es una sola hoja.",
+      "vocab": [
+        { "word": "leaf / leaves", "meaning": "hoja / hojas" },
+        { "word": "line", "meaning": "vía (del tren)" }
+      ]
+    },
+    {
+      "start": 705,
+      "es": "¿Ha dicho hoja? ¿Como en una hoja ha parado el tren entero? ¿Qué voy a hacer contigo?",
+      "note": "\"What am I going to do with you?\" se dice con cariño y resignación cuando alguien hace una tontería.",
+      "tip": "\"As in...\" sirve para pedir que te aclaren algo: \"¿como en...?\", \"¿te refieres a...?\".",
+      "vocab": [
+        { "word": "as in", "meaning": "como en, o sea" },
+        { "word": "whole", "meaning": "entero" }
+      ]
+    },
+    {
+      "start": 714,
+      "es": "Vamos a llegar tarde de vuelta.",
+      "note": "\"be going to\" es el futuro de lo que ya se ve venir. Aquí el retraso ya está pasando.",
+      "vocab": [
+        { "word": "to be late", "meaning": "llegar tarde" },
+        { "word": "to get back", "meaning": "volver, regresar" }
+      ]
+    },
+    {
+      "start": 716,
+      "en": "It's okay, Mummy. It's not about where we go. Yay. It's about how we go.",
+      "es": "No pasa nada, mamá. No se trata de a dónde vamos. ¡Bien! Se trata de cómo vamos.",
+      "note": "Peppa le devuelve a su madre la frase del principio. Es el cierre del cuento.",
+      "tip": "Compárala con la del minuto 10:11: casi idénticas. Cuando una frase se repite así en una historia, es la idea que quieren que te lleves.",
+      "watch": "Otro \"Mommy\" del subtítulo automático que en realidad es \"Mummy\"."
+    },
+    {
+      "start": 725,
+      "es": "Y las vistas de aquí son bastante buenas.",
+      "note": "\"pretty\" delante de un adjetivo no es \"bonito\": significa \"bastante\". \"Pretty good\" es \"bastante bueno\".",
+      "tip": "Aquí acaba el cuento del tren. Lo que suena después ya es otra historia.",
+      "vocab": [
+        { "word": "pretty", "meaning": "bastante (delante de un adjetivo)" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué han ganado Peppa y su familia?",
+      "options": [
+        "Billetes para un tren elegante",
+        "Un videojuego",
+        "Una cena en un restaurante"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿A dónde va el tren?",
+      "options": [
+        "A la playa",
+        "A ningún sitio en particular",
+        "A casa de la abuela"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "En el juego del \"veo veo\", ¿cuál es siempre la respuesta?",
+      "options": [
+        "Trenes",
+        "Túneles",
+        "Árboles"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Por qué se retrasa el tren?",
+      "options": [
+        "Por una hoja en la vía",
+        "Por la nieve",
+        "Porque se acabó la gasolina"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuál es la moraleja que repite Peppa al final?",
+      "options": [
+        "Que hay que llegar pronto",
+        "Que lo importante no es a dónde vas, sino cómo vas",
+        "Que los trenes son lentos"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"We have to go somewhere, don't we?\" — ese \"don't we?\" es...",
+      "options": [
+        "una orden",
+        "un error",
+        "una coletilla para pedir confirmación"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Si la frase es afirmativa, la coletilla del final va...",
+      "options": [
+        "en negativo",
+        "en afirmativo",
+        "en pasado"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"Would you like some tea?\" es una forma de...",
+      "options": [
+        "ofrecer algo con educación",
+        "quejarse",
+        "dar una orden"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "El plural de \"leaf\" es...",
+      "options": [
+        "leafs",
+        "leaves",
+        "leafes"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"pretty good\" significa...",
+      "options": [
+        "bonito y bueno",
+        "bastante bueno",
+        "poco bueno"
+      ],
+      "answer": 1
+    }
+  ]
+}
