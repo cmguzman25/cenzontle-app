@@ -63,6 +63,12 @@ export default function LessonView({
   const activeIdRef = useRef<number | null>(null);
   const pauseEachRef = useRef(false);
   const awaitingNextRef = useRef<number | null>(null);
+  /**
+   * Segundo al que queremos volver al retomar la lección. Mientras esté puesto,
+   * ignoramos el reloj del reproductor: con el video sin empezar devuelve 0 y
+   * nos mandaría a la primera frase.
+   */
+  const resumeTargetRef = useRef<number | null>(null);
   loopIdRef.current = loopId;
   pauseEachRef.current = pauseEach;
 
@@ -102,6 +108,9 @@ export default function LessonView({
       // no tocamos nada para que siga viéndose la frase que acaba de escuchar.
       if (awaitingNextRef.current != null) return;
 
+      // Retomando: mantenemos la frase guardada hasta que el video arranque.
+      if (resumeTargetRef.current != null) return;
+
       const current = lesson.sentences.find(
         (s) => seconds >= s.start && seconds < s.end,
       );
@@ -128,6 +137,7 @@ export default function LessonView({
   const goToSentence = useCallback((sentence: Sentence) => {
     awaitingNextRef.current = null;
     setAwaitingNext(null);
+    resumeTargetRef.current = null;
     activeIdRef.current = sentence.id;
     setActiveId(sentence.id);
     playerRef.current?.seekTo(sentence.start, true);
@@ -147,6 +157,7 @@ export default function LessonView({
     (id: number) => {
       awaitingNextRef.current = null;
       setAwaitingNext(null);
+      resumeTargetRef.current = null;
       setLoopId((current) => {
         if (current === id) return null;
         const s = sentenceById.get(id);
@@ -317,12 +328,24 @@ export default function LessonView({
             if (resume) {
               activeIdRef.current = resume.id;
               setActiveId(resume.id);
+              resumeTargetRef.current = resume.start;
               player.seekTo(resume.start, true);
             }
           }}
           onTime={handleTime}
           onStateChange={(state) => {
             setPlaying(state === YT_STATE.PLAYING);
+
+            // Ya arrancó: soltamos el freno. Si YouTube ignoró nuestro salto
+            // (a veces pasa con el video sin empezar), lo repetimos.
+            if (state === YT_STATE.PLAYING && resumeTargetRef.current != null) {
+              const target = resumeTargetRef.current;
+              resumeTargetRef.current = null;
+              const now = playerRef.current?.getCurrentTime() ?? target;
+              if (Math.abs(now - target) > 1.5) {
+                playerRef.current?.seekTo(target, true);
+              }
+            }
 
             // Al volver a dar play (con nuestro botón o con el de YouTube),
             // avanzamos a la frase que estaba esperando.
@@ -356,6 +379,8 @@ export default function LessonView({
             <kbd className="ml-1 text-xs opacity-60">P</kbd>
           </button>
 
+          {/* El reproductor de YouTube va sin controles, así que play y pausa
+              tienen que estar siempre a mano aquí. */}
           {awaitingNext != null ? (
             <button
               type="button"
@@ -366,18 +391,15 @@ export default function LessonView({
               <kbd className="ml-1 text-xs opacity-70">espacio</kbd>
             </button>
           ) : (
-            pauseEach &&
-            ready &&
-            !playing && (
-              <button
-                type="button"
-                onClick={togglePlay}
-                className="rounded-lg bg-sky-600 px-4 py-1.5 font-medium text-white hover:bg-sky-700"
-              >
-                ▶ Continuar
-                <kbd className="ml-1 text-xs opacity-70">espacio</kbd>
-              </button>
-            )
+            <button
+              type="button"
+              onClick={togglePlay}
+              disabled={!ready}
+              className="rounded-lg bg-sky-600 px-4 py-1.5 font-medium text-white hover:bg-sky-700 disabled:opacity-50"
+            >
+              {playing ? "⏸ Pausar" : "▶ Reproducir"}
+              <kbd className="ml-1 text-xs opacity-70">espacio</kbd>
+            </button>
           )}
 
           {loopId != null && (
