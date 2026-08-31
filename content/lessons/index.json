@@ -64,5 +64,49 @@
     "order": 6,
     "categories": ["Dibujos animados", "Inglés británico", "Vida diaria"],
     "description": "Peppa y George son demasiado pequeños para la atracción grande, así que sus padres montan una en el salón. 15:11 – 18:12."
+  },
+  {
+    "id": "peppa-07",
+    "title": "El parque acuático",
+    "level": "A2",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 7,
+    "categories": ["Dibujos animados", "Inglés británico", "Vida diaria"],
+    "description": "George se queda atrapado en la fuente y toda la familia aprende que pedir ayuda no tiene nada de malo. 18:12 – 21:08."
+  },
+  {
+    "id": "peppa-08",
+    "title": "Las luces de Navidad",
+    "level": "A2",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 8,
+    "categories": ["Dibujos animados", "Inglés británico", "Navidad"],
+    "description": "Peppa y George corren para llegar al espectáculo del final, pero la bebé disfruta más del camino. 21:08 – 24:15."
+  },
+  {
+    "id": "peppa-09",
+    "title": "Las vacaciones virtuales",
+    "level": "B1",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 9,
+    "categories": ["Dibujos animados", "Inglés británico", "Viajes"],
+    "description": "Peppa les monta unas vacaciones a sus padres dentro del salón recreativo, y se le va de las manos. 24:15 – 27:03."
+  },
+  {
+    "id": "peppa-10",
+    "title": "El pato de Evie",
+    "level": "A2",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 10,
+    "categories": ["Dibujos animados", "Inglés británico", "Vida diaria", "Animales"],
+    "description": "El pato de juguete se cae al embalse y Peppa lo persigue hasta las entrañas de la potabilizadora. 27:03 – 30:10."
   }
 ]

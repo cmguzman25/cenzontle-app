@@ -1,0 +1,343 @@
+{
+  "id": "peppa-10",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El pato de Evie",
+  "level": "A2",
+  "description": "El pato de juguete se cae al embalse y Peppa lo persigue hasta las entrañas de la potabilizadora. 27:03 – 30:10.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 1623,
+  "endAt": 1810,
+  "annotations": [
+    {
+      "start": 1623,
+      "es": "A casa, por favor. Pero a Mamá y Papá Pig también les encanta su casa. Hoy Peppa y su familia visitan el embalse.",
+      "note": "\"Home, please\" al taxista: sin \"to\". Con \"home\" nunca se pone preposición: go home, come home, get home.",
+      "tip": "Esta línea cierra el cuento del salón recreativo y abre el del embalse. Por eso empieza aquí la parte 10.",
+      "watch": "Es un error muy común decir \"go to home\". Nunca lleva \"to\".",
+      "vocab": [
+        { "word": "reservoir", "meaning": "embalse, pantano" },
+        { "word": "to go home", "meaning": "ir a casa (sin \"to\")" }
+      ]
+    },
+    {
+      "start": 1634,
+      "note": "\"They're saying hello\" — presente continuo para algo que pasa ahora. Los patos \"están saludando\".",
+      "vocab": [
+        { "word": "duck", "meaning": "pato" },
+        { "word": "to say hello", "meaning": "saludar" }
+      ]
+    },
+    {
+      "start": 1637,
+      "note": "\"Especially\" ya salió en las luces de Navidad: sirve para destacar un caso concreto.",
+      "vocab": [{ "word": "toy", "meaning": "juguete" }]
+    },
+    {
+      "start": 1642,
+      "es": "Vaya. El pato se ha caído al embalse.",
+      "note": "\"has fallen\" es present perfect: se acaba de caer y el problema sigue ahí. De ahí arranca toda la historia.",
+      "watch": "\"Fall\" es irregular: fall → fell → fallen. El participio es \"fallen\", no \"falled\".",
+      "vocab": [
+        { "word": "to fall in", "meaning": "caerse dentro (fall → fell → fallen)" }
+      ]
+    },
+    {
+      "start": 1645,
+      "es": "No pasa nada, no cabe por la rejilla.",
+      "note": "\"can't fit through\" — \"fit\" es caber. \"Through\" es \"a través de\", pasando por dentro.",
+      "tip": "El nombre del pato de juguete lo destroza el subtítulo automático una y otra vez. Se llama Quack Quack; si ves \"Whack\" o \"Wackwack\", es el mismo pato.",
+      "vocab": [
+        { "word": "to fit", "meaning": "caber" },
+        { "word": "grate", "meaning": "rejilla" }
+      ]
+    },
+    {
+      "start": 1650,
+      "tip": "Aquí el reconocedor automático se pierde del todo y escribe algo sin sentido. Fíate del audio: no intentes leer esta línea."
+    },
+    {
+      "start": 1657,
+      "note": "\"so yellow and smiley\" — ese \"so\" es \"qué, muy\", como en \"we're so high up\" de la parte 6.",
+      "tip": "\"Smiley\" es otra vez la terminación -y de la parte 7: smile → smiley, o sea \"sonriente\".",
+      "vocab": [{ "word": "smiley", "meaning": "sonriente" }]
+    },
+    {
+      "start": 1665,
+      "es": "Sigue a ese pato. Entendido. Tú mantén a Evie distraída.",
+      "note": "\"keep Eevee distracted\" — \"keep\" + adjetivo es \"mantener a alguien en un estado\": keep it clean, keep him busy.",
+      "tip": "\"Got it\" es \"entendido\", como ya salió en el videojuego de la parte 2. Y \"Follow that duck\" es la orden de película de la parte 5.",
+      "vocab": [
+        {
+          "word": "to keep someone + adjetivo",
+          "meaning": "mantener a alguien (distraído, callado...)",
+          "example": "Keep the children quiet."
+        },
+        { "word": "distracted", "meaning": "distraído" }
+      ]
+    },
+    {
+      "start": 1670,
+      "es": "No pararemos hasta recuperarlo.",
+      "note": "\"until we get it back\" va en presente aunque hable del futuro. Es la misma regla de \"when you're bigger\" de la parte 6: después de until, when o if nunca va \"will\".",
+      "tip": "\"Get something back\" es recuperar algo que habías perdido. Es de los \"get\" más útiles que hay.",
+      "vocab": [
+        { "word": "to get something back", "meaning": "recuperar algo" },
+        { "word": "until", "meaning": "hasta que" }
+      ]
+    },
+    {
+      "start": 1678,
+      "es": "El señor Bull lleva a Peppa y a Papá Pig bajo tierra a buscar al pato.",
+      "note": "\"is taking\" — \"take\" es llevar a alguien a algún sitio. Si es traer hacia aquí, sería \"bring\".",
+      "vocab": [
+        { "word": "underground", "meaning": "bajo tierra, subterráneo" },
+        { "word": "to take someone", "meaning": "llevar a alguien" }
+      ]
+    },
+    {
+      "start": 1683,
+      "es": "Cuevas. El pato tiene que estar por aquí en alguna parte. Ahí está.",
+      "note": "\"must be here somewhere\" — \"must\" no es obligación aquí, es deducción: \"tiene que estar\". Ya salió en la parte 8 con \"Must be my hay fever\".",
+      "tip": "\"There it is\" es \"ahí está\", cuando encuentras algo. Igual que en el almacén de la parte 5.",
+      "vocab": [
+        { "word": "cave", "meaning": "cueva" },
+        { "word": "must be", "meaning": "tiene que estar/ser (deducción)" },
+        { "word": "somewhere", "meaning": "en alguna parte" }
+      ]
+    },
+    {
+      "start": 1691,
+      "note": "\"the town's water plant\" — el genitivo con apóstrofo también vale para cosas: la potabilizadora del pueblo.",
+      "vocab": [
+        { "word": "water plant", "meaning": "potabilizadora, planta de agua" },
+        { "word": "town", "meaning": "pueblo" }
+      ]
+    },
+    {
+      "start": 1694,
+      "note": "\"Did you build this?\" — el pasado lo lleva \"did\", así que \"build\" se queda sin conjugar. Misma regla que en la parte 2.",
+      "vocab": [{ "word": "to build", "meaning": "construir (build → built → built)" }]
+    },
+    {
+      "start": 1699,
+      "es": "Sí. Costó mucho trabajo, pero nunca nos rendimos.",
+      "note": "\"give up\" es rendirse, abandonar. Es el verbo del cuento entero: sale tres veces y es la moraleja.",
+      "tip": "\"Hard work\" es \"mucho trabajo\", \"trabajo duro\". Se repite tanto en esta parte que la vas a acabar diciendo sola.",
+      "watch": "\"Give\" es irregular: give → gave → given. \"We never gave up\", no \"we never gived up\".",
+      "vocab": [
+        {
+          "word": "to give up",
+          "meaning": "rendirse, abandonar",
+          "example": "Don't give up!"
+        },
+        { "word": "hard work", "meaning": "trabajo duro" }
+      ]
+    },
+    {
+      "start": 1710,
+      "es": "Aquí limpiamos el agua del embalse para que salga por los grifos de vuestras casas. Uf, me vendría bien uno de esos.",
+      "note": "\"so it could come out of your taps\" — \"so\" aquí es \"para que\", explica la finalidad.",
+      "tip": "\"I could do with...\" es \"me vendría bien...\". Expresión utilísima y muy británica: \"I could do with a coffee\".",
+      "vocab": [
+        {
+          "word": "I could do with...",
+          "meaning": "me vendría bien...",
+          "example": "I could do with a holiday."
+        },
+        { "word": "tap", "meaning": "grifo (británico; en EE. UU. \"faucet\")" }
+      ]
+    },
+    {
+      "start": 1719,
+      "note": "\"After it!\" es \"¡a por él!\". Se grita al salir en persecución de algo.",
+      "vocab": [{ "word": "After it!", "meaning": "¡a por él!" }]
+    },
+    {
+      "start": 1726,
+      "note": "\"drinking water\" es agua potable. Ese -ing describe para qué sirve algo: drinking water, swimming pool, washing machine.",
+      "vocab": [
+        { "word": "drinking water", "meaning": "agua potable" },
+        { "word": "fresh", "meaning": "fresco, limpio" }
+      ]
+    },
+    {
+      "start": 1729,
+      "es": "Gracias, Papá Pig. No puedo parar, estoy persiguiendo a un pato. Suena a mucho trabajo. Lo es.",
+      "note": "\"Sounds like hard work\" — \"sound like\" es \"sonar a\", dar la impresión de algo por lo que te cuentan.",
+      "tip": "\"It is\" como respuesta corta evita repetir toda la frase. En inglés se responde así constantemente.",
+      "vocab": [
+        {
+          "word": "It sounds like...",
+          "meaning": "suena a..., parece que...",
+          "example": "That sounds like fun."
+        },
+        { "word": "to chase", "meaning": "perseguir" }
+      ]
+    },
+    {
+      "start": 1736,
+      "note": "Segunda vez de \"give up\", ahora en negativo y en presente: \"no podemos rendirnos\"."
+    },
+    {
+      "start": 1741,
+      "es": "Vaya. El pato ha desaparecido.",
+      "note": "\"has gone\" es present perfect: se ha ido y sigue sin aparecer. Como el \"Where's the real Miss Rabbit gone?\" de la parte 5.",
+      "vocab": [{ "word": "to be gone", "meaning": "haber desaparecido" }]
+    },
+    {
+      "start": 1745,
+      "es": "¿Cómo vamos a atraparlo ahora? Es el juguete favorito de Evie. ¿Y si compramos otro?",
+      "note": "\"What if we buy...?\" es \"¿y si...?\": sirve para lanzar una idea. Detrás va presente, no futuro.",
+      "tip": "\"How are we going to...?\" es \"¿cómo vamos a...?\". El \"going to\" del plan o de lo que ya se ve venir.",
+      "vocab": [
+        {
+          "word": "What if...?",
+          "meaning": "¿y si...?",
+          "example": "What if we take the bus?"
+        },
+        { "word": "favourite", "meaning": "favorito" }
+      ]
+    },
+    {
+      "start": 1754,
+      "es": "A lo mejor no se da cuenta. Da igual. Rápido, por aquí arriba.",
+      "note": "\"she won't notice\" — \"notice\" es darse cuenta de algo, percibirlo. No confundir con \"realise\", que es caer en la cuenta.",
+      "tip": "\"Never mind\" es \"da igual, olvídalo\". Se dice cuando lo que ibas a contar ya no viene al caso.",
+      "vocab": [
+        { "word": "to notice", "meaning": "darse cuenta, notar" },
+        { "word": "Never mind", "meaning": "da igual, olvídalo" }
+      ]
+    },
+    {
+      "start": 1764,
+      "es": "Estamos otra vez donde empezamos. No hemos encontrado al pato.",
+      "note": "\"back where we started\" es \"otra vez en el punto de partida\". Se usa igual en sentido literal y figurado.",
+      "vocab": [
+        { "word": "back where we started", "meaning": "otra vez donde empezamos" }
+      ]
+    },
+    {
+      "start": 1770,
+      "es": "¿Estás segura, Peppa? El pato lleva a Quack Quack en la cabeza.",
+      "note": "\"is wearing\" — \"wear\" es llevar puesto. Vale para ropa, gafas, sombreros y, aquí, un pato de juguete.",
+      "tip": "\"Are you sure?\" es \"¿estás segura?\". Aquí el narrador la usa para avisarnos de que mire mejor.",
+      "vocab": [
+        { "word": "to wear", "meaning": "llevar puesto (wear → wore → worn)" },
+        { "word": "Are you sure?", "meaning": "¿estás seguro?" }
+      ]
+    },
+    {
+      "start": 1777,
+      "en": "Yeah, we chased Quack Quack through caves into a huge factory that makes water for our taps. Sounds like hard work.",
+      "es": "Sí, perseguimos al pato por unas cuevas hasta una fábrica enorme que hace el agua de nuestros grifos.",
+      "note": "\"a factory that makes water\" — ese \"that\" une la fábrica con lo que hace. Es el relativo más común para cosas.",
+      "watch": "El subtítulo automático escribió \"tax\" (impuestos) donde dice \"taps\" (grifos). Suenan parecido pero no tienen nada que ver.",
+      "vocab": [
+        { "word": "huge", "meaning": "enorme" },
+        { "word": "factory", "meaning": "fábrica" }
+      ]
+    },
+    {
+      "start": 1788,
+      "es": "Lo fue, pero Peppa nunca se rindió en su empeño de encontrar el pato para Evie. Fue un trabajo duro y sediento. Lo que me recuerda...",
+      "note": "\"gave up ON finding\" — cuando \"give up\" lleva complemento así, va con \"on\" y el verbo con -ing.",
+      "tip": "\"That reminds me\" es \"eso me recuerda...\", cuando algo que has oído te trae otra idea a la cabeza. Aquí, la sed.",
+      "vocab": [
+        { "word": "to give up on", "meaning": "abandonar el empeño de" },
+        { "word": "That reminds me", "meaning": "eso me recuerda" },
+        { "word": "thirsty", "meaning": "sediento, con sed" }
+      ]
+    },
+    {
+      "start": 1800,
+      "note": "\"Here you go\" al entregar algo, como el repartidor de la parte 5.",
+      "vocab": [{ "word": "adventure", "meaning": "aventura" }]
+    },
+    {
+      "start": 1805,
+      "es": "Pero mereció la pena con tal de hacer sonreír a Evie.",
+      "note": "\"it was all worth it\" — \"worth it\" es \"merecer la pena\". Ojo: lleva siempre ese \"it\" al final.",
+      "tip": "\"To make someone smile\" — después de \"make\" el verbo va sin \"to\": make her smile, make me laugh. Con esta frase termina el video entero.",
+      "vocab": [
+        {
+          "word": "worth it",
+          "meaning": "que merece la pena",
+          "example": "It was hard, but it was worth it."
+        },
+        { "word": "to make someone smile", "meaning": "hacer sonreír a alguien" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué le pasa al pato de juguete de Evie?",
+      "options": [
+        "Se cae al embalse",
+        "Se lo lleva un perro",
+        "Se rompe"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿A dónde persiguen al pato?",
+      "options": [
+        "Al parque",
+        "A la potabilizadora del pueblo",
+        "Al supermercado"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Dónde estaba el pato al final?",
+      "options": [
+        "En el fondo del embalse",
+        "En casa",
+        "En la cabeza de un pato de verdad"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Cuál es la moraleja del cuento?",
+      "options": [
+        "No rendirse",
+        "No acercarse al agua",
+        "Comprar dos juguetes iguales"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"to give up\" significa...",
+      "options": ["rendirse", "regalar", "levantarse"],
+      "answer": 0
+    },
+    {
+      "q": "El pasado de \"give\" es...",
+      "options": ["gived", "gave", "goved"],
+      "answer": 1
+    },
+    {
+      "q": "\"We won't stop until we get it back\" — después de \"until\" el verbo va...",
+      "options": ["en presente", "con will", "en pasado"],
+      "answer": 0
+    },
+    {
+      "q": "\"I could do with a coffee\" significa...",
+      "options": [
+        "podría hacer un café",
+        "me vendría bien un café",
+        "puedo tomar café"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"It was worth it\" significa...",
+      "options": ["costó mucho", "mereció la pena", "valía mucho dinero"],
+      "answer": 1
+    },
+    {
+      "q": "\"Never mind\" significa...",
+      "options": ["nunca pienses", "da igual, olvídalo", "no me importa nada"],
+      "answer": 1
+    }
+  ]
+}

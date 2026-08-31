@@ -1,0 +1,308 @@
+{
+  "id": "peppa-08",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "Las luces de Navidad",
+  "level": "A2",
+  "description": "Peppa y George corren para llegar al espectáculo del final, pero la bebé disfruta más del camino. 21:08 – 24:15.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 1268,
+  "endAt": 1455,
+  "annotations": [
+    {
+      "start": 1268,
+      "es": "Y la familia siempre se ayuda cuando lo necesita. Esta noche, Peppa y su familia van a un recorrido de luces de Navidad.",
+      "note": "\"each other\" es \"el uno al otro\": la ayuda va en las dos direcciones. Sin él, \"family helps\" no diría quién ayuda a quién.",
+      "tip": "Esta línea cierra el cuento del parque acuático y abre el de las luces en la misma frase. Por eso empieza aquí la parte 8.",
+      "vocab": [
+        { "word": "each other", "meaning": "el uno al otro, mutuamente" },
+        { "word": "light trail", "meaning": "recorrido de luces" },
+        { "word": "tonight", "meaning": "esta noche" }
+      ]
+    },
+    {
+      "start": 1277,
+      "note": "\"I can't wait\" solo, sin nada detrás, es \"¡qué ganas!\". Ya salió en las partes 6 y 7 con \"can't wait to\".",
+      "vocab": [{ "word": "I can't wait!", "meaning": "¡qué ganas!" }]
+    },
+    {
+      "start": 1281,
+      "es": "Vais a tener que esperar un poco. El espectáculo está al final del todo del recorrido.",
+      "note": "\"You'll have to wait\" — \"have to\" es obligación por las circunstancias, no porque alguien lo mande. Aquí: toca esperar porque el show está lejos.",
+      "tip": "Fíjate en el contraste con la línea anterior: \"I can't wait\" (ganas) frente a \"you'll have to wait\" (obligación). Mismo verbo, sentidos opuestos.",
+      "vocab": [
+        { "word": "to have to", "meaning": "tener que" },
+        { "word": "all the way", "meaning": "hasta el final del todo" },
+        { "word": "lightsacular", "meaning": "invento: Light + Spectacular" }
+      ]
+    },
+    {
+      "start": 1288,
+      "es": "Pero hay un montón de cosas divertidas que ver por el camino. Más vale que nos pongamos en marcha.",
+      "note": "\"We'd better get going\" es \"had better\": más vale que, conviene que. Suena a consejo con un punto de urgencia.",
+      "tip": "\"Plenty of\" es \"de sobra, un montón\". Ya salió en la parte 6: \"plenty of fun to be had\".",
+      "watch": "\"We'd better\" se contrae de \"we had better\". No es \"we would better\", aunque el apóstrofo lo parezca.",
+      "vocab": [
+        {
+          "word": "had better",
+          "meaning": "más vale que",
+          "example": "You'd better hurry."
+        },
+        { "word": "plenty of", "meaning": "de sobra, un montón de" },
+        { "word": "on the way", "meaning": "por el camino" }
+      ]
+    },
+    {
+      "start": 1296,
+      "note": "\"is enjoying\" — \"enjoy\" es disfrutar DE algo, pero en inglés no lleva preposición: \"enjoy the tunnel\", nunca \"enjoy of\".",
+      "vocab": [
+        { "word": "to enjoy", "meaning": "disfrutar (sin preposición)" }
+      ]
+    },
+    {
+      "start": 1302,
+      "es": "Peppa y George tienen muchas ganas de ver el espectáculo del final.",
+      "tip": "\"Really want\" es querer con ganas. El narrador lo repite varias veces en esta parte para marcar la tensión del cuento."
+    },
+    {
+      "start": 1309,
+      "es": "Vamos a verlo otra vez. ¿A que es bonito, Evie?",
+      "note": "\"Isn't it pretty?\" es una pregunta en negativo, pero no espera un \"no\": busca que le des la razón. Es el \"¿a que sí?\" del español.",
+      "tip": "Es primo hermano de las coletillas de la parte 4. \"Isn't it pretty?\" y \"It's pretty, isn't it?\" significan lo mismo.",
+      "vocab": [
+        { "word": "Isn't it...?", "meaning": "¿a que es...?" },
+        { "word": "Let's go see", "meaning": "vamos a ver" }
+      ]
+    },
+    {
+      "start": 1318,
+      "note": "\"especially\" es \"sobre todo, especialmente\". Sirve para destacar un caso dentro de un grupo.",
+      "vocab": [{ "word": "especially", "meaning": "sobre todo, especialmente" }]
+    },
+    {
+      "start": 1328,
+      "note": "\"quite amazing\" — en inglés británico \"quite\" delante de un adjetivo fuerte significa \"realmente\", no \"bastante\".",
+      "watch": "Con adjetivos normales (\"quite good\") es \"bastante\". Con adjetivos ya fuertes (\"quite amazing\") es \"realmente\". El tono lo decide.",
+      "vocab": [{ "word": "quite", "meaning": "bastante / realmente" }]
+    },
+    {
+      "start": 1330,
+      "es": "Peppa y su familia siguen por el recorrido de luces. Disfrutan de las flores brillantes.",
+      "note": "\"shining\" viene de \"shine\" (brillar). El -ing lo convierte en adjetivo: flores que brillan.",
+      "vocab": [
+        { "word": "to shine", "meaning": "brillar (shine → shone → shone)" },
+        { "word": "to continue through", "meaning": "seguir por, atravesar" }
+      ]
+    },
+    {
+      "start": 1340,
+      "note": "\"hay fever\" es la alergia al polen. Papá Pig lo dice como excusa para disimular que se ha emocionado.",
+      "tip": "\"Must be...\" sin sujeto es \"será...\": una suposición. \"Must be my hay fever\" = \"será la alergia\".",
+      "vocab": [
+        { "word": "hay fever", "meaning": "alergia al polen" },
+        { "word": "must be", "meaning": "será, debe de ser" },
+        { "word": "glowing", "meaning": "que resplandece" }
+      ]
+    },
+    {
+      "start": 1347,
+      "tip": "El nombre de esta atracción lo transcribió mal el subtítulo automático. Pasa mucho con los nombres inventados: no te pelees con ellos."
+    },
+    {
+      "start": 1353,
+      "note": "\"it's you\" es \"eres tú\" señalando una foto o un reflejo. Ojo: en inglés se usa \"it\", no \"you are\".",
+      "vocab": [{ "word": "It's you!", "meaning": "¡eres tú!" }]
+    },
+    {
+      "start": 1358,
+      "tip": "La risa de Papá Noel. En inglés se escribe \"Ho ho ho\", igual que en español \"Jo jo jo\"."
+    },
+    {
+      "start": 1362,
+      "es": "Muy bien, equipo. ¿Quién quiere chocolate caliente y nubes?",
+      "note": "\"Who's ready for...?\" es \"¿quién se apunta a...?\". Se usa para ofrecer algo a un grupo con entusiasmo.",
+      "tip": "\"All right, team\" es como se dirige un adulto a un grupo de niños. Muy de padre animando la tropa.",
+      "vocab": [
+        { "word": "hot chocolate", "meaning": "chocolate caliente" },
+        { "word": "marshmallows", "meaning": "nubes, malvaviscos" },
+        { "word": "Who's ready for...?", "meaning": "¿quién se apunta a...?" }
+      ]
+    },
+    {
+      "start": 1369,
+      "es": "¿A que esto es increíble, Evie? Y ya casi estamos en el espectáculo.",
+      "note": "Segunda vez de \"Isn't this amazing?\". La misma fórmula de antes: pide que le den la razón.",
+      "vocab": [
+        { "word": "nearly", "meaning": "casi" },
+        { "word": "to be nearly at", "meaning": "estar ya casi en" }
+      ]
+    },
+    {
+      "start": 1375,
+      "es": "Atención a todos. El espectáculo empezará en un minuto. Nos lo vamos a perder. Rápido, tenemos que ir.",
+      "note": "\"will be starting in 1 minute\" es lenguaje de megafonía. \"In + tiempo\" es \"dentro de\", no \"en\".",
+      "tip": "\"We're going to miss it\" — \"going to\" para lo que ya se ve venir. Y \"miss\" es perderse algo, como en el tren de la parte 4.",
+      "vocab": [
+        { "word": "Attention everyone", "meaning": "atención a todos" },
+        { "word": "in one minute", "meaning": "dentro de un minuto" },
+        { "word": "to miss", "meaning": "perderse algo" }
+      ]
+    },
+    {
+      "start": 1385,
+      "es": "Peppa y George no quieren perderse el espectáculo de luces. Pero Evie está disfrutando mucho de estas luces también.",
+      "tip": "Aquí está el conflicto del cuento en una sola frase: ellos quieren llegar al final, la bebé ya está a gusto donde está."
+    },
+    {
+      "start": 1394,
+      "es": "O a lo mejor podemos quedarnos aquí pasándolo bien.",
+      "note": "\"keep having fun\" — después de \"keep\" el verbo siempre lleva -ing. \"Keep going\", \"keep trying\".",
+      "vocab": [
+        {
+          "word": "to keep + -ing",
+          "meaning": "seguir haciendo algo",
+          "example": "Keep going!"
+        }
+      ]
+    },
+    {
+      "start": 1404,
+      "es": "Qué majos sois, cerditos. Pero creo que Evie quiere ver el espectáculo tanto como vosotros.",
+      "note": "\"just as much as you do\" es \"tanto como vosotros\". La estructura es \"as much as\", y ese \"do\" al final evita repetir el verbo.",
+      "tip": "\"That's very sweet\" se dice cuando alguien tiene un detalle bonito. No es \"dulce\": es \"qué majo\", \"qué detalle\".",
+      "vocab": [
+        { "word": "as much as", "meaning": "tanto como" },
+        { "word": "That's very sweet", "meaning": "qué majo, qué detalle" }
+      ]
+    },
+    {
+      "start": 1414,
+      "es": "¡Lo conseguimos! Y es increíble. Se acabó el espectáculo, amigos.",
+      "note": "\"Made it\" es \"I made it\" sin el sujeto: lo lograron, llegaron a tiempo. Ya salió en la parte 7.",
+      "tip": "\"Show's over, folks\" es la fórmula clásica para cerrar un espectáculo. \"Folks\" es \"gente, amigos\", muy campechano.",
+      "vocab": [
+        { "word": "folks", "meaning": "gente, amigos" },
+        { "word": "It's over", "meaning": "se acabó" }
+      ]
+    },
+    {
+      "start": 1421,
+      "note": "\"at least\" es \"al menos\", para buscarle el lado bueno a algo que salió mal. Ya salió en la parte 5.",
+      "watch": "El final de esta línea lo transcribió mal el subtítulo automático. Fíate del audio, no del texto.",
+      "vocab": [{ "word": "at least", "meaning": "al menos" }]
+    },
+    {
+      "start": 1429,
+      "es": "...porque pudo verlo todo con su hermano y su hermana mayores.",
+      "note": "\"she got to see it\" — \"got to\" aquí es \"tuvo la oportunidad de\", no \"tener que\". Es un matiz bonito: pudo, y le hizo ilusión.",
+      "watch": "Cuidado: \"I got to go\" puede ser \"pude ir\" o, en habla rápida, \"tengo que irme\" (I've got to go). El contexto lo aclara.",
+      "vocab": [
+        { "word": "to get to do something", "meaning": "tener la oportunidad de hacer algo" },
+        { "word": "big brother", "meaning": "hermano mayor" }
+      ]
+    },
+    {
+      "start": 1436,
+      "es": "El siguiente pase empieza ahora mismo. Se repite en bucle toda la noche.",
+      "note": "\"It plays on a loop\" es justo lo que hace el botón 🔁 de esta app: repetirse una y otra vez.",
+      "tip": "\"Right now\" es \"ahora mismo\". Más inmediato que \"now\" a secas.",
+      "vocab": [
+        { "word": "on a loop", "meaning": "en bucle" },
+        { "word": "right now", "meaning": "ahora mismo" }
+      ]
+    },
+    {
+      "start": 1446,
+      "es": "A Peppa y George les encantan las luces de Navidad, pero lo que de verdad les encanta es compartirlas con Evie.",
+      "note": "\"love sharing\" — después de \"love\", \"like\" o \"hate\", el otro verbo va con -ing.",
+      "tip": "Ahí está la moraleja: no era llegar al espectáculo, era verlo juntos. Con esto se cierra la parte.",
+      "vocab": [
+        { "word": "to share", "meaning": "compartir" },
+        { "word": "love + -ing", "meaning": "encantar hacer algo" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿A dónde va la familia esta noche?",
+      "options": [
+        "A un recorrido de luces de Navidad",
+        "Al cine",
+        "A un parque acuático"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué quieren Peppa y George?",
+      "options": [
+        "Volver a casa",
+        "Llegar al espectáculo del final",
+        "Comer nubes"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Qué prefiere la bebé Evie?",
+      "options": [
+        "El espectáculo del final",
+        "Las luces del camino",
+        "El chocolate caliente"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Cuál es la moraleja del cuento?",
+      "options": [
+        "Que hay que correr para no perderse nada",
+        "Que lo bonito es compartirlo con los demás",
+        "Que la Navidad es cara"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"We'd better get going\" significa...",
+      "options": [
+        "nos gustaría irnos",
+        "más vale que nos vayamos",
+        "seremos mejores yendo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"Isn't this amazing?\" se dice para...",
+      "options": [
+        "que te den la razón",
+        "quejarse",
+        "preguntar de verdad si lo es"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Después de \"keep\", el verbo va...",
+      "options": ["en infinitivo", "con -ing", "en pasado"],
+      "answer": 1
+    },
+    {
+      "q": "\"She got to see it\" significa...",
+      "options": [
+        "tuvo que verlo",
+        "pudo verlo",
+        "fue a verlo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"The show starts in one minute\" — ese \"in\" significa...",
+      "options": ["en", "dentro de", "durante"],
+      "answer": 1
+    },
+    {
+      "q": "\"It plays on a loop\" significa...",
+      "options": [
+        "se repite en bucle",
+        "suena muy fuerte",
+        "dura poco"
+      ],
+      "answer": 0
+    }
+  ]
+}

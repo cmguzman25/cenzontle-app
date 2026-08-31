@@ -1,0 +1,302 @@
+{
+  "id": "peppa-07",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El parque acuático",
+  "level": "A2",
+  "description": "George se queda atrapado en la fuente y toda la familia aprende que pedir ayuda no tiene nada de malo. 18:12 – 21:08.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 1092,
+  "endAt": 1268,
+  "annotations": [
+    {
+      "start": 1092,
+      "es": "El mejor día de la historia. Hoy Peppa y su familia han venido a...",
+      "note": "\"Best day ever\" sin artículo delante. Los niños lo dicen así, cortado, como una exclamación.",
+      "tip": "Ese \"ever\" del superlativo ya salió en la parte 6 con \"the best ride ever\". Es la misma fórmula."
+    },
+    {
+      "start": 1100,
+      "es": "...un parque acuático cubierto. ¿Ves, papá? El Splashron no daba miedo. Ni un poquito.",
+      "note": "\"indoor\" es \"cubierto, bajo techo\". Lo contrario es \"outdoor\".",
+      "tip": "\"Scary\" es lo que da miedo; \"scared\" es quien tiene miedo. Mismo par que confusing/confused de la parte 5.",
+      "vocab": [
+        { "word": "indoor", "meaning": "cubierto, de interior" },
+        { "word": "scary", "meaning": "que da miedo" },
+        { "word": "not even a little bit", "meaning": "ni un poquito" }
+      ]
+    },
+    {
+      "start": 1108,
+      "note": "\"Thanks for the help\" — después de \"thanks for\" va un nombre o un verbo con -ing: \"thanks for helping\".",
+      "vocab": [
+        {
+          "word": "Thanks for...",
+          "meaning": "gracias por...",
+          "example": "Thanks for coming."
+        }
+      ]
+    },
+    {
+      "start": 1111,
+      "es": "No pasa nada. Todo el mundo necesita ayuda a veces.",
+      "note": "Esta es la frase del cuento. Sale cuatro veces y siempre la dice quien acaba de ayudar, para quitarle importancia.",
+      "tip": "Apréndetela entera: \"Everyone needs help sometimes\". Ojo a la ese de \"needs\", porque \"everyone\" va en singular.",
+      "watch": "\"Everyone\" parece plural pero es singular: everyone NEEDS, everyone IS, everyone HAS.",
+      "vocab": [
+        { "word": "That's okay", "meaning": "no pasa nada, de nada" },
+        { "word": "sometimes", "meaning": "a veces" }
+      ]
+    },
+    {
+      "start": 1118,
+      "es": "Hay mucho que ver en el parque acuático. Y mucho que hacer.",
+      "note": "\"lots to see\" y \"lots to do\" = \"mucho que ver\", \"mucho que hacer\". La estructura es \"lots to + verbo\".",
+      "tip": "Sirve para cualquier sitio: \"There's lots to do in Madrid\". Muy útil al hablar de viajes.",
+      "vocab": [
+        { "word": "lots to see", "meaning": "mucho que ver" }
+      ]
+    },
+    {
+      "start": 1128,
+      "tip": "\"Tada!\" es el sonido de presentar algo con orgullo, como un mago al terminar el truco."
+    },
+    {
+      "start": 1131,
+      "note": "\"can't wait to try\" — el \"can't wait to\" de la parte 6, otra vez. Es \"morirse de ganas\", no \"no poder esperar\".",
+      "vocab": [
+        { "word": "to try", "meaning": "probar, intentar" },
+        { "word": "everything", "meaning": "todo" }
+      ]
+    },
+    {
+      "start": 1144,
+      "tip": "Solo el nombre, dicho con alarma. La entonación ya avisa de que algo va mal."
+    },
+    {
+      "start": 1145,
+      "es": "Vaya. George está atrapado en la fuente del suelo. Uno de nosotros debería ir a ayudar.",
+      "note": "\"should\" es \"debería\": lo correcto, lo que toca hacer. Ya salió en la parte 5 con el repartidor.",
+      "tip": "\"go and help\" — en inglés hablado se encadenan dos verbos con \"and\": go and see, come and look.",
+      "vocab": [
+        { "word": "trapped", "meaning": "atrapado" },
+        { "word": "fountain", "meaning": "fuente" },
+        { "word": "one of us", "meaning": "uno de nosotros" }
+      ]
+    },
+    {
+      "start": 1153,
+      "note": "\"If you insist\" es \"si insistes\": se dice aceptando algo que en realidad te viene muy bien no hacer. Aquí es puro humor.",
+      "vocab": [
+        { "word": "if you insist", "meaning": "si insistes" }
+      ]
+    },
+    {
+      "start": 1159,
+      "note": "\"I'm coming\" es \"ya voy\". Igual que el \"Coming!\" de la puerta en la parte 5: en inglés se usa \"come\", no \"go\", cuando vas hacia quien te llama.",
+      "watch": "Este cambio confunde mucho: si alguien te llama, en inglés dices \"I'm coming\", nunca \"I'm going\"."
+    },
+    {
+      "start": 1168,
+      "es": "¡Vamos, Peppa! ¡Tú puedes!",
+      "note": "\"You can do it\" es el ánimo estándar en inglés. Literalmente \"puedes hacerlo\".",
+      "tip": "Junto con \"Go, Peppa!\" es lo que se grita en cualquier competición o momento difícil.",
+      "vocab": [
+        { "word": "You can do it!", "meaning": "¡tú puedes!" },
+        { "word": "Go + nombre!", "meaning": "¡vamos, X!" }
+      ]
+    },
+    {
+      "start": 1175,
+      "note": "\"Pesky\" es \"pesado, molesto\", con tono de broma. Se usa para algo que te fastidia una y otra vez.",
+      "vocab": [{ "word": "pesky", "meaning": "pesado, molesto" }]
+    },
+    {
+      "start": 1178,
+      "es": "Lo lograste, ¿eh? Ven conmigo si no quieres acabar empapado.",
+      "note": "\"You made it\" es \"lo lograste\" o \"llegaste\". \"Make it\" es conseguir llegar a algún sitio o superar algo.",
+      "tip": "\"if you don't want to be splashed\" está en pasiva: no quiere que LE salpiquen. Se forma con \"be\" + participio.",
+      "vocab": [
+        {
+          "word": "to make it",
+          "meaning": "lograrlo, conseguir llegar",
+          "example": "Sorry, I can't make it tonight."
+        },
+        { "word": "to splash", "meaning": "salpicar" }
+      ]
+    },
+    {
+      "start": 1188,
+      "note": "\"Well done\" otra vez, como en la parte 3. Es el elogio por excelencia en inglés británico.",
+      "vocab": [{ "word": "little piggies", "meaning": "cerditos (cariñoso)" }]
+    },
+    {
+      "start": 1192,
+      "note": "\"You're welcome\" es \"de nada\", la respuesta a \"thank you\". Y detrás vuelve la frase del cuento por segunda vez.",
+      "tip": "Cuéntalas mientras escuchas: \"Everyone needs help sometimes\" sale cuatro veces en esta parte, en boca de personajes distintos.",
+      "vocab": [{ "word": "You're welcome", "meaning": "de nada" }]
+    },
+    {
+      "start": 1196,
+      "es": "Ahora George está a salvo. Peppa puede probar todo lo que ofrece el parque acuático, incluida la piscina de olas.",
+      "note": "\"everything the water park has to offer\" — se han comido el \"that\". Es lo normal en inglés hablado.",
+      "vocab": [
+        { "word": "saved", "meaning": "a salvo, salvado" },
+        { "word": "wave pool", "meaning": "piscina de olas" },
+        { "word": "including", "meaning": "incluido" }
+      ]
+    },
+    {
+      "start": 1204,
+      "en": "Come on, Peppa. The water is super wavy.",
+      "es": "Vamos, Peppa. El agua está superondulada.",
+      "note": "\"wavy\" viene de \"wave\" (ola). Añadir -y a un nombre lo convierte en adjetivo: wave → wavy, rain → rainy, sun → sunny.",
+      "watch": "El subtítulo automático entendió \"wily\", que no pega. Es \"wavy\".",
+      "vocab": [
+        { "word": "wavy", "meaning": "ondulado, con olas" },
+        { "word": "-y", "meaning": "terminación que convierte un nombre en adjetivo" }
+      ]
+    },
+    {
+      "start": 1210,
+      "es": "Agarraos a los gorros de baño. Es la hora de las olas.",
+      "note": "\"Hold on to\" es agarrarse A algo. Sin el \"to\" cambia: \"hold on\" solo es \"espera\" o \"agárrate\".",
+      "vocab": [
+        { "word": "swimming hat", "meaning": "gorro de baño" },
+        { "word": "to hold on to", "meaning": "agarrarse a" }
+      ]
+    },
+    {
+      "start": 1215,
+      "es": "Quizá entre yo con ella y os vemos en la piscina pequeña.",
+      "note": "\"shallow\" es poco profundo; lo contrario es \"deep\". En una piscina, la parte de poca profundidad.",
+      "tip": "\"Maybe I'll...\" es como se propone algo sin comprometerse del todo. Muy útil para sonar natural.",
+      "vocab": [
+        { "word": "shallow", "meaning": "poco profundo" },
+        { "word": "deep", "meaning": "profundo" }
+      ]
+    },
+    {
+      "start": 1221,
+      "note": "\"splashy\" es otra vez la terminación -y: splash → splashy. Aquí, \"que salpica mucho\"."
+    },
+    {
+      "start": 1230,
+      "es": "Quizá demasiado. Papá, las olas son demasiado grandes. ¿Probamos otra piscina?",
+      "note": "\"Shall we...?\" es la forma británica de proponer algo: \"¿probamos?\", \"¿vamos?\". Suena educada y natural.",
+      "tip": "\"A bit too splashy\" — el \"too\" de la parte 6, ahora suavizado con \"a bit\". Es la forma inglesa de quejarse sin quejarse del todo.",
+      "vocab": [
+        {
+          "word": "Shall we...?",
+          "meaning": "¿...? (para proponer)",
+          "example": "Shall we go?"
+        },
+        { "word": "a bit too", "meaning": "un poco demasiado" }
+      ]
+    },
+    {
+      "start": 1239,
+      "tip": "Aquí el subtítulo automático solo pilló una letra suelta: es un grito, no una palabra. Pasa a menudo con los sonidos."
+    },
+    {
+      "start": 1246,
+      "note": "\"Finally\" es \"por fin\", después de mucho aguantar. Ya salió en la parte 5 con el paquete.",
+      "vocab": [{ "word": "finally", "meaning": "por fin" }]
+    },
+    {
+      "start": 1248,
+      "es": "Sí que me gustaban las olas, papá, pero eran demasiado grandes.",
+      "note": "\"I DID like the waves\" — ese \"did\" en una frase afirmativa sirve para insistir: \"sí que me gustaban\".",
+      "tip": "Es un recurso muy útil para defenderte cuando crees que no te creen: \"I did call you\", \"I do like it\".",
+      "vocab": [
+        { "word": "did + verbo", "meaning": "sí que... (para insistir)" }
+      ]
+    },
+    {
+      "start": 1252,
+      "es": "No pasa nada. Todo el mundo necesita ayuda a veces. Quedémonos con las olas pequeñas por ahora.",
+      "note": "\"Let's stick to...\" es \"quedémonos con...\", \"vamos a limitarnos a...\". \"Stick to\" es no salirse de algo.",
+      "tip": "Tercera vez que aparece la frase del cuento, ahora dicha por Papá Pig a Peppa. Antes se la dijeron a él.",
+      "vocab": [
+        { "word": "to stick to", "meaning": "quedarse con, limitarse a" },
+        { "word": "for now", "meaning": "por ahora" }
+      ]
+    },
+    {
+      "start": 1259,
+      "note": "Cuarta y última vez de la frase, ahora de George. La ha aprendido de los demás: ese es el cierre del cuento.",
+      "tip": "Fíjate en el recorrido: la frase pasa del socorrista a Peppa, de Peppa a su padre, y del padre a George. Así se cuenta una moraleja sin decirla."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué le pasa a George en el parque acuático?",
+      "options": [
+        "Se queda atrapado en la fuente del suelo",
+        "Pierde su gorro",
+        "Se pierde"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuál es la frase que se repite cuatro veces?",
+      "options": [
+        "Best day ever",
+        "Everyone needs help sometimes",
+        "You can do it"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Por qué salen de la piscina de olas?",
+      "options": [
+        "Porque cierra",
+        "Porque tienen hambre",
+        "Porque las olas son demasiado grandes"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Quién dice la frase la última vez?",
+      "options": ["George", "Mamá Pig", "El socorrista"],
+      "answer": 0
+    },
+    {
+      "q": "\"Everyone needs help\" lleva ese -s porque \"everyone\"...",
+      "options": ["es plural", "es singular", "es un nombre propio"],
+      "answer": 1
+    },
+    {
+      "q": "\"Shall we try another pool?\" sirve para...",
+      "options": ["proponer algo", "dar una orden", "pedir permiso"],
+      "answer": 0
+    },
+    {
+      "q": "\"I did like the waves\" significa...",
+      "options": [
+        "no me gustaban las olas",
+        "sí que me gustaban las olas",
+        "haré las olas"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Si alguien te llama y vas hacia él, en inglés dices...",
+      "options": ["I'm going", "I'm coming", "I'm walking"],
+      "answer": 1
+    },
+    {
+      "q": "\"shallow\" significa...",
+      "options": ["profundo", "poco profundo", "ancho"],
+      "answer": 1
+    },
+    {
+      "q": "\"Sorry, I can't make it tonight\" significa...",
+      "options": [
+        "no puedo hacerlo",
+        "no sé cocinarlo",
+        "no voy a poder ir"
+      ],
+      "answer": 2
+    }
+  ]
+}

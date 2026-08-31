@@ -1,0 +1,298 @@
+{
+  "id": "peppa-09",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "Las vacaciones virtuales",
+  "level": "B1",
+  "description": "Peppa les monta unas vacaciones a sus padres dentro del salón recreativo, y se le va de las manos. 24:15 – 27:03.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 1455,
+  "endAt": 1623,
+  "annotations": [
+    {
+      "start": 1455,
+      "note": "\"Hurry\" es \"date prisa\". También existe \"hurry up\", que es lo mismo pero más insistente.",
+      "vocab": [{ "word": "to hurry", "meaning": "darse prisa" }]
+    },
+    {
+      "start": 1456,
+      "es": "Hoy Peppa y su familia están jugando en un salón recreativo virtual.",
+      "note": "\"arcade\" es el salón recreativo, el sitio de las máquinas de juegos.",
+      "tip": "\"Well done, team\" otra vez, como en las luces de Navidad. El adulto animando al grupo.",
+      "vocab": [
+        { "word": "arcade", "meaning": "salón recreativo" },
+        { "word": "virtual", "meaning": "virtual" }
+      ]
+    },
+    {
+      "start": 1465,
+      "en": "Life with three children can be very tiring for Mummy and Daddy Pig.",
+      "es": "La vida con tres hijos puede ser muy agotadora para Mamá y Papá Pig.",
+      "note": "\"tiring\" es lo que cansa; \"tired\" es quien está cansado. Es el mismo par que scary/scared de la parte 7.",
+      "watch": "El subtítulo automático puso \"mommy\". Peppa es británica: \"Mummy\".",
+      "vocab": [
+        { "word": "tiring", "meaning": "agotador, que cansa" },
+        { "word": "tired", "meaning": "cansado" }
+      ]
+    },
+    {
+      "start": 1470,
+      "es": "¿No sería un sitio bonito para unas vacaciones?",
+      "note": "\"Wouldn't that be...?\" sirve para imaginar algo que no es real todavía. Es \"would\" + pregunta en negativo, o sea: quiere que le den la razón.",
+      "tip": "Junta dos cosas que ya viste: el \"would\" de imaginar y las preguntas negativas de la parte 8 (\"Isn't this amazing?\").",
+      "vocab": [
+        { "word": "holiday", "meaning": "vacaciones (británico; en EE. UU. \"vacation\")" },
+        { "word": "Wouldn't that be...?", "meaning": "¿no sería...?" }
+      ]
+    },
+    {
+      "start": 1482,
+      "es": "Creo que deberíamos hacer esto también. A lo mejor deberíamos.",
+      "note": "\"should\" para proponer, no para regañar. \"I think we should\" es la forma más común de sugerir algo en inglés.",
+      "tip": "\"Maybe we should\" lo suaviza aún más. Si quieres proponer algo sin imponerte, esta es la fórmula.",
+      "vocab": [
+        { "word": "I think we should", "meaning": "creo que deberíamos" }
+      ]
+    },
+    {
+      "start": 1487,
+      "es": "Peppa tiene un plan para regalarles unas vacaciones a sus padres aquí mismo, en el salón recreativo.",
+      "note": "\"right here\" es \"aquí mismo\". Ese \"right\" delante de un lugar o un tiempo lo hace exacto: right now, right there.",
+      "vocab": [
+        { "word": "right here", "meaning": "aquí mismo" },
+        { "word": "plan", "meaning": "plan" }
+      ]
+    },
+    {
+      "start": 1496,
+      "es": "¿Qué tipo de vacaciones le gustaría? A algún sitio caluroso.",
+      "note": "\"What kind of...?\" es \"¿qué tipo de...?\". Muy útil para preguntar por preferencias.",
+      "tip": "\"Somewhere hot\" — el adjetivo va DETRÁS de somewhere, something, anywhere. Se dice \"something nice\", nunca \"nice something\".",
+      "vocab": [
+        { "word": "What kind of...?", "meaning": "¿qué tipo de...?" },
+        { "word": "somewhere hot", "meaning": "algún sitio caluroso" }
+      ]
+    },
+    {
+      "start": 1507,
+      "note": "\"I mean\" es \"quiero decir\": sirve para corregirte a media frase. Lo usarás muchísimo al hablar.",
+      "vocab": [{ "word": "I mean", "meaning": "quiero decir" }]
+    },
+    {
+      "start": 1514,
+      "es": "El lado de la sala de Mamá Pig se ha convertido en una playa cálida. Y el lado de Papá Pig, en una montaña nevada.",
+      "note": "\"has been turned into\" es la pasiva: no dice quién lo hizo, solo lo que pasó. Se forma con \"has been\" + participio.",
+      "tip": "Esta es LA estructura de la lección. Sale cuatro veces en tres minutos. Ponla en bucle: cuando la reconozcas sola, has ganado.",
+      "watch": "No confundas \"turned into\" (convertirse en) con \"turned on\" (encender) ni \"turned off\" (apagar). La partícula lo cambia todo.",
+      "vocab": [
+        {
+          "word": "to be turned into",
+          "meaning": "ser convertido en",
+          "example": "The old factory has been turned into a museum."
+        },
+        { "word": "snowy", "meaning": "nevado" }
+      ]
+    },
+    {
+      "start": 1529,
+      "note": "\"What do you think?\" es \"¿qué te parece?\", no \"¿qué piensas?\". Ya salió en el restaurante de la parte 3.",
+      "vocab": [{ "word": "What do you think?", "meaning": "¿qué te parece?" }]
+    },
+    {
+      "start": 1533,
+      "es": "Está funcionando de verdad. Ya me siento un poco más relajado.",
+      "note": "\"actually\" es \"en realidad, de verdad\". No significa \"actualmente\": ese es \"currently\". Falso amigo clásico.",
+      "tip": "\"Already\" es \"ya\", antes de lo esperado. Se pone al final o antes del verbo principal.",
+      "watch": "actually = en realidad · currently = actualmente. Confundirlos es de los errores más comunes.",
+      "vocab": [
+        { "word": "actually", "meaning": "en realidad (¡falso amigo!)" },
+        { "word": "already", "meaning": "ya" },
+        { "word": "relaxed", "meaning": "relajado" }
+      ]
+    },
+    {
+      "start": 1536,
+      "es": "Solo un poco, señorita Rabbit. Hay que subir más la temperatura. Esto lo arreglará.",
+      "note": "\"go hotter\" es lenguaje de niño: lo correcto sería \"make it hotter\". Peppa habla como una niña de cuatro años.",
+      "tip": "\"This will do the trick\" es \"con esto bastará\", \"esto lo soluciona\". Muy usado cuando aplicas un remedio.",
+      "vocab": [
+        { "word": "to do the trick", "meaning": "resolver el problema, bastar" },
+        { "word": "hotter", "meaning": "más caliente" }
+      ]
+    },
+    {
+      "start": 1544,
+      "es": "La playa de Mamá Pig se ha convertido en un desierto muy caluroso. Uy, hace un poco de calorcito.",
+      "note": "Segunda vez de la pasiva: \"has been turned into\". Ya la reconoces.",
+      "tip": "\"A bit toasty\" — el \"toasty\" del tren de la parte 4, ahora con ironía: está en un desierto y dice que hace \"calorcito\".",
+      "vocab": [
+        { "word": "desert", "meaning": "desierto" },
+        { "word": "a bit", "meaning": "un poco" }
+      ]
+    },
+    {
+      "start": 1552,
+      "es": "Ah, sí, y más frío. Prepárate, Papá Pig.",
+      "note": "\"Brace yourself\" es \"prepárate\" para algo desagradable que viene. Más dramático que \"get ready\".",
+      "vocab": [
+        { "word": "Brace yourself", "meaning": "prepárate (viene algo duro)" },
+        { "word": "colder", "meaning": "más frío" }
+      ]
+    },
+    {
+      "start": 1557,
+      "es": "La montaña se ha convertido en una ventisca helada. Hace un poco de viento para mí. ¿Qué ha dicho?",
+      "note": "Tercera pasiva. Y fíjate en \"What did he say?\": el pasado lo lleva \"did\", por eso \"say\" se queda sin conjugar.",
+      "tip": "\"Chilly\" es un frío incómodo pero no extremo. \"Freezing\" sería helador de verdad.",
+      "vocab": [
+        { "word": "chilly", "meaning": "fresquito, con frío incómodo" },
+        { "word": "blizzard", "meaning": "ventisca" },
+        { "word": "windy", "meaning": "con viento" }
+      ]
+    },
+    {
+      "start": 1566,
+      "es": "Ha dicho que es un poco maravilloso.",
+      "note": "Aquí está el chiste: con el ruido de la ventisca, \"windy\" (con viento) suena parecido a \"wonderful\" (maravilloso), y Peppa entiende lo que le conviene.",
+      "tip": "\"He said it's...\" es estilo indirecto: contar lo que otro dijo. En inglés hablado se usa muchísimo con \"said\".",
+      "vocab": [
+        { "word": "even bigger", "meaning": "aún más grande" },
+        { "word": "He said (that)...", "meaning": "dijo que..." }
+      ]
+    },
+    {
+      "start": 1574,
+      "es": "Tus deseos son órdenes. Peppa y George buscan de todo para poner la sala más caliente y más fría.",
+      "note": "\"Your wish is my command\" es la frase del genio de la lámpara. Se dice en broma cuando aceptas hacer lo que te piden.",
+      "tip": "\"Looking for\" es buscar, como en la parte 5 con el paquete. \"Look for\" es buscar; \"look at\" es mirar.",
+      "vocab": [
+        { "word": "Your wish is my command", "meaning": "tus deseos son órdenes" },
+        { "word": "to look for", "meaning": "buscar" }
+      ]
+    },
+    {
+      "start": 1581,
+      "note": "\"Good idea\" es el elogio más simple y más útil. Ya salió como \"Good point\" en la parte 5.",
+      "vocab": [
+        { "word": "volcano", "meaning": "volcán" },
+        { "word": "iceberg", "meaning": "iceberg" }
+      ]
+    },
+    {
+      "start": 1593,
+      "es": "Están haciendo tantas cosas calientes y frías que el ordenador no da abasto.",
+      "note": "\"so many ... that ...\" es \"tantos... que...\". Con cosas contables va \"so many\"; con incontables, \"so much\".",
+      "tip": "\"To struggle to keep up\" es no dar abasto, ir con la lengua fuera. Se usa igual para personas y para máquinas.",
+      "vocab": [
+        { "word": "to struggle", "meaning": "batallar, costar mucho" },
+        { "word": "to keep up", "meaning": "seguir el ritmo" },
+        { "word": "so many ... that", "meaning": "tantos... que" }
+      ]
+    },
+    {
+      "start": 1602,
+      "es": "Creo que ya está bien de vacaciones por hoy. ¿Eso significa que se acabaron tus vacaciones?",
+      "note": "\"That's probably enough ... for today\" es la fórmula educada para cortar algo. Literalmente: \"con esto ya basta por hoy\".",
+      "tip": "\"Does that mean...?\" sirve para comprobar que has entendido bien lo que implica algo.",
+      "vocab": [
+        { "word": "enough", "meaning": "suficiente, bastante" },
+        { "word": "Does that mean...?", "meaning": "¿eso significa que...?" },
+        { "word": "to be over", "meaning": "haberse acabado" }
+      ]
+    },
+    {
+      "start": 1610,
+      "es": "Creo que lo que de verdad nos apetece ahora es irnos a casa. Bueno, la máquina ya está arreglada. ¿Alguien necesita un taxi?",
+      "note": "\"What we'd really like to do now is go home\" — la frase empieza con \"what\" para destacar lo importante. Es una forma de subrayar sin levantar la voz.",
+      "tip": "\"The machine's all fixed\" — ese \"all\" delante del participio significa \"del todo\": all fixed, all done, all ready.",
+      "vocab": [
+        { "word": "to fix", "meaning": "arreglar" },
+        { "word": "all fixed", "meaning": "arreglado del todo" }
+      ]
+    },
+    {
+      "start": 1618,
+      "es": "Haga frío o haga calor, a todo el mundo le encantan las vacaciones.",
+      "note": "\"Whether ... or ...\" es \"tanto si... como si...\". Da igual cuál de las dos cosas sea.",
+      "tip": "El narrador cierra el cuento con la fórmula de siempre: una frase general que resume la moraleja. Aquí acaba esta parte.",
+      "vocab": [
+        {
+          "word": "whether ... or ...",
+          "meaning": "tanto si... como si...",
+          "example": "Whether you like it or not."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué se le ocurre a Peppa en el salón recreativo?",
+      "options": [
+        "Regalarles unas vacaciones virtuales a sus padres",
+        "Ganar un premio",
+        "Romper la máquina"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué vacaciones pide cada uno?",
+      "options": [
+        "Los dos quieren playa",
+        "Mamá quiere calor y Papá quiere frío",
+        "Los dos quieren montaña"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Por qué acaba fallando la máquina?",
+      "options": [
+        "Se queda sin luz",
+        "Papá Pig la desenchufa",
+        "Peppa y George piden demasiadas cosas a la vez"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Qué quieren hacer los padres al final?",
+      "options": ["Irse a casa", "Repetir", "Quedarse a dormir"],
+      "answer": 0
+    },
+    {
+      "q": "\"The room has been turned into a beach\" está en...",
+      "options": ["pasiva", "futuro", "condicional"],
+      "answer": 0
+    },
+    {
+      "q": "\"turned into\" significa...",
+      "options": ["encendido", "convertido en", "apagado"],
+      "answer": 1
+    },
+    {
+      "q": "\"actually\" significa...",
+      "options": ["actualmente", "en realidad", "posiblemente"],
+      "answer": 1
+    },
+    {
+      "q": "\"algún sitio caluroso\" se dice...",
+      "options": ["hot somewhere", "somewhere hot", "somewhere of hot"],
+      "answer": 1
+    },
+    {
+      "q": "\"This will do the trick\" significa...",
+      "options": [
+        "esto es un truco",
+        "esto lo va a solucionar",
+        "esto es trampa"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"Whether they're hot or cold\" significa...",
+      "options": [
+        "si tienen frío o calor, pregunta",
+        "tanto si hace frío como si hace calor",
+        "cuando hace frío o calor"
+      ],
+      "answer": 1
+    }
+  ]
+}
