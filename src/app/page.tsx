@@ -55,7 +55,8 @@ export default async function Home() {
           <Link href="/login" className="font-medium underline">
             Entra en tu cuenta
           </Link>{" "}
-          para guardar palabras y que la app recuerde por dónde ibas.
+          para abrir las lecciones, guardar palabras y que la app recuerde por
+          dónde ibas.
         </p>
       )}
 

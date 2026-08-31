@@ -80,8 +80,11 @@ propio JSON, sin archivo de transcripción. Los dos siguen funcionando.
 - [x] `/auth/confirm` (acepta `?code=` y `?token_hash=`) y `/auth/signout`
 - [x] Server actions en `src/lib/actions.ts`
 - [x] Página `/words`: buscar, marcar como conocida, borrar
-- [ ] **Pendiente tuyo:** ejecutar `supabase/schema.sql` en el SQL Editor de Supabase
-- [ ] **Pendiente tuyo:** añadir la Redirect URL en Supabase → Authentication → URL Configuration
+- [x] Tablas creadas en Supabase (`words`, `progress`, `lesson_position`)
+- [ ] **Pendiente tuyo:** en Supabase → Authentication → URL Configuration,
+      poner el dominio de Vercel como Site URL y en Redirect URLs
+      (`https://<tu-app>.vercel.app/**`). Sin esto el login por correo devuelve
+      a `localhost` en producción.
 
 ### Fase 5 — Evaluación de comprensión ✅
 - [x] Quiz al terminar el video + porcentaje ("80% entendido")
@@ -95,8 +98,16 @@ propio JSON, sin archivo de transcripción. Los dos siguen funcionando.
 - [ ] `/api/captions`: intenta bajar los captions públicos; si falla, pide el archivo
 - [ ] Botón "Copiar JSON" con el esqueleto de la lección sin traducir
 
-### Fase 7 — Pulido ⬜
-- [ ] Barra de progreso propia y velocidad de reproducción
+### Fase 7 — Pulido 🟡
+- [x] Portada con tarjetas + miniatura de YouTube
+- [x] Filtros por estado (en progreso / sin empezar / terminadas), nivel,
+      tema y buscador
+- [x] Reproductor sin los controles de YouTube (`controls: 0`) y pantalla
+      propia al pausar, para que el bucle no haga parpadear la barra
+- [ ] **Barra de progreso propia**: ahora hace falta de verdad, porque al
+      apagar los controles de YouTube no queda forma de ver ni de mover el
+      punto del video
+- [ ] Velocidad de reproducción (0.75× ayuda mucho al escuchar)
 - [ ] Modo oscuro explícito y ajustes de responsive
 - [ ] Estados de carga y error
 

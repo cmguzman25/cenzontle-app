@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 
 import {
   ErrorBox,
@@ -11,12 +11,23 @@ import {
   SubmitButton,
 } from "@/components/AuthForm";
 import { translateAuthError } from "@/lib/auth-errors";
+import { safeNext } from "@/lib/safe-next";
 import { createClient } from "@/lib/supabase/client";
 
 type Mode = "password" | "magic";
 
 export default function LoginPage() {
+  return (
+    <Suspense>
+      <LoginForm />
+    </Suspense>
+  );
+}
+
+function LoginForm() {
   const router = useRouter();
+  /** A dónde volver: lo pone la página que nos mandó aquí. */
+  const next = safeNext(useSearchParams().get("next"));
   const [mode, setMode] = useState<Mode>("password");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +54,7 @@ export default function LoginPage() {
 
     // `refresh` hace que el servidor vuelva a leer la sesión de las cookies.
     router.refresh();
-    router.push("/");
+    router.push(next);
   }
 
   async function sendMagicLink(event: React.FormEvent) {
@@ -54,7 +65,9 @@ export default function LoginPage() {
     const supabase = createClient();
     const { error } = await supabase.auth.signInWithOtp({
       email: email.trim(),
-      options: { emailRedirectTo: `${window.location.origin}/auth/confirm` },
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/confirm?next=${encodeURIComponent(next)}`,
+      },
     });
 
     setLoading(false);

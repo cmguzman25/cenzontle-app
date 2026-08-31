@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import LessonView, { type SavedWord } from "@/components/LessonView";
 import { getLesson } from "@/lib/lessons";
@@ -11,50 +11,51 @@ export default async function LessonPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const lesson = await getLesson(id);
 
-  if (!lesson) notFound();
-
+  // Las transcripciones no son públicas: hay que entrar para leerlas.
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  let initialWords: SavedWord[] = [];
-  let history: { score: number; completed_at: string }[] = [];
-  let initialSentenceId: number | null = null;
-
-  if (user) {
-    const [wordsResult, progressResult, positionResult] = await Promise.all([
-      supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
-      supabase
-        .from("progress")
-        .select("score, completed_at")
-        .eq("lesson_id", lesson.id)
-        .order("completed_at", { ascending: false })
-        .limit(5),
-      supabase
-        .from("lesson_position")
-        .select("sentence_id")
-        .eq("lesson_id", lesson.id)
-        .maybeSingle(),
-    ]);
-
-    initialWords = (wordsResult.data ?? []).map((row) => ({
-      word: row.word as string,
-      meaning: (row.meaning as string) ?? "",
-      lessonId: (row.lesson_id as string) ?? lesson.id,
-      sentenceId: (row.sentence_id as number) ?? 0,
-    }));
-
-    history = (progressResult.data ?? []) as typeof history;
-
-    // Solo vale si la frase sigue existiendo (la lección pudo cambiar).
-    const saved = positionResult.data?.sentence_id as number | undefined;
-    if (saved != null && lesson.sentences.some((s) => s.id === saved)) {
-      initialSentenceId = saved;
-    }
+  if (!user) {
+    redirect(`/login?next=${encodeURIComponent(`/lesson/${id}`)}`);
   }
+
+  const lesson = await getLesson(id);
+  if (!lesson) notFound();
+
+  const [wordsResult, progressResult, positionResult] = await Promise.all([
+    supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
+    supabase
+      .from("progress")
+      .select("score, completed_at")
+      .eq("lesson_id", lesson.id)
+      .order("completed_at", { ascending: false })
+      .limit(5),
+    supabase
+      .from("lesson_position")
+      .select("sentence_id")
+      .eq("lesson_id", lesson.id)
+      .maybeSingle(),
+  ]);
+
+  const initialWords: SavedWord[] = (wordsResult.data ?? []).map((row) => ({
+    word: row.word as string,
+    meaning: (row.meaning as string) ?? "",
+    lessonId: (row.lesson_id as string) ?? lesson.id,
+    sentenceId: (row.sentence_id as number) ?? 0,
+  }));
+
+  const history = (progressResult.data ?? []) as {
+    score: number;
+    completed_at: string;
+  }[];
+
+  // Solo vale si la frase sigue existiendo (la lección pudo cambiar).
+  const saved = positionResult.data?.sentence_id as number | undefined;
+  const initialSentenceId =
+    saved != null && lesson.sentences.some((s) => s.id === saved) ? saved : null;
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-6">
@@ -85,7 +86,7 @@ export default async function LessonPage({
 
       <LessonView
         lesson={lesson}
-        isLoggedIn={Boolean(user)}
+        isLoggedIn
         initialWords={initialWords}
         initialSentenceId={initialSentenceId}
       />
