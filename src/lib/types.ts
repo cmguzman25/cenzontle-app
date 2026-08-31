@@ -63,6 +63,8 @@ export type Lesson = {
   title: string;
   /** Nivel orientativo: A1, A2, B1, B2, C1. */
   level: string;
+  /** Temas de la lección. Una lección puede estar en varias. */
+  categories?: string[];
   description?: string;
   /**
    * Si el video es largo y esta lección es solo un trozo, `startAt` y `endAt`
@@ -93,5 +95,7 @@ export type LessonSummary = {
   title: string;
   level: string;
   youtubeId: string;
+  /** Temas de la lección. Una lección puede estar en varias. */
+  categories?: string[];
   description?: string;
 };

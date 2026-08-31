@@ -8,6 +8,17 @@ const nextConfig: NextConfig = {
     SUPABASE_URL: process.env.SUPABASE_URL!,
     SUPABASE_PUBLISHABLE_KEY: process.env.SUPABASE_PUBLISHABLE_KEY!,
   },
+
+  // Miniaturas de los videos de YouTube.
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/vi/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

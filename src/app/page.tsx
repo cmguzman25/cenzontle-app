@@ -1,50 +1,65 @@
 import Link from "next/link";
 
-import { getLessons } from "@/lib/lessons";
+import LessonList, { type LessonCard } from "@/components/LessonList";
+import { getLesson, getLessons } from "@/lib/lessons";
+import { createClient } from "@/lib/supabase/server";
 
 export default async function Home() {
-  const lessons = await getLessons();
+  const summaries = await getLessons();
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Resolvemos cada lección solo para saber cuántas frases tiene.
+  const resolved = await Promise.all(summaries.map((s) => getLesson(s.id)));
+
+  const positions = new Map<string, number>();
+  const bestScores = new Map<string, number>();
+
+  if (user) {
+    const [positionResult, progressResult] = await Promise.all([
+      supabase.from("lesson_position").select("lesson_id, sentence_id"),
+      supabase.from("progress").select("lesson_id, score"),
+    ]);
+
+    for (const row of positionResult.data ?? []) {
+      positions.set(row.lesson_id as string, row.sentence_id as number);
+    }
+
+    for (const row of progressResult.data ?? []) {
+      const lessonId = row.lesson_id as string;
+      const score = row.score as number;
+      bestScores.set(lessonId, Math.max(bestScores.get(lessonId) ?? 0, score));
+    }
+  }
+
+  const lessons: LessonCard[] = summaries.map((summary, i) => ({
+    ...summary,
+    totalSentences: resolved[i]?.sentences.length ?? 0,
+    positionId: positions.get(summary.id) ?? null,
+    bestScore: bestScores.get(summary.id) ?? null,
+  }));
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10">
+    <main className="mx-auto max-w-5xl px-4 py-10">
       <h1 className="text-3xl font-semibold">Frase a Frase</h1>
       <p className="mt-2 text-neutral-600 dark:text-neutral-400">
         Escucha videos en inglés con la transcripción frase por frase, repite lo
         que no entiendas y guarda las palabras nuevas.
       </p>
 
-      <h2 className="mt-10 text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-        Lecciones
-      </h2>
-
-      <ul className="mt-3 flex flex-col gap-2">
-        {lessons.map((lesson) => (
-          <li key={lesson.id}>
-            <Link
-              href={`/lesson/${lesson.id}`}
-              className="block rounded-xl border border-neutral-200 p-4 transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-neutral-800 dark:hover:border-sky-500 dark:hover:bg-sky-950/40"
-            >
-              <div className="flex items-baseline justify-between gap-3">
-                <span className="font-medium">{lesson.title}</span>
-                <span className="shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
-                  {lesson.level}
-                </span>
-              </div>
-              {lesson.description && (
-                <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-                  {lesson.description}
-                </p>
-              )}
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      {lessons.length === 0 && (
-        <p className="mt-3 text-sm text-neutral-500">
-          Todavía no hay lecciones en <code>content/lessons/</code>.
+      {!user && (
+        <p className="mt-4 rounded-lg bg-neutral-100 px-3 py-2 text-sm text-neutral-600 dark:bg-neutral-900 dark:text-neutral-400">
+          <Link href="/login" className="font-medium underline">
+            Entra en tu cuenta
+          </Link>{" "}
+          para guardar palabras y que la app recuerde por dónde ibas.
         </p>
       )}
+
+      <LessonList lessons={lessons} isLoggedIn={Boolean(user)} />
     </main>
   );
 }

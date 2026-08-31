@@ -12,7 +12,9 @@ No usamos ninguna API de IA dentro de la app. El flujo es:
    guardas en `content/transcripts/<archivo>.txt`.
 2. Me pasas el video y yo escribo `content/lessons/<id>.json` con la traducción,
    las explicaciones, el vocabulario y el quiz.
-3. Lo añades a `content/lessons/index.json`.
+3. Lo añades a `content/lessons/index.json`, con su `level` y sus
+   `categories` (una lección puede estar en varias). Los filtros de la portada
+   se construyen solos a partir de lo que haya en ese archivo.
 
 **El inglés no se copia al JSON.** La app lee el archivo de transcripción y le
 pega encima las anotaciones, enlazándolas por el segundo de inicio:
@@ -38,12 +40,8 @@ Ventaja: un video largo se parte en varias lecciones cortas (`peppa-01`,
 `peppa-02`, …) que apuntan al **mismo** archivo de transcripción con distinto
 rango de tiempo.
 
-También existe el formato antiguo con `sentences` escritas a mano dentro del
-JSON (ver `content/lessons/demo.json`). Los dos siguen funcionando.
-
-> La lección `demo` tiene texto inventado por mí para probar la app: **no
-> corresponde al audio del video**. Sirve solo para comprobar que el reproductor,
-> el resaltado y el bucle funcionan.
+También existe el formato alternativo con `sentences` escritas a mano dentro del
+propio JSON, sin archivo de transcripción. Los dos siguen funcionando.
 
 ## Fases
 
