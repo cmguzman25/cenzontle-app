@@ -53,5 +53,16 @@
     "order": 5,
     "categories": ["Dibujos animados", "Inglés británico", "Vida diaria"],
     "description": "Papá Pig se cansa de esperar y persigue a la furgoneta de reparto hasta el almacén. 12:12 – 15:11."
+  },
+  {
+    "id": "peppa-06",
+    "title": "El tobogán de queso",
+    "level": "A2",
+    "youtubeId": "CO7UBkoPHhk",
+    "seriesId": "peppa-tales",
+    "seriesTitle": "Peppa Pig Tales",
+    "order": 6,
+    "categories": ["Dibujos animados", "Inglés británico", "Vida diaria"],
+    "description": "Peppa y George son demasiado pequeños para la atracción grande, así que sus padres montan una en el salón. 15:11 – 18:12."
   }
 ]

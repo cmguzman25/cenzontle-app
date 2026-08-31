@@ -1,0 +1,332 @@
+{
+  "id": "peppa-06",
+  "youtubeId": "CO7UBkoPHhk",
+  "title": "El tobogán de queso",
+  "level": "A2",
+  "description": "Peppa y George son demasiado pequeños para la atracción grande, así que sus padres montan una en el salón. 15:11 – 18:12.",
+  "transcript": "peppa-tales.txt",
+  "startAt": 911,
+  "endAt": 1092,
+  "annotations": [
+    {
+      "start": 911,
+      "es": "Hoy Peppa y su familia están en Cheese World. Se montan en las tazas de queso.",
+      "note": "\"are riding\" es presente continuo: lo están haciendo justo ahora. Para atracciones y vehículos el verbo es \"ride\", no \"go in\".",
+      "tip": "\"Wave for the camera\" es lo que grita todo el mundo en un parque de atracciones. \"To wave\" es saludar con la mano.",
+      "vocab": [
+        {
+          "word": "to ride",
+          "meaning": "montarse en (una atracción, una bici, un caballo)",
+          "example": "Let's ride the roller coaster."
+        },
+        { "word": "to wave", "meaning": "saludar con la mano" }
+      ]
+    },
+    {
+      "start": 919,
+      "tip": "Los nombres de las atracciones son todos juegos de palabras con quesos. Aquí no hay que entender nada nuevo: escucha el ritmo y sigue."
+    },
+    {
+      "start": 924,
+      "en": "We're flying! And the big Brie wheel.",
+      "es": "¡Estamos volando! Y la gran noria de Brie.",
+      "note": "El nombre real es \"Ferris wheel\" (noria). Aquí lo cambian por \"Brie wheel\" porque el Brie es un queso redondo, como la noria.",
+      "tip": "Este tipo de chiste es constante en la serie. Si reconoces la palabra original detrás del juego, entiendes el chiste: Brie wheel ← Ferris wheel.",
+      "vocab": [
+        { "word": "Ferris wheel", "meaning": "noria" },
+        { "word": "to fly", "meaning": "volar (fly → flew → flown)" }
+      ]
+    },
+    {
+      "start": 932,
+      "es": "¡Estamos altísimos!",
+      "note": "\"so high up\" — ese \"so\" delante de un adjetivo significa \"muy, tanto\". \"We're so high up\" es \"qué alto estamos\".",
+      "vocab": [
+        { "word": "high up", "meaning": "muy arriba, a mucha altura" },
+        { "word": "so + adjetivo", "meaning": "qué..., muy..." }
+      ]
+    },
+    {
+      "start": 934,
+      "note": "\"next up\" es \"lo siguiente\", \"ahora toca\". Se usa para anunciar lo que viene.",
+      "tip": "\"Let's go on...\" es la forma de proponer subirse a algo. Con atracciones se dice \"go on a ride\".",
+      "vocab": [
+        { "word": "next up", "meaning": "lo siguiente, ahora toca" },
+        { "word": "to go on a ride", "meaning": "montarse en una atracción" }
+      ]
+    },
+    {
+      "start": 943,
+      "es": "Lo siento, peques. Hay que medir esto para subir a esta atracción.",
+      "note": "\"You need to be this tall\" es la frase exacta de los carteles de los parques de atracciones. Literalmente: \"tienes que ser así de alto\".",
+      "tip": "\"This tall\" se dice señalando con la mano una altura. Igual funciona \"this big\", \"this long\".",
+      "watch": "\"Tall\" es alto de estatura (personas, árboles, edificios). Para cosas altas del suelo se usa \"high\". Una persona nunca es \"high\".",
+      "vocab": [
+        { "word": "tall", "meaning": "alto (de estatura)" },
+        { "word": "kiddos", "meaning": "peques, chavales (cariñoso)" },
+        { "word": "ride", "meaning": "atracción" }
+      ]
+    },
+    {
+      "start": 948,
+      "es": "Vaya. Peppa y George son demasiado pequeños para el tobogán de queso.",
+      "note": "Aquí está el eje de todo el cuento: \"too little\" (demasiado pequeños) frente a \"taller\" (más altos). Toda la historia va de tamaños.",
+      "tip": "\"Too\" siempre lleva carga negativa: \"too small\" es un problema. Si solo quieres decir \"muy pequeño\" sin queja, es \"very small\".",
+      "vocab": [
+        { "word": "too little", "meaning": "demasiado pequeño" },
+        { "word": "taller", "meaning": "más alto (comparativo de tall)" }
+      ]
+    },
+    {
+      "start": 955,
+      "note": "\"How about now?\" es \"¿y ahora?\". Sirve para volver a preguntar después de cambiar algo.",
+      "tip": "\"Still no\" es \"sigue siendo que no\". Ese \"still\" ya lo viste en la parte 5: significa que nada ha cambiado.",
+      "vocab": [
+        { "word": "How about...?", "meaning": "¿y...?, ¿qué tal si...?" }
+      ]
+    },
+    {
+      "start": 959,
+      "en": "There'll be lots of chances to go on those rides when you're bigger. I wish I was bigger now.",
+      "es": "Habrá muchas oportunidades de montarte cuando seas mayor. Ojalá fuera mayor ahora.",
+      "note": "\"when you're bigger\" va en presente aunque hable del futuro. En inglés, después de \"when\", \"if\" o \"until\" nunca se pone \"will\".",
+      "tip": "\"I wish I was bigger\" es \"ojalá fuera más grande\": deseo imposible ahora mismo. Se forma con \"wish\" + pasado, aunque hables del presente.",
+      "watch": "Es un error clásico decir \"when you will be bigger\". Nunca. Siempre \"when you are bigger\".",
+      "vocab": [
+        {
+          "word": "I wish I was...",
+          "meaning": "ojalá fuera...",
+          "example": "I wish I was taller."
+        },
+        { "word": "chance", "meaning": "oportunidad" }
+      ]
+    },
+    {
+      "start": 970,
+      "note": "\"I'll meet you at...\" es futuro decidido en el momento: \"nos vemos en...\". Es como se queda con alguien.",
+      "vocab": [
+        { "word": "to meet someone at", "meaning": "quedar con alguien en" },
+        { "word": "exit", "meaning": "salida" }
+      ]
+    },
+    {
+      "start": 975,
+      "es": "Todos están de vuelta en casa, pero Peppa y George tenían muchas ganas de montarse en el tobogán de queso.",
+      "note": "\"really wanted\" en pasado: lo querían y no pudieron. Ese \"really\" carga la frase de emoción.",
+      "vocab": [
+        { "word": "to be back", "meaning": "estar de vuelta" }
+      ]
+    },
+    {
+      "start": 988,
+      "en": "Wow. Mummy and Daddy Pig have made their own big cheesy dipper in the living room.",
+      "es": "Mamá y Papá Pig han hecho su propio tobogán de queso en el salón.",
+      "note": "\"their own\" es \"su propio\". Con \"own\" se recalca que es de ellos y hecho por ellos.",
+      "watch": "El subtítulo automático escribió \"Mommy\". Peppa es británica: \"Mummy\".",
+      "vocab": [
+        { "word": "own", "meaning": "propio" },
+        { "word": "living room", "meaning": "salón, sala de estar" }
+      ]
+    },
+    {
+      "start": 995,
+      "es": "Pónganse a la cola si desean montar. Lo siento, señor, es usted demasiado bajo. Lo siento, pero es usted demasiado alto.",
+      "note": "Otra vez el patrón \"too + adjetivo\": too small, too tall. Ahora les toca a los padres.",
+      "tip": "\"Queue\" es la cola en inglés británico; en EE. UU. dicen \"line\". Se pronuncia como la letra Q, las otras cuatro letras no suenan.",
+      "vocab": [
+        { "word": "queue", "meaning": "cola, fila (británico)" },
+        { "word": "to join the queue", "meaning": "ponerse a la cola" },
+        { "word": "if you'd like to", "meaning": "si desea" }
+      ]
+    },
+    {
+      "start": 1005,
+      "tip": "\"Oh no\" con entonación de decepción. Fíjate en cómo baja la voz: eso comunica tanto como la palabra."
+    },
+    {
+      "start": 1009,
+      "es": "Y ustedes dos son... perfectos tal como están. Pasen, pasen.",
+      "note": "\"as you are\" = \"tal como sois\". Es la frase cariñosa del cuento: no les falta nada.",
+      "tip": "\"Step right up\" es el grito clásico del feriante para que la gente se acerque a la atracción. Muy de barraca de feria.",
+      "vocab": [
+        { "word": "as you are", "meaning": "tal como eres/sois" },
+        { "word": "Step right up", "meaning": "pasen, acérquense" }
+      ]
+    },
+    {
+      "start": 1016,
+      "note": "\"We did it\" es \"lo conseguimos\". Se dice al lograr algo que costaba.",
+      "vocab": [{ "word": "We did it!", "meaning": "¡lo conseguimos!" }]
+    },
+    {
+      "start": 1019,
+      "es": "Abróchense los cinturones. Mantengan brazos, piernas y adorables rabitos rizados dentro de la atracción en todo momento.",
+      "note": "Esto es, palabra por palabra, el aviso de seguridad real de cualquier atracción. Solo han añadido lo de los rabitos.",
+      "tip": "\"At all times\" es \"en todo momento\". Lenguaje de aviso oficial, lo verás en carteles y lo oirás en aviones.",
+      "vocab": [
+        { "word": "to buckle up", "meaning": "abrocharse el cinturón" },
+        { "word": "at all times", "meaning": "en todo momento" },
+        { "word": "curly", "meaning": "rizado" }
+      ]
+    },
+    {
+      "start": 1027,
+      "note": "\"Hold on tight\" es \"agárrate fuerte\". \"Tight\" funciona aquí como adverbio.",
+      "vocab": [{ "word": "to hold on", "meaning": "agarrarse" }]
+    },
+    {
+      "start": 1032,
+      "es": "Papá Pig grabó su vuelta en el tobogán de queso.",
+      "note": "\"filmed\" es pasado simple: lo hizo y se acabó.",
+      "vocab": [{ "word": "to film", "meaning": "grabar, filmar" }]
+    },
+    {
+      "start": 1037,
+      "es": "Así Peppa y George pueden hacer como que están montados también.",
+      "note": "\"pretend\" es hacer como que, fingir. Detrás puede ir una frase entera: \"pretend they're on it\".",
+      "tip": "\"Workout\" es sesión de ejercicio. Papá Pig lo dice porque mover el sofá le está costando: es una queja disfrazada de broma.",
+      "vocab": [
+        {
+          "word": "to pretend",
+          "meaning": "hacer como que, fingir",
+          "example": "Let's pretend we're pirates."
+        },
+        { "word": "workout", "meaning": "sesión de ejercicio" }
+      ]
+    },
+    {
+      "start": 1046,
+      "es": "Viene la bajada grande. Preparaos. Allá vamos.",
+      "note": "\"The big drop's coming\" es presente continuo para algo inminente: está a punto de pasar.",
+      "tip": "\"Here we go\" es \"allá vamos\", justo antes de empezar algo. Lo oirás muchísimo.",
+      "vocab": [
+        { "word": "drop", "meaning": "caída, bajada" },
+        { "word": "Get ready", "meaning": "preparaos" },
+        { "word": "Here we go", "meaning": "allá vamos" }
+      ]
+    },
+    {
+      "start": 1061,
+      "es": "Ahí viene el chapuzón. Ha sido la mejor atracción de la historia.",
+      "note": "\"the best ride ever\" — el superlativo con \"ever\" al final significa \"de todos los tiempos\".",
+      "tip": "Los niños usan \"ever\" para todo: best day ever, worst film ever. Es exageración pura y muy natural.",
+      "vocab": [
+        { "word": "splash", "meaning": "chapuzón, salpicadura" },
+        { "word": "the best ... ever", "meaning": "el mejor ... de la historia" }
+      ]
+    },
+    {
+      "start": 1070,
+      "es": "A mí también me ha parecido bastante divertido. Dejadme salir.",
+      "note": "\"pretty fun\" — ese \"pretty\" es \"bastante\", como ya salió en el tren de la parte 4.",
+      "tip": "\"Let me off\" es \"déjame bajar\" de un vehículo o atracción. Para un coche se dice \"let me out\".",
+      "vocab": [
+        { "word": "to let someone off", "meaning": "dejar bajar a alguien" }
+      ]
+    },
+    {
+      "start": 1078,
+      "note": "\"honestly\" aquí es \"de verdad, en serio\". Se usa cuando crees que no te creen.",
+      "tip": "\"Can we go again?\" es la petición número uno de cualquier niño en un parque de atracciones.",
+      "vocab": [
+        { "word": "honestly", "meaning": "de verdad, en serio" },
+        { "word": "again", "meaning": "otra vez" }
+      ]
+    },
+    {
+      "start": 1082,
+      "es": "Peppa y George se mueren de ganas de ser lo bastante mayores para el tobogán de verdad, pero hasta entonces hay diversión de sobra con su familia.",
+      "note": "\"big enough\" — con \"enough\" el orden es al revés que en español: va detrás del adjetivo, no delante. \"Big enough\", nunca \"enough big\".",
+      "tip": "\"Can't wait to\" no es \"no puedo esperar\": es \"me muero de ganas\". Es la forma normal de decir que algo te ilusiona.",
+      "vocab": [
+        {
+          "word": "can't wait to",
+          "meaning": "morirse de ganas de",
+          "example": "I can't wait to see you."
+        },
+        { "word": "big enough", "meaning": "lo bastante grande" },
+        { "word": "until then", "meaning": "hasta entonces" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Por qué Peppa y George no pueden montar en el tobogán de queso?",
+      "options": [
+        "Porque son demasiado pequeños",
+        "Porque está cerrado",
+        "Porque les da miedo"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Qué hacen Mamá y Papá Pig al llegar a casa?",
+      "options": [
+        "Ver la tele",
+        "Montar su propio tobogán en el salón",
+        "Volver al parque"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Por qué los padres no pueden montar en el tobogán casero?",
+      "options": [
+        "Uno es demasiado bajo y el otro demasiado alto",
+        "Porque están cansados",
+        "Porque no hay sitio"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿De dónde viene el chiste de \"Brie wheel\"?",
+      "options": [
+        "De \"water wheel\" (rueda de agua)",
+        "De \"wheelbarrow\" (carretilla)",
+        "De \"Ferris wheel\" (noria)"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"You need to be this tall\" es la frase de...",
+      "options": [
+        "un menú de restaurante",
+        "un cartel de atracción de feria",
+        "un anuncio de ropa"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Después de \"when\" hablando del futuro, el verbo va...",
+      "options": ["en presente", "con will", "en pasado"],
+      "answer": 0
+    },
+    {
+      "q": "\"I wish I was bigger\" significa...",
+      "options": [
+        "seré más grande",
+        "ojalá fuera más grande",
+        "era más grande"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"lo bastante grande\" se dice...",
+      "options": ["enough big", "big enough", "so big enough"],
+      "answer": 1
+    },
+    {
+      "q": "\"I can't wait to see you\" significa...",
+      "options": [
+        "no puedo esperarte",
+        "me muero de ganas de verte",
+        "no quiero verte"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "En inglés británico, la cola de una atracción es...",
+      "options": ["a line", "a queue", "a row"],
+      "answer": 1
+    }
+  ]
+}
