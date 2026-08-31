@@ -66,7 +66,9 @@ JSON (ver `content/lessons/demo.json`). Los dos siguen funcionando.
 - [x] Atajos: `S` español, `L` bucle, `←`/`→` frase anterior/siguiente
 
 ### Fase 3 — Explicación y palabras ✅
-- [x] Panel con la explicación y el vocabulario de la frase activa
+- [x] Explicación y vocabulario dentro de cada frase, con botón "💡 Ver
+      explicación" (antes era un panel debajo del video: en el móvil obligaba a
+      subir para leerlo)
 - [x] Click en cualquier palabra en inglés → la guarda (segundo clic la quita)
 - [x] Lista de palabras guardadas (por ahora solo en memoria)
 
@@ -86,6 +88,8 @@ JSON (ver `content/lessons/demo.json`). Los dos siguen funcionando.
 ### Fase 5 — Evaluación de comprensión ✅
 - [x] Quiz al terminar el video + porcentaje ("80% entendido")
 - [x] Guardar el resultado en `progress` y mostrar el historial en la lección
+- [x] Marca 📍 de por dónde va el usuario (`lesson_position`), que se restaura
+      al volver a la lección
 
 ### Fase 6 — Importar transcripción ⬜
 - [ ] `src/lib/srt.ts`: parser propio de `.srt` / `.vtt`

@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import HighlightedText, {
   buildHighlightPattern,
 } from "@/components/HighlightedText";
+import SentenceExplanation, {
+  hasExplanation,
+} from "@/components/SentenceExplanation";
 import type { Sentence } from "@/lib/types";
 
 export type TextSelection = {
@@ -18,11 +21,14 @@ type Props = {
   sentences: Sentence[];
   activeId: number | null;
   loopId: number | null;
+  /** Frase donde lo dejó el usuario la última vez: lleva la marca 📍. */
+  savedPositionId: number | null;
   showEs: boolean;
   autoScroll: boolean;
   savedWords: Set<string>;
   onSelect: (sentence: Sentence) => void;
   onToggleLoop: (id: number) => void;
+  onSaveWord: (word: string, meaning: string, sentence: Sentence) => void;
   /** Se llama al soltar el ratón habiendo sombreado texto. */
   onSelectText: (selection: TextSelection | null) => void;
 };
@@ -31,14 +37,18 @@ export default function Transcript({
   sentences,
   activeId,
   loopId,
+  savedPositionId,
   showEs,
   autoScroll,
   savedWords,
   onSelect,
   onToggleLoop,
+  onSaveWord,
   onSelectText,
 }: Props) {
   const listRef = useRef<HTMLOListElement>(null);
+  /** Solo una explicación abierta a la vez: en el móvil la lista se dispara. */
+  const [openId, setOpenId] = useState<number | null>(null);
 
   // Una sola expresión regular para toda la lista, no una por frase.
   const highlight = useMemo(
@@ -97,6 +107,9 @@ export default function Transcript({
       {sentences.map((sentence) => {
         const active = sentence.id === activeId;
         const looping = sentence.id === loopId;
+        const open = sentence.id === openId;
+        const explainable = hasExplanation(sentence);
+        const bookmarked = sentence.id === savedPositionId;
 
         return (
           <li
@@ -122,6 +135,14 @@ export default function Transcript({
               <div className="min-w-0 flex-1">
                 {/* Texto normal y seleccionable: sombrear es lo que guarda palabras. */}
                 <p className="text-lg leading-relaxed">
+                  {bookmarked && (
+                    <span
+                      title="Aquí lo dejaste la última vez"
+                      className="mr-1 select-none"
+                    >
+                      📍
+                    </span>
+                  )}
                   <HighlightedText text={sentence.en} pattern={highlight} />
                 </p>
 
@@ -141,12 +162,37 @@ export default function Transcript({
                   "shrink-0 select-none rounded-md px-2 py-1 text-sm transition-colors",
                   looping
                     ? "bg-sky-600 text-white"
-                    : "text-neutral-400 opacity-0 hover:bg-neutral-200 focus:opacity-100 group-hover:opacity-100 dark:hover:bg-neutral-800",
+                    : "text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800",
                 ].join(" ")}
               >
                 🔁
               </button>
             </div>
+
+            {explainable && (
+              <button
+                type="button"
+                onClick={() => setOpenId(open ? null : sentence.id)}
+                aria-expanded={open}
+                className={[
+                  "mt-1 select-none rounded-md px-2 py-1 text-xs font-medium transition-colors",
+                  open
+                    ? "bg-neutral-200 dark:bg-neutral-800"
+                    : "text-neutral-500 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-800",
+                ].join(" ")}
+              >
+                {open ? "▲ Ocultar explicación" : "💡 Ver explicación"}
+              </button>
+            )}
+
+            {open && (
+              <SentenceExplanation
+                sentence={sentence}
+                showEs={showEs}
+                savedWords={savedWords}
+                onSaveWord={onSaveWord}
+              />
+            )}
           </li>
         );
       })}

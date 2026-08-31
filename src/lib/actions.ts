@@ -85,6 +85,35 @@ export async function deleteWordById(id: string): Promise<ActionResult> {
   return { ok: true };
 }
 
+/**
+ * Recuerda por qué frase va el usuario en esta lección. Se llama a menudo
+ * mientras se ve el video, así que no revalida ninguna ruta.
+ */
+export async function saveLessonPosition(input: {
+  lessonId: string;
+  sentenceId: number;
+}): Promise<ActionResult> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  const { error } = await supabase.from("lesson_position").upsert(
+    {
+      user_id: user.id,
+      lesson_id: input.lessonId,
+      sentence_id: input.sentenceId,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "user_id,lesson_id" },
+  );
+
+  if (error) return { ok: false, error: error.message };
+  return { ok: true };
+}
+
 /** Guarda el resultado de la evaluación de comprensión. */
 export async function saveProgress(input: {
   lessonId: string;

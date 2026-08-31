@@ -22,9 +22,10 @@ export default async function LessonPage({
 
   let initialWords: SavedWord[] = [];
   let history: { score: number; completed_at: string }[] = [];
+  let initialSentenceId: number | null = null;
 
   if (user) {
-    const [wordsResult, progressResult] = await Promise.all([
+    const [wordsResult, progressResult, positionResult] = await Promise.all([
       supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
       supabase
         .from("progress")
@@ -32,6 +33,11 @@ export default async function LessonPage({
         .eq("lesson_id", lesson.id)
         .order("completed_at", { ascending: false })
         .limit(5),
+      supabase
+        .from("lesson_position")
+        .select("sentence_id")
+        .eq("lesson_id", lesson.id)
+        .maybeSingle(),
     ]);
 
     initialWords = (wordsResult.data ?? []).map((row) => ({
@@ -42,6 +48,12 @@ export default async function LessonPage({
     }));
 
     history = (progressResult.data ?? []) as typeof history;
+
+    // Solo vale si la frase sigue existiendo (la lección pudo cambiar).
+    const saved = positionResult.data?.sentence_id as number | undefined;
+    if (saved != null && lesson.sentences.some((s) => s.id === saved)) {
+      initialSentenceId = saved;
+    }
   }
 
   return (
@@ -75,6 +87,7 @@ export default async function LessonPage({
         lesson={lesson}
         isLoggedIn={Boolean(user)}
         initialWords={initialWords}
+        initialSentenceId={initialSentenceId}
       />
     </main>
   );

@@ -3,12 +3,16 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import ExplanationPanel from "@/components/ExplanationPanel";
 import Quiz from "@/components/Quiz";
 import SelectionPopover from "@/components/SelectionPopover";
 import Transcript, { type TextSelection } from "@/components/Transcript";
 import YouTubePlayer, { YT_STATE, type YTPlayer } from "@/components/YouTubePlayer";
-import { removeWord, saveProgress, saveWord as saveWordToDb } from "@/lib/actions";
+import {
+  removeWord,
+  saveLessonPosition,
+  saveProgress,
+  saveWord as saveWordToDb,
+} from "@/lib/actions";
 import type { ResolvedLesson, Sentence } from "@/lib/types";
 
 export type SavedWord = {
@@ -24,9 +28,16 @@ type Props = {
   isLoggedIn: boolean;
   /** Palabras que el usuario ya tenía guardadas. */
   initialWords: SavedWord[];
+  /** Frase por la que iba la última vez, si la tenemos guardada. */
+  initialSentenceId: number | null;
 };
 
-export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) {
+export default function LessonView({
+  lesson,
+  isLoggedIn,
+  initialWords,
+  initialSentenceId,
+}: Props) {
   const playerRef = useRef<YTPlayer | null>(null);
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -43,6 +54,8 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
   const [selection, setSelection] = useState<TextSelection | null>(null);
   const [saveError, setSaveError] = useState("");
   const [showQuiz, setShowQuiz] = useState(false);
+  /** Frase marcada con 📍 en la lista: la última que guardamos en Supabase. */
+  const [savedPositionId, setSavedPositionId] = useState(initialSentenceId);
 
   // Refs para leer el estado más reciente dentro del callback de tiempo,
   // que se ejecuta cada 200 ms fuera del ciclo de render.
@@ -62,8 +75,6 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
     () => new Set(words.map((w) => w.word.toLowerCase())),
     [words],
   );
-
-  const activeSentence = activeId != null ? sentenceById.get(activeId) ?? null : null;
 
   const handleTime = useCallback(
     (seconds: number) => {
@@ -212,6 +223,23 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
     setSelection(null);
   }, [saveWord, selection, sentenceById]);
 
+  // Recordamos por dónde vamos. Esperamos 2 s para no guardar las frases por
+  // las que solo pasamos de largo, y para no llamar a Supabase cada 3 segundos.
+  useEffect(() => {
+    if (!isLoggedIn || activeId == null || activeId === savedPositionId) return;
+
+    const timer = setTimeout(() => {
+      setSavedPositionId(activeId);
+      saveLessonPosition({ lessonId: lesson.id, sentenceId: activeId }).then(
+        (result) => {
+          if (!result.ok) setSaveError(result.error);
+        },
+      );
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [activeId, isLoggedIn, lesson.id, savedPositionId]);
+
   // Si la página se mueve, la posición del botón flotante deja de valer.
   useEffect(() => {
     if (!selection) return;
@@ -280,6 +308,17 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
           onReady={(player) => {
             playerRef.current = player;
             setReady(true);
+
+            // Volvemos a donde lo dejamos, sin arrancar el video solo.
+            const resume =
+              initialSentenceId != null
+                ? sentenceById.get(initialSentenceId)
+                : null;
+            if (resume) {
+              activeIdRef.current = resume.id;
+              setActiveId(resume.id);
+              player.seekTo(resume.start, true);
+            }
           }}
           onTime={handleTime}
           onStateChange={(state) => {
@@ -355,8 +394,9 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
 
         {awaitingNext != null && (
           <p className="rounded-lg bg-emerald-50 p-3 text-sm text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-200">
-            ⏸ Pausado. Lee la explicación de la frase resaltada con calma y dale
-            a <strong>Siguiente frase</strong> cuando quieras seguir.
+            ⏸ Pausado. Abre <strong>💡 Ver explicación</strong> en la frase
+            resaltada y dale a <strong>Siguiente frase</strong> cuando quieras
+            seguir.
           </p>
         )}
 
@@ -407,12 +447,6 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
             }}
           />
         )}
-
-        <ExplanationPanel
-          sentence={activeSentence}
-          savedWords={savedWords}
-          onSaveWord={saveWord}
-        />
 
         <div className="rounded-xl border border-neutral-200 p-4 dark:border-neutral-800">
           <h2 className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
@@ -469,15 +503,23 @@ export default function LessonView({ lesson, isLoggedIn, initialWords }: Props) 
           </span>
         </div>
 
+        {initialSentenceId != null && activeId === initialSentenceId && (
+          <p className="rounded-lg bg-neutral-100 px-3 py-2 text-xs text-neutral-600 dark:bg-neutral-900 dark:text-neutral-400">
+            📍 Seguimos donde lo dejaste.
+          </p>
+        )}
+
         <Transcript
           sentences={lesson.sentences}
           activeId={activeId}
           loopId={loopId}
+          savedPositionId={savedPositionId}
           showEs={showEs}
           autoScroll={autoScroll}
           savedWords={savedWords}
           onSelect={goToSentence}
           onToggleLoop={toggleLoop}
+          onSaveWord={saveWord}
           onSelectText={setSelection}
         />
       </aside>
