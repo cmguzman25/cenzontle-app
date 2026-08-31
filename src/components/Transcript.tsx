@@ -56,12 +56,37 @@ export default function Transcript({
     [savedWords],
   );
 
+  /**
+   * Lleva la frase activa a la vista.
+   *
+   * No usamos `scrollIntoView`: ese método mueve todos los contenedores con
+   * scroll que haya por encima, incluida la página, y el video se acaba yendo
+   * de sitio. Cuando la lista tiene su propio scroll (escritorio) movemos solo
+   * la lista; si no lo tiene (móvil), movemos la página lo mínimo y solo si la
+   * frase no se ve.
+   */
   useEffect(() => {
-    if (!autoScroll || activeId == null || !listRef.current) return;
-    const el = listRef.current.querySelector<HTMLElement>(
+    if (!autoScroll || activeId == null) return;
+
+    const list = listRef.current;
+    const el = list?.querySelector<HTMLElement>(
       `[data-sentence-id="${activeId}"]`,
     );
-    el?.scrollIntoView({ block: "center", behavior: "smooth" });
+    if (!list || !el) return;
+
+    if (list.scrollHeight > list.clientHeight + 1) {
+      const listBox = list.getBoundingClientRect();
+      const elBox = el.getBoundingClientRect();
+      // Centramos la frase dentro de la lista, sin tocar el scroll de la página.
+      const delta =
+        elBox.top - listBox.top - (list.clientHeight - elBox.height) / 2;
+      list.scrollTo({ top: list.scrollTop + delta, behavior: "smooth" });
+      return;
+    }
+
+    const box = el.getBoundingClientRect();
+    const visible = box.top >= 0 && box.bottom <= window.innerHeight;
+    if (!visible) el.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [activeId, autoScroll]);
 
   /** Lee lo que el usuario acaba de sombrear y avisa al componente padre. */
@@ -97,12 +122,14 @@ export default function Transcript({
     });
   }
 
+  // `min-h-0` + `flex-1`: sin esto la lista crece hasta pasarse del alto del
+  // panel y quien acaba haciendo scroll es la página, no la lista.
   return (
     <ol
       ref={listRef}
       onMouseUp={readSelection}
       onTouchEnd={readSelection}
-      className="flex flex-col gap-2 overflow-y-auto pr-1"
+      className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto overscroll-contain pr-1"
     >
       {sentences.map((sentence) => {
         const active = sentence.id === activeId;
