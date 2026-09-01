@@ -568,7 +568,9 @@ export default function LessonView({
         </div>
       </div>
 
-      <aside className="flex min-h-0 flex-col gap-2 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)]">
+      {/* El alto máximo es lo que hace que la transcripción tenga su propio
+          scroll también en el móvil: así el video no se mueve de sitio. */}
+      <aside className="flex max-h-[70svh] min-h-0 flex-col gap-2 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)]">
         <div className="flex items-baseline justify-between">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             Transcripción

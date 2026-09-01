@@ -10,6 +10,9 @@ import SentenceExplanation, {
 } from "@/components/SentenceExplanation";
 import type { Sentence } from "@/lib/types";
 
+/** Cuánto respeta el autoscroll al usuario después de que mueva la lista. */
+const PAUSE_MS = 5000;
+
 export type TextSelection = {
   text: string;
   sentenceId: number;
@@ -49,6 +52,8 @@ export default function Transcript({
   const listRef = useRef<HTMLOListElement>(null);
   /** Solo una explicación abierta a la vez: en el móvil la lista se dispara. */
   const [openId, setOpenId] = useState<number | null>(null);
+  /** Mientras el usuario mueve la lista a mano, el autoscroll no le pelea. */
+  const pausedUntil = useRef(0);
 
   // Una sola expresión regular para toda la lista, no una por frase.
   const highlight = useMemo(
@@ -57,36 +62,50 @@ export default function Transcript({
   );
 
   /**
-   * Lleva la frase activa a la vista.
-   *
-   * No usamos `scrollIntoView`: ese método mueve todos los contenedores con
-   * scroll que haya por encima, incluida la página, y el video se acaba yendo
-   * de sitio. Cuando la lista tiene su propio scroll (escritorio) movemos solo
-   * la lista; si no lo tiene (móvil), movemos la página lo mínimo y solo si la
-   * frase no se ve.
+   * Si el usuario toca la lista, el autoscroll se aparta unos segundos. Sin
+   * esto, en el móvil cada frase nueva devolvía la lista a su sitio y era
+   * imposible subir o bajar mientras el video sonaba.
+   */
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+
+    const pause = () => {
+      pausedUntil.current = Date.now() + PAUSE_MS;
+    };
+
+    // `passive`: solo miramos, nunca cancelamos el gesto.
+    const events = ["touchstart", "touchmove", "wheel"] as const;
+    for (const name of events) {
+      list.addEventListener(name, pause, { passive: true });
+    }
+    return () => {
+      for (const name of events) list.removeEventListener(name, pause);
+    };
+  }, []);
+
+  /**
+   * Lleva la frase activa a la vista moviendo solo la lista, nunca la página:
+   * `scrollIntoView` arrastraba también el scroll del documento y el video se
+   * iba de sitio. Si la lista no tiene scroll propio no hay nada que hacer.
    */
   useEffect(() => {
     if (!autoScroll || activeId == null) return;
+    if (Date.now() < pausedUntil.current) return;
 
     const list = listRef.current;
     const el = list?.querySelector<HTMLElement>(
       `[data-sentence-id="${activeId}"]`,
     );
     if (!list || !el) return;
+    if (list.scrollHeight <= list.clientHeight + 1) return;
 
-    if (list.scrollHeight > list.clientHeight + 1) {
-      const listBox = list.getBoundingClientRect();
-      const elBox = el.getBoundingClientRect();
-      // Centramos la frase dentro de la lista, sin tocar el scroll de la página.
-      const delta =
-        elBox.top - listBox.top - (list.clientHeight - elBox.height) / 2;
-      list.scrollTo({ top: list.scrollTop + delta, behavior: "smooth" });
-      return;
-    }
-
-    const box = el.getBoundingClientRect();
-    const visible = box.top >= 0 && box.bottom <= window.innerHeight;
-    if (!visible) el.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    const listBox = list.getBoundingClientRect();
+    const elBox = el.getBoundingClientRect();
+    // Centramos la frase dentro de la lista, sin tocar el scroll de la página.
+    const delta =
+      elBox.top - listBox.top - (list.clientHeight - elBox.height) / 2;
+    list.scrollTo({ top: list.scrollTop + delta, behavior: "smooth" });
   }, [activeId, autoScroll]);
 
   /** Lee lo que el usuario acaba de sombrear y avisa al componente padre. */
