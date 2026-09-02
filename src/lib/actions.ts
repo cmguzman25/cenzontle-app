@@ -39,6 +39,86 @@ export async function saveWord(input: {
   return { ok: true };
 }
 
+/**
+ * Guarda el trozo de audio de una palabra, ajustado a mano por el usuario.
+ * Con `from`/`to` a null volvemos a la estimación automática.
+ *
+ * Como se llama a cada toque de flecha, no revalida ninguna ruta.
+ */
+export async function saveWordTiming(input: {
+  word: string;
+  from: number | null;
+  to: number | null;
+}): Promise<ActionResult> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  const { error } = await supabase
+    .from("words")
+    .update({ audio_start: input.from, audio_end: input.to })
+    .eq("user_id", user.id)
+    .eq("word", input.word);
+
+  if (error) return { ok: false, error: error.message };
+  return { ok: true };
+}
+
+/**
+ * Deja el ajuste hecho para todo el mundo: es la misma historia y el mismo
+ * audio para cualquiera que guarde esa palabra. Con `from`/`to` a null se
+ * borra y todos vuelven a la estimación automática.
+ */
+export async function saveSharedWordTiming(input: {
+  lessonId: string;
+  sentenceId: number;
+  term: string;
+  from: number | null;
+  to: number | null;
+  /** Visto bueno del usuario: el trozo suena bien tal cual. */
+  confirmed: boolean;
+}): Promise<ActionResult> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  const term = input.term.trim().toLowerCase();
+  if (!term) return { ok: false, error: "Palabra vacía." };
+
+  const key = {
+    lesson_id: input.lessonId,
+    sentence_id: input.sentenceId,
+    term,
+  };
+
+  if (input.from == null || input.to == null) {
+    const { error } = await supabase.from("word_audio").delete().match(key);
+    if (error) return { ok: false, error: error.message };
+    return { ok: true };
+  }
+
+  const { error } = await supabase.from("word_audio").upsert(
+    {
+      ...key,
+      audio_start: input.from,
+      audio_end: input.to,
+      confirmed: input.confirmed,
+      updated_by: user.id,
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "lesson_id,sentence_id,term" },
+  );
+
+  if (error) return { ok: false, error: error.message };
+  return { ok: true };
+}
+
 /** Quita una palabra del banco. */
 export async function removeWord(word: string): Promise<ActionResult> {
   const supabase = await createClient();

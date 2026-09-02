@@ -1,10 +1,19 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
-import LessonView, { type SavedWord } from "@/components/LessonView";
+import LessonView, {
+  type SavedWord,
+  type SharedTiming,
+} from "@/components/LessonView";
 import { lessonNeighbours } from "@/lib/catalog";
 import { getLesson, getLessons } from "@/lib/lessons";
 import { createClient } from "@/lib/supabase/server";
+
+/** `numeric` de Postgres llega como texto (o null): lo pasamos a número. */
+function toSeconds(value: unknown): number | null {
+  const n = Number(value);
+  return value == null || Number.isNaN(n) ? null : n;
+}
 
 export default async function LessonPage({
   params,
@@ -31,8 +40,11 @@ export default async function LessonPage({
     id,
   );
 
-  const [wordsResult, progressResult, positionResult] = await Promise.all([
-    supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
+  const [wordsResult, progressResult, positionResult, timingsResult] =
+    await Promise.all([
+    supabase
+      .from("words")
+      .select("word, meaning, lesson_id, sentence_id, audio_start, audio_end"),
     supabase
       .from("progress")
       .select("score, completed_at")
@@ -44,6 +56,11 @@ export default async function LessonPage({
       .select("sentence_id")
       .eq("lesson_id", lesson.id)
       .maybeSingle(),
+    // Ajustes de audio que ya hizo cualquiera en esta lección.
+    supabase
+      .from("word_audio")
+      .select("sentence_id, term, audio_start, audio_end, confirmed")
+      .eq("lesson_id", lesson.id),
   ]);
 
   const initialWords: SavedWord[] = (wordsResult.data ?? []).map((row) => ({
@@ -51,7 +68,27 @@ export default async function LessonPage({
     meaning: (row.meaning as string) ?? "",
     lessonId: (row.lesson_id as string) ?? lesson.id,
     sentenceId: (row.sentence_id as number) ?? 0,
+    // Postgres devuelve `numeric` como texto: hay que pasarlo a número.
+    audioStart: toSeconds(row.audio_start),
+    audioEnd: toSeconds(row.audio_end),
   }));
+
+  const sharedTimings: SharedTiming[] = (timingsResult.data ?? []).flatMap(
+    (row) => {
+      const from = toSeconds(row.audio_start);
+      const to = toSeconds(row.audio_end);
+      if (from == null || to == null) return [];
+      return [
+        {
+          sentenceId: row.sentence_id as number,
+          term: row.term as string,
+          from,
+          to,
+          confirmed: Boolean(row.confirmed),
+        },
+      ];
+    },
+  );
 
   const history = (progressResult.data ?? []) as {
     score: number;
@@ -104,6 +141,7 @@ export default async function LessonPage({
         lesson={lesson}
         isLoggedIn
         initialWords={initialWords}
+        initialTimings={sharedTimings}
         initialSentenceId={initialSentenceId}
       />
 

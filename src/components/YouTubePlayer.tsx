@@ -45,21 +45,36 @@ declare global {
 }
 
 const API_SRC = "https://www.youtube.com/iframe_api";
+/** Si en este tiempo la API no ha cargado, damos la carga por fallida. */
+const API_TIMEOUT = 10000;
 let apiPromise: Promise<YTGlobal> | null = null;
 
-/** Carga el script de la IFrame API una sola vez para toda la app. */
+/**
+ * Carga el script de la IFrame API una sola vez para toda la app.
+ *
+ * Si no carga (un bloqueador, la red, YouTube caído) hay que enterarse: sin
+ * esto la promesa se quedaba pendiente para siempre y la lección se quedaba
+ * muda y sin explicación, con todos los botones sin hacer nada.
+ */
 function loadYouTubeApi(): Promise<YTGlobal> {
   if (apiPromise) return apiPromise;
 
-  apiPromise = new Promise<YTGlobal>((resolve) => {
+  apiPromise = new Promise<YTGlobal>((resolve, reject) => {
     if (window.YT?.Player) {
       resolve(window.YT);
       return;
     }
 
+    const timer = setTimeout(() => {
+      // Sin esto, un reintento reutilizaría la promesa ya fallida.
+      apiPromise = null;
+      reject(new Error("La API de YouTube no cargó."));
+    }, API_TIMEOUT);
+
     // La API llama a esta función global cuando termina de cargar.
     const previous = window.onYouTubeIframeAPIReady;
     window.onYouTubeIframeAPIReady = () => {
+      clearTimeout(timer);
       previous?.();
       resolve(window.YT as YTGlobal);
     };
@@ -68,6 +83,12 @@ function loadYouTubeApi(): Promise<YTGlobal> {
       const script = document.createElement("script");
       script.src = API_SRC;
       script.async = true;
+      script.onerror = () => {
+        clearTimeout(timer);
+        apiPromise = null;
+        script.remove();
+        reject(new Error("No se pudo descargar el script de YouTube."));
+      };
       document.head.appendChild(script);
     }
   });
@@ -105,6 +126,10 @@ export default function YouTubePlayer({
   const playerRef = useRef<YTPlayer | null>(null);
   const domId = useId().replace(/[^a-zA-Z0-9-]/g, "");
   const [state, setState] = useState<number>(YT_STATE.UNSTARTED);
+  /** Mensaje de por qué no hay reproductor, si es que no lo hay. */
+  const [failed, setFailed] = useState("");
+  /** Se cambia para volver a intentar la carga. */
+  const [attempt, setAttempt] = useState(0);
 
   // Guardamos los callbacks en refs para no recrear el reproductor cuando cambian.
   const onReadyRef = useRef(onReady);
@@ -157,6 +182,9 @@ export default function YouTubePlayer({
           },
         },
       });
+    }).catch((error: Error) => {
+      if (cancelled) return;
+      setFailed(error.message);
     });
 
     return () => {
@@ -164,7 +192,7 @@ export default function YouTubePlayer({
       if (interval) clearInterval(interval);
       player?.destroy();
     };
-  }, [videoId, domId]);
+  }, [videoId, domId, attempt]);
 
   // Al pausar, YouTube saca su propia pantalla con "More videos" y la miniatura
   // de otros videos. No hay forma de apagarla desde la API, así que la tapamos.
@@ -180,7 +208,29 @@ export default function YouTubePlayer({
     <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
       <div ref={containerRef} className="h-full w-full [&_iframe]:h-full [&_iframe]:w-full" />
 
-      {covered && (
+      {failed ? (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-neutral-900 p-6 text-center text-sm text-white">
+          <p>
+            No se pudo cargar el reproductor de YouTube.
+            <br />
+            <span className="text-neutral-400">{failed}</span>
+          </p>
+          <p className="text-xs text-neutral-400">
+            Suele ser un bloqueador de anuncios, una extensión o la red.
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              setFailed("");
+              setAttempt((n) => n + 1);
+            }}
+            className="rounded-lg bg-white px-3 py-1.5 font-medium text-neutral-900 hover:bg-neutral-200"
+          >
+            Reintentar
+          </button>
+        </div>
+      ) : (
+        covered && (
         <button
           type="button"
           onClick={() => {
@@ -193,7 +243,8 @@ export default function YouTubePlayer({
           <span className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/60 pl-1 text-2xl">
             ▶
           </span>
-        </button>
+          </button>
+        )
       )}
     </div>
   );

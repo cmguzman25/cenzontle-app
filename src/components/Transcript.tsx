@@ -30,6 +30,8 @@ type Props = {
   autoScroll: boolean;
   savedWords: Set<string>;
   onSelect: (sentence: Sentence) => void;
+  /** Pulsar una palabra guardada: suena solo ese trozo del audio. */
+  onPlayWord: (term: string, sentenceId: number, at?: number) => void;
   onToggleLoop: (id: number) => void;
   onSaveWord: (word: string, meaning: string, sentence: Sentence) => void;
   /** Se llama al soltar el ratón habiendo sombreado texto. */
@@ -45,6 +47,7 @@ export default function Transcript({
   autoScroll,
   savedWords,
   onSelect,
+  onPlayWord,
   onToggleLoop,
   onSaveWord,
   onSelectText,
@@ -189,7 +192,13 @@ export default function Transcript({
                       📍
                     </span>
                   )}
-                  <HighlightedText text={sentence.en} pattern={highlight} />
+                  <HighlightedText
+                    text={sentence.en}
+                    pattern={highlight}
+                    onMarkClick={(term, at) =>
+                      onPlayWord(term, sentence.id, at)
+                    }
+                  />
                 </p>
 
                 {showEs && (

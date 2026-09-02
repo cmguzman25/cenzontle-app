@@ -6,21 +6,54 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Quiz from "@/components/Quiz";
 import SelectionPopover from "@/components/SelectionPopover";
 import Transcript, { type TextSelection } from "@/components/Transcript";
+import WordTuner from "@/components/WordTuner";
 import YouTubePlayer, { YT_STATE, type YTPlayer } from "@/components/YouTubePlayer";
 import {
   removeWord,
   saveLessonPosition,
   saveProgress,
+  saveSharedWordTiming,
   saveWord as saveWordToDb,
+  saveWordTiming,
 } from "@/lib/actions";
 import type { ResolvedLesson, Sentence } from "@/lib/types";
+import {
+  clampRange,
+  estimateWordRange,
+  type Range,
+} from "@/lib/word-timing";
 
 export type SavedWord = {
   word: string;
   meaning: string;
   lessonId: string;
   sentenceId: number;
+  /** Trozo de audio ajustado a mano. Sin esto se usa la estimación. */
+  audioStart?: number | null;
+  audioEnd?: number | null;
 };
+
+/**
+ * Trozo de audio de una palabra ya cuadrado a mano por alguien. Es de la
+ * lección, no de quien lo ajustó: el audio es el mismo para todos.
+ */
+export type SharedTiming = {
+  sentenceId: number;
+  /** En minúsculas, como se guarda. */
+  term: string;
+  from: number;
+  to: number;
+  /** Alguien le dio el visto bueno: suena bien tal cual. */
+  confirmed: boolean;
+};
+
+/** Lo que sabemos del trozo de una palabra: dónde suena y si está aprobado. */
+type Timing = Range & { confirmed: boolean };
+
+/** Clave de un ajuste dentro de la lección: frase + palabra en minúsculas. */
+function timingKey(sentenceId: number, term: string): string {
+  return `${sentenceId}|${term.trim().toLowerCase()}`;
+}
 
 type Props = {
   lesson: ResolvedLesson;
@@ -28,6 +61,8 @@ type Props = {
   isLoggedIn: boolean;
   /** Palabras que el usuario ya tenía guardadas. */
   initialWords: SavedWord[];
+  /** Ajustes de audio que ya hizo cualquier usuario en esta lección. */
+  initialTimings: SharedTiming[];
   /** Frase por la que iba la última vez, si la tenemos guardada. */
   initialSentenceId: number | null;
 };
@@ -36,6 +71,7 @@ export default function LessonView({
   lesson,
   isLoggedIn,
   initialWords,
+  initialTimings,
   initialSentenceId,
 }: Props) {
   const playerRef = useRef<YTPlayer | null>(null);
@@ -51,7 +87,28 @@ export default function LessonView({
   const [showEs, setShowEs] = useState(false);
   const [autoScroll, setAutoScroll] = useState(true);
   const [words, setWords] = useState<SavedWord[]>(initialWords);
+  /** Ajustes de audio de la lección, de quien sea. Clave: `timingKey`. */
+  const [timings, setTimings] = useState<Record<string, Timing>>(() =>
+    Object.fromEntries(
+      initialTimings.map((t) => [
+        timingKey(t.sentenceId, t.term),
+        { from: t.from, to: t.to, confirmed: t.confirmed },
+      ]),
+    ),
+  );
   const [selection, setSelection] = useState<TextSelection | null>(null);
+  /** Palabra cuyo trozo de audio se está ajustando con las flechas. */
+  const [tuning, setTuning] = useState<{
+    word: string;
+    sentenceId: number;
+    range: Range;
+    /** `true` cuando los segundos están guardados y no son la estimación. */
+    tuned: boolean;
+    /** El ajuste lo dejó hecho otra persona. */
+    fromOthers: boolean;
+    /** Visto bueno dado a mano con el botón. */
+    confirmed: boolean;
+  } | null>(null);
   const [saveError, setSaveError] = useState("");
   const [showQuiz, setShowQuiz] = useState(false);
   /** Llegamos al final del tramo: el play ahora significa "repetir". */
@@ -71,6 +128,29 @@ export default function LessonView({
    * nos mandaría a la primera frase.
    */
   const resumeTargetRef = useRef<number | null>(null);
+  /**
+   * Trozo suelto que estamos escuchando (al pulsar una palabra guardada).
+   * `null` = reproducción normal, sin freno.
+   *
+   * `armed` existe porque el reloj de YouTube tarda un poco en enterarse del
+   * salto: hasta que no vemos un tiempo dentro del trozo no activamos el
+   * freno, o pararíamos al instante con el segundo viejo.
+   */
+  const stopRangeRef = useRef<{
+    from: number;
+    to: number;
+    armed: boolean;
+  } | null>(null);
+  /**
+   * Al parar en seco la frase quedamos justo en su borde y el reloj, que sigue
+   * corriendo con el video pausado, resaltaría ya la frase siguiente. Con esto
+   * dejamos quieta la que se acaba de oír hasta que el usuario vuelva a jugar.
+   */
+  const holdActiveRef = useRef(false);
+  /** Guardados del ajuste pendientes, uno por palabra. */
+  const timingSaveTimers = useRef(
+    new Map<string, ReturnType<typeof setTimeout>>(),
+  );
   loopIdRef.current = loopId;
   pauseEachRef.current = pauseEach;
 
@@ -82,6 +162,13 @@ export default function LessonView({
   const savedWords = useMemo(
     () => new Set(words.map((w) => w.word.toLowerCase())),
     [words],
+  );
+
+  // El panel enseña solo lo de esta parte; el resaltado en la transcripción
+  // sigue usando todas, que una palabra de otro capítulo también vale aquí.
+  const lessonWords = useMemo(
+    () => words.filter((w) => w.lessonId === lesson.id),
+    [words, lesson.id],
   );
 
   /**
@@ -107,6 +194,20 @@ export default function LessonView({
         setShowQuiz(true);
         return;
       }
+
+      // Escuchando un trozo suelto: paramos al acabarlo.
+      const range = stopRangeRef.current;
+      if (range && !range.armed) {
+        if (seconds >= range.from - 0.4 && seconds < range.to) {
+          stopRangeRef.current = { ...range, armed: true };
+        }
+      } else if (range && seconds >= range.to) {
+        playerRef.current?.pauseVideo();
+        stopRangeRef.current = null;
+        holdActiveRef.current = true;
+        return;
+      }
+      if (holdActiveRef.current) return;
 
       // Bucle: al llegar al final de la frase, volvemos a su inicio.
       const looping = loopIdRef.current;
@@ -153,6 +254,7 @@ export default function LessonView({
     awaitingNextRef.current = null;
     setAwaitingNext(null);
     resumeTargetRef.current = null;
+    stopRangeRef.current = null;
     setFinished(false);
     activeIdRef.current = sentence.id;
     setActiveId(sentence.id);
@@ -160,12 +262,219 @@ export default function LessonView({
     playerRef.current?.playVideo();
   }, []);
 
+  /**
+   * Apunta el trozo ajustado: al momento en pantalla y, un poco después, en
+   * Supabase. Se espera porque las flechas se tocan varias veces seguidas y no
+   * hace falta una escritura por toque.
+   *
+   * Se guarda en dos sitios: en la palabra del usuario y en el ajuste de la
+   * lección, que es el que aprovecha cualquiera que guarde esa misma palabra.
+   */
+  const queueTimingSave = useCallback(
+    (
+      word: string,
+      sentenceId: number,
+      timing: Timing | null,
+      /** El visto bueno se guarda ya; las flechas pueden esperar. */
+      now = false,
+    ) => {
+      const key = word.toLowerCase();
+      const shared = timingKey(sentenceId, word);
+
+      setWords((current) =>
+        current.map((w) =>
+          w.word.toLowerCase() === key
+            ? {
+                ...w,
+                audioStart: timing?.from ?? null,
+                audioEnd: timing?.to ?? null,
+              }
+            : w,
+        ),
+      );
+
+      setTimings((current) => {
+        if (timing) return { ...current, [shared]: timing };
+        const rest = { ...current };
+        delete rest[shared];
+        return rest;
+      });
+
+      if (!isLoggedIn) return;
+
+      const timers = timingSaveTimers.current;
+      const pending = timers.get(shared);
+      if (pending) clearTimeout(pending);
+
+      const write = () => {
+        timers.delete(shared);
+        const from = timing?.from ?? null;
+        const to = timing?.to ?? null;
+
+        Promise.all([
+          saveWordTiming({ word, from, to }),
+          saveSharedWordTiming({
+            lessonId: lesson.id,
+            sentenceId,
+            term: word,
+            from,
+            to,
+            confirmed: timing?.confirmed ?? false,
+          }),
+        ]).then((results) => {
+          const failed = results.find((r) => !r.ok);
+          if (failed && !failed.ok) setSaveError(failed.error);
+        });
+      };
+
+      if (now) {
+        write();
+        return;
+      }
+      timers.set(shared, setTimeout(write, 700));
+    },
+    [isLoggedIn, lesson.id],
+  );
+
+  // Si el usuario se va de la lección con un guardado en cola, lo cancelamos.
+  useEffect(() => {
+    const timers = timingSaveTimers.current;
+    return () => {
+      for (const timer of timers.values()) clearTimeout(timer);
+      timers.clear();
+    };
+  }, []);
+
+  /** Reproduce un tramo de segundos y para al final. No toca nada más. */
+  const playRange = useCallback((sentence: Sentence, range: Range) => {
+    awaitingNextRef.current = null;
+    setAwaitingNext(null);
+    resumeTargetRef.current = null;
+    setLoopId(null);
+    loopIdRef.current = null;
+    setFinished(false);
+    holdActiveRef.current = false;
+    activeIdRef.current = sentence.id;
+    setActiveId(sentence.id);
+    stopRangeRef.current = { from: range.from, to: range.to, armed: false };
+    playerRef.current?.seekTo(range.from, true);
+    playerRef.current?.playVideo();
+  }, []);
+
+  /**
+   * Escucha solo el trozo donde suena una palabra guardada y abre el ajuste.
+   *
+   * Orden: lo que ajustó el usuario, lo que dejó ajustado cualquier otro en
+   * esta lección, y si no hay nada, la estimación (`estimateWordRange`), que la
+   * transcripción no trae tiempos por palabra. Si ni siquiera podemos situarla,
+   * suena la frase entera.
+   */
+  const playWord = useCallback(
+    (term: string, sentenceId: number, at?: number) => {
+      const sentence = sentenceById.get(sentenceId);
+      if (!sentence) return;
+
+      // El texto pulsado puede venir con otras mayúsculas que el guardado.
+      const saved = words.find(
+        (w) => w.word.toLowerCase() === term.toLowerCase(),
+      );
+      const mine =
+        saved?.audioStart != null && saved.audioEnd != null
+          ? { from: saved.audioStart, to: saved.audioEnd }
+          : null;
+      const shared = timings[timingKey(sentenceId, term)] ?? null;
+      const tuned = mine ?? shared;
+
+      const range =
+        tuned ??
+        estimateWordRange(sentence, term, at) ?? {
+          from: sentence.start,
+          to: sentence.end,
+        };
+
+      setTuning({
+        word: saved?.word ?? term,
+        sentenceId: sentence.id,
+        range,
+        tuned: tuned != null,
+        // Nos interesa avisar de que el trabajo ya venía hecho de fuera.
+        fromOthers: mine == null && shared != null,
+        confirmed: shared?.confirmed ?? false,
+      });
+      playRange(sentence, range);
+    },
+    [playRange, sentenceById, timings, words],
+  );
+
+  /**
+   * Mueve una flecha del ajuste: recorta, deja oír el resultado al momento y
+   * guarda en segundo plano (con espera, que se toca varias veces seguidas).
+   */
+  const tuneWord = useCallback(
+    (range: Range) => {
+      if (!tuning) return;
+      const sentence = sentenceById.get(tuning.sentenceId);
+      if (!sentence) return;
+
+      const next = clampRange(sentence, range);
+      setTuning({ ...tuning, range: next, tuned: true, fromOthers: false });
+      playRange(sentence, next);
+      // Mover las flechas no toca el visto bueno: eso lo decide el botón.
+      queueTimingSave(tuning.word, tuning.sentenceId, {
+        ...next,
+        confirmed: tuning.confirmed,
+      });
+    },
+    [playRange, queueTimingSave, sentenceById, tuning],
+  );
+
+  /**
+   * Tira el ajuste y vuelve a la estimación automática. Como el ajuste es de
+   * la lección, esto también lo deshace para los demás.
+   */
+  const resetWordTiming = useCallback(() => {
+    if (!tuning) return;
+    const sentence = sentenceById.get(tuning.sentenceId);
+    if (!sentence) return;
+
+    const range = estimateWordRange(sentence, tuning.word) ?? {
+      from: sentence.start,
+      to: sentence.end,
+    };
+    setTuning({
+      ...tuning,
+      range,
+      tuned: false,
+      fromOthers: false,
+      confirmed: false,
+    });
+    playRange(sentence, range);
+    queueTimingSave(tuning.word, tuning.sentenceId, null);
+  }, [playRange, queueTimingSave, sentenceById, tuning]);
+
+  /**
+   * El visto bueno: lo pone y lo quita el usuario con el botón, nunca solo.
+   * Guarda al momento, que es una decisión, no un tanteo.
+   */
+  const toggleWordConfirmed = useCallback(() => {
+    if (!tuning) return;
+    const confirmed = !tuning.confirmed;
+    setTuning({ ...tuning, tuned: true, confirmed });
+    queueTimingSave(
+      tuning.word,
+      tuning.sentenceId,
+      { ...tuning.range, confirmed },
+      true,
+    );
+  }, [queueTimingSave, tuning]);
+
   /** Vuelve al principio del tramo. Es lo que hace el play una vez terminado. */
   const restart = useCallback(() => {
     const first = lesson.sentences[0];
     awaitingNextRef.current = null;
     setAwaitingNext(null);
     resumeTargetRef.current = null;
+    stopRangeRef.current = null;
     setFinished(false);
     if (first) {
       activeIdRef.current = first.id;
@@ -177,6 +486,10 @@ export default function LessonView({
 
   const togglePlay = useCallback(() => {
     if (!playerRef.current) return;
+    // Dar al play es "sigue sonando": si quedaba el freno de un trozo suelto,
+    // lo soltamos o pararía de nuevo al llegar a su final.
+    stopRangeRef.current = null;
+    holdActiveRef.current = false;
     if (playerRef.current.getPlayerState() === YT_STATE.PLAYING) {
       playerRef.current.pauseVideo();
     } else if (finished) {
@@ -193,6 +506,7 @@ export default function LessonView({
       awaitingNextRef.current = null;
       setAwaitingNext(null);
       resumeTargetRef.current = null;
+      stopRangeRef.current = null;
       setFinished(false);
       setLoopId((current) => {
         if (current === id) return null;
@@ -213,6 +527,13 @@ export default function LessonView({
     (word: string, meaning: string, sentence: Sentence) => {
       const key = word.toLowerCase();
       const alreadySaved = words.some((w) => w.word.toLowerCase() === key);
+
+      // Si quitamos la palabra que se estaba ajustando, el panel sobra.
+      if (alreadySaved) {
+        setTuning((current) =>
+          current && current.word.toLowerCase() === key ? null : current,
+        );
+      }
 
       // Actualización optimista: la UI responde al instante.
       setWords((current) =>
@@ -339,6 +660,24 @@ export default function LessonView({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+      {tuning && (
+        <WordTuner
+          word={tuning.word}
+          range={tuning.range}
+          tuned={tuning.tuned}
+          fromOthers={tuning.fromOthers}
+          confirmed={tuning.confirmed}
+          onChange={tuneWord}
+          onToggleConfirmed={toggleWordConfirmed}
+          onReset={resetWordTiming}
+          onPlay={() => {
+            const sentence = sentenceById.get(tuning.sentenceId);
+            if (sentence) playRange(sentence, tuning.range);
+          }}
+          onClose={() => setTuning(null)}
+        />
+      )}
+
       {selection && (
         <SelectionPopover
           selection={selection}
@@ -372,6 +711,9 @@ export default function LessonView({
           onRequestPlay={togglePlay}
           onStateChange={(state) => {
             setPlaying(state === YT_STATE.PLAYING);
+
+            // Vuelve a sonar: el resaltado deja de estar congelado.
+            if (state === YT_STATE.PLAYING) holdActiveRef.current = false;
 
             // Ya arrancó: soltamos el freno. Si YouTube ignoró nuestro salto
             // (a veces pasa con el video sin empezar), lo repetimos.
@@ -525,20 +867,51 @@ export default function LessonView({
 
         <div className="rounded-xl border border-neutral-200 p-4 dark:border-neutral-800">
           <h2 className="text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
-            Palabras guardadas ({words.length})
+            Palabras de esta parte ({lessonWords.length})
           </h2>
 
-          {words.length > 0 ? (
+          {lessonWords.length > 0 ? (
             <ul className="mt-2 flex flex-wrap gap-1.5">
-              {words.map((w) => (
-                <li
-                  key={w.word.toLowerCase()}
-                  title={w.meaning || "Sin significado guardado"}
-                  className="rounded-full bg-amber-100 px-2.5 py-1 text-sm dark:bg-amber-500/20"
-                >
-                  {w.word}
-                </li>
-              ))}
+              {lessonWords.map((w) => {
+                // Sin la frase (palabras viejas) el chip no lleva a ningún sitio.
+                const playable = sentenceById.has(w.sentenceId);
+                // El ✓ solo sale si alguien le dio el visto bueno a mano.
+                const confirmed =
+                  timings[timingKey(w.sentenceId, w.word)]?.confirmed ?? false;
+                return (
+                  <li key={w.word.toLowerCase()}>
+                    <button
+                      type="button"
+                      disabled={!playable}
+                      onClick={() => playWord(w.word, w.sentenceId)}
+                      title={[
+                        playable ? "Escucharla" : null,
+                        confirmed ? "audio comprobado" : null,
+                        w.meaning || "sin significado guardado",
+                      ]
+                        .filter(Boolean)
+                        .join(" · ")}
+                      className={[
+                        "rounded-full px-2.5 py-1 text-sm transition-colors disabled:cursor-default",
+                        tuning?.word.toLowerCase() === w.word.toLowerCase()
+                          ? "bg-amber-300 dark:bg-amber-500/50"
+                          : "bg-amber-100 enabled:hover:bg-amber-200 dark:bg-amber-500/20 dark:enabled:hover:bg-amber-500/30",
+                      ].join(" ")}
+                    >
+                      {playable && <span className="mr-1 text-xs">▶</span>}
+                      {w.word}
+                      {confirmed && (
+                        <span
+                          aria-label="audio comprobado"
+                          className="ml-1 text-xs text-emerald-700 dark:text-emerald-400"
+                        >
+                          ✓
+                        </span>
+                      )}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           ) : (
             <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
@@ -595,6 +968,7 @@ export default function LessonView({
           autoScroll={autoScroll}
           savedWords={savedWords}
           onSelect={goToSentence}
+          onPlayWord={playWord}
           onToggleLoop={toggleLoop}
           onSaveWord={saveWord}
           onSelectText={setSelection}
