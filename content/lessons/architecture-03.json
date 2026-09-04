@@ -1,0 +1,339 @@
+{
+  "id": "architecture-03",
+  "youtubeId": "SNVuEZz3bLo",
+  "title": "Por qué dibujamos diagramas",
+  "level": "B1",
+  "description": "No se dibuja para presumir, se dibuja para entenderse. Con el ejemplo de encargar una casa sin planos. 6:39 – 9:24.",
+  "transcript": "data-architecture.txt",
+  "startAt": 399,
+  "endAt": 564,
+  "annotations": [
+    {
+      "start": 399,
+      "es": "Ahora me gustaría repasar un poco la mentalidad. Claro, la pregunta es:",
+      "note": "\"I would like to\" es la forma educada de \"I want to\". En una presentación o en el trabajo siempre se dice así.",
+      "vocab": [
+        { "word": "I would like to", "meaning": "me gustaría" },
+        { "word": "mindset", "meaning": "mentalidad, forma de pensar" }
+      ]
+    },
+    {
+      "start": 404,
+      "es": "¿por qué dibujamos esas arquitecturas, no? Dibujamos esas cosas no para presumir.",
+      "note": "\"to show off\" es «presumir, fardar». Verbo con partícula: sin el \"off\" sería solo «enseñar».",
+      "vocab": [
+        { "word": "to show off", "meaning": "presumir, fardar" }
+      ]
+    },
+    {
+      "start": 408,
+      "es": "No estamos intentando aquí, eh, enseñarle a la empresa: yo soy... yo sé dibujarte cuatro cosas.",
+      "watch": "Dos fallos de directo juntos: \"we are not trying TO HERE to show\" (le sobra el primer \"to\": sería \"we are not trying here to show\"), y \"I am— I can draw you\", donde empieza una frase y salta a otra sin terminarla.",
+      "tip": "Cuando alguien se corta a mitad de frase, no busques el sentido a lo que dejó a medias: quédate solo con la versión que sí termina."
+    },
+    {
+      "start": 413,
+      "es": "Usamos los dibujos para que se entienda.",
+      "note": "\"in order to\" es «para, con el fin de». Es la versión formal del \"to\" de finalidad, y él la usa todo el rato.",
+      "vocab": [
+        { "word": "in order to", "meaning": "para, con el fin de" },
+        { "word": "visual", "meaning": "dibujo, apoyo visual" }
+      ]
+    },
+    {
+      "start": 417,
+      "es": "Es como un analista de datos, ¿no? Si un analista de datos quiere explicar la historia que hay detrás de los datos, hace dibujos.",
+      "note": "\"the story behind the data\" — muy buena expresión: lo que cuentan los datos si sabes mirarlos.",
+      "watch": "Dice \"a data analyst want\": le falta la -s. En he/she/it el verbo lleva -s: he wants.",
+      "vocab": [
+        { "word": "behind", "meaning": "detrás de" },
+        { "word": "story", "meaning": "historia, relato" }
+      ]
+    },
+    {
+      "start": 423,
+      "es": "Usan visualizaciones de datos, ¿no? Hacen esos gráficos, hacen datos agregados y hacen gráficos de barras y todo eso,",
+      "vocab": [
+        { "word": "chart", "meaning": "gráfico" },
+        { "word": "bar chart", "meaning": "gráfico de barras" },
+        { "word": "aggregated data", "meaning": "datos agregados, resumidos" }
+      ]
+    },
+    {
+      "start": 432,
+      "es": "porque quieren usar los dibujos para explicarlo. Es lo mismo.",
+      "note": "\"It is the same thing\" — «es lo mismo». Ojo: \"same\" siempre va con \"the\" delante."
+    },
+    {
+      "start": 436,
+      "es": "Dibujamos esos diagramas para nosotros, para explicar algo con imágenes.",
+      "vocab": [
+        { "word": "diagram", "meaning": "diagrama, esquema" },
+        { "word": "through", "meaning": "a través de, por medio de" }
+      ]
+    },
+    {
+      "start": 442,
+      "es": "Nos va a ayudar a entender qué estamos pensando construir.",
+      "note": "\"to help us to understand\" — con \"help\" el \"to\" es opcional: help me understand o help me to understand. Las dos valen.",
+      "vocab": [
+        { "word": "to plan to", "meaning": "tener pensado, planear" },
+        { "word": "to build", "meaning": "construir (build → built → built)" }
+      ]
+    },
+    {
+      "start": 446,
+      "es": "Porque piénsalo: si quieres construir una casa y no tienes ningún plano, no tienes ningún dibujo.",
+      "note": "\"think about it\" es «piénsalo». En inglés se piensa \"about\" algo, no se piensa algo a secas.",
+      "watch": "No se dice \"think it\". Es \"think about it\".",
+      "vocab": [
+        { "word": "to think about", "meaning": "pensar en" },
+        { "word": "plan", "meaning": "plano, plan" }
+      ]
+    },
+    {
+      "start": 452,
+      "es": "Te sientas con alguien y te dice: vale, confía en mí, te voy a hacer cuatro habitaciones. Te voy a hacer una cocina.",
+      "note": "\"trust me\" es «confía en mí, fíate de mí». Sin preposición: trust me, no \"trust in me\".",
+      "vocab": [
+        { "word": "trust me", "meaning": "confía en mí, fíate" },
+        { "word": "room", "meaning": "habitación, cuarto" }
+      ]
+    },
+    {
+      "start": 459,
+      "es": "O sea, imagínatelo conmigo. La cocina va a estar a la izquierda, ¿no? Y el tío hablándote de tu casa sin un dibujo, ¿no? Sin nada visual.",
+      "tip": "Este ejemplo de la casa es el corazón de la parte 3: encargar algo grande sin planos acaba mal. Vale igual para los datos.",
+      "watch": "\"The kitchen going to be left\" se come dos cosas: el verbo y la preposición. En inglés correcto sería \"The kitchen IS going to be ON THE left\". Aquí se le entiende por el contexto, pero escrito no vale.",
+      "vocab": [
+        { "word": "kitchen", "meaning": "cocina" },
+        { "word": "on the left", "meaning": "a la izquierda (así se dice bien)" }
+      ]
+    },
+    {
+      "start": 467,
+      "es": "Así que tú te vas a poner a imaginarte algo en tu cabeza, y él se va a imaginar algo en tu cabeza [quiere decir: en la suya],",
+      "note": "\"in your head\" — en inglés las cosas se imaginan «en la cabeza», no «en la mente».",
+      "watch": "Dos resbalones seguidos: \"HE GOING to imagine\" se come el verbo (sería \"he IS going to\"), y dice \"in YOUR head\" cuando quería decir \"in HIS head\" — si no, la frase no tiene sentido. Va rápido y se le cruzan los posesivos.",
+      "vocab": [
+        { "word": "to imagine", "meaning": "imaginarse" },
+        { "word": "in your head", "meaning": "en tu cabeza" }
+      ]
+    },
+    {
+      "start": 472,
+      "es": "y al final vas a acabar con algo que no cum... que a lo mejor no es lo que esperabas.",
+      "note": "\"to meet your expectations\" es «estar a la altura de lo que esperabas». Se dice igual en una tienda que en el trabajo.",
+      "watch": "Frase rota: \"something that is not meet— maybe meeting your expectations\". Arranca con «que no cumple», se corta y reformula con «a lo mejor», pero se deja el \"not\" por el camino. Lo que quiere decir es \"something that is maybe not meeting your expectations\".",
+      "vocab": [
+        { "word": "at the end", "meaning": "al final" },
+        { "word": "to meet expectations", "meaning": "cumplir las expectativas" }
+      ]
+    },
+    {
+      "start": 477,
+      "es": "Por eso, antes de construir nada, tenemos que dibujar, tenemos que hacer esos diagramas, para comunicarle el plan a todo el mundo.",
+      "note": "\"before we build anything\" — con \"before\" el verbo va en presente aunque hables del futuro.",
+      "vocab": [
+        { "word": "before", "meaning": "antes de" },
+        { "word": "to communicate", "meaning": "comunicar, transmitir" }
+      ]
+    },
+    {
+      "start": 485,
+      "es": "Primero de todo, para ti mismo. Si quieres, por ejemplo, hacer un plan, a lo mejor escribes un documento largo sobre eso,",
+      "note": "\"first of all\" es «lo primero de todo». Sirve para empezar una lista de razones.",
+      "watch": "Dice \"a big documents\": o \"a big document\" o \"big documents\". El \"a\" no puede ir con plural.",
+      "vocab": [
+        { "word": "first of all", "meaning": "primero de todo, lo primero" },
+        { "word": "yourself", "meaning": "tú mismo" }
+      ]
+    },
+    {
+      "start": 492,
+      "es": "pero para poder entender ese documento tienes que, digamos, dibujar los apoyos visuales, dibujar los diagramas,",
+      "tip": "Fíjate en cómo se corrige a media frase: empieza \"but you have to...\", se para y vuelve a empezar. Es normal al hablar."
+    },
+    {
+      "start": 498,
+      "es": "para que te ayude a entender cuál es tu plan. Y también ayuda a los demás.",
+      "watch": "Dice \"And is as well helping others\": le falta el sujeto. Sería \"And it is as well helping others\".",
+      "vocab": [
+        { "word": "others", "meaning": "los demás, otros" }
+      ]
+    },
+    {
+      "start": 503,
+      "es": "Por ejemplo, si te reúnes con jefes, con las partes interesadas, o digamos con gente no técnica, quieres enseñarles el plan.",
+      "note": "\"stakeholder\" es todo el que tiene algo que ganar o perder con el proyecto: clientes, jefes, otros equipos. No hay traducción corta.",
+      "vocab": [
+        { "word": "stakeholder", "meaning": "parte interesada, implicado" },
+        { "word": "non-technical", "meaning": "no técnico" },
+        { "word": "to meet", "meaning": "reunirse con, quedar con" }
+      ]
+    },
+    {
+      "start": 510,
+      "es": "Eso, no puedes solo explicarlo, quieres enseñarles los dibujos.",
+      "tip": "\"you cannot just explain\" — ese \"just\" es «solo, únicamente». Muy distinto del \"just\" de «acabar de»."
+    },
+    {
+      "start": 514,
+      "es": "Y también va a ayudar a todo el mundo, digamos, a los desarrolladores, o digamos a los ingenieros de datos y demás.",
+      "vocab": [
+        { "word": "developer", "meaning": "desarrollador, programador" },
+        { "word": "data engineer", "meaning": "ingeniero de datos" }
+      ]
+    },
+    {
+      "start": 519,
+      "es": "Les va a ayudar a entender qué es... de qué estás hablando.",
+      "watch": "\"to understand what is— what are you talking about\": se corta y, al reformular, deja la pregunta con la vuelta puesta. Dentro de una frase afirmativa no se invierte: sería \"to understand what you are talking about\". Es el fallo más repetido del video (lo hace también en 6:18 y 6:33).",
+      "vocab": [
+        { "word": "to talk about", "meaning": "hablar de" }
+      ]
+    },
+    {
+      "start": 522,
+      "es": "Así que los dibujos son solo una herramienta para comunicarle tu plan a los demás. Por eso dibujamos esos diagramas.",
+      "tip": "Esta frase resume el video entero. Si te quedas con una, que sea esta."
+    },
+    {
+      "start": 529,
+      "es": "Y no hay reglas sobre cómo hacerlo. Puedes hacerlo con cajas, puedes hacerlo de izquierda a derecha, de arriba abajo.",
+      "note": "\"there are no rules\" — con \"no\" delante del sustantivo ya va negado, no hace falta \"not\".",
+      "vocab": [
+        { "word": "rule", "meaning": "regla, norma" },
+        { "word": "from left to right", "meaning": "de izquierda a derecha" }
+      ]
+    },
+    {
+      "start": 537,
+      "es": "Puedes hacerlo como quieras. No hay, digamos, estándares de cómo dibujar esas cosas.",
+      "note": "\"the way that you want\" es «como tú quieras». \"way\" es la manera, no el camino.",
+      "vocab": [
+        { "word": "the way you want", "meaning": "como tú quieras" },
+        { "word": "standard", "meaning": "estándar, norma establecida" }
+      ]
+    },
+    {
+      "start": 542,
+      "es": "Es solo un instrumento para comunicar tu plan.",
+      "watch": "Dice \"It is just instrument\": le falta el artículo. Sería \"It is just AN instrument\"."
+    },
+    {
+      "start": 547,
+      "es": "Así que no hay bien ni mal. Pero no intentes dibujar solo herramientas, porque no le sirve a nadie.",
+      "note": "\"it is not helping anyone\" — con negación se usa \"anyone\", no \"no one\". Doble negación no vale en inglés.",
+      "vocab": [
+        { "word": "anyone", "meaning": "nadie / alguien (en negativas y preguntas)" }
+      ]
+    },
+    {
+      "start": 554,
+      "es": "Y yo diría que es solo una herramienta, y ya está, es solo una herramienta para comunicar tu plan.",
+      "tip": "\"that's it\" es «y ya está, nada más». Una de esas expresiones cortas que se oyen a todas horas.",
+      "vocab": [
+        { "word": "that's it", "meaning": "y ya está, eso es todo" }
+      ]
+    },
+    {
+      "start": 558,
+      "es": "Por eso va a ser nuestra herramienta principal para comunicar, eh, digamos, las cosas.",
+      "tip": "Aquí acaba el video. Fíjate en cuántas veces ha repetido \"in order to communicate\": es la idea que quería que te llevaras.",
+      "vocab": [
+        { "word": "main tool", "meaning": "herramienta principal" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Según él, ¿para qué se dibujan los diagramas?",
+      "options": [
+        "Para presumir delante de la empresa",
+        "Para comunicar el plan y que se entienda",
+        "Para cumplir una norma del sector"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Con qué compara el trabajo del arquitecto de datos?",
+      "options": [
+        "Con el vendedor de una tienda",
+        "Con un profesor de matemáticas",
+        "Con el analista que hace gráficos para contar los datos"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "En el ejemplo de la casa, ¿qué pasa si no hay planos?",
+      "options": [
+        "Cada uno se imagina una cosa y el resultado no es el esperado",
+        "La casa sale más barata",
+        "Se construye más rápido"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"to show off\" significa...",
+      "options": ["apagar", "enseñar el camino", "presumir, fardar"],
+      "answer": 2
+    },
+    {
+      "q": "\"in order to\" significa...",
+      "options": ["en orden", "por orden de", "para, con el fin de"],
+      "answer": 2
+    },
+    {
+      "q": "\"stakeholder\" es...",
+      "options": [
+        "el dueño de la empresa",
+        "el que sujeta el palo",
+        "alguien con algo que ganar o perder en el proyecto"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Dice \"he going to imagine something in your head\". ¿Qué dos cosas falla?",
+      "options": [
+        "Nada, está bien dicho",
+        "Le falta el verbo (\"he IS going to\") y dice \"your\" en vez de \"his\"",
+        "Sobra la palabra \"head\""
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"think about it\" — en inglés se piensa...",
+      "options": ["\"about\" algo", "algo, sin preposición", "\"in\" algo"],
+      "answer": 0
+    },
+    {
+      "q": "\"trust me\" se dice...",
+      "options": ["trust in me", "sin preposición", "trust on me"],
+      "answer": 1
+    },
+    {
+      "q": "\"that's it\" significa...",
+      "options": ["eso es", "y ya está, eso es todo", "está ahí"],
+      "answer": 1
+    },
+    {
+      "q": "Cuando alguien se corta a media frase y vuelve a empezar, ¿con qué te quedas?",
+      "options": [
+        "Con la versión que sí termina",
+        "Con la primera, que es la que pensó de verdad",
+        "Hay que juntar las dos"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuántas reglas dice que hay para dibujar un diagrama?",
+      "options": [
+        "Tres reglas fijas",
+        "Las que marca el estándar del sector",
+        "Ninguna, lo puedes hacer como quieras"
+      ],
+      "answer": 2
+    }
+  ]
+}

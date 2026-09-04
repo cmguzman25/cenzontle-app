@@ -1,0 +1,369 @@
+{
+  "id": "architecture-01",
+  "youtubeId": "SNVuEZz3bLo",
+  "title": "Los diagramas que solo venden herramientas",
+  "level": "B1",
+  "description": "Buscas «arquitectura de datos» en Google y te salen mil dibujos distintos. Casi todos son de fabricantes intentando venderte sus productos. 0:00 – 3:06.",
+  "transcript": "data-architecture.txt",
+  "startAt": 0,
+  "endAt": 186,
+  "annotations": [
+    {
+      "start": 0,
+      "es": "Muy bien. La cosa es que, si eres nuevo, si eres analista de datos o ingeniero, si eres estudiante, si todavía estás aprendiendo, y te pones",
+      "note": "\"All right\" al principio de una frase no es «todo bien»: es un «venga, vamos» para arrancar. Lo vas a oír muchísimo en este video.",
+      "tip": "Fíjate en «if you are..., if you are...»: va enumerando a quién le habla. Repetir la misma estructura es su forma de hacer lista.",
+      "watch": "ESTO ES UN DIRECTO y el ponente no es nativo. Vas a oír muletillas (yeah, like, uh, let's say), frases que empieza y corta a medias (marcadas con —) y fallos de gramática. Todo eso está en el texto tal cual lo dice, porque es lo que vas a oír. Cada vez que algo no sea inglés correcto te lo aviso en esta casilla: fíjate, pero no lo copies. Aquí mismo ya pasa: dice \"if you are data analyst\" y \"you are student\", sin artículo. En inglés las profesiones SIEMPRE lo llevan: \"a data analyst\", \"a student\". Es el fallo más típico de quien tiene una lengua materna que no usa artículos ahí.",
+      "vocab": [
+        { "word": "all right", "meaning": "muy bien, venga (para empezar a hablar)" },
+        { "word": "still learning", "meaning": "todavía aprendiendo" }
+      ]
+    },
+    {
+      "start": 6,
+      "es": "a buscar sobre las arquitecturas y los distintos tipos y demás, te puedes liar muy, muy rápido, amigos,",
+      "note": "\"stuff\" es la palabra comodín del inglés hablado: «cosas, movidas». Aquí sale unas veinte veces.",
+      "tip": "\"the architect— architectures\": empieza una palabra, se da cuenta y la cambia. Eso es un arranque en falso, y en un directo pasa cada dos por tres. La raya (—) te marca dónde se corta.",
+      "watch": "\"you start LIKE searching\" — ese \"like\" es una muletilla de relleno, no significa nada y en inglés correcto no va ahí. Es el «tipo» o el «o sea» del español hablado.",
+      "vocab": [
+        { "word": "to get confused", "meaning": "liarse, hacerse un lío" },
+        { "word": "and stuff", "meaning": "y demás, y cosas así" }
+      ]
+    },
+    {
+      "start": 13,
+      "es": "porque hay muchísimos tipos distintos, muchísimos diagramas distintos sobre cómo dibuja la gente las arquitecturas,",
+      "note": "\"a lot of\" + plural = «muchos». Repetirlo («a lot of different types, a lot of different diagrams») es una forma muy hablada de insistir.",
+      "vocab": [
+        { "word": "a lot of", "meaning": "muchos, un montón de" },
+        { "word": "to draw", "meaning": "dibujar (draw → drew → drawn)" }
+      ]
+    },
+    {
+      "start": 19,
+      "es": "y hay mucha, digamos, confusión sobre qué es realmente la arquitectura de datos.",
+      "note": "\"let's say\" es su muletilla favorita: «digamos», «por así decirlo». Sirve para suavizar lo que viene detrás.",
+      "vocab": [
+        { "word": "let's say", "meaning": "digamos, por así decirlo" },
+        { "word": "misunderstanding", "meaning": "malentendido, confusión" }
+      ]
+    },
+    {
+      "start": 24,
+      "es": "Porque si buscas en Google y te vas a imágenes, y... y buscas, no sé, «arquitectura de Azure» o «arquitectura de datos», te vas a encontrar dibujos distintos,",
+      "note": "\"to Google\" — la marca convertida en verbo, igual que en español «googlear».",
+      "tip": "\"I don't know\" metido en medio de la frase no es «no lo sé»: es «yo qué sé», para dar un ejemplo cualquiera.",
+      "watch": "\"and— and you search\": repite la palabra mientras piensa lo que viene. Es ganar tiempo hablando, no un error de gramática. Muy típico del directo.",
+      "vocab": [
+        { "word": "to Google", "meaning": "buscar en Google" },
+        { "word": "to search for", "meaning": "buscar (algo concreto)" }
+      ]
+    },
+    {
+      "start": 32,
+      "es": "y... y quiero que aquí seas consciente de qué es realmente la arquitectura de datos.",
+      "note": "\"awareness\" es «conciencia» en el sentido de darse cuenta de algo. \"to bring awareness\" = «hacer ver, concienciar».",
+      "tip": "Otra vez el arranque en falso: \"and I— I want you\". No pasa nada, es cómo habla la gente cuando no lee un guion.",
+      "vocab": [
+        { "word": "awareness", "meaning": "conciencia, el darse cuenta de algo" },
+        { "word": "really", "meaning": "realmente, de verdad" }
+      ]
+    },
+    {
+      "start": 37,
+      "es": "Aquí tenemos una imagen cualquiera, digamos, que parece una arquitectura de datos de Azure, de Microsoft.",
+      "note": "\"looks like\" = «parece, tiene pinta de». Con \"like\" delante de un sustantivo: it looks like a house.",
+      "vocab": [
+        { "word": "random", "meaning": "cualquiera, al azar" },
+        { "word": "to look like", "meaning": "parecerse a, tener pinta de" }
+      ]
+    },
+    {
+      "start": 44,
+      "es": "Pero amigos, esto no es una arquitectura de datos. Sí, aquí tenemos, eso, fuentes a la izquierda,",
+      "tip": "\"my friends\" es su coletilla para dirigirse al público, como «amigos» o «gente». La suelta cada pocas frases.",
+      "vocab": [
+        { "word": "source", "meaning": "fuente (de datos)" },
+        { "word": "on the left side", "meaning": "en el lado izquierdo" }
+      ]
+    },
+    {
+      "start": 49,
+      "es": "tenemos pipelines, tenemos almacenamiento, tenemos eventos en streaming, consumidores y cosas así. Esto no es una arquitectura de datos.",
+      "vocab": [
+        { "word": "storage", "meaning": "almacenamiento" },
+        { "word": "consumer", "meaning": "consumidor (quien usa los datos)" }
+      ]
+    },
+    {
+      "start": 57,
+      "es": "Si dibujas algo así en una empresa, te lo van a tirar a la cara,",
+      "note": "\"to throw something at someone's face\" — tal cual: tirárselo a la cara. Es una exageración, no pasa de verdad.",
+      "tip": "Ojo a \"throw it AT your face\": con \"at\" hay puntería, va dirigido a ti. Con \"to\" sería un pase amistoso.",
+      "vocab": [
+        { "word": "to throw", "meaning": "tirar, lanzar (throw → threw → thrown)" }
+      ]
+    },
+    {
+      "start": 61,
+      "es": "porque amigos, esto no es algo que vaya a explicar nada a la empresa. Esto es solo una arquitectura de fabricante.",
+      "note": "\"vendor\" es el fabricante o proveedor que te vende el producto: Microsoft, Databricks, etc. Es la palabra clave de toda esta parte.",
+      "vocab": [
+        { "word": "vendor", "meaning": "fabricante, proveedor (el que te vende)" },
+        { "word": "only", "meaning": "solo, nada más que" }
+      ]
+    },
+    {
+      "start": 68,
+      "es": "Esto es un fabricante intentando venderte su producto, a ti y a las empresas.",
+      "note": "\"trying to sell\" — después de \"try\" el verbo va con -ing o con to: try to sell, try selling. Aquí es to + infinitivo.",
+      "vocab": [
+        { "word": "to try to", "meaning": "intentar" },
+        { "word": "product", "meaning": "producto" }
+      ]
+    },
+    {
+      "start": 73,
+      "es": "Así que aquí Microsoft te está explicando: usa mis herramientas para hacer todo eso.",
+      "watch": "Dice \"explaining FOR you\". Lo correcto es \"explaining TO you\". Es un fallo suyo: fíjate pero no lo copies.",
+      "vocab": [
+        { "word": "tool", "meaning": "herramienta" },
+        { "word": "to explain to someone", "meaning": "explicarle a alguien" }
+      ]
+    },
+    {
+      "start": 77,
+      "es": "Así que si alguien te pide, eh, dibújanos una arquitectura de datos, y dibujas esto, esto... pues esto está mal, ¿vale?",
+      "note": "\"if someone asks you\" — detrás de \"if\" va presente, nunca \"will\". Es la condicional de lo que puede pasar.",
+      "tip": "\"of course\" aquí no es «por supuesto» de acuerdo: es «claramente, evidentemente».",
+      "watch": "Aquí se le juntan dos cosas del directo: el \"uh\" de relleno y el \"this, this—\" repetido. Ninguna de las dos se escribe en inglés cuidado.",
+      "vocab": [
+        { "word": "to ask someone to", "meaning": "pedirle a alguien que" },
+        { "word": "wrong", "meaning": "mal, equivocado" }
+      ]
+    },
+    {
+      "start": 85,
+      "es": "O sea, esto no es una arquitectura de datos, esto es solo una arquitectura de fabricante."
+    },
+    {
+      "start": 88,
+      "es": "Vamos a pasar a la siguiente. Lo mismo aquí. A lo mejor ves este dibujo y dices: guau, esto es perfecto. Mira esto.",
+      "note": "\"let's move to\" es «pasemos a». Con \"let's\" propone hacer algo juntos.",
+      "vocab": [
+        { "word": "let's move to", "meaning": "pasemos a, vamos a" },
+        { "word": "might", "meaning": "puede que, a lo mejor" }
+      ]
+    },
+    {
+      "start": 94,
+      "es": "Tenemos bronce, plata, oro. Tenemos Delta Lake. Tenemos, yo qué sé, Unity Catalog, Power BI, Fabric. Perfecto.",
+      "tip": "«bronze, silver, gold» son los nombres de las tres capas de datos: cruda, limpia y lista para usar. Salen otra vez en la parte 2.",
+      "vocab": [
+        { "word": "bronze, silver, gold", "meaning": "bronce, plata, oro (las tres capas de datos)" }
+      ]
+    },
+    {
+      "start": 101,
+      "es": "Si voy a ser arquitecto de datos, voy a dibujar esta, ¿verdad? Esta es la que prefiero para llegar a arquitecto de datos. Otra vez, esto está mal.",
+      "watch": "Dice \"becoming data architecture\" dos veces, pero quiere decir \"becoming A DATA ARCHITECT\". Confunde la cosa con la persona: architecture es la arquitectura (el diseño), architect es quien la hace. Y otra vez sin el artículo \"a\".",
+      "tip": "Fíjate en la pareja: architect / architecture funciona igual que en español arquitecto / arquitectura. Lo mismo con engineer / engineering y analyst / analytics.",
+      "vocab": [
+        { "word": "architect", "meaning": "arquitecto (la persona)" },
+        { "word": "architecture", "meaning": "arquitectura (el diseño)" }
+      ]
+    },
+    {
+      "start": 109,
+      "es": "Esto no es una arquitectura de datos, amigos. Esto es, otra vez, arquitectura de fabricante."
+    },
+    {
+      "start": 113,
+      "es": "En cuanto empiezas a ver un montón de, digamos, ehm, iconos de plataformas y herramientas, entonces esto... esto no es una arquitectura de datos.",
+      "note": "\"once\" al principio de la frase es «en cuanto, una vez que»: Once you see it, you'll understand.",
+      "tip": "Esta es la regla práctica de todo el video: muchos logos = anuncio, no arquitectura.",
+      "watch": "Frase de directo de manual: \"let's say\" + \"um\" + \"yeah\" + \"this is— this is\" repetido. Cuatro rellenos seguidos. La frase útil de verdad es solo «Once you start seeing a lot of icons, this is not a data architecture».",
+      "vocab": [
+        { "word": "once", "meaning": "en cuanto, una vez que" },
+        { "word": "icon", "meaning": "icono, logo" }
+      ]
+    },
+    {
+      "start": 123,
+      "es": "Esto es alguien intentando vender plataformas, intentando vender herramientas."
+    },
+    {
+      "start": 127,
+      "es": "Por cierto, he visto a muchísima gente en empresas, que... sí, que dicen: sí, soy arquitecto, y se ponen a dibujar cosas y les sale este dibujo.",
+      "note": "\"by the way\" es «por cierto»: mete un comentario que no venía a cuento.",
+      "tip": "\"to come up with\" es «sacarse algo de la manga, dar con algo». Muy usado: come up with an idea, come up with a name.",
+      "watch": "\"they— yeah, they say, yeah\": arranca, mete un \"yeah\", vuelve a arrancar y suelta otro \"yeah\". Su \"yeah\" no es «sí» de responder, es puro relleno, como el «eh» o el «pues» en español.",
+      "vocab": [
+        { "word": "by the way", "meaning": "por cierto" },
+        { "word": "to come up with", "meaning": "sacarse algo, dar con algo" }
+      ]
+    },
+    {
+      "start": 135,
+      "es": "Sí, esto es malísimo. O sea, esto no es algo que debas, digamos, entregar como solución a una empresa.",
+      "vocab": [
+        { "word": "really bad", "meaning": "malísimo, muy malo" },
+        { "word": "solution", "meaning": "solución" }
+      ]
+    },
+    {
+      "start": 141,
+      "es": "Entonces solo estás, eh, intentando venderle herramientas a la empresa. Esto está mal."
+    },
+    {
+      "start": 145,
+      "es": "Ahora vamos con Databricks. Aquí ves lo mismo, Databricks tiene un montón de imágenes y dicen: sí, esto es una arquitectura y tal.",
+      "tip": "\"as well\" es «también», y se pone al final o en medio. Él lo usa constantemente en vez de \"too\".",
+      "vocab": [
+        { "word": "as well", "meaning": "también" }
+      ]
+    },
+    {
+      "start": 154,
+      "es": "Pues otra vez, esto es cosa del fabricante. Yo diría que, en cuanto ves un montón de iconos y logos, eso, Power BI, Event Hubs y bla, bla, bla, esto es una arquitectura de fabricante.",
+      "note": "\"blah, blah, blah\" existe igual en inglés y significa lo mismo: «y bla, bla, bla», lo que sigue da igual.",
+      "vocab": [
+        { "word": "logo", "meaning": "logo, logotipo" }
+      ]
+    },
+    {
+      "start": 163,
+      "es": "Esto no es una arquitectura de datos. Y esta es la peor. Esta es de las peores que he visto en Google.",
+      "note": "\"the worst\" es el superlativo de \"bad\": bad → worse → the worst. Irregular, hay que aprendérselo.",
+      "watch": "\"one of the worst\" lleva plural detrás cuando hay sustantivo: one of the worst diagrams.",
+      "vocab": [
+        { "word": "the worst", "meaning": "el peor, lo peor" },
+        { "word": "one of the", "meaning": "uno de los" }
+      ]
+    },
+    {
+      "start": 168,
+      "es": "Aquí hay otro que dice que esto es arquitectura de datos. Aquí ves cajas puestas al azar y herramientas sueltas que van soltando por ahí, y dicen que esto es una arquitectura de datos.",
+      "vocab": [
+        { "word": "box", "meaning": "caja, recuadro" },
+        { "word": "to throw around", "meaning": "soltar por ahí, poner sin orden" }
+      ]
+    },
+    {
+      "start": 177,
+      "es": "Esto no tiene ningún sentido. Claro que puedes añadir iconos y logos y demás,",
+      "note": "\"This makes no sense\" es «esto no tiene sentido». Ojo: el sentido en inglés se «hace» (make sense), no se «tiene».",
+      "watch": "No se dice \"this has no sense\". Es \"this makes no sense\" o \"this doesn't make sense\".",
+      "vocab": [
+        { "word": "to make sense", "meaning": "tener sentido" },
+        { "word": "to add", "meaning": "añadir" }
+      ]
+    },
+    {
+      "start": 182,
+      "es": "pero no puedes llamar a esto arquitectura de datos. Sí, te lo van a tirar a la cara.",
+      "tip": "Aquí acaba la parte 1. En la parte 2 empieza a enseñar dibujos que sí se acercan a lo que él considera correcto.",
+      "vocab": [
+        { "word": "to call something", "meaning": "llamar a algo (de una manera)" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Según él, ¿qué es lo que casi siempre encuentras si buscas «data architecture» en Google?",
+      "options": [
+        "Arquitecturas correctas y bien explicadas",
+        "Arquitecturas de fabricante, hechas para vender herramientas",
+        "Diagramas hechos por estudiantes"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"vendor\" significa...",
+      "options": ["fabricante, proveedor", "vendedor de la tienda", "cliente"],
+      "answer": 0
+    },
+    {
+      "q": "¿Cuál es su regla práctica para detectar un mal diagrama?",
+      "options": [
+        "Que tenga demasiadas flechas",
+        "Que sea en blanco y negro",
+        "Que esté lleno de iconos y logos de herramientas"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"They're going to throw it at your face\" significa...",
+      "options": [
+        "te lo van a explicar en persona",
+        "te lo van a tirar a la cara",
+        "te lo van a devolver por correo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"and stuff\" al final de una frase significa...",
+      "options": ["y ya está", "y nada más", "y demás, y cosas así"],
+      "answer": 2
+    },
+    {
+      "q": "\"let's say\" en mitad de una frase es...",
+      "options": [
+        "una orden: digamos esto en voz alta",
+        "una pregunta",
+        "una muletilla: digamos, por así decirlo"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Oyes \"then this is— this is not a data architecture\". ¿Qué ha pasado?",
+      "options": [
+        "Ha arrancado, se ha cortado y ha vuelto a empezar: normal hablando en directo",
+        "Está diciendo dos cosas distintas",
+        "Es un fallo de la transcripción"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Dice \"if you are data analyst\". ¿Qué le falta?",
+      "options": [
+        "Nada, está bien dicho",
+        "El artículo: \"if you are A data analyst\"",
+        "El verbo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "¿Cuál es la diferencia entre \"architect\" y \"architecture\"?",
+      "options": [
+        "son lo mismo",
+        "architect es el diseño, architecture es la persona",
+        "architect es la persona, architecture es el diseño"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"This makes no sense\" — la forma correcta en inglés es...",
+      "options": [
+        "make sense (el sentido se \"hace\")",
+        "have sense (el sentido se \"tiene\")",
+        "take sense"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"to come up with an idea\" significa...",
+      "options": [
+        "subir con una idea",
+        "estar de acuerdo con una idea",
+        "sacarse una idea, dar con una idea"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"the worst\" es el superlativo de...",
+      "options": ["good", "bad", "big"],
+      "answer": 1
+    }
+  ]
+}

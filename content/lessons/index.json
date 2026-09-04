@@ -130,5 +130,38 @@
     "order": 2,
     "categories": ["Cuentos", "Inglés americano", "Valores", "Animales"],
     "description": "Nikolai salva a una panda y a su cría en plena tormenta, y descubre que sus tres preguntas ya estaban respondidas. 4:45 – 8:52."
+  },
+  {
+    "id": "architecture-01",
+    "title": "Los diagramas que solo venden herramientas",
+    "level": "B1",
+    "youtubeId": "SNVuEZz3bLo",
+    "seriesId": "data-architecture",
+    "seriesTitle": "Data Architecture: Vendor Diagrams vs the Real One",
+    "order": 1,
+    "categories": ["Tecnología", "Datos", "Charlas", "Trabajo"],
+    "description": "Buscas «arquitectura de datos» en Google y te salen mil dibujos distintos. Casi todos son de fabricantes intentando venderte sus productos. 0:00 – 3:06."
+  },
+  {
+    "id": "architecture-02",
+    "title": "Los que sí se acercan",
+    "level": "B2",
+    "youtubeId": "SNVuEZz3bLo",
+    "seriesId": "data-architecture",
+    "seriesTitle": "Data Architecture: Vendor Diagrams vs the Real One",
+    "order": 2,
+    "categories": ["Tecnología", "Datos", "Charlas", "Trabajo"],
+    "description": "Ahora enseña diagramas que sí valen: sin logos, con el flujo de los datos y con las capas explicadas. Y su propio dibujo del almacén SQL. 3:06 – 6:39."
+  },
+  {
+    "id": "architecture-03",
+    "title": "Por qué dibujamos diagramas",
+    "level": "B1",
+    "youtubeId": "SNVuEZz3bLo",
+    "seriesId": "data-architecture",
+    "seriesTitle": "Data Architecture: Vendor Diagrams vs the Real One",
+    "order": 3,
+    "categories": ["Tecnología", "Datos", "Charlas", "Trabajo"],
+    "description": "No se dibuja para presumir, se dibuja para entenderse. Con el ejemplo de encargar una casa sin planos. 6:39 – 9:24."
   }
 ]

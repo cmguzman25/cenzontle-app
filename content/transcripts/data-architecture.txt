@@ -1,0 +1,91 @@
+0:00 All right. So now the thing is, if you are new, if you are data analyst or engineer, you are student, you are still learning, and you start
+0:06 like searching about the architect— architectures and the different types and stuff, you might get confused very, very fast, my friends,
+0:13 because there are a lot of different types, a lot of different diagrams on how people draw architectures,
+0:19 and there is a lot of, let's say, misunderstanding what is really data architecture.
+0:24 Because if you Google and go to images, and— and you search for, I don't know, Azure architecture or data architecture, you're going to find different pictures,
+0:32 and I— I want you here to have some awareness about what is really data architecture.
+0:37 Now here we have some random image, I'm going to say, that looks like data architecture from Azure, from Microsoft.
+0:44 But my friends, this is not a data architecture. Yes, we have here, yeah, sources on the left side,
+0:49 we have pipelines, we have storage, we have streaming events, consumers and stuff like that. This is not a data architecture.
+0:57 If you draw something like this at companies, they're going to throw it at your face,
+1:01 because my friends, this is not something that's, yeah, going to explain anything for the company. This is only a vendor architecture.
+1:08 This is a vendor trying to sell their product for you, for the companies.
+1:13 So here Microsoft is explaining for you: use my tools to do all those stuff.
+1:17 So if someone asks you, uh, draw for us a data architecture, and you draw this, this— then this is of course wrong, okay?
+1:25 So this is not a data architecture, this is just a vendor architecture.
+1:28 Now let's move to the next one. Same thing here. You might see this picture and say, wow, this is perfect. Look at this.
+1:34 We have bronze, silver, gold. We have Delta Lake. We have, I don't know, Unity Catalog, Power BI, Fabric. Perfect.
+1:41 If I am becoming data architecture, I'm going to draw this one, right? This is my preference to become data architecture. Again, this is wrong.
+1:49 This is not a data architecture, my friends. This is again vendor architecture.
+1:53 Once you start seeing a lot of, let's say, um, yeah, icons about platforms and tools, then this is— this is not a data architecture.
+2:03 This is something, someone trying to sell platforms, try to sell tools.
+2:07 By the way, I saw a lot, a lot of people at companies, they— yeah, they say, yeah, I am an architect, and they start drawing stuff and they come up with this picture.
+2:15 Yeah, this is really bad. So this is not something that you should, let's say, provide as a solution for companies.
+2:21 Then you are just, uh, trying to sell the company tools. This is bad.
+2:25 Now we come to the Databricks. You see here as well, Databricks have a lot of pictures and they say, yeah, this is an architecture and stuff like that.
+2:34 Well, again, this is a vendor thing. I'm going to say, once you see a lot of just icons, logos, yeah, Power BI, Event Hubs and blah, blah, blah, this is a vendor architecture.
+2:43 This is not a data architecture. And this is the worst. This is one of the worst that I've seen in Google.
+2:48 Someone as well is saying this is data architecture. You can see here just random boxes and random tools that they throw around, and they say this is a data architecture.
+2:57 This makes no sense. Of course you can add, yeah, icons and logos and stuff,
+3:02 but you cannot call this data architecture. Yeah, they're going to throw it at your face.
+3:06 Now we come here. This is something that we are— we going to say getting closer to become data architecture.
+3:14 So I'm going to say I like this one. Yeah, it is very high level, of course, but at least I know the flow of data.
+3:20 I know, all right, there is like data sources, they go to data storage. There is streaming processing.
+3:25 We are doing in between machine learning. We have analytical data store and analytical reporting. And we have to do orchestration.
+3:33 So you can see this image from Microsoft Azure. They don't have here any, let's say, logos. Yeah, they are not trying to sell their products.
+3:39 But at least I'm going to say I understand the flow of data.
+3:42 This is like a marketplace of tools. Like, I'm not understanding what is going on here.
+3:46 What happens in Spark? What happens? I don't know. Yeah, and dbt. And like, are we storing that? Like, it's very confusing.
+3:54 Yeah, that's why you cannot sell this as a data architecture. Yeah, this one is close and we get closer.
+3:59 Yeah, this as well, I like it, because it is as well listing out what are the different sources that we have in the company.
+4:07 We are here speaking about the ingestions. We are speaking about the processing. We have here data cleaning, data transformation,
+4:13 and then it says we have here three layers: the raw, clean and curated. And we have here data governance and stuff like that.
+4:18 Yeah. And how to consume it. My friends, this is closer, yeah, to data architecture.
+4:23 I just want to bring you the awareness that not everyone that go and throw at you some logos and boxes and say, now I have a data architecture from company,
+4:32 or you can go and take a reference architecture from Databricks or Azure and say, hey look, I know now how to do it in the company and we can do it like this, right?
+4:43 You are just another guy selling Microsoft products for a company. You are not selling any solution.
+4:48 This is not something that you can do, my friends. Of course, if you are discussing tools, yeah, in the companies is—
+4:53 and you are discussing what— which, yeah, which service we're going to use, which service and stuff, but this is something that a cloud architect going to do, not you, not a data architect.
+5:02 So again, I just want to bring this awareness for you, because I saw many people do that.
+5:09 And of course, I'm not saying it should be boring like this. Yeah, this is totally boring, yeah, to have— uh, to have only boxes and stuff.
+5:17 Like, you can mix, you can start mixing a little bit to say, yeah, in the analytical you could use, for example, Power BI.
+5:24 Yeah, but uh, it would be nicer if you speak more about, uh, let's say, what is exactly the use cases, how the data stored, how the data move and stuff like that.
+5:30 And here, for example, I don't know whether you have done with me the, uh, the SQL warehouse. It is as well here.
+5:37 I tried to draw for you something like close to a data architecture. So you can see, uh, we went through, okay, we have bronze, silver, gold, we have two source systems,
+5:47 and we have put here some contracts, data contracts, on the data architecture, where we explain you: we are storing here tables.
+5:53 Uh, we are doing here batch processing. We are doing full load. We are doing truncate and insert. The data model going to stay as it is.
+6:00 So we are adding some descriptions about what's going to happen inside each of those boxes. This is what we have to understand.
+6:08 Yeah, from data architecture, we have to understand what going to happen with my data inside this one big picture, and not what tools I have to buy for the company.
+6:18 So I hope that it is clear for you. So with this, I hope you understand what do you mean with the data architecture.
+6:25 This is just a way on how to explain how the data, yeah, move around.
+6:29 Now, of course, we're going to deep dive into how to do those stuff. Depends on the time, of course.
+6:33 So this is something that I want to raise an awareness about it, so that you know what do we mean with those stuff.
+6:39 Now I would like to go through the mindset a little bit. Now, of course, the question is:
+6:44 why we draw those architectures, right? We draw those stuff not to show off.
+6:48 We are not trying to here, uh, to show the company: I am— I can draw you a few stuff.
+6:53 We are using visuals in order to bring understanding.
+6:57 It's like a data analyst, right? If a data analyst want to explain the story behind the data, they make visuals.
+7:03 They use data visualizations, right? They make like those charts, they make some aggregated data and they make like bar chart and all those stuff,
+7:12 because they want to use the visuals to explain it. It is the same thing.
+7:16 We draw those diagrams for us in order to explain something through the visuals.
+7:22 It's going to help us to understand what we are planning to build.
+7:26 Because think about it, like if you want to build a house and you don't have any plan, you don't have any visual.
+7:32 You sit with someone and going to say: okay, trust me, I'm going to make for you four rooms. I'm going to make for you a kitchen.
+7:39 Like, imagine it with me. The kitchen going to be left, right? And the guy talking to you about your house without a picture, right? Without a visual.
+7:47 So you're going to start imagining something in your head, he going to imagine something in your head,
+7:52 and at the end you're going to get something that is not meet— maybe meeting your expectations.
+7:57 So that's why before we build anything, we have to draw, we have to build those diagrams, in order that we communicate the plan for everyone.
+8:05 First of all, for you yourself. Like if you want, for example, to make plan, like maybe you create a big documents about it,
+8:12 but you have to, let's say, in order to bring this document for you to understand it, draw the visuals, to draw the diagrams,
+8:18 so it is helping you to understand what is your plan. And is as well helping others.
+8:23 Like if you are meeting managers, stakeholders, or let's say non-technical people, you want to show them the plan.
+8:30 Yeah, you cannot just explain, you want to show them the pictures.
+8:34 And as well it going to help everyone, let's say, in the developers, or let's say data engineers and stuff like that.
+8:39 It's going to help them to understand what is— what are you talking about.
+8:42 So the visuals, it is just a tool to communicate your plan with the others. That's why we draw those diagrams.
+8:49 And there are no rules on how to do it. You can make it boxes, you can make it from left to right, from up to bottom.
+8:57 You can make it the way that you want. There is no, like, how to. I'm going to say standards how to draw those stuff.
+9:02 It is just instrument for you in order to communicate your plan.
+9:07 So there is no wrong and right. But don't try to draw only tools, because it is not helping anyone.
+9:14 And I'm going to say it is just a tool, that's it, it is just a tool in order to communicate your plan.
+9:18 So that's why it's going to be our main tool in order to communicate, uh, let's say, things.

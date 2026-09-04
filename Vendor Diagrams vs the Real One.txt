@@ -1,0 +1,532 @@
+0:00
+All right. So now the thing is if you
+0:01
+are new, if you are data analyst or
+0:03
+engineer, you are student, you are still
+0:05
+learning and you start like searching
+0:06
+about the architect architectures and
+0:09
+the different types and stuff you might
+0:10
+get confused very very fast my friends
+0:13
+because there are a lot of different
+0:15
+types a lot of different diagrams on how
+0:17
+people draw architectures and there is a
+0:19
+lot of let's say misunderstanding what
+0:22
+is really that architecture because if
+0:24
+you Google and go to images and and you
+0:26
+search for I don't know Azure
+0:28
+architecture or data architect
+0:29
+aritecture you're going to find
+0:30
+different pictures and I I want you here
+0:32
+to have some awareness about what is
+0:35
+really data architecture now here we
+Vendor architectures
+0:37
+have some random image I'm going to say
+0:39
+that looks like data architecture from
+0:42
+Azure from Microsoft but my friends this
+0:44
+is not a data architecture yes we have
+0:46
+here yeah sources on the left side we
+0:49
+have pipelines we have storage we have
+0:51
+streaming events consumers and stuff
+0:53
+like that this is not a data
+0:55
+architecture if you draw something like
+0:57
+this at companies they're going to throw
+0:59
+it at your face because my friends this
+1:01
+is not something that's yeah going to
+1:03
+explain anything for the company this is
+1:05
+only a vendor architecture this is a
+1:08
+vendor trying to sell their product for
+1:11
+you for the companies so here Microsoft
+1:13
+is explaining for you use my tools to do
+1:17
+all those stuff so if someone asks you
+1:19
+uh draw for us a data architecture and
+1:21
+you draw this this then this is of
+1:23
+course wrong okay so this is not a data
+1:25
+architecture this is just a vendor
+1:28
+architecture Now let's move to the next
+1:30
+one. Same thing here. You might see this
+1:32
+picture and say wow this is perfect.
+1:34
+Look at this. We have bronze silver
+1:36
+gold. We have delta lake. We have I
+1:38
+don't know unity catalog powerbi fabric.
+1:41
+Perfect. If I am becoming data
+1:43
+architecture I'm going to draw this one.
+1:45
+Right. This is my preference to become
+1:47
+data architecture. Again this is wrong.
+1:49
+This is not a data architecture my
+1:51
+friends. This is again vendor
+1:53
+architecture. Once you start seeing a
+1:56
+lot of let's say um yeah icons about
+1:58
+platforms and tools then this is this is
+2:01
+not a dirt architecture this is
+2:03
+something someone trying to sell
+2:04
+platforms try to sell tools by the way I
+2:07
+saw a lot a lot of people at companies
+2:09
+they yeah they say yeah I am an
+2:11
+architect and they start drawing stuff
+2:13
+and they come up with this picture yeah
+2:15
+this is really bad so this is not
+2:17
+something that you should let's say
+2:19
+provide as a solution for companies then
+2:21
+you are just uh trying to sell the
+2:23
+company tools This is bad. Now we come
+2:25
+to the data bricks. You see here as well
+2:28
+data bricks have a lot of pictures and
+2:30
+they say yeah this is an architecture
+2:32
+and stuff like that. Well again this is
+2:34
+a vendor thing. I'm going to say once
+2:36
+you see a lot of just icons logos yeah
+2:38
+PowerBI event hub and blah blah blah.
+2:40
+This is a vendor architecture. This is
+2:43
+not a data architecture and this is the
+2:45
+worst. This is one of the worst that
+2:46
+I've seen in Google. Someone as well is
+2:48
+saying this is that architecture. You
+2:50
+can see here just random boxes and
+2:52
+random tools that they throw around and
+2:55
+they say this is a data architecture.
+2:57
+This makes no sense. Of course you can
+2:59
+add yeah icons and logos and stuff but
+3:02
+you cannot call this data architecture.
+3:04
+Yeah, they're going to throw it at your
+Getting closer to a real one
+3:06
+face. Now we come here. This is
+3:08
+something that we are we going to say
+3:10
+getting closer to become data
+3:12
+architecture. So I'm going to say I like
+3:14
+this one. Yeah, it is very high level of
+3:16
+course but at least I know the flow of
+3:18
+data. I know. All right. There is like
+3:20
+data sources. They go to data storage.
+3:23
+There is streaming processing. We are
+3:25
+doing in between machine learning. We
+3:27
+have analytical data store and
+3:29
+analytical reporting. And we have to do
+3:31
+orchestration. So you can see this image
+3:33
+from Microsoft Azure. They don't have
+3:35
+here any let's say logos. Yeah, they are
+3:37
+not trying to sell their products. But
+3:39
+at least I'm going to say I understand
+3:41
+the flow of data. This is like a
+3:42
+marketplace of tools. Like I'm not
+3:44
+understanding what is going on here.
+3:46
+What happens in Spark? What happens? I
+3:48
+don't know. Yeah. and DBT and like are
+3:50
+we storing that like it's very
+3:51
+confusing. Yeah, that's why you cannot
+3:54
+sell this as a data architecture. Yeah,
+3:56
+this one is closed and we get closer.
+3:59
+Yeah, this as well I like it because it
+4:01
+is as well listing out what are the
+4:04
+different sources that we have in the
+4:05
+company. We are here speaking about the
+4:07
+ingestions. We are speaking about the
+4:08
+processing. We have here data cleaning,
+4:10
+data transformation and then it says we
+4:13
+have here three layers the row, clean
+4:15
+and created and we have here data
+4:17
+governance and stuff like that. Yeah.
+4:18
+And how to consume it. My friends this
+4:20
+is closer yeah to data architecture. I
+4:23
+just want to bring you the awareness
+4:25
+that not everyone that go and throw
+4:28
+through you some logos and boxes and say
+4:31
+now I have a debt architecture from
+4:32
+company or you can go and take a
+4:34
+reference architecture from data bricks
+4:35
+or Azure and say hey look I know now how
+4:39
+to do it in the company and we can do it
+4:40
+like this right you are just another guy
+4:43
+selling Microsoft products for a company
+4:45
+you are not selling any solution this is
+4:48
+not something that you can do my friends
+4:50
+of course if you are discussing tools
+4:52
+yeah in the companies is and you are
+4:53
+discussing what which yeah which service
+4:55
+we're going to use which service and
+4:57
+stuff but this is something that a cloud
+4:59
+architect going to do not you not a data
+5:02
+architect so again I just want to bring
+5:04
+this awareness for you because I saw
+5:07
+many people do that and of course I'm
+5:09
+not saying it should be boring like this
+5:11
+yeah this is totally boring yeah to have
+5:13
+uh to have only boxes and stuff like you
+5:15
+can mix you can start mixing a little
+5:17
+bit to say yeah in the analytical you
+5:19
+could use for example PowerBI yeah but
+5:22
+uh It would be nicer if you speak more
+5:24
+about uh let's say what is exactly the
+5:26
+use cases how the data stored how the
+5:28
+data move and stuff like that and here
+What a real architecture shows
+5:30
+for example I don't know whether you
+5:32
+have done with me the uh the SQL
+5:34
+warehouse it is as well here I tried to
+5:37
+draw for you something like close to a
+5:40
+data architecture so you can see uh we
+5:42
+went through okay we have bronze silver
+5:44
+gold we have two source systems and we
+5:47
+have put here some contracts data
+5:49
+contracts on the data architects where
+5:50
+we explain you We are storing here
+5:53
+tables. Uh we are doing here patch
+5:55
+processing. We are doing full load. We
+5:56
+are doing truncate and insert. The data
+5:58
+model going to stay as it is. So we are
+6:00
+adding some descriptions about what's
+6:02
+going to happen inside each of those
+6:03
+boxes. This is what we have to
+6:06
+understand. Yeah. From data
+6:08
+architecture, we have to understand what
+6:10
+going to happen with my data inside this
+6:13
+one big picture and not what tools I
+6:16
+have to buy for the company. So I hope
+6:18
+that it is clear for you. So with this I
+6:21
+hope you understand what do you mean
+6:22
+with the data architecture. This is just
+6:25
+a way on how to explain how the data
+6:27
+yeah move around. Now of course we're
+6:29
+going to deep dive into how to do those
+6:31
+stuff. Depends on the time of course. So
+6:33
+this is something that I want to raise
+6:34
+an awareness about it so that you know
+6:37
+what do we mean with those stuff. Now I
+Why we draw architectures
+6:39
+would like to go through the mindset a
+6:40
+little bit. Now of course the question
+6:42
+is why we draw those architectures
+6:44
+right? We draw those stuff not to show
+6:46
+off. We are not trying to here uh to
+6:48
+show the company. I am I can draw you a
+6:50
+few stuff. We are using visuals in order
+6:53
+to bring understanding. It's like
+6:55
+[snorts] a data analyst, right? If a
+6:57
+data analyst want to explain the story
+7:00
+behind the data, they make visuals. They
+7:03
+use data visualizations, right? They
+7:05
+make like those charts, they make some
+7:07
+aggregated data and they make like bar
+7:10
+chart and all those stuff because they
+7:12
+want to use the visuals to explain it.
+7:14
+It is the same thing. We draw those
+7:16
+diagrams for us in order to explain
+7:20
+something through the visuals. It's
+7:22
+going to help us to understand what we
+7:24
+are planning to build. Because think
+7:26
+about it like if you want to build a
+7:28
+house and you don't have any plan, you
+7:30
+don't have any visual. You sit with
+7:32
+someone and going to say okay trust me
+7:34
+I'm going to make for you four rooms.
+7:36
+I'm going to make for you a kitchen.
+7:37
+Like imagine it with me. The kitchen
+7:39
+going to be left, right? And the guy
+7:41
+talking to you about your house without
+7:44
+a picture, right? Without a visual. So
+7:46
+you're going to start imagining
+7:47
+something in your head, he going to
+7:49
+imagine something in your head and at
+7:50
+the ends you're going to get something
+7:52
+that is not meet maybe meeting your
+7:55
+expectations. So that's why before we
+7:57
+build anything, we have to draw we have
+8:00
+to build those diagrams in order that we
+8:02
+communicate the plan for everyone. First
+8:05
+of all for you yourself like if you want
+8:07
+for example to make plan like maybe you
+8:10
+create a big documents about it but you
+8:12
+have to let's say in order to bring this
+8:14
+document for you to understand it draw
+8:16
+the visuals to draw the diagrams so it
+8:18
+is helping you to understand what is
+8:21
+your plan and is as well helping others
+8:23
+like if you are meeting managers
+8:25
+stakeholders or let's say nontechnical
+8:28
+people you want to show them the plan
+8:30
+yeah you cannot just explain you want to
+8:31
+show them the pictures and as well it
+8:34
+going to help everyone let's say in the
+8:36
+developers or let's say data engineers
+8:38
+and stuff like that. It's going to help
+8:39
+them to understand what is what are you
+8:42
+talking about. So the visuals it is just
+8:44
+a tool to communicate your plan with the
+8:47
+others. That's why we draw those
+8:49
+diagrams and there are no rules on how
+8:52
+to do it. You can make it boxes, you can
+8:54
+make it from left to right, from up to
+8:57
+bottom. You can make it the way that you
+8:58
+want. There is no like how to I'm going
+9:00
+to say standards how to draw those
+9:02
+stuff. It is just instrument for you in
+9:05
+order to communicate your plan. So there
+9:07
+is no wrong and right. But don't try to
+9:10
+draw only tools because it is not
+9:12
+helping anyone. And I'm going to say it
+9:14
+is just a tool that's it is just a tool
+9:16
+in order to [music] communicate your
+9:18
+plan. So that's why it's going to be our
+9:20
+main tool in order to communicate uh
+9:22
+let's say things.

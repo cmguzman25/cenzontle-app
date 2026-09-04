@@ -1,0 +1,395 @@
+{
+  "id": "architecture-02",
+  "youtubeId": "SNVuEZz3bLo",
+  "title": "Los que sí se acercan",
+  "level": "B2",
+  "description": "Ahora enseña diagramas que sí valen: sin logos, con el flujo de los datos y con las capas explicadas. Y su propio dibujo del almacén SQL. 3:06 – 6:39.",
+  "transcript": "data-architecture.txt",
+  "startAt": 186,
+  "endAt": 399,
+  "annotations": [
+    {
+      "start": 186,
+      "es": "Ahora vamos aquí. Esto ya es algo que... que, digamos, se acerca a ser una arquitectura de datos.",
+      "note": "\"getting closer\" — el -ing dice que va acercándose poco a poco, no que ya haya llegado.",
+      "watch": "\"that we are— we going to say\": corta y reformula, y al reformular se come el verbo. Correcto sería \"we are going to say\". En un directo se pierden auxiliares constantemente.",
+      "vocab": [
+        { "word": "to get closer", "meaning": "acercarse, ir acercándose" },
+        { "word": "closer to", "meaning": "más cerca de" }
+      ]
+    },
+    {
+      "start": 194,
+      "es": "Yo diría que esta me gusta. Sí, es muy de alto nivel, claro, pero al menos me entero de por dónde van los datos.",
+      "note": "\"high level\" en informática es «de alto nivel»: con poco detalle, la vista general. Lo contrario es \"low level\".",
+      "tip": "\"at least\" es «al menos, por lo menos». Sirve para reconocer lo poco bueno que tiene algo.",
+      "vocab": [
+        { "word": "high level", "meaning": "de alto nivel, general, sin detalle" },
+        { "word": "at least", "meaning": "al menos, por lo menos" },
+        { "word": "the flow of data", "meaning": "el flujo de los datos" }
+      ]
+    },
+    {
+      "start": 200,
+      "es": "Me entero: vale, hay como fuentes de datos, van a un almacenamiento de datos. Hay procesamiento en streaming.",
+      "note": "\"there is like data sources\" — dos cosas de golpe: el \"like\" de relleno, y \"there IS\" con plural detrás. Correcto sería \"there ARE data sources\".",
+      "watch": "Dice \"streaming processing\". El término normal en el sector es \"stream processing\" (o solo \"streaming\"). Se le entiende, pero no es como se dice.",
+      "vocab": [
+        { "word": "data source", "meaning": "fuente de datos" },
+        { "word": "storage", "meaning": "almacenamiento" },
+        { "word": "stream processing", "meaning": "procesamiento en streaming (así se dice bien)" }
+      ]
+    },
+    {
+      "start": 205,
+      "es": "Por el medio estamos haciendo machine learning. Tenemos un almacén de datos analítico y los informes analíticos. Y hay que hacer orquestación.",
+      "note": "\"in between\" es «en medio, entre una cosa y otra».",
+      "vocab": [
+        { "word": "in between", "meaning": "por el medio, entre medias" },
+        { "word": "reporting", "meaning": "informes, generación de informes" },
+        { "word": "orchestration", "meaning": "orquestación (coordinar los procesos)" }
+      ]
+    },
+    {
+      "start": 213,
+      "es": "Así que ves esta imagen de Microsoft Azure. Aquí no tienen ningún, digamos, logo. Eso, no están intentando vender sus productos.",
+      "tip": "Es la clave de la parte 2: el mismo Microsoft puede hacer un diagrama bueno; lo que lo estropea son los logos."
+    },
+    {
+      "start": 219,
+      "es": "Pero al menos yo diría que entiendo el flujo de los datos."
+    },
+    {
+      "start": 222,
+      "es": "Este otro es como un mercadillo de herramientas. O sea, no me entero de qué está pasando aquí.",
+      "note": "\"a marketplace of tools\" — la imagen es buenísima: un mercado lleno de puestos, todos vendiendo algo.",
+      "watch": "Cuidado, aquí vuelve al diagrama malo de antes. El \"this\" salta de una imagen a otra sin avisar.",
+      "vocab": [
+        { "word": "marketplace", "meaning": "mercado, mercadillo" },
+        { "word": "what is going on", "meaning": "qué está pasando" }
+      ]
+    },
+    {
+      "start": 226,
+      "es": "¿Qué pasa en Spark? ¿Qué pasa? No lo sé. Eso, y dbt. Y como, ¿estamos guardando eso? Es que es muy confuso.",
+      "note": "\"What happens...?\" en presente simple para lo que pasa siempre. Si preguntara por ahora mismo sería \"What is happening?\".",
+      "vocab": [
+        { "word": "confusing", "meaning": "confuso, lioso" },
+        { "word": "to store", "meaning": "guardar, almacenar" }
+      ]
+    },
+    {
+      "start": 234,
+      "es": "Eso, por eso no puedes vender esto como una arquitectura de datos. Sí, este está cerca y nos vamos acercando.",
+      "vocab": [
+        { "word": "that's why", "meaning": "por eso" },
+        { "word": "close", "meaning": "cerca (adjetivo, suena \"claus\")" }
+      ]
+    },
+    {
+      "start": 239,
+      "es": "Sí, este también me gusta, porque también va listando cuáles son las distintas fuentes que tenemos en la empresa.",
+      "note": "\"to list out\" es «enumerar, ir poniendo en lista». Ese \"out\" le añade la idea de sacarlo todo a la vista.",
+      "vocab": [
+        { "word": "to list out", "meaning": "enumerar, ir listando" }
+      ]
+    },
+    {
+      "start": 247,
+      "es": "Aquí estamos hablando de las ingestas. Estamos hablando del procesamiento. Aquí tenemos limpieza de datos, transformación de datos,",
+      "note": "\"ingestion\" es la entrada de los datos al sistema. En español se dice igual: «ingesta».",
+      "vocab": [
+        { "word": "ingestion", "meaning": "ingesta, entrada de datos" },
+        { "word": "data cleaning", "meaning": "limpieza de datos" }
+      ]
+    },
+    {
+      "start": 253,
+      "es": "y luego dice que tenemos tres capas: la cruda, la limpia y la curada. Y aquí tenemos gobierno del dato y cosas así.",
+      "tip": "raw / clean / curated son las mismas tres capas que antes llamaba bronze / silver / gold. Cada empresa las nombra a su manera.",
+      "vocab": [
+        { "word": "layer", "meaning": "capa" },
+        { "word": "raw", "meaning": "crudo, sin tratar" },
+        { "word": "curated", "meaning": "curado, ya preparado para usar" }
+      ]
+    },
+    {
+      "start": 258,
+      "es": "Eso. Y cómo consumirlo. Amigos, esto ya se acerca, eso, a una arquitectura de datos.",
+      "vocab": [
+        { "word": "to consume", "meaning": "consumir, usar (los datos)" }
+      ]
+    },
+    {
+      "start": 263,
+      "es": "Solo quiero que te des cuenta de que no todo el que va y te suelta unos logos y unas cajas y dice «ya tengo una arquitectura de datos de la empresa»...",
+      "note": "\"not everyone that...\" es «no todo el que...». Aquí deja la frase a medias y sigue con otra idea: pasa mucho al hablar.",
+      "watch": "Dice \"throw through you\", pero lo correcto es \"throw at you\". Otro fallo suyo.",
+      "vocab": [
+        { "word": "not everyone", "meaning": "no todo el mundo, no todos" }
+      ]
+    },
+    {
+      "start": 272,
+      "es": "...o puedes ir y coger una arquitectura de referencia de Databricks o de Azure y decir: eh, mira, ya sé cómo hacerlo en la empresa y podemos hacerlo así, ¿no?",
+      "note": "\"reference architecture\" es la plantilla oficial que publica el fabricante para que la copies.",
+      "tip": "\"right?\" al final de la frase es el «¿no?» o «¿verdad?» de pedir confirmación.",
+      "vocab": [
+        { "word": "reference architecture", "meaning": "arquitectura de referencia, plantilla" },
+        { "word": "right?", "meaning": "¿no?, ¿verdad?" }
+      ]
+    },
+    {
+      "start": 283,
+      "es": "Entonces eres otro tío más vendiendo productos de Microsoft a una empresa. No estás vendiendo ninguna solución.",
+      "note": "\"just another guy\" — «uno más del montón». Ese \"just another\" es despectivo.",
+      "vocab": [
+        { "word": "just another", "meaning": "uno más, otro más del montón" }
+      ]
+    },
+    {
+      "start": 288,
+      "es": "Esto no es algo que puedas hacer, amigos. Claro, si estás discutiendo herramientas, eso, en la empresa es...",
+      "vocab": [
+        { "word": "to discuss", "meaning": "hablar de, debatir" }
+      ],
+      "tip": "\"in the companies is—\" y ahí lo deja: empieza a decir algo, cambia de idea y arranca otra frase. Cuando oigas un verbo suelto que no lleva a ningún sitio, es eso: no te has perdido nada.",
+      "watch": "Ojo con \"to discuss\": no lleva \"about\" detrás. Se dice \"discuss tools\", no \"discuss about tools\". Él lo usa bien aquí."
+    },
+    {
+      "start": 293,
+      "es": "y estás discutiendo qué... cuál, eso, cuál servicio vamos a usar, qué servicio y tal, pero eso es algo que hace un arquitecto cloud, no tú, no un arquitecto de datos.",
+      "tip": "Aquí está la idea central del video: elegir herramientas es trabajo del arquitecto cloud; el de datos explica qué pasa con los datos.",
+      "watch": "\"discussing what— which, yeah, which service\": empieza con \"what\", se corrige a \"which\" y lo repite. Se autocorrige en voz alta, que es justo lo que hace todo el mundo hablando en directo.",
+      "vocab": [
+        { "word": "service", "meaning": "servicio" },
+        { "word": "cloud architect", "meaning": "arquitecto de la nube" }
+      ]
+    },
+    {
+      "start": 302,
+      "es": "Así que otra vez, solo quiero que te des cuenta de esto, porque he visto a mucha gente hacerlo.",
+      "note": "\"I saw many people do that\" — después de \"see\" el verbo va sin \"to\": I saw him leave, I heard her sing."
+    },
+    {
+      "start": 309,
+      "es": "Y claro, no estoy diciendo que tenga que ser aburrido como esto. Sí, esto es aburridísimo, eso, tener... eh, tener solo cajas y ya.",
+      "note": "\"I'm not saying it should be...\" — se adelanta a lo que podrías pensar. Muy útil en una discusión: «no estoy diciendo que...».",
+      "tip": "\"to have— uh, to have only boxes\": arranque en falso más muletilla. Al escucharlo suena a que se atasca, pero la idea sigue igual: quédate con la segunda vez.",
+      "vocab": [
+        { "word": "boring", "meaning": "aburrido" },
+        { "word": "totally", "meaning": "totalmente, del todo" }
+      ]
+    },
+    {
+      "start": 317,
+      "es": "O sea, puedes mezclar, puedes empezar a mezclar un poco y decir, eso, que en la parte analítica podrías usar, por ejemplo, Power BI.",
+      "tip": "Matiza lo dicho: los logos no están prohibidos, el problema es que sean lo único que hay."
+    },
+    {
+      "start": 324,
+      "es": "Eso, pero eh, quedaría mejor si hablaras más de, eh, digamos, cuáles son exactamente los casos de uso, cómo se guardan los datos, cómo se mueven los datos y cosas así.",
+      "note": "\"it would be nicer if you speak more\" — la condicional de lo hipotético. En inglés cuidado sería \"if you spoke more\": él se salta el pasado.",
+      "watch": "Tres fallos en una sola frase, típicos de hablar a toda prisa: 1) \"if you SPEAK\" debería ser \"if you SPOKE\" (con \"would\" delante, el otro verbo va en pasado). 2) \"what IS exactly the use cases\" debería ser \"what ARE\", que \"use cases\" es plural. 3) \"how the data STORED\" y \"how the data MOVE\" se comen el verbo: sería \"how the data IS stored\" y \"how the data MOVES\".",
+      "vocab": [
+        { "word": "use case", "meaning": "caso de uso" },
+        { "word": "it would be nicer", "meaning": "quedaría mejor, sería mejor" }
+      ]
+    },
+    {
+      "start": 330,
+      "es": "Y aquí, por ejemplo, no sé si has hecho conmigo lo del, eh, lo del almacén SQL. También está aquí.",
+      "note": "\"whether\" es «si» de duda, igual que \"if\": I don't know whether you have done it.",
+      "tip": "\"the, uh, the SQL warehouse\": mete el \"uh\" en medio del artículo y su nombre, y repite el \"the\". Es la forma más común de ganar un segundo mientras recuerda la palabra.",
+      "vocab": [
+        { "word": "whether", "meaning": "si (para dudas, no condicional)" },
+        { "word": "warehouse", "meaning": "almacén (de datos)" }
+      ]
+    },
+    {
+      "start": 337,
+      "es": "Intenté dibujarte algo parecido a una arquitectura de datos. Así que ves que, eh, pasamos por: vale, tenemos bronce, plata, oro, tenemos dos sistemas de origen,",
+      "note": "\"we went through\" — \"go through\" es «pasar por, repasar». Muy común: let's go through the list.",
+      "tip": "\"something like close to a data architecture\" — ese \"like\" otra vez de relleno. Sin él la frase queda igual de clara: «something close to a data architecture».",
+      "vocab": [
+        { "word": "to go through", "meaning": "pasar por, repasar" },
+        { "word": "source system", "meaning": "sistema de origen" }
+      ]
+    },
+    {
+      "start": 347,
+      "es": "y hemos puesto aquí unos contratos, contratos de datos, sobre la arquitectura, donde te explicamos: aquí estamos guardando tablas.",
+      "note": "\"data contract\" es el acuerdo de qué forma tienen los datos que se intercambian: qué columnas, qué tipos, qué se puede romper y qué no.",
+      "watch": "\"where we explain you\" — le falta el \"to\". Es \"explain TO you\". El verbo explain nunca lleva la persona pegada detrás: se dice \"explain something to someone\". Lo repite en 1:13 de la parte 1, así que es un fallo suyo fijo, no un despiste.",
+      "vocab": [
+        { "word": "data contract", "meaning": "contrato de datos" },
+        { "word": "table", "meaning": "tabla" }
+      ]
+    },
+    {
+      "start": 353,
+      "es": "Eh, aquí estamos haciendo procesamiento por lotes. Estamos haciendo carga completa. Estamos haciendo truncar e insertar. El modelo de datos se va a quedar como está.",
+      "note": "\"batch processing\" es procesar por tandas, a ratos, en vez de en tiempo real (streaming). Son las dos grandes formas de mover datos.",
+      "tip": "\"truncate and insert\" es vaciar la tabla entera y volver a llenarla. \"full load\" es traer todos los datos, no solo lo nuevo.",
+      "vocab": [
+        { "word": "batch processing", "meaning": "procesamiento por lotes" },
+        { "word": "full load", "meaning": "carga completa" },
+        { "word": "as it is", "meaning": "tal como está" }
+      ]
+    },
+    {
+      "start": 360,
+      "es": "Así que estamos añadiendo descripciones de lo que va a pasar dentro de cada una de esas cajas. Esto es lo que tenemos que entender.",
+      "tip": "Aquí está la respuesta del video: una arquitectura de datos de verdad explica qué pasa DENTRO de cada caja, no qué producto se compra.",
+      "vocab": [
+        { "word": "description", "meaning": "descripción" },
+        { "word": "inside", "meaning": "dentro de" }
+      ]
+    },
+    {
+      "start": 368,
+      "es": "Eso, de una arquitectura de datos tenemos que entender qué va a pasar con mis datos dentro de este dibujo general, y no qué herramientas tengo que comprar para la empresa.",
+      "watch": "Dice \"what going to happen\": le falta el \"is\". Lo correcto es \"what IS going to happen\".",
+      "vocab": [
+        { "word": "big picture", "meaning": "visión general, el dibujo completo" },
+        { "word": "to buy", "meaning": "comprar (buy → bought)" }
+      ]
+    },
+    {
+      "start": 378,
+      "es": "Espero que te haya quedado claro. Con esto, espero que entiendas a qué nos referimos con arquitectura de datos.",
+      "watch": "Dice \"what do you mean\" dentro de la frase. En una frase afirmativa no se pone \"do\": lo correcto es \"what you mean\".",
+      "vocab": [
+        { "word": "to be clear", "meaning": "estar claro" },
+        { "word": "to mean", "meaning": "querer decir, significar" }
+      ]
+    },
+    {
+      "start": 385,
+      "es": "Esto es solo una forma de explicar cómo se mueven los datos.",
+      "vocab": [
+        { "word": "a way to", "meaning": "una forma de, una manera de" },
+        { "word": "to move around", "meaning": "moverse de un lado a otro" }
+      ]
+    },
+    {
+      "start": 389,
+      "es": "Ahora, claro, vamos a meternos a fondo en cómo hacer todo eso. Según el tiempo que tengamos, claro.",
+      "note": "\"deep dive\" es «zambullirse»: meterse a fondo en un tema. Se usa como verbo y como nombre: let's do a deep dive.",
+      "vocab": [
+        { "word": "to deep dive into", "meaning": "meterse a fondo en" },
+        { "word": "it depends on", "meaning": "depende de" }
+      ]
+    },
+    {
+      "start": 393,
+      "es": "Esto es algo sobre lo que quería llamar la atención, para que sepas a qué nos referimos con todo esto.",
+      "tip": "Aquí acaba la parte 2. En la parte 3 cambia de tema: por qué dibujamos diagramas, con el ejemplo de construir una casa.",
+      "vocab": [
+        { "word": "to raise awareness", "meaning": "llamar la atención sobre algo, concienciar" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué le gusta del diagrama de Azure sin logos?",
+      "options": [
+        "Que tiene más colores",
+        "Que se entiende el flujo de los datos",
+        "Que lleva más herramientas"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Las tres capas \"raw, clean and curated\" son las mismas que...",
+      "options": ["Spark, dbt, Power BI", "Azure, AWS, GCP", "bronze, silver, gold"],
+      "answer": 2
+    },
+    {
+      "q": "Según él, elegir qué servicio usar es trabajo de...",
+      "options": [
+        "el arquitecto de datos",
+        "el analista de datos",
+        "el arquitecto cloud, no el de datos"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "¿Qué tiene que explicar una arquitectura de datos de verdad?",
+      "options": [
+        "Qué pasa con los datos dentro de cada caja",
+        "Qué productos hay que comprar",
+        "Cuánto cuesta cada herramienta"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"high level\" hablando de un diagrama significa...",
+      "options": [
+        "de mucha calidad",
+        "general, con poco detalle",
+        "muy difícil de entender"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"batch processing\" es...",
+      "options": [
+        "procesar en tiempo real",
+        "procesar a mano",
+        "procesar por lotes, a tandas"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Dice \"how the data stored, how the data move\". ¿Qué falla?",
+      "options": [
+        "Nada, está bien dicho",
+        "Se come los verbos: sería \"how the data IS stored, how the data MOVES\"",
+        "Sobra la palabra \"data\""
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"where we explain you\" — ¿por qué no es correcto?",
+      "options": [
+        "Falta el \"to\": explain TO you",
+        "Sobra el \"we\"",
+        "Explain va siempre en pasado"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"whether\" significa...",
+      "options": [
+        "el tiempo que hace",
+        "cuando",
+        "si (de duda: no sé si...)"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"to discuss\" se construye...",
+      "options": [
+        "con \"about\": discuss about tools",
+        "sin \"about\": discuss tools",
+        "con \"of\": discuss of tools"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"to go through\" significa...",
+      "options": ["salir por", "pasar por, repasar", "tirar a la basura"],
+      "answer": 1
+    },
+    {
+      "q": "\"the big picture\" significa...",
+      "options": [
+        "una foto grande",
+        "la pantalla principal",
+        "la visión general, el conjunto"
+      ],
+      "answer": 2
+    }
+  ]
+}
