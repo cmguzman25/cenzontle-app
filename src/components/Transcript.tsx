@@ -13,12 +13,49 @@ import type { Sentence } from "@/lib/types";
 /** Cuánto respeta el autoscroll al usuario después de que mueva la lista. */
 const PAUSE_MS = 5000;
 
+/** Cuánto esperamos antes de leer lo sombreado. Ver el efecto que lo usa. */
+const SELECTION_MS = 250;
+
 export type TextSelection = {
   text: string;
   sentenceId: number;
   /** Posición en pantalla del texto sombreado. */
-  rect: { top: number; left: number; width: number };
+  rect: { top: number; left: number; width: number; height: number };
 };
+
+/**
+ * Lee lo que hay sombreado en la transcripción. Devuelve `null` si no sirve
+ * para guardar: nada sombreado, un párrafo entero, o texto de fuera de la lista.
+ */
+export function readTextSelection(): TextSelection | null {
+  const selection = window.getSelection();
+  if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
+    return null;
+  }
+
+  const text = selection.toString().trim().replace(/\s+/g, " ");
+  // Ni vacío ni un párrafo entero.
+  if (!text || text.length > 80) return null;
+
+  const anchor = selection.anchorNode;
+  const element =
+    anchor instanceof Element ? anchor : (anchor?.parentElement ?? null);
+  const item = element?.closest<HTMLElement>("[data-sentence-id]");
+  if (!item) return null;
+
+  const rect = selection.getRangeAt(0).getBoundingClientRect();
+
+  return {
+    text,
+    sentenceId: Number(item.dataset.sentenceId),
+    rect: {
+      top: rect.top,
+      left: rect.left,
+      width: rect.width,
+      height: rect.height,
+    },
+  };
+}
 
 type Props = {
   sentences: Sentence[];
@@ -111,46 +148,38 @@ export default function Transcript({
     list.scrollTo({ top: list.scrollTop + delta, behavior: "smooth" });
   }, [activeId, autoScroll]);
 
-  /** Lee lo que el usuario acaba de sombrear y avisa al componente padre. */
-  function readSelection() {
-    const selection = window.getSelection();
-    if (!selection || selection.isCollapsed || selection.rangeCount === 0) {
-      onSelectText(null);
-      return;
-    }
+  /**
+   * En el móvil no hay `mouseup`: se sombrea con un toque largo y luego se
+   * mueven las asas, que son del navegador y no avisan a la página. `touchend`
+   * llega antes de que exista la selección, así que con él el botón no salía
+   * nunca. `selectionchange` sí avisa en el móvil y en el ordenador.
+   *
+   * Esperamos un momento antes de leer por dos motivos: no leer a media
+   * selección mientras se arrastran las asas, y dar tiempo a que un toque en el
+   * botón flotante se atienda antes de que el navegador borre lo sombreado.
+   */
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
-    const text = selection.toString().trim().replace(/\s+/g, " ");
-    // Ni vacío ni un párrafo entero.
-    if (!text || text.length > 80) {
-      onSelectText(null);
-      return;
-    }
+    const onChange = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => onSelectText(readTextSelection()), SELECTION_MS);
+    };
 
-    const anchor = selection.anchorNode;
-    const element =
-      anchor instanceof Element ? anchor : (anchor?.parentElement ?? null);
-    const item = element?.closest<HTMLElement>("[data-sentence-id]");
-    if (!item) {
-      onSelectText(null);
-      return;
-    }
-
-    const rect = selection.getRangeAt(0).getBoundingClientRect();
-
-    onSelectText({
-      text,
-      sentenceId: Number(item.dataset.sentenceId),
-      rect: { top: rect.top, left: rect.left, width: rect.width },
-    });
-  }
+    document.addEventListener("selectionchange", onChange);
+    return () => {
+      document.removeEventListener("selectionchange", onChange);
+      clearTimeout(timer);
+    };
+  }, [onSelectText]);
 
   // `min-h-0` + `flex-1`: sin esto la lista crece hasta pasarse del alto del
   // panel y quien acaba haciendo scroll es la página, no la lista.
   return (
     <ol
       ref={listRef}
-      onMouseUp={readSelection}
-      onTouchEnd={readSelection}
+      // Con el ratón respondemos al soltar, sin esperar al `selectionchange`.
+      onMouseUp={() => onSelectText(readTextSelection())}
       className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto overscroll-contain pr-1"
     >
       {sentences.map((sentence) => {

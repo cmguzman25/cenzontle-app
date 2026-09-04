@@ -40,34 +40,6 @@ export async function saveWord(input: {
 }
 
 /**
- * Guarda el trozo de audio de una palabra, ajustado a mano por el usuario.
- * Con `from`/`to` a null volvemos a la estimación automática.
- *
- * Como se llama a cada toque de flecha, no revalida ninguna ruta.
- */
-export async function saveWordTiming(input: {
-  word: string;
-  from: number | null;
-  to: number | null;
-}): Promise<ActionResult> {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) return { ok: false, error: "No has iniciado sesión." };
-
-  const { error } = await supabase
-    .from("words")
-    .update({ audio_start: input.from, audio_end: input.to })
-    .eq("user_id", user.id)
-    .eq("word", input.word);
-
-  if (error) return { ok: false, error: error.message };
-  return { ok: true };
-}
-
-/**
  * Deja el ajuste hecho para todo el mundo: es la misma historia y el mismo
  * audio para cualquiera que guarde esa palabra. Con `from`/`to` a null se
  * borra y todos vuelven a la estimación automática.

@@ -42,9 +42,7 @@ export default async function LessonPage({
 
   const [wordsResult, progressResult, positionResult, timingsResult] =
     await Promise.all([
-    supabase
-      .from("words")
-      .select("word, meaning, lesson_id, sentence_id, audio_start, audio_end"),
+    supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
     supabase
       .from("progress")
       .select("score, completed_at")
@@ -59,7 +57,7 @@ export default async function LessonPage({
     // Ajustes de audio que ya hizo cualquiera en esta lección.
     supabase
       .from("word_audio")
-      .select("sentence_id, term, audio_start, audio_end, confirmed")
+      .select("sentence_id, term, audio_start, audio_end, confirmed, updated_by")
       .eq("lesson_id", lesson.id),
   ]);
 
@@ -68,9 +66,6 @@ export default async function LessonPage({
     meaning: (row.meaning as string) ?? "",
     lessonId: (row.lesson_id as string) ?? lesson.id,
     sentenceId: (row.sentence_id as number) ?? 0,
-    // Postgres devuelve `numeric` como texto: hay que pasarlo a número.
-    audioStart: toSeconds(row.audio_start),
-    audioEnd: toSeconds(row.audio_end),
   }));
 
   const sharedTimings: SharedTiming[] = (timingsResult.data ?? []).flatMap(
@@ -85,6 +80,7 @@ export default async function LessonPage({
           from,
           to,
           confirmed: Boolean(row.confirmed),
+          updatedBy: (row.updated_by as string | null) ?? null,
         },
       ];
     },
@@ -140,6 +136,7 @@ export default async function LessonPage({
       <LessonView
         lesson={lesson}
         isLoggedIn
+        userId={user.id}
         initialWords={initialWords}
         initialTimings={sharedTimings}
         initialSentenceId={initialSentenceId}

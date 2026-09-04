@@ -5,7 +5,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import Quiz from "@/components/Quiz";
 import SelectionPopover from "@/components/SelectionPopover";
-import Transcript, { type TextSelection } from "@/components/Transcript";
+import Transcript, {
+  readTextSelection,
+  type TextSelection,
+} from "@/components/Transcript";
 import WordTuner from "@/components/WordTuner";
 import YouTubePlayer, { YT_STATE, type YTPlayer } from "@/components/YouTubePlayer";
 import {
@@ -14,12 +17,12 @@ import {
   saveProgress,
   saveSharedWordTiming,
   saveWord as saveWordToDb,
-  saveWordTiming,
 } from "@/lib/actions";
 import type { ResolvedLesson, Sentence } from "@/lib/types";
 import {
   clampRange,
   estimateWordRange,
+  overlapsSentence,
   type Range,
 } from "@/lib/word-timing";
 
@@ -28,14 +31,14 @@ export type SavedWord = {
   meaning: string;
   lessonId: string;
   sentenceId: number;
-  /** Trozo de audio ajustado a mano. Sin esto se usa la estimación. */
-  audioStart?: number | null;
-  audioEnd?: number | null;
 };
 
 /**
  * Trozo de audio de una palabra ya cuadrado a mano por alguien. Es de la
  * lección, no de quien lo ajustó: el audio es el mismo para todos.
+ *
+ * Va por frase a propósito: la misma palabra sale en varias y cada aparición
+ * suena en un segundo distinto.
  */
 export type SharedTiming = {
   sentenceId: number;
@@ -45,10 +48,12 @@ export type SharedTiming = {
   to: number;
   /** Alguien le dio el visto bueno: suena bien tal cual. */
   confirmed: boolean;
+  /** Quién lo dejó ajustado, para saber si el trabajo venía de fuera. */
+  updatedBy: string | null;
 };
 
 /** Lo que sabemos del trozo de una palabra: dónde suena y si está aprobado. */
-type Timing = Range & { confirmed: boolean };
+type Timing = Range & { confirmed: boolean; updatedBy: string | null };
 
 /** Clave de un ajuste dentro de la lección: frase + palabra en minúsculas. */
 function timingKey(sentenceId: number, term: string): string {
@@ -59,6 +64,8 @@ type Props = {
   lesson: ResolvedLesson;
   /** Si hay sesión, las palabras y el resultado se guardan en Supabase. */
   isLoggedIn: boolean;
+  /** Para distinguir los ajustes propios de los que dejó hechos otra persona. */
+  userId: string | null;
   /** Palabras que el usuario ya tenía guardadas. */
   initialWords: SavedWord[];
   /** Ajustes de audio que ya hizo cualquier usuario en esta lección. */
@@ -70,6 +77,7 @@ type Props = {
 export default function LessonView({
   lesson,
   isLoggedIn,
+  userId,
   initialWords,
   initialTimings,
   initialSentenceId,
@@ -92,7 +100,12 @@ export default function LessonView({
     Object.fromEntries(
       initialTimings.map((t) => [
         timingKey(t.sentenceId, t.term),
-        { from: t.from, to: t.to, confirmed: t.confirmed },
+        {
+          from: t.from,
+          to: t.to,
+          confirmed: t.confirmed,
+          updatedBy: t.updatedBy,
+        },
       ]),
     ),
   );
@@ -133,7 +146,7 @@ export default function LessonView({
    * `null` = reproducción normal, sin freno.
    *
    * `armed` existe porque el reloj de YouTube tarda un poco en enterarse del
-   * salto: hasta que no vemos un tiempo dentro del trozo no activamos el
+   * salto: hasta que no vemos un tiempo cerca del trozo no activamos el
    * freno, o pararíamos al instante con el segundo viejo.
    */
   const stopRangeRef = useRef<{
@@ -198,7 +211,11 @@ export default function LessonView({
       // Escuchando un trozo suelto: paramos al acabarlo.
       const range = stopRangeRef.current;
       if (range && !range.armed) {
-        if (seconds >= range.from - 0.4 && seconds < range.to) {
+        // La ventana pasa del final del trozo a propósito: con trozos de menos
+        // de un segundo, el primer tic tras el salto puede caer ya pasado el
+        // final, y con `seconds < range.to` el freno no se armaba nunca y el
+        // video seguía sonando. Como mucho nos pasamos un tic (200 ms).
+        if (seconds >= range.from - 0.5 && seconds < range.to + 1.5) {
           stopRangeRef.current = { ...range, armed: true };
         }
       } else if (range && seconds >= range.to) {
@@ -267,8 +284,9 @@ export default function LessonView({
    * Supabase. Se espera porque las flechas se tocan varias veces seguidas y no
    * hace falta una escritura por toque.
    *
-   * Se guarda en dos sitios: en la palabra del usuario y en el ajuste de la
-   * lección, que es el que aprovecha cualquiera que guarde esa misma palabra.
+   * Se guarda solo en el ajuste de la lección, que va por frase. Guardarlo
+   * también en la palabra del usuario (una fila por palabra, sin frase) hacía
+   * que la segunda aparición de una expresión sonara donde la primera.
    */
   const queueTimingSave = useCallback(
     (
@@ -278,20 +296,7 @@ export default function LessonView({
       /** El visto bueno se guarda ya; las flechas pueden esperar. */
       now = false,
     ) => {
-      const key = word.toLowerCase();
       const shared = timingKey(sentenceId, word);
-
-      setWords((current) =>
-        current.map((w) =>
-          w.word.toLowerCase() === key
-            ? {
-                ...w,
-                audioStart: timing?.from ?? null,
-                audioEnd: timing?.to ?? null,
-              }
-            : w,
-        ),
-      );
 
       setTimings((current) => {
         if (timing) return { ...current, [shared]: timing };
@@ -308,22 +313,16 @@ export default function LessonView({
 
       const write = () => {
         timers.delete(shared);
-        const from = timing?.from ?? null;
-        const to = timing?.to ?? null;
 
-        Promise.all([
-          saveWordTiming({ word, from, to }),
-          saveSharedWordTiming({
-            lessonId: lesson.id,
-            sentenceId,
-            term: word,
-            from,
-            to,
-            confirmed: timing?.confirmed ?? false,
-          }),
-        ]).then((results) => {
-          const failed = results.find((r) => !r.ok);
-          if (failed && !failed.ok) setSaveError(failed.error);
+        saveSharedWordTiming({
+          lessonId: lesson.id,
+          sentenceId,
+          term: word,
+          from: timing?.from ?? null,
+          to: timing?.to ?? null,
+          confirmed: timing?.confirmed ?? false,
+        }).then((result) => {
+          if (!result.ok) setSaveError(result.error);
         });
       };
 
@@ -364,10 +363,11 @@ export default function LessonView({
   /**
    * Escucha solo el trozo donde suena una palabra guardada y abre el ajuste.
    *
-   * Orden: lo que ajustó el usuario, lo que dejó ajustado cualquier otro en
-   * esta lección, y si no hay nada, la estimación (`estimateWordRange`), que la
-   * transcripción no trae tiempos por palabra. Si ni siquiera podemos situarla,
-   * suena la frase entera.
+   * El ajuste es de esta frase, no de la palabra: la misma expresión sale en
+   * varias frases y en cada una suena en otro segundo. Si no hay ajuste para
+   * esta frase (o el guardado cae fuera de ella, de cuando se guardaban por
+   * palabra), vamos a la estimación, que la transcripción no trae tiempos por
+   * palabra. Si ni siquiera podemos situarla, suena la frase entera.
    */
   const playWord = useCallback(
     (term: string, sentenceId: number, at?: number) => {
@@ -378,12 +378,10 @@ export default function LessonView({
       const saved = words.find(
         (w) => w.word.toLowerCase() === term.toLowerCase(),
       );
-      const mine =
-        saved?.audioStart != null && saved.audioEnd != null
-          ? { from: saved.audioStart, to: saved.audioEnd }
-          : null;
-      const shared = timings[timingKey(sentenceId, term)] ?? null;
-      const tuned = mine ?? shared;
+
+      const stored = timings[timingKey(sentenceId, term)] ?? null;
+      // Un ajuste que no suena dentro de su frase es de otra: no vale.
+      const tuned = stored && overlapsSentence(sentence, stored) ? stored : null;
 
       const range =
         tuned ??
@@ -398,12 +396,12 @@ export default function LessonView({
         range,
         tuned: tuned != null,
         // Nos interesa avisar de que el trabajo ya venía hecho de fuera.
-        fromOthers: mine == null && shared != null,
-        confirmed: shared?.confirmed ?? false,
+        fromOthers: tuned != null && tuned.updatedBy !== userId,
+        confirmed: tuned?.confirmed ?? false,
       });
       playRange(sentence, range);
     },
-    [playRange, sentenceById, timings, words],
+    [playRange, sentenceById, timings, userId, words],
   );
 
   /**
@@ -423,9 +421,10 @@ export default function LessonView({
       queueTimingSave(tuning.word, tuning.sentenceId, {
         ...next,
         confirmed: tuning.confirmed,
+        updatedBy: userId,
       });
     },
-    [playRange, queueTimingSave, sentenceById, tuning],
+    [playRange, queueTimingSave, sentenceById, tuning, userId],
   );
 
   /**
@@ -463,10 +462,10 @@ export default function LessonView({
     queueTimingSave(
       tuning.word,
       tuning.sentenceId,
-      { ...tuning.range, confirmed },
+      { ...tuning.range, confirmed, updatedBy: userId },
       true,
     );
-  }, [queueTimingSave, tuning]);
+  }, [queueTimingSave, tuning, userId]);
 
   /** Vuelve al principio del tramo. Es lo que hace el play una vez terminado. */
   const restart = useCallback(() => {
@@ -608,17 +607,21 @@ export default function LessonView({
     return () => clearTimeout(timer);
   }, [activeId, isLoggedIn, lesson.id, savedPositionId]);
 
-  // Si la página se mueve, la posición del botón flotante deja de valer.
+  const hasSelection = selection != null;
+
+  // Si algo se mueve, el botón flotante sigue al texto sombreado en vez de
+  // desaparecer: en el móvil la lista se mueve sola al sombrear y el botón se
+  // perdía antes de que diera tiempo a tocarlo.
   useEffect(() => {
-    if (!selection) return;
-    const clear = () => setSelection(null);
-    window.addEventListener("scroll", clear, true);
-    window.addEventListener("resize", clear);
+    if (!hasSelection) return;
+    const sync = () => setSelection(readTextSelection());
+    window.addEventListener("scroll", sync, true);
+    window.addEventListener("resize", sync);
     return () => {
-      window.removeEventListener("scroll", clear, true);
-      window.removeEventListener("resize", clear);
+      window.removeEventListener("scroll", sync, true);
+      window.removeEventListener("resize", sync);
     };
-  }, [selection]);
+  }, [hasSelection]);
 
   // Atajos de teclado.
   useEffect(() => {
@@ -915,8 +918,9 @@ export default function LessonView({
             </ul>
           ) : (
             <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-              Sombrea con el ratón una palabra o un trozo de frase en la
-              transcripción y aparecerá el botón para guardarla.
+              Sombrea una palabra o un trozo de frase en la transcripción y
+              aparecerá el botón para guardarla. En el móvil, mantén el dedo
+              pulsado sobre la palabra.
             </p>
           )}
 

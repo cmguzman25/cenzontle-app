@@ -76,6 +76,19 @@ export function clampRange(sentence: Sentence, range: Range): Range {
   return { from: round(from), to: round(to) };
 }
 
+/**
+ * ¿El trozo suena dentro de su frase, o es de otra?
+ *
+ * Una misma palabra sale en varias frases y cada aparición tiene su sitio en el
+ * audio. Con esto descartamos un ajuste que se guardó pensando en otra frase:
+ * mejor la estimación que mandar al usuario a un segundo que no es.
+ */
+export function overlapsSentence(sentence: Sentence, range: Range): boolean {
+  const overlap =
+    Math.min(range.to, sentence.end) - Math.max(range.from, sentence.start);
+  return overlap > 0;
+}
+
 /** Dos decimales: ni el audio ni la pantalla necesitan más. */
 function round(seconds: number): number {
   return Math.round(seconds * 100) / 100;

@@ -13,8 +13,10 @@ create table if not exists public.words (
   sentence_id integer,
   context     text,
   known       boolean not null default false,
-  -- Segundos exactos del trozo de audio, ajustados a mano por el usuario.
-  -- Si están vacíos se calcula una estimación a partir de la frase.
+  -- OBSOLETAS: no se leen ni se escriben. Aquí solo cabía un trozo de audio
+  -- por palabra, y la misma palabra sale en varias frases sonando en segundos
+  -- distintos: la segunda aparición acababa mandando al usuario a la primera.
+  -- Los segundos viven ahora en `word_audio`, con la frase en la clave.
   audio_start numeric,
   audio_end   numeric,
   created_at  timestamptz not null default now(),
@@ -24,6 +26,7 @@ create table if not exists public.words (
 );
 
 -- Para bases de datos creadas antes de que existiera el ajuste de audio.
+-- Se dejan por no tirar datos viejos, pero ya no se usan (ver arriba).
 alter table public.words add column if not exists audio_start numeric;
 alter table public.words add column if not exists audio_end   numeric;
 
