@@ -200,8 +200,10 @@ export default function LessonView({
     (seconds: number) => {
       setTime(seconds);
 
-      // Fin del tramo: paramos y ofrecemos la evaluación.
-      if (limit != null && seconds >= limit) {
+      // Fin del tramo: paramos y ofrecemos la evaluación. Con la última frase
+      // en bucle manda el bucle: repetirla no es haber terminado, y este corte
+      // iba antes que el bucle, así que la frase sonaba una vez y se paraba.
+      if (limit != null && seconds >= limit && loopIdRef.current == null) {
         playerRef.current?.pauseVideo();
         setFinished(true);
         setShowQuiz(true);

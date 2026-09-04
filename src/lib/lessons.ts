@@ -75,8 +75,12 @@ async function buildFromTranscript(lesson: Lesson): Promise<Sentence[]> {
 
   return cues.map((cue, i) => {
     const annotation = byStart.get(cue.start);
-    // La frase termina donde empieza la siguiente (o al final del trozo).
-    const next = cues[i + 1]?.start ?? Math.min(cue.start + 6, limit);
+    // La frase termina donde empieza la siguiente. La última llega hasta el
+    // final del trozo: `endAt` se pone justo donde se deja de hablar, así que
+    // recortarla a los 6 segundos de siempre le comía el final. Sin `endAt`
+    // (la lección es el video entero) no hay dónde parar y damos 6 segundos.
+    const next =
+      cues[i + 1]?.start ?? (limit === Infinity ? cue.start + 6 : limit);
 
     return {
       id: i + 1,
