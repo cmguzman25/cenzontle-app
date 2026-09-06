@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { isAdminEmail } from "@/lib/admin";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function Nav() {
@@ -7,6 +8,7 @@ export default async function Nav() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+  const admin = isAdminEmail(user?.email);
 
   return (
     <header className="border-b border-neutral-200 dark:border-neutral-800">
@@ -21,6 +23,22 @@ export default async function Nav() {
         >
           Mis palabras
         </Link>
+
+        <Link
+          href="/buscar"
+          className="text-neutral-600 hover:underline dark:text-neutral-400"
+        >
+          Buscar frases
+        </Link>
+
+        {admin && (
+          <Link
+            href="/admin"
+            className="text-neutral-600 hover:underline dark:text-neutral-400"
+          >
+            Usuarios
+          </Link>
+        )}
 
         <div className="ml-auto flex items-center gap-3">
           {user ? (
@@ -38,20 +56,14 @@ export default async function Nav() {
               </form>
             </>
           ) : (
-            <>
-              <Link
-                href="/login"
-                className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
-              >
-                Entrar
-              </Link>
-              <Link
-                href="/register"
-                className="rounded-lg bg-sky-600 px-3 py-1.5 font-medium text-white hover:bg-sky-700"
-              >
-                Crear cuenta
-              </Link>
-            </>
+            // Sin "Crear cuenta": el registro está cerrado, las cuentas se dan
+            // a mano desde /admin.
+            <Link
+              href="/login"
+              className="rounded-lg bg-sky-600 px-3 py-1.5 font-medium text-white hover:bg-sky-700"
+            >
+              Entrar
+            </Link>
           )}
         </div>
       </nav>

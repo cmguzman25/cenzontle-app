@@ -21,10 +21,26 @@ import {
 import type { ResolvedLesson, Sentence } from "@/lib/types";
 import {
   clampRange,
+  clampSentenceRange,
   estimateWordRange,
   overlapsSentence,
   type Range,
 } from "@/lib/word-timing";
+
+/**
+ * Con este "término" guardamos el ajuste de la frase entera en la misma tabla
+ * que el de las palabras. Lleva guiones bajos a propósito: ninguna palabra de
+ * la transcripción puede llamarse así, y no hace falta otra tabla para algo
+ * que se guarda y se lee exactamente igual (lección + frase + tramo).
+ */
+const SENTENCE_TERM = "__frase__";
+
+/**
+ * Cuánto se oye al mover una flecha. Se escucha solo el borde que se movió: en
+ * una frase de veinte segundos, esperar a que termine entera para saber si el
+ * final está bien no hay quien lo aguante.
+ */
+const EDGE_PREVIEW = 2;
 
 export type SavedWord = {
   word: string;
@@ -110,9 +126,14 @@ export default function LessonView({
     ),
   );
   const [selection, setSelection] = useState<TextSelection | null>(null);
-  /** Palabra cuyo trozo de audio se está ajustando con las flechas. */
+  /** Trozo de audio que se está ajustando con las flechas. */
   const [tuning, setTuning] = useState<{
+    /** Una palabra suelta o la frase entera. */
+    kind: "word" | "sentence";
+    /** Lo que se enseña en el panel. */
     word: string;
+    /** Con lo que se guarda: la palabra, o `SENTENCE_TERM` si es la frase. */
+    term: string;
     sentenceId: number;
     range: Range;
     /** `true` cuando los segundos están guardados y no son la estimación. */
@@ -167,9 +188,41 @@ export default function LessonView({
   loopIdRef.current = loopId;
   pauseEachRef.current = pauseEach;
 
+  /**
+   * Las frases con el tiempo que alguien haya cuadrado a mano. Los subtítulos
+   * automáticos van desfasados a menudo, y de aquí salen el resaltado, el
+   * bucle y los saltos: la corrección tiene que valer para todo, no solo para
+   * el trozo que se está oyendo.
+   */
+  const sentences = useMemo(
+    () =>
+      lesson.sentences.map((s) => {
+        const tuned = timings[timingKey(s.id, SENTENCE_TERM)];
+        return tuned ? { ...s, start: tuned.from, end: tuned.to } : s;
+      }),
+    [lesson.sentences, timings],
+  );
+
   const sentenceById = useMemo(
+    () => new Map(sentences.map((s) => [s.id, s])),
+    [sentences],
+  );
+
+  /** Los tiempos tal como vienen del guion, para poder volver a ellos. */
+  const originalById = useMemo(
     () => new Map(lesson.sentences.map((s) => [s.id, s])),
     [lesson.sentences],
+  );
+
+  /** Frases con el tiempo ya cuadrado: la transcripción lo marca en su botón. */
+  const tunedSentenceIds = useMemo(
+    () =>
+      new Set(
+        lesson.sentences
+          .filter((s) => timings[timingKey(s.id, SENTENCE_TERM)])
+          .map((s) => s.id),
+      ),
+    [lesson.sentences, timings],
   );
 
   const savedWords = useMemo(
@@ -192,9 +245,9 @@ export default function LessonView({
    */
   const limit = useMemo(() => {
     if (lesson.endAt == null) return null;
-    const last = lesson.sentences[lesson.sentences.length - 1];
+    const last = sentences[sentences.length - 1];
     return last ? Math.min(lesson.endAt, last.end) : lesson.endAt;
-  }, [lesson.endAt, lesson.sentences]);
+  }, [lesson.endAt, sentences]);
 
   const handleTime = useCallback(
     (seconds: number) => {
@@ -246,7 +299,7 @@ export default function LessonView({
       // Retomando: mantenemos la frase guardada hasta que el video arranque.
       if (resumeTargetRef.current != null) return;
 
-      const current = lesson.sentences.find(
+      const current = sentences.find(
         (s) => seconds >= s.start && seconds < s.end,
       );
       if (!current) return;
@@ -266,7 +319,7 @@ export default function LessonView({
         setActiveId(current.id);
       }
     },
-    [limit, lesson.sentences, sentenceById],
+    [limit, sentenceById, sentences],
   );
 
   const goToSentence = useCallback((sentence: Sentence) => {
@@ -292,13 +345,14 @@ export default function LessonView({
    */
   const queueTimingSave = useCallback(
     (
-      word: string,
+      /** La palabra, o `SENTENCE_TERM` si lo que se movió es la frase. */
+      term: string,
       sentenceId: number,
       timing: Timing | null,
       /** El visto bueno se guarda ya; las flechas pueden esperar. */
       now = false,
     ) => {
-      const shared = timingKey(sentenceId, word);
+      const shared = timingKey(sentenceId, term);
 
       setTimings((current) => {
         if (timing) return { ...current, [shared]: timing };
@@ -319,7 +373,7 @@ export default function LessonView({
         saveSharedWordTiming({
           lessonId: lesson.id,
           sentenceId,
-          term: word,
+          term,
           from: timing?.from ?? null,
           to: timing?.to ?? null,
           confirmed: timing?.confirmed ?? false,
@@ -393,7 +447,9 @@ export default function LessonView({
         };
 
       setTuning({
+        kind: "word",
         word: saved?.word ?? term,
+        term: saved?.word ?? term,
         sentenceId: sentence.id,
         range,
         tuned: tuned != null,
@@ -407,26 +463,74 @@ export default function LessonView({
   );
 
   /**
+   * Abre (o cierra) el ajuste de la frase entera: el mismo panel de flechas de
+   * las palabras, pero moviendo el principio y el final de la frase. Se llega
+   * aquí desde el botón de debajo del bucle, en la transcripción.
+   */
+  const toggleTuneSentence = useCallback(
+    (id: number) => {
+      if (tuning?.kind === "sentence" && tuning.sentenceId === id) {
+        setTuning(null);
+        return;
+      }
+
+      const sentence = sentenceById.get(id);
+      if (!sentence) return;
+
+      const stored = timings[timingKey(id, SENTENCE_TERM)] ?? null;
+      const range = { from: sentence.start, to: sentence.end };
+
+      setTuning({
+        kind: "sentence",
+        word: sentence.en,
+        term: SENTENCE_TERM,
+        sentenceId: id,
+        range,
+        tuned: stored != null,
+        fromOthers: stored != null && stored.updatedBy !== userId,
+        confirmed: stored?.confirmed ?? false,
+      });
+      playRange(sentence, range);
+    },
+    [playRange, sentenceById, timings, tuning, userId],
+  );
+
+  /**
    * Mueve una flecha del ajuste: recorta, deja oír el resultado al momento y
    * guarda en segundo plano (con espera, que se toca varias veces seguidas).
    */
   const tuneWord = useCallback(
-    (range: Range) => {
+    (range: Range, edge: "from" | "to") => {
       if (!tuning) return;
       const sentence = sentenceById.get(tuning.sentenceId);
-      if (!sentence) return;
+      const original = originalById.get(tuning.sentenceId);
+      if (!sentence || !original) return;
 
-      const next = clampRange(sentence, range);
+      // La frase se mide contra el guion, que es lo que no se mueve; el trozo
+      // de una palabra, contra la frase en la que suena.
+      const next =
+        tuning.kind === "sentence"
+          ? clampSentenceRange(original, range)
+          : clampRange(sentence, range);
+
       setTuning({ ...tuning, range: next, tuned: true, fromOthers: false });
-      playRange(sentence, next);
+
+      // Solo el borde que se acaba de mover: el principio se comprueba oyendo
+      // cómo entra, y el final, cómo cierra. Si el tramo entero es más corto
+      // que eso, suena entero y ya está.
+      const preview: Range =
+        edge === "from"
+          ? { from: next.from, to: Math.min(next.to, next.from + EDGE_PREVIEW) }
+          : { from: Math.max(next.from, next.to - EDGE_PREVIEW), to: next.to };
+      playRange(sentence, preview);
       // Mover las flechas no toca el visto bueno: eso lo decide el botón.
-      queueTimingSave(tuning.word, tuning.sentenceId, {
+      queueTimingSave(tuning.term, tuning.sentenceId, {
         ...next,
         confirmed: tuning.confirmed,
         updatedBy: userId,
       });
     },
-    [playRange, queueTimingSave, sentenceById, tuning, userId],
+    [originalById, playRange, queueTimingSave, sentenceById, tuning, userId],
   );
 
   /**
@@ -436,7 +540,23 @@ export default function LessonView({
   const resetWordTiming = useCallback(() => {
     if (!tuning) return;
     const sentence = sentenceById.get(tuning.sentenceId);
-    if (!sentence) return;
+    const original = originalById.get(tuning.sentenceId);
+    if (!sentence || !original) return;
+
+    // La frase vuelve a los segundos del guion; la palabra, a la estimación.
+    if (tuning.kind === "sentence") {
+      const back = { from: original.start, to: original.end };
+      setTuning({
+        ...tuning,
+        range: back,
+        tuned: false,
+        fromOthers: false,
+        confirmed: false,
+      });
+      playRange(original, back);
+      queueTimingSave(tuning.term, tuning.sentenceId, null);
+      return;
+    }
 
     const range = estimateWordRange(sentence, tuning.word) ?? {
       from: sentence.start,
@@ -450,8 +570,8 @@ export default function LessonView({
       confirmed: false,
     });
     playRange(sentence, range);
-    queueTimingSave(tuning.word, tuning.sentenceId, null);
-  }, [playRange, queueTimingSave, sentenceById, tuning]);
+    queueTimingSave(tuning.term, tuning.sentenceId, null);
+  }, [originalById, playRange, queueTimingSave, sentenceById, tuning]);
 
   /**
    * El visto bueno: lo pone y lo quita el usuario con el botón, nunca solo.
@@ -462,7 +582,7 @@ export default function LessonView({
     const confirmed = !tuning.confirmed;
     setTuning({ ...tuning, tuned: true, confirmed });
     queueTimingSave(
-      tuning.word,
+      tuning.term,
       tuning.sentenceId,
       { ...tuning.range, confirmed, updatedBy: userId },
       true,
@@ -471,7 +591,7 @@ export default function LessonView({
 
   /** Vuelve al principio del tramo. Es lo que hace el play una vez terminado. */
   const restart = useCallback(() => {
-    const first = lesson.sentences[0];
+    const first = sentences[0];
     awaitingNextRef.current = null;
     setAwaitingNext(null);
     resumeTargetRef.current = null;
@@ -483,7 +603,7 @@ export default function LessonView({
       playerRef.current?.seekTo(first.start, true);
     }
     playerRef.current?.playVideo();
-  }, [lesson.sentences]);
+  }, [sentences]);
 
   const togglePlay = useCallback(() => {
     if (!playerRef.current) return;
@@ -532,7 +652,9 @@ export default function LessonView({
       // Si quitamos la palabra que se estaba ajustando, el panel sobra.
       if (alreadySaved) {
         setTuning((current) =>
-          current && current.word.toLowerCase() === key ? null : current,
+          current?.kind === "word" && current.word.toLowerCase() === key
+            ? null
+            : current,
         );
       }
 
@@ -631,7 +753,7 @@ export default function LessonView({
       const target = event.target as HTMLElement | null;
       if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
 
-      const index = lesson.sentences.findIndex((s) => s.id === activeId);
+      const index = sentences.findIndex((s) => s.id === activeId);
 
       if (event.key === " ") {
         event.preventDefault();
@@ -644,20 +766,20 @@ export default function LessonView({
         if (activeId != null) toggleLoop(activeId);
       } else if (event.key === "ArrowLeft" && index > 0) {
         event.preventDefault();
-        goToSentence(lesson.sentences[index - 1]);
+        goToSentence(sentences[index - 1]);
       } else if (
         event.key === "ArrowRight" &&
         index >= 0 &&
-        index < lesson.sentences.length - 1
+        index < sentences.length - 1
       ) {
         event.preventDefault();
-        goToSentence(lesson.sentences[index + 1]);
+        goToSentence(sentences[index + 1]);
       }
     }
 
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [activeId, goToSentence, lesson.sentences, togglePlay, toggleLoop]);
+  }, [activeId, goToSentence, sentences, togglePlay, toggleLoop]);
 
   const selectionSaved = selection
     ? savedWords.has(selection.text.toLowerCase())
@@ -667,6 +789,7 @@ export default function LessonView({
     <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
       {tuning && (
         <WordTuner
+          kind={tuning.kind}
           word={tuning.word}
           range={tuning.range}
           tuned={tuning.tuned}
@@ -898,7 +1021,8 @@ export default function LessonView({
                         .join(" · ")}
                       className={[
                         "rounded-full px-2.5 py-1 text-sm transition-colors disabled:cursor-default",
-                        tuning?.word.toLowerCase() === w.word.toLowerCase()
+                        tuning?.kind === "word" &&
+                        tuning.word.toLowerCase() === w.word.toLowerCase()
                           ? "bg-amber-300 dark:bg-amber-500/50"
                           : "bg-amber-100 enabled:hover:bg-amber-200 dark:bg-amber-500/20 dark:enabled:hover:bg-amber-500/30",
                       ].join(" ")}
@@ -966,16 +1090,19 @@ export default function LessonView({
         )}
 
         <Transcript
-          sentences={lesson.sentences}
+          sentences={sentences}
           activeId={activeId}
           loopId={loopId}
           savedPositionId={savedPositionId}
           showEs={showEs}
           autoScroll={autoScroll}
           savedWords={savedWords}
+          tuningId={tuning?.kind === "sentence" ? tuning.sentenceId : null}
+          tunedIds={tunedSentenceIds}
           onSelect={goToSentence}
           onPlayWord={playWord}
           onToggleLoop={toggleLoop}
+          onToggleTune={toggleTuneSentence}
           onSaveWord={saveWord}
           onSelectText={setSelection}
         />

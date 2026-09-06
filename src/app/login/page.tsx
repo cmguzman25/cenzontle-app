@@ -66,6 +66,9 @@ function LoginForm() {
     const { error } = await supabase.auth.signInWithOtp({
       email: email.trim(),
       options: {
+        // Por defecto el enlace mágico CREA la cuenta si el correo no existe.
+        // Aquí las cuentas solo se dan a mano desde /admin, así que no.
+        shouldCreateUser: false,
         emailRedirectTo: `${window.location.origin}/auth/confirm?next=${encodeURIComponent(next)}`,
       },
     });
@@ -142,10 +145,8 @@ function LoginForm() {
       )}
 
       <p className="mt-8 border-t border-neutral-200 pt-4 text-center text-sm text-neutral-600 dark:border-neutral-800 dark:text-neutral-400">
-        ¿Todavía no tienes cuenta?{" "}
-        <Link href="/register" className="font-medium text-sky-600 underline">
-          Crear cuenta
-        </Link>
+        Las cuentas se crean a mano. Si no tienes una, pídesela al
+        administrador.
       </p>
     </main>
   );

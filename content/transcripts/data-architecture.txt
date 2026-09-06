@@ -2,8 +2,8 @@
 0:06 like searching about the architect— architectures and the different types and stuff, you might get confused very, very fast, my friends,
 0:13 because there are a lot of different types, a lot of different diagrams on how people draw architectures,
 0:19 and there is a lot of, let's say, misunderstanding what is really data architecture.
-0:24 Because if you Google and go to images, and— and you search for, I don't know, Azure architecture or data architecture, you're going to find different pictures,
-0:32 and I— I want you here to have some awareness about what is really data architecture.
+0:24 Because if you Google and go to images, and— and you search for, I don't know, Azure architecture or data architecture, you're going to find different pictures, and I
+0:32 I want you here to have some awareness about what is really data architecture.
 0:37 Now here we have some random image, I'm going to say, that looks like data architecture from Azure, from Microsoft.
 0:44 But my friends, this is not a data architecture. Yes, we have here, yeah, sources on the left side,
 0:49 we have pipelines, we have storage, we have streaming events, consumers and stuff like that. This is not a data architecture.

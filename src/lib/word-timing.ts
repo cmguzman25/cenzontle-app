@@ -76,6 +76,27 @@ export function clampRange(sentence: Sentence, range: Range): Range {
   return { from: round(from), to: round(to) };
 }
 
+/** Cuánto se puede mover una frase entera respecto a lo que dice el guion. */
+const SENTENCE_SLACK = 10;
+/** Una frase más corta que esto no dice nada. */
+const MIN_SENTENCE = 0.5;
+
+/**
+ * Igual que `clampRange`, pero para mover la frase entera. Aquí el margen es
+ * más ancho: los tiempos de los subtítulos automáticos se desfasan varios
+ * segundos, y el tope se mide siempre contra el guion original para que a base
+ * de flechas la frase no se vaya a la otra punta del video.
+ */
+export function clampSentenceRange(original: Sentence, range: Range): Range {
+  const floor = Math.max(0, original.start - SENTENCE_SLACK);
+  const ceiling = original.end + SENTENCE_SLACK;
+
+  const from = Math.min(Math.max(range.from, floor), ceiling - MIN_SENTENCE);
+  const to = Math.min(Math.max(range.to, from + MIN_SENTENCE), ceiling);
+
+  return { from: round(from), to: round(to) };
+}
+
 /**
  * ¿El trozo suena dentro de su frase, o es de otra?
  *

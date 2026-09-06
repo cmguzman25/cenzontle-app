@@ -66,10 +66,16 @@ type Props = {
   showEs: boolean;
   autoScroll: boolean;
   savedWords: Set<string>;
+  /** Frase cuyo tiempo se está cuadrando ahora mismo con las flechas. */
+  tuningId: number | null;
+  /** Frases cuyo tiempo ya cuadró alguien a mano. */
+  tunedIds: Set<number>;
   onSelect: (sentence: Sentence) => void;
   /** Pulsar una palabra guardada: suena solo ese trozo del audio. */
   onPlayWord: (term: string, sentenceId: number, at?: number) => void;
   onToggleLoop: (id: number) => void;
+  /** Abre (o cierra) el ajuste de tiempo de la frase entera. */
+  onToggleTune: (id: number) => void;
   onSaveWord: (word: string, meaning: string, sentence: Sentence) => void;
   /** Se llama al soltar el ratón habiendo sombreado texto. */
   onSelectText: (selection: TextSelection | null) => void;
@@ -83,9 +89,12 @@ export default function Transcript({
   showEs,
   autoScroll,
   savedWords,
+  tuningId,
+  tunedIds,
   onSelect,
   onPlayWord,
   onToggleLoop,
+  onToggleTune,
   onSaveWord,
   onSelectText,
 }: Props) {
@@ -188,6 +197,8 @@ export default function Transcript({
         const open = sentence.id === openId;
         const explainable = hasExplanation(sentence);
         const bookmarked = sentence.id === savedPositionId;
+        const tuning = sentence.id === tuningId;
+        const tuned = tunedIds.has(sentence.id);
 
         return (
           <li
@@ -237,20 +248,44 @@ export default function Transcript({
                 )}
               </div>
 
-              <button
-                type="button"
-                onClick={() => onToggleLoop(sentence.id)}
-                title={looping ? "Detener el bucle" : "Repetir esta frase en bucle"}
-                aria-pressed={looping}
-                className={[
-                  "shrink-0 select-none rounded-md px-2 py-1 text-sm transition-colors",
-                  looping
-                    ? "bg-sky-600 text-white"
-                    : "text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800",
-                ].join(" ")}
-              >
-                🔁
-              </button>
+              {/* En columna: el bucle arriba y, debajo, el ajuste de tiempo. */}
+              <div className="flex shrink-0 flex-col items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => onToggleLoop(sentence.id)}
+                  title={looping ? "Detener el bucle" : "Repetir esta frase en bucle"}
+                  aria-pressed={looping}
+                  className={[
+                    "select-none rounded-md px-2 py-1 text-sm transition-colors",
+                    looping
+                      ? "bg-sky-600 text-white"
+                      : "text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800",
+                  ].join(" ")}
+                >
+                  🔁
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => onToggleTune(sentence.id)}
+                  title={
+                    tuning
+                      ? "Cerrar el ajuste de tiempo"
+                      : "Cuadrar esta frase con el audio"
+                  }
+                  aria-pressed={tuning}
+                  className={[
+                    "select-none rounded-md px-2 py-1 text-sm transition-colors",
+                    tuning
+                      ? "bg-amber-500 text-white"
+                      : tuned
+                        ? "text-amber-600 hover:bg-amber-100 dark:text-amber-400 dark:hover:bg-amber-500/20"
+                        : "text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800",
+                  ].join(" ")}
+                >
+                  ↔
+                </button>
+              </div>
             </div>
 
             {explainable && (

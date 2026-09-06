@@ -6,6 +6,8 @@ import type { Range } from "@/lib/word-timing";
 const STEP = 0.2;
 
 type Props = {
+  /** Qué se está cuadrando: el trozo de una palabra o la frase entera. */
+  kind: "word" | "sentence";
   word: string;
   range: Range;
   /** `true` si estos segundos están guardados y no son la estimación. */
@@ -14,7 +16,8 @@ type Props = {
   fromOthers: boolean;
   /** Visto bueno: lo pone el usuario con el botón, nunca solo. */
   confirmed: boolean;
-  onChange: (range: Range) => void;
+  /** `edge` dice qué lado se movió: quien escuche solo tiene que oír ese. */
+  onChange: (range: Range, edge: "from" | "to") => void;
   onToggleConfirmed: () => void;
   onReset: () => void;
   onPlay: () => void;
@@ -22,11 +25,13 @@ type Props = {
 };
 
 /**
- * Ajuste fino del trozo de audio de una palabra. La estimación por caracteres
- * falla cuando el narrador hace pausas, así que el usuario corre el principio
- * y el final a golpe de flecha hasta que suena bien.
+ * Ajuste fino de un trozo de audio, sea el de una palabra o el de una frase
+ * entera. La estimación por caracteres falla cuando el narrador hace pausas y
+ * los tiempos de los subtítulos van desfasados, así que el usuario corre el
+ * principio y el final a golpe de flecha hasta que suena bien.
  */
 export default function WordTuner({
+  kind,
   word,
   range,
   tuned,
@@ -39,7 +44,9 @@ export default function WordTuner({
   onClose,
 }: Props) {
   const move = (edge: "from" | "to", delta: number) =>
-    onChange({ ...range, [edge]: range[edge] + delta });
+    onChange({ ...range, [edge]: range[edge] + delta }, edge);
+
+  const isSentence = kind === "sentence";
 
   return (
     // Flotante abajo: se llega aquí desde el banco de palabras o desde la
@@ -49,13 +56,18 @@ export default function WordTuner({
         <button
           type="button"
           onClick={onPlay}
-          title="Escuchar el trozo"
+          title={isSentence ? "Escuchar la frase entera" : "Escuchar el trozo"}
           className="rounded-md bg-amber-600 px-2.5 py-1 text-sm text-white hover:bg-amber-700"
         >
           ▶
         </button>
 
         <span className="min-w-0 flex-1 truncate text-sm font-medium">
+          {isSentence && (
+            <span className="mr-1 text-xs font-normal text-neutral-500 dark:text-neutral-400">
+              Frase:
+            </span>
+          )}
           {word}
         </span>
 
@@ -116,9 +128,11 @@ export default function WordTuner({
               onClick={onReset}
               className="underline hover:no-underline"
             >
-              Volver a la estimación
+              {isSentence ? "Volver al tiempo del guion" : "Volver a la estimación"}
             </button>
           </>
+        ) : isSentence ? (
+          "Tiempo del guion. Muévelo con las flechas hasta que el texto vaya con el audio: queda ajustado para todos."
         ) : (
           "Estimado. Muévelo con las flechas y queda ajustado para todos."
         )}
@@ -144,7 +158,7 @@ function Edge({
       <button
         type="button"
         onClick={onLess}
-        title={`${label}: ${STEP}s antes`}
+        title={`${label}: ${STEP}s antes (suena solo este borde)`}
         className="rounded-md border border-amber-300 px-2 py-0.5 hover:bg-amber-100 dark:border-amber-500/40 dark:hover:bg-amber-500/20"
       >
         ◀
@@ -155,7 +169,7 @@ function Edge({
       <button
         type="button"
         onClick={onMore}
-        title={`${label}: ${STEP}s después`}
+        title={`${label}: ${STEP}s después (suena solo este borde)`}
         className="rounded-md border border-amber-300 px-2 py-0.5 hover:bg-amber-100 dark:border-amber-500/40 dark:hover:bg-amber-500/20"
       >
         ▶
