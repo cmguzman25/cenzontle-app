@@ -138,12 +138,15 @@ export async function deleteWordById(id: string): Promise<ActionResult> {
 }
 
 /**
- * Recuerda por qué frase va el usuario en esta lección. Se llama a menudo
- * mientras se ve el video, así que no revalida ninguna ruta.
+ * Guarda la frase que el usuario marcó con 📍 en esta lección. La pone y la
+ * quita él a mano; con `sentenceId` a null se borra la marca.
+ *
+ * No revalida ninguna ruta: la pantalla ya enseña la marca al momento y
+ * recargar la lección entera por esto se nota mientras suena el video.
  */
 export async function saveLessonPosition(input: {
   lessonId: string;
-  sentenceId: number;
+  sentenceId: number | null;
 }): Promise<ActionResult> {
   const supabase = await createClient();
   const {
@@ -151,6 +154,17 @@ export async function saveLessonPosition(input: {
   } = await supabase.auth.getUser();
 
   if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  if (input.sentenceId == null) {
+    const { error } = await supabase
+      .from("lesson_position")
+      .delete()
+      .eq("user_id", user.id)
+      .eq("lesson_id", input.lessonId);
+
+    if (error) return { ok: false, error: error.message };
+    return { ok: true };
+  }
 
   const { error } = await supabase.from("lesson_position").upsert(
     {

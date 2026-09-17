@@ -76,6 +76,8 @@ type Props = {
   onToggleLoop: (id: number) => void;
   /** Abre (o cierra) el ajuste de tiempo de la frase entera. */
   onToggleTune: (id: number) => void;
+  /** Pone o quita la marca 📍 de por dónde va el usuario. */
+  onToggleSavedPosition: (id: number) => void;
   onSaveWord: (word: string, meaning: string, sentence: Sentence) => void;
   /** Se llama al soltar el ratón habiendo sombreado texto. */
   onSelectText: (selection: TextSelection | null) => void;
@@ -95,6 +97,7 @@ export default function Transcript({
   onPlayWord,
   onToggleLoop,
   onToggleTune,
+  onToggleSavedPosition,
   onSaveWord,
   onSelectText,
 }: Props) {
@@ -212,26 +215,41 @@ export default function Transcript({
             ].join(" ")}
           >
             <div className="flex items-start gap-2">
-              <button
-                type="button"
-                onClick={() => onSelect(sentence)}
-                title="Ir a esta frase"
-                className="mt-0.5 shrink-0 select-none rounded px-1.5 py-0.5 font-mono text-xs text-neutral-500 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-800"
-              >
-                {formatTime(sentence.start)}
-              </button>
+              {/* A la izquierda, lo de situarse: el segundo y la marca. */}
+              <div className="mt-0.5 flex shrink-0 flex-col items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => onSelect(sentence)}
+                  title="Ir a esta frase"
+                  className="select-none rounded px-1.5 py-0.5 font-mono text-xs text-neutral-500 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-800"
+                >
+                  {formatTime(sentence.start)}
+                </button>
+
+                {/* Difuminada mientras no esté puesta: va en todas las frases y
+                    a plena tinta serían cien chinchetas. Nunca invisible del
+                    todo, que en el móvil no hay "pasar por encima". */}
+                <button
+                  type="button"
+                  onClick={() => onToggleSavedPosition(sentence.id)}
+                  title={
+                    bookmarked
+                      ? "Quitar la marca de por dónde vas"
+                      : "Marcar aquí por dónde vas"
+                  }
+                  aria-pressed={bookmarked}
+                  className={[
+                    "select-none rounded-md px-1.5 py-0.5 text-sm transition-opacity",
+                    bookmarked ? "opacity-100" : "opacity-25 hover:opacity-100",
+                  ].join(" ")}
+                >
+                  📍
+                </button>
+              </div>
 
               <div className="min-w-0 flex-1">
                 {/* Texto normal y seleccionable: sombrear es lo que guarda palabras. */}
                 <p className="text-lg leading-relaxed">
-                  {bookmarked && (
-                    <span
-                      title="Aquí lo dejaste la última vez"
-                      className="mr-1 select-none"
-                    >
-                      📍
-                    </span>
-                  )}
                   <HighlightedText
                     text={sentence.en}
                     pattern={highlight}

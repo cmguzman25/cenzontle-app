@@ -42,6 +42,30 @@ const SENTENCE_TERM = "__frase__";
  */
 const EDGE_PREVIEW = 2;
 
+/**
+ * Respiro entre una vuelta del bucle y la siguiente. Sin él la frase enlaza con
+ * ella misma y no se distingue dónde acaba y dónde vuelve a empezar, que es
+ * justo lo que hay que oír para repetirla. Cuánto hace falta depende de quién
+ * escucha, así que se elige en la barra y se recuerda para la próxima vez.
+ */
+const LOOP_PAUSE_DEFAULT = 500;
+const LOOP_PAUSE_OPTIONS = [0, 500, 1000, 1500, 2000, 3000];
+const LOOP_PAUSE_KEY = "listen-app:loop-pause";
+
+/**
+ * Lo que eligió el usuario la última vez. En el servidor no hay almacén, y el
+ * navegador puede tenerlo bloqueado: en ambos casos se va al valor de siempre.
+ */
+function readLoopPause(): number {
+  if (typeof window === "undefined") return LOOP_PAUSE_DEFAULT;
+  try {
+    const ms = Number(window.localStorage.getItem(LOOP_PAUSE_KEY));
+    return LOOP_PAUSE_OPTIONS.includes(ms) ? ms : LOOP_PAUSE_DEFAULT;
+  } catch {
+    return LOOP_PAUSE_DEFAULT;
+  }
+}
+
 export type SavedWord = {
   word: string;
   meaning: string;
@@ -147,7 +171,15 @@ export default function LessonView({
   const [showQuiz, setShowQuiz] = useState(false);
   /** Llegamos al final del tramo: el play ahora significa "repetir". */
   const [finished, setFinished] = useState(false);
-  /** Frase marcada con 📍 en la lista: la última que guardamos en Supabase. */
+  /** El bucle está en el respiro entre dos vueltas. Solo para enseñarlo. */
+  const [loopWaiting, setLoopWaiting] = useState(false);
+  /**
+   * Cuánto silencio deja el bucle antes de repetir, en milisegundos. Solo sale
+   * en pantalla con el bucle en marcha, que al montar nunca lo está: no hay
+   * riesgo de que el servidor pinte un valor y el navegador otro.
+   */
+  const [loopPause, setLoopPause] = useState(readLoopPause);
+  /** Frase marcada con 📍 en la lista. La pone y la quita el usuario a mano. */
   const [savedPositionId, setSavedPositionId] = useState(initialSentenceId);
 
   // Refs para leer el estado más reciente dentro del callback de tiempo,
@@ -181,6 +213,12 @@ export default function LessonView({
    * dejamos quieta la que se acaba de oír hasta que el usuario vuelva a jugar.
    */
   const holdActiveRef = useRef(false);
+  /**
+   * Respiro del bucle en marcha. Mientras esté puesto el video está parado al
+   * final de la frase esperando para repetirla, y el reloj —que sigue llegando
+   * cada 200 ms aunque no suene nada— no debe tocar nada.
+   */
+  const loopPauseRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   /** Guardados del ajuste pendientes, uno por palabra. */
   const timingSaveTimers = useRef(
     new Map<string, ReturnType<typeof setTimeout>>(),
@@ -249,9 +287,36 @@ export default function LessonView({
     return last ? Math.min(lesson.endAt, last.end) : lesson.endAt;
   }, [lesson.endAt, sentences]);
 
+  /** Corta el respiro del bucle. Sin `resume`, además deja el video parado. */
+  const cancelLoopPause = useCallback((resume = false) => {
+    const timer = loopPauseRef.current;
+    if (!timer) return;
+    clearTimeout(timer);
+    loopPauseRef.current = null;
+    setLoopWaiting(false);
+    if (resume) playerRef.current?.playVideo();
+  }, []);
+
+  useEffect(() => cancelLoopPause, [cancelLoopPause]);
+
+  /** Cambia el respiro del bucle y lo deja apuntado para la próxima vez. */
+  const changeLoopPause = useCallback((ms: number) => {
+    setLoopPause(ms);
+    try {
+      window.localStorage.setItem(LOOP_PAUSE_KEY, String(ms));
+    } catch {
+      // Sin almacén vale para esta sesión y ya está.
+    }
+  }, []);
+
   const handleTime = useCallback(
     (seconds: number) => {
       setTime(seconds);
+
+      // En el respiro entre dos vueltas: el reloj sigue llegando con el video
+      // parado, y si le hiciéramos caso saltaría el resaltado a la frase de al
+      // lado, que es donde cae el segundo en el que nos hemos quedado.
+      if (loopPauseRef.current) return;
 
       // Fin del tramo: paramos y ofrecemos la evaluación. Con la última frase
       // en bucle manda el bucle: repetirla no es haber terminado, y este corte
@@ -281,13 +346,22 @@ export default function LessonView({
       }
       if (holdActiveRef.current) return;
 
-      // Bucle: al llegar al final de la frase, volvemos a su inicio.
+      // Bucle: al llegar al final de la frase paramos, dejamos un respiro y
+      // volvemos a su inicio. El silencio es lo que marca dónde acaba una
+      // vuelta y empieza la siguiente.
       const looping = loopIdRef.current;
       if (looping != null) {
         const s = sentenceById.get(looping);
         if (s && seconds >= s.end - 0.05) {
-          playerRef.current?.seekTo(s.start, true);
+          playerRef.current?.pauseVideo();
           setRepeats((r) => ({ ...r, [s.id]: (r[s.id] ?? 0) + 1 }));
+          setLoopWaiting(true);
+          loopPauseRef.current = setTimeout(() => {
+            loopPauseRef.current = null;
+            setLoopWaiting(false);
+            playerRef.current?.seekTo(s.start, true);
+            playerRef.current?.playVideo();
+          }, loopPause);
           return;
         }
       }
@@ -319,20 +393,24 @@ export default function LessonView({
         setActiveId(current.id);
       }
     },
-    [limit, sentenceById, sentences],
+    [limit, loopPause, sentenceById, sentences],
   );
 
-  const goToSentence = useCallback((sentence: Sentence) => {
-    awaitingNextRef.current = null;
-    setAwaitingNext(null);
-    resumeTargetRef.current = null;
-    stopRangeRef.current = null;
-    setFinished(false);
-    activeIdRef.current = sentence.id;
-    setActiveId(sentence.id);
-    playerRef.current?.seekTo(sentence.start, true);
-    playerRef.current?.playVideo();
-  }, []);
+  const goToSentence = useCallback(
+    (sentence: Sentence) => {
+      cancelLoopPause();
+      awaitingNextRef.current = null;
+      setAwaitingNext(null);
+      resumeTargetRef.current = null;
+      stopRangeRef.current = null;
+      setFinished(false);
+      activeIdRef.current = sentence.id;
+      setActiveId(sentence.id);
+      playerRef.current?.seekTo(sentence.start, true);
+      playerRef.current?.playVideo();
+    },
+    [cancelLoopPause],
+  );
 
   /**
    * Apunta el trozo ajustado: al momento en pantalla y, un poco después, en
@@ -401,20 +479,24 @@ export default function LessonView({
   }, []);
 
   /** Reproduce un tramo de segundos y para al final. No toca nada más. */
-  const playRange = useCallback((sentence: Sentence, range: Range) => {
-    awaitingNextRef.current = null;
-    setAwaitingNext(null);
-    resumeTargetRef.current = null;
-    setLoopId(null);
-    loopIdRef.current = null;
-    setFinished(false);
-    holdActiveRef.current = false;
-    activeIdRef.current = sentence.id;
-    setActiveId(sentence.id);
-    stopRangeRef.current = { from: range.from, to: range.to, armed: false };
-    playerRef.current?.seekTo(range.from, true);
-    playerRef.current?.playVideo();
-  }, []);
+  const playRange = useCallback(
+    (sentence: Sentence, range: Range) => {
+      cancelLoopPause();
+      awaitingNextRef.current = null;
+      setAwaitingNext(null);
+      resumeTargetRef.current = null;
+      setLoopId(null);
+      loopIdRef.current = null;
+      setFinished(false);
+      holdActiveRef.current = false;
+      activeIdRef.current = sentence.id;
+      setActiveId(sentence.id);
+      stopRangeRef.current = { from: range.from, to: range.to, armed: false };
+      playerRef.current?.seekTo(range.from, true);
+      playerRef.current?.playVideo();
+    },
+    [cancelLoopPause],
+  );
 
   /**
    * Escucha solo el trozo donde suena una palabra guardada y abre el ajuste.
@@ -592,6 +674,7 @@ export default function LessonView({
   /** Vuelve al principio del tramo. Es lo que hace el play una vez terminado. */
   const restart = useCallback(() => {
     const first = sentences[0];
+    cancelLoopPause();
     awaitingNextRef.current = null;
     setAwaitingNext(null);
     resumeTargetRef.current = null;
@@ -603,10 +686,23 @@ export default function LessonView({
       playerRef.current?.seekTo(first.start, true);
     }
     playerRef.current?.playVideo();
-  }, [sentences]);
+  }, [cancelLoopPause, sentences]);
 
   const togglePlay = useCallback(() => {
     if (!playerRef.current) return;
+
+    // En medio del respiro del bucle el video está parado, así que el play
+    // aquí es "no esperes más": repetimos ya, sin agotar el silencio.
+    if (loopPauseRef.current) {
+      const s = loopId != null ? sentenceById.get(loopId) : null;
+      cancelLoopPause();
+      if (s) {
+        playerRef.current.seekTo(s.start, true);
+        playerRef.current.playVideo();
+        return;
+      }
+    }
+
     // Dar al play es "sigue sonando": si quedaba el freno de un trozo suelto,
     // lo soltamos o pararía de nuevo al llegar a su final.
     stopRangeRef.current = null;
@@ -620,10 +716,11 @@ export default function LessonView({
     } else {
       playerRef.current.playVideo();
     }
-  }, [finished, restart]);
+  }, [cancelLoopPause, finished, loopId, restart, sentenceById]);
 
   const toggleLoop = useCallback(
     (id: number) => {
+      cancelLoopPause();
       awaitingNextRef.current = null;
       setAwaitingNext(null);
       resumeTargetRef.current = null;
@@ -641,7 +738,7 @@ export default function LessonView({
         return id;
       });
     },
-    [sentenceById],
+    [cancelLoopPause, sentenceById],
   );
 
   const saveWord = useCallback(
@@ -714,22 +811,30 @@ export default function LessonView({
     setSelection(null);
   }, [saveWord, selection, sentenceById]);
 
-  // Recordamos por dónde vamos. Esperamos 2 s para no guardar las frases por
-  // las que solo pasamos de largo, y para no llamar a Supabase cada 3 segundos.
-  useEffect(() => {
-    if (!isLoggedIn || activeId == null || activeId === savedPositionId) return;
+  /**
+   * Pone o quita la marca 📍 de por dónde va el usuario. Es a mano a
+   * propósito: cuando seguía a la frase que sonaba, un clic sin querer en
+   * cualquier otra la movía de sitio y luego costaba encontrar el punto bueno.
+   */
+  const toggleSavedPosition = useCallback(
+    (id: number) => {
+      const next = savedPositionId === id ? null : id;
+      const previous = savedPositionId;
+      setSavedPositionId(next);
 
-    const timer = setTimeout(() => {
-      setSavedPositionId(activeId);
-      saveLessonPosition({ lessonId: lesson.id, sentenceId: activeId }).then(
+      if (!isLoggedIn) return;
+
+      saveLessonPosition({ lessonId: lesson.id, sentenceId: next }).then(
         (result) => {
-          if (!result.ok) setSaveError(result.error);
+          if (!result.ok) {
+            setSaveError(result.error);
+            setSavedPositionId(previous);
+          }
         },
       );
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, [activeId, isLoggedIn, lesson.id, savedPositionId]);
+    },
+    [isLoggedIn, lesson.id, savedPositionId],
+  );
 
   const hasSelection = selection != null;
 
@@ -912,12 +1017,40 @@ export default function LessonView({
           {loopId != null && (
             <button
               type="button"
-              onClick={() => setLoopId(null)}
+              onClick={() => {
+                // Sin esto el respiro pendiente saltaría después de apagar el
+                // bucle y el video se iría solo al principio de la frase.
+                cancelLoopPause();
+                setLoopId(null);
+              }}
               className="rounded-lg bg-sky-600 px-3 py-1.5 text-white hover:bg-sky-700"
             >
-              🔁 En bucle ({repeats[loopId] ?? 0}) — detener
+              {loopWaiting ? "⏸" : "🔁"} En bucle ({repeats[loopId] ?? 0}) —
+              detener
               <kbd className="ml-1 text-xs opacity-70">L</kbd>
             </button>
+          )}
+
+          {loopId != null && (
+            <label
+              title="Silencio entre una vuelta del bucle y la siguiente"
+              className="flex items-center gap-1.5 rounded-lg border border-neutral-300 px-3 py-1.5 dark:border-neutral-700"
+            >
+              <span className="text-neutral-500 dark:text-neutral-400">
+                Pausa
+              </span>
+              <select
+                value={loopPause}
+                onChange={(event) => changeLoopPause(Number(event.target.value))}
+                className="bg-transparent font-medium outline-none [&>option]:bg-white dark:[&>option]:bg-neutral-900"
+              >
+                {LOOP_PAUSE_OPTIONS.map((ms) => (
+                  <option key={ms} value={ms}>
+                    {ms === 0 ? "sin pausa" : `${(ms / 1000).toString().replace(".", ",")} s`}
+                  </option>
+                ))}
+              </select>
+            </label>
           )}
         </div>
 
@@ -1083,10 +1216,20 @@ export default function LessonView({
           </span>
         </div>
 
-        {initialSentenceId != null && activeId === initialSentenceId && (
-          <p className="rounded-lg bg-neutral-100 px-3 py-2 text-xs text-neutral-600 dark:bg-neutral-900 dark:text-neutral-400">
-            📍 Seguimos donde lo dejaste.
-          </p>
+        {/* La otra mitad del problema: tener la marca puesta no sirve de nada
+            si luego hay que buscarla a mano por la lista. */}
+        {savedPositionId != null && activeId !== savedPositionId && (
+          <button
+            type="button"
+            onClick={() => {
+              const sentence = sentenceById.get(savedPositionId);
+              if (sentence) goToSentence(sentence);
+            }}
+            className="rounded-lg bg-neutral-100 px-3 py-2 text-left text-xs text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800"
+          >
+            📍 Volver a tu marca (
+            {formatClock(sentenceById.get(savedPositionId)?.start ?? 0)})
+          </button>
         )}
 
         <Transcript
@@ -1103,6 +1246,7 @@ export default function LessonView({
           onPlayWord={playWord}
           onToggleLoop={toggleLoop}
           onToggleTune={toggleTuneSentence}
+          onToggleSavedPosition={toggleSavedPosition}
           onSaveWord={saveWord}
           onSelectText={setSelection}
         />
