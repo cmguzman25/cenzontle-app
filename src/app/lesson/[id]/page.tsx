@@ -40,8 +40,13 @@ export default async function LessonPage({
     id,
   );
 
-  const [wordsResult, progressResult, positionResult, timingsResult] =
-    await Promise.all([
+  const [
+    wordsResult,
+    progressResult,
+    positionResult,
+    timingsResult,
+    reviewResult,
+  ] = await Promise.all([
     supabase.from("words").select("word, meaning, lesson_id, sentence_id"),
     supabase
       .from("progress")
@@ -59,6 +64,12 @@ export default async function LessonPage({
       .from("word_audio")
       .select("sentence_id, term, audio_start, audio_end, confirmed, updated_by")
       .eq("lesson_id", lesson.id),
+    // Cuántas vueltas le ha dado el usuario a esta parte.
+    supabase
+      .from("lesson_review")
+      .select("times, last_at")
+      .eq("lesson_id", lesson.id)
+      .maybeSingle(),
   ]);
 
   const initialWords: SavedWord[] = (wordsResult.data ?? []).map((row) => ({
@@ -140,6 +151,14 @@ export default async function LessonPage({
         initialWords={initialWords}
         initialTimings={sharedTimings}
         initialSentenceId={initialSentenceId}
+        initialReview={
+          reviewResult.data
+            ? {
+                times: reviewResult.data.times as number,
+                lastAt: reviewResult.data.last_at as string,
+              }
+            : null
+        }
       />
 
       {chapter && (

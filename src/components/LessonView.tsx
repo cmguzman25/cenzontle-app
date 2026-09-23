@@ -12,12 +12,17 @@ import Transcript, {
 import WordTuner from "@/components/WordTuner";
 import YouTubePlayer, { YT_STATE, type YTPlayer } from "@/components/YouTubePlayer";
 import {
+  getLessonTimings,
+  markLessonReviewed,
   removeWord,
+  unmarkLessonReviewed,
+  type Review,
   saveLessonPosition,
   saveProgress,
   saveSharedWordTiming,
   saveWord as saveWordToDb,
 } from "@/lib/actions";
+import { timeAgo } from "@/lib/dates";
 import type { ResolvedLesson, Sentence } from "@/lib/types";
 import {
   clampRange,
@@ -112,6 +117,8 @@ type Props = {
   initialTimings: SharedTiming[];
   /** Frase por la que iba la última vez, si la tenemos guardada. */
   initialSentenceId: number | null;
+  /** Repasos que lleva esta parte, o `null` si aún no la ha revisado. */
+  initialReview: Review | null;
 };
 
 export default function LessonView({
@@ -121,6 +128,7 @@ export default function LessonView({
   initialWords,
   initialTimings,
   initialSentenceId,
+  initialReview,
 }: Props) {
   const playerRef = useRef<YTPlayer | null>(null);
   const [ready, setReady] = useState(false);
@@ -181,6 +189,10 @@ export default function LessonView({
   const [loopPause, setLoopPause] = useState(readLoopPause);
   /** Frase marcada con 📍 en la lista. La pone y la quita el usuario a mano. */
   const [savedPositionId, setSavedPositionId] = useState(initialSentenceId);
+  /** Repasos de esta parte. `null` mientras no la haya dado por revisada. */
+  const [review, setReview] = useState(initialReview);
+  /** Hay un repaso yendo o viniendo de Supabase: el botón espera. */
+  const [savingReview, setSavingReview] = useState(false);
 
   // Refs para leer el estado más reciente dentro del callback de tiempo,
   // que se ejecuta cada 200 ms fuera del ciclo de render.
@@ -223,6 +235,14 @@ export default function LessonView({
   const timingSaveTimers = useRef(
     new Map<string, ReturnType<typeof setTimeout>>(),
   );
+  /** Ajustes con la escritura ya en camino, esperando respuesta. */
+  const timingWriting = useRef(new Set<string>());
+  /**
+   * Freno del botón de repasos. Va en un ref y no en el estado porque el
+   * `disabled` solo llega después de repintar: dos clics seguidos entran los
+   * dos y la parte se cuenta dos veces.
+   */
+  const reviewBusy = useRef(false);
   loopIdRef.current = loopId;
   pauseEachRef.current = pauseEach;
 
@@ -447,6 +467,9 @@ export default function LessonView({
 
       const write = () => {
         timers.delete(shared);
+        // Anotado hasta que el servidor conteste: si mientras tanto volvemos a
+        // leer los ajustes, este no se pisa con el valor viejo de Supabase.
+        timingWriting.current.add(shared);
 
         saveSharedWordTiming({
           lessonId: lesson.id,
@@ -456,6 +479,7 @@ export default function LessonView({
           to: timing?.to ?? null,
           confirmed: timing?.confirmed ?? false,
         }).then((result) => {
+          timingWriting.current.delete(shared);
           if (!result.ok) setSaveError(result.error);
         });
       };
@@ -477,6 +501,57 @@ export default function LessonView({
       timers.clear();
     };
   }, []);
+
+  /**
+   * Vuelve a leer los ajustes de Supabase. Los ajustes son de todos y se tocan
+   * desde varios sitios: lo que se cuadró en el móvil tiene que aparecer aquí
+   * sin recargar la lección.
+   */
+  const refreshTimings = useCallback(async () => {
+    const result = await getLessonTimings(lesson.id);
+    // En silencio: esto pasa de fondo y un aviso rojo aquí solo asusta.
+    if (!result.ok) return;
+
+    setTimings((current) => {
+      const next: Record<string, Timing> = {};
+      for (const t of result.timings) {
+        next[timingKey(t.sentenceId, t.term)] = {
+          from: t.from,
+          to: t.to,
+          confirmed: t.confirmed,
+          updatedBy: t.updatedBy,
+        };
+      }
+
+      // Lo que este dispositivo tiene a medio guardar manda sobre lo leído:
+      // todavía no ha llegado al servidor y lo de allí es lo de antes.
+      const mine = [
+        ...timingSaveTimers.current.keys(),
+        ...timingWriting.current,
+      ];
+      for (const key of mine) {
+        const local = current[key];
+        if (local) next[key] = local;
+        else delete next[key];
+      }
+
+      return next;
+    });
+  }, [lesson.id]);
+
+  // Al volver a la pestaña recogemos lo que se haya ajustado por ahí fuera.
+  useEffect(() => {
+    const sync = () => {
+      if (document.visibilityState === "visible") void refreshTimings();
+    };
+
+    document.addEventListener("visibilitychange", sync);
+    window.addEventListener("focus", sync);
+    return () => {
+      document.removeEventListener("visibilitychange", sync);
+      window.removeEventListener("focus", sync);
+    };
+  }, [refreshTimings]);
 
   /** Reproduce un tramo de segundos y para al final. No toca nada más. */
   const playRange = useCallback(
@@ -836,6 +911,40 @@ export default function LessonView({
     [isLoggedIn, lesson.id, savedPositionId],
   );
 
+  /**
+   * Una vuelta más a esta parte. El contador es lo que luego deja ordenar el
+   * repaso: sin él no hay forma de saber cuáles tengo abandonadas.
+   *
+   * Sin adelantar el número en pantalla: la cuenta la lleva Postgres y aquí
+   * interesa enseñar la de verdad, no la que suponemos.
+   */
+  const addReview = useCallback(() => {
+    if (!isLoggedIn || reviewBusy.current) return;
+
+    reviewBusy.current = true;
+    setSavingReview(true);
+    markLessonReviewed(lesson.id).then((result) => {
+      reviewBusy.current = false;
+      setSavingReview(false);
+      if (result.ok) setReview(result.review);
+      else setSaveError(result.error);
+    });
+  }, [isLoggedIn, lesson.id]);
+
+  /** Quita el último repaso, para cuando se marcó sin querer. */
+  const removeReview = useCallback(() => {
+    if (!isLoggedIn || reviewBusy.current) return;
+
+    reviewBusy.current = true;
+    setSavingReview(true);
+    unmarkLessonReviewed(lesson.id).then((result) => {
+      reviewBusy.current = false;
+      setSavingReview(false);
+      if (result.ok) setReview(result.review);
+      else setSaveError(result.error);
+    });
+  }, [isLoggedIn, lesson.id]);
+
   const hasSelection = selection != null;
 
   // Si algo se mueve, el botón flotante sigue al texto sombreado en vez de
@@ -1105,6 +1214,54 @@ export default function LessonView({
             {showQuiz ? "Ocultar evaluación" : "Evaluar comprensión"}
           </button>
         </div>
+
+        {/* Repasos. Se resalta al llegar al final del tramo, que es cuando de
+            verdad toca darla por revisada. */}
+        {isLoggedIn && (
+          <div className="flex flex-wrap items-center gap-2 text-sm">
+            <button
+              type="button"
+              onClick={addReview}
+              disabled={savingReview}
+              className={[
+                "rounded-lg px-3 py-1.5 font-medium transition-colors disabled:opacity-50",
+                finished || review == null
+                  ? "bg-emerald-600 text-white hover:bg-emerald-700"
+                  : "border border-emerald-600 text-emerald-700 hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-950/40",
+              ].join(" ")}
+            >
+              ✅ {review == null ? "Marcar como revisada" : "Revisada otra vez"}
+            </button>
+
+            {review && (
+              <>
+                <span className="text-neutral-500 dark:text-neutral-400">
+                  {review.times === 1
+                    ? "Revisada 1 vez"
+                    : `Revisada ${review.times} veces`}{" "}
+                  · última {timeAgo(review.lastAt)}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={removeReview}
+                  disabled={savingReview}
+                  title="Por si la marcaste sin querer"
+                  className="text-neutral-500 underline hover:no-underline disabled:opacity-50 dark:text-neutral-400"
+                >
+                  quitar una
+                </button>
+              </>
+            )}
+
+            <Link
+              href="/repaso"
+              className="ml-auto text-neutral-500 hover:underline dark:text-neutral-400"
+            >
+              Ver mis repasos →
+            </Link>
+          </div>
+        )}
 
         {saveError && (
           <p className="rounded-lg border border-red-300 bg-red-50 p-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">

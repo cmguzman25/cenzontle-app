@@ -31,6 +31,15 @@ export default async function Nav() {
           Buscar frases
         </Link>
 
+        {user && (
+          <Link
+            href="/repaso"
+            className="text-neutral-600 hover:underline dark:text-neutral-400"
+          >
+            Mis repasos
+          </Link>
+        )}
+
         {admin && (
           <Link
             href="/admin"

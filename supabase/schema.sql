@@ -117,11 +117,61 @@ create table if not exists public.lesson_position (
 );
 
 -- ---------------------------------------------------------------------------
+-- Repasos: cuántas veces ha revisado el usuario cada parte
+--
+-- Escuchar una parte una vez no es aprendérsela. Aquí se lleva la cuenta de
+-- las vueltas que le ha dado cada uno, para poder volver luego a las que menos
+-- ha tocado o a las que tiene más olvidadas.
+-- ---------------------------------------------------------------------------
+create table if not exists public.lesson_review (
+  user_id   uuid not null references auth.users (id) on delete cascade,
+  lesson_id text not null,
+  -- Cuántas veces la ha dado por revisada. Nunca baja de 1: al llegar a cero
+  -- se borra la fila y la parte vuelve a estar sin repasar.
+  times     integer not null default 1 check (times > 0),
+  last_at   timestamptz not null default now(),
+
+  primary key (user_id, lesson_id)
+);
+
+-- Para ordenar por "la que hace más que no toco".
+create index if not exists lesson_review_user_last_idx
+  on public.lesson_review (user_id, last_at);
+
+/*
+ * Suma un repaso. Va en una función porque `times + 1` sobre la fila que ya
+ * existe no se puede pedir desde el cliente en una sola llamada, y leer-sumar-
+ * escribir desde fuera son dos viajes y una carrera.
+ *
+ * `security invoker`: la función entra con los permisos de quien llama, así
+ * que las políticas de abajo siguen mandando y nadie puede sumarle repasos a
+ * otro.
+ */
+-- `setof` y no el tipo a secas: así PostgREST devuelve una lista y el cliente
+-- puede pedir `.single()`, que es como lee el resto de la app.
+drop function if exists public.mark_lesson_reviewed(text);
+
+create function public.mark_lesson_reviewed(p_lesson_id text)
+returns setof public.lesson_review
+language sql
+security invoker
+set search_path = public
+as $$
+  insert into public.lesson_review as r (user_id, lesson_id, times, last_at)
+  values (auth.uid(), p_lesson_id, 1, now())
+  on conflict (user_id, lesson_id) do update
+    set times   = r.times + 1,
+        last_at = now()
+  returning r.*;
+$$;
+
+-- ---------------------------------------------------------------------------
 -- Row Level Security: cada usuario solo ve y edita lo suyo
 -- ---------------------------------------------------------------------------
 alter table public.words           enable row level security;
 alter table public.progress        enable row level security;
 alter table public.lesson_position enable row level security;
+alter table public.lesson_review   enable row level security;
 
 drop policy if exists "words: propias" on public.words;
 create policy "words: propias" on public.words
@@ -139,6 +189,13 @@ create policy "progress: propio" on public.progress
 
 drop policy if exists "lesson_position: propia" on public.lesson_position;
 create policy "lesson_position: propia" on public.lesson_position
+  for all
+  to authenticated
+  using (auth.uid() = user_id)
+  with check (auth.uid() = user_id);
+
+drop policy if exists "lesson_review: propio" on public.lesson_review;
+create policy "lesson_review: propio" on public.lesson_review
   for all
   to authenticated
   using (auth.uid() = user_id)

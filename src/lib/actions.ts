@@ -91,6 +91,65 @@ export async function saveSharedWordTiming(input: {
   return { ok: true };
 }
 
+/** Un ajuste de audio tal como lo necesita la lección. */
+export type LessonTiming = {
+  sentenceId: number;
+  term: string;
+  from: number;
+  to: number;
+  confirmed: boolean;
+  updatedBy: string | null;
+};
+
+/**
+ * Vuelve a leer los ajustes de audio de una lección.
+ *
+ * La página los trae una sola vez, al pintarse en el servidor. Como son de
+ * todos y se tocan desde varios sitios (el móvil, el ordenador), hace falta
+ * poder recogerlos otra vez sin recargar la lección entera.
+ */
+export async function getLessonTimings(
+  lessonId: string,
+): Promise<
+  { ok: true; timings: LessonTiming[] } | { ok: false; error: string }
+> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // Sin sesión, la tabla no deja leer y devuelve cero filas en vez de un
+  // error. Quien llame no podría distinguirlo de "aquí no hay nada ajustado"
+  // y dejaría la pantalla sin ningún ajuste: hay que decirlo claro.
+  if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  const { data, error } = await supabase
+    .from("word_audio")
+    .select("sentence_id, term, audio_start, audio_end, confirmed, updated_by")
+    .eq("lesson_id", lessonId);
+
+  if (error) return { ok: false, error: error.message };
+
+  const timings = (data ?? []).flatMap<LessonTiming>((row) => {
+    // `numeric` de Postgres llega como texto.
+    const from = Number(row.audio_start);
+    const to = Number(row.audio_end);
+    if (Number.isNaN(from) || Number.isNaN(to)) return [];
+    return [
+      {
+        sentenceId: row.sentence_id as number,
+        term: row.term as string,
+        from,
+        to,
+        confirmed: Boolean(row.confirmed),
+        updatedBy: (row.updated_by as string | null) ?? null,
+      },
+    ];
+  });
+
+  return { ok: true, timings };
+}
+
 /** Quita una palabra del banco. */
 export async function removeWord(word: string): Promise<ActionResult> {
   const supabase = await createClient();
@@ -178,6 +237,96 @@ export async function saveLessonPosition(input: {
 
   if (error) return { ok: false, error: error.message };
   return { ok: true };
+}
+
+/** Un repaso: cuántas vueltas le ha dado el usuario a una parte y cuándo. */
+export type Review = {
+  /** Siempre mayor que cero: sin repasos no hay fila. */
+  times: number;
+  /** ISO 8601, como lo devuelve Postgres. */
+  lastAt: string;
+};
+
+/**
+ * Suma un repaso a esta parte. La cuenta la lleva Postgres (`times + 1` sobre
+ * la fila que ya hay), que desde aquí serían dos viajes y una carrera.
+ */
+export async function markLessonReviewed(
+  lessonId: string,
+): Promise<{ ok: true; review: Review } | { ok: false; error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  const { data, error } = await supabase
+    .rpc("mark_lesson_reviewed", { p_lesson_id: lessonId })
+    .single();
+
+  if (error) return { ok: false, error: error.message };
+
+  const row = data as { times: number; last_at: string };
+
+  revalidatePath("/repaso");
+  return { ok: true, review: { times: row.times, lastAt: row.last_at } };
+}
+
+/**
+ * Quita un repaso, para cuando se marcó sin querer. Al llegar a cero se borra
+ * la fila: la parte vuelve a estar sin repasar y desaparece del listado.
+ *
+ * `last_at` se queda como estaba. Guardar la fecha de cada repaso para poder
+ * retroceder a la anterior es mucha contabilidad para deshacer un clic.
+ */
+export async function unmarkLessonReviewed(
+  lessonId: string,
+): Promise<{ ok: true; review: Review | null } | { ok: false; error: string }> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return { ok: false, error: "No has iniciado sesión." };
+
+  const key = { user_id: user.id, lesson_id: lessonId };
+
+  const { data: current, error: readError } = await supabase
+    .from("lesson_review")
+    .select("times, last_at")
+    .match(key)
+    .maybeSingle();
+
+  if (readError) return { ok: false, error: readError.message };
+  if (!current) return { ok: true, review: null };
+
+  const times = (current.times as number) - 1;
+
+  if (times <= 0) {
+    const { error } = await supabase
+      .from("lesson_review")
+      .delete()
+      .match(key);
+
+    if (error) return { ok: false, error: error.message };
+
+    revalidatePath("/repaso");
+    return { ok: true, review: null };
+  }
+
+  const { error } = await supabase
+    .from("lesson_review")
+    .update({ times })
+    .match(key);
+
+  if (error) return { ok: false, error: error.message };
+
+  revalidatePath("/repaso");
+  return {
+    ok: true,
+    review: { times, lastAt: current.last_at as string },
+  };
 }
 
 /** Guarda el resultado de la evaluación de comprensión. */
