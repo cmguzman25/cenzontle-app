@@ -1,4 +1,18 @@
 /**
+ * Un segundo del video como `m:ss`.
+ *
+ * Vive aquí y no en el componente de la transcripción porque aquel es de
+ * cliente, y desde el servidor no se puede llamar a una función de cliente:
+ * el buscador de frases también necesita pintar el minuto.
+ */
+export function formatTime(seconds: number): string {
+  const total = Math.max(0, Math.floor(seconds));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+/**
  * Milisegundos de una fecha de Postgres, o `NaN` si no hay forma.
  *
  * Postgres puede mandarla como `2026-09-23T10:00:00+00:00` o con un espacio

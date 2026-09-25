@@ -22,7 +22,13 @@ import {
   saveSharedWordTiming,
   saveWord as saveWordToDb,
 } from "@/lib/actions";
-import { timeAgo } from "@/lib/dates";
+import { formatTime, timeAgo } from "@/lib/dates";
+import {
+  formatLoopPause,
+  LOOP_PAUSE_OPTIONS,
+  readLoopPause,
+  writeLoopPause,
+} from "@/lib/loop-pause";
 import type { ResolvedLesson, Sentence } from "@/lib/types";
 import {
   clampRange,
@@ -47,29 +53,6 @@ const SENTENCE_TERM = "__frase__";
  */
 const EDGE_PREVIEW = 2;
 
-/**
- * Respiro entre una vuelta del bucle y la siguiente. Sin él la frase enlaza con
- * ella misma y no se distingue dónde acaba y dónde vuelve a empezar, que es
- * justo lo que hay que oír para repetirla. Cuánto hace falta depende de quién
- * escucha, así que se elige en la barra y se recuerda para la próxima vez.
- */
-const LOOP_PAUSE_DEFAULT = 500;
-const LOOP_PAUSE_OPTIONS = [0, 500, 1000, 1500, 2000, 3000];
-const LOOP_PAUSE_KEY = "listen-app:loop-pause";
-
-/**
- * Lo que eligió el usuario la última vez. En el servidor no hay almacén, y el
- * navegador puede tenerlo bloqueado: en ambos casos se va al valor de siempre.
- */
-function readLoopPause(): number {
-  if (typeof window === "undefined") return LOOP_PAUSE_DEFAULT;
-  try {
-    const ms = Number(window.localStorage.getItem(LOOP_PAUSE_KEY));
-    return LOOP_PAUSE_OPTIONS.includes(ms) ? ms : LOOP_PAUSE_DEFAULT;
-  } catch {
-    return LOOP_PAUSE_DEFAULT;
-  }
-}
 
 export type SavedWord = {
   word: string;
@@ -117,6 +100,11 @@ type Props = {
   initialTimings: SharedTiming[];
   /** Frase por la que iba la última vez, si la tenemos guardada. */
   initialSentenceId: number | null;
+  /**
+   * Frase por la que abrir la lección, llegando desde el buscador. Manda sobre
+   * la marca 📍, pero no la mueve: eso lo decide el usuario a mano.
+   */
+  openSentenceId: number | null;
   /** Repasos que lleva esta parte, o `null` si aún no la ha revisado. */
   initialReview: Review | null;
 };
@@ -128,6 +116,7 @@ export default function LessonView({
   initialWords,
   initialTimings,
   initialSentenceId,
+  openSentenceId,
   initialReview,
 }: Props) {
   const playerRef = useRef<YTPlayer | null>(null);
@@ -322,11 +311,7 @@ export default function LessonView({
   /** Cambia el respiro del bucle y lo deja apuntado para la próxima vez. */
   const changeLoopPause = useCallback((ms: number) => {
     setLoopPause(ms);
-    try {
-      window.localStorage.setItem(LOOP_PAUSE_KEY, String(ms));
-    } catch {
-      // Sin almacén vale para esta sesión y ya está.
-    }
+    writeLoopPause(ms);
   }, []);
 
   const handleTime = useCallback(
@@ -1037,11 +1022,11 @@ export default function LessonView({
             playerRef.current = player;
             setReady(true);
 
-            // Volvemos a donde lo dejamos, sin arrancar el video solo.
-            const resume =
-              initialSentenceId != null
-                ? sentenceById.get(initialSentenceId)
-                : null;
+            // Volvemos a donde lo dejamos, sin arrancar el video solo. Si se
+            // llegó desde el buscador manda la frase que se pulsó: para eso
+            // se pulsó.
+            const target = openSentenceId ?? initialSentenceId;
+            const resume = target != null ? sentenceById.get(target) : null;
             if (resume) {
               activeIdRef.current = resume.id;
               setActiveId(resume.id);
@@ -1155,7 +1140,7 @@ export default function LessonView({
               >
                 {LOOP_PAUSE_OPTIONS.map((ms) => (
                   <option key={ms} value={ms}>
-                    {ms === 0 ? "sin pausa" : `${(ms / 1000).toString().replace(".", ",")} s`}
+                    {formatLoopPause(ms)}
                   </option>
                 ))}
               </select>
@@ -1369,7 +1354,7 @@ export default function LessonView({
             Transcripción
           </h2>
           <span className="font-mono text-xs text-neutral-400">
-            {ready ? formatClock(time) : "cargando…"}
+            {ready ? formatTime(time) : "cargando…"}
           </span>
         </div>
 
@@ -1385,7 +1370,7 @@ export default function LessonView({
             className="rounded-lg bg-neutral-100 px-3 py-2 text-left text-xs text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800"
           >
             📍 Volver a tu marca (
-            {formatClock(sentenceById.get(savedPositionId)?.start ?? 0)})
+            {formatTime(sentenceById.get(savedPositionId)?.start ?? 0)})
           </button>
         )}
 
@@ -1410,9 +1395,4 @@ export default function LessonView({
       </aside>
     </div>
   );
-}
-
-function formatClock(seconds: number): string {
-  const total = Math.max(0, Math.floor(seconds));
-  return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, "0")}`;
 }

@@ -8,6 +8,7 @@ import HighlightedText, {
 import SentenceExplanation, {
   hasExplanation,
 } from "@/components/SentenceExplanation";
+import { formatTime } from "@/lib/dates";
 import type { Sentence } from "@/lib/types";
 
 /** Cuánto respeta el autoscroll al usuario después de que mueva la lista. */
@@ -19,6 +20,12 @@ const SELECTION_MS = 250;
 export type TextSelection = {
   text: string;
   sentenceId: number;
+  /**
+   * De qué lección es la frase. En la transcripción sobra (todas son de la
+   * misma), pero el buscador enseña frases de lecciones distintas mezcladas y
+   * ahí hace falta para guardar la palabra en su sitio.
+   */
+  lessonId?: string;
   /** Posición en pantalla del texto sombreado. */
   rect: { top: number; left: number; width: number; height: number };
 };
@@ -48,6 +55,7 @@ export function readTextSelection(): TextSelection | null {
   return {
     text,
     sentenceId: Number(item.dataset.sentenceId),
+    lessonId: item.dataset.lessonId,
     rect: {
       top: rect.top,
       left: rect.left,
@@ -337,9 +345,3 @@ export default function Transcript({
   );
 }
 
-export function formatTime(seconds: number): string {
-  const total = Math.max(0, Math.floor(seconds));
-  const m = Math.floor(total / 60);
-  const s = total % 60;
-  return `${m}:${String(s).padStart(2, "0")}`;
-}

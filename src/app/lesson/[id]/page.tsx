@@ -17,10 +17,13 @@ function toSeconds(value: unknown): number | null {
 
 export default async function LessonPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  /** `?frase=12`: se llega desde el buscador y se abre en esa frase. */
+  searchParams: Promise<{ frase?: string }>;
 }) {
-  const { id } = await params;
+  const [{ id }, { frase }] = await Promise.all([params, searchParams]);
 
   // Las transcripciones no son públicas: hay que entrar para leerlas.
   const supabase = await createClient();
@@ -29,7 +32,10 @@ export default async function LessonPage({
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect(`/login?next=${encodeURIComponent(`/lesson/${id}`)}`);
+    // Con la frase a cuestas: si se llegó desde el buscador, tras entrar hay
+    // que caer en la frase que se pulsó y no al principio de la lección.
+    const back = frase ? `/lesson/${id}?frase=${frase}` : `/lesson/${id}`;
+    redirect(`/login?next=${encodeURIComponent(back)}`);
   }
 
   const lesson = await getLesson(id);
@@ -107,6 +113,16 @@ export default async function LessonPage({
   const initialSentenceId =
     saved != null && lesson.sentences.some((s) => s.id === saved) ? saved : null;
 
+  // Lo mismo con la del buscador, que además llega de la URL y puede ser
+  // cualquier cosa.
+  const asked = Number(frase);
+  const openSentenceId =
+    frase != null &&
+    Number.isInteger(asked) &&
+    lesson.sentences.some((s) => s.id === asked)
+      ? asked
+      : null;
+
   return (
     <main className="mx-auto max-w-7xl px-4 py-6">
       <header className="mb-6">
@@ -151,6 +167,7 @@ export default async function LessonPage({
         initialWords={initialWords}
         initialTimings={sharedTimings}
         initialSentenceId={initialSentenceId}
+        openSentenceId={openSentenceId}
         initialReview={
           reviewResult.data
             ? {
