@@ -3,14 +3,14 @@
   "youtubeId": "jHJNuylT2-Q",
   "title": "La casa, las tuberías y las canicas",
   "level": "B1",
-  "description": "Presenta la ingeniería de datos con la analogía de una casa: lo que no se ve son las tuberías. Y explica qué son los datos con un estadio lleno de canicas. 0:00 – 3:26.",
+  "description": "Presenta la ingeniería de datos con la analogía de una casa: lo que no se ve son las tuberías. Y explica qué son los datos con un estadio lleno de canicas. 0:00 – 3:27.",
   "transcript": "data-engineering.txt",
   "startAt": 0,
   "endAt": 206,
   "annotations": [
     {
       "start": 0,
-      "es": "Muy bien, ¿qué es la ingeniería de datos? Pues hoy vamos a hablar de una introducción a",
+      "es": "Muy bien, ¿qué es la ingeniería de datos? Pues hoy vamos a hablar de una introducción a la ingeniería de datos.",
       "note": "\"All right\" al principio no es «todo bien»: es un «venga, vamos» para arrancar.",
       "watch": "ESTE HABLA INGLÉS AMERICANO NATIVO Y RÁPIDO. Suelta \"right\", \"you know\" y \"like\" cada pocas palabras: son muletillas, no significan nada. Te las voy marcando cuando aparezcan.",
       "vocab": [
@@ -19,8 +19,8 @@
       ]
     },
     {
-      "start": 5,
-      "es": "la ingeniería de datos. Vamos a hablar de las herramientas que usan y, lo que es más importante, vamos a hablar de",
+      "start": 6,
+      "es": "Vamos a hablar de las herramientas que usan y, lo que es más importante, vamos a hablar de",
       "tip": "\"more importantly\" = «y lo que es más importante». Es su forma de anunciar lo que de verdad le interesa.",
       "vocab": [
         { "word": "tool", "meaning": "herramienta" },
@@ -29,7 +29,7 @@
     },
     {
       "start": 10,
-      "es": "cómo puedes entrar en el sector, ya sea como analista de datos o como ingeniero de datos. Así que vamos al lío. Me llamo Chris Garzone, soy el CEO de",
+      "es": "cómo puedes entrar en el sector, ya sea como analista de datos o como ingeniero de datos. Así que vamos al lío. Me llamo Chris Garzone, soy el CEO de Data Engineer Academy.",
       "note": "\"to break into\" es «meterse en, entrar en» algo difícil. Literalmente «romper para entrar».",
       "tip": "\"either... or...\" = «o... o...». Van siempre en pareja.",
       "vocab": [
@@ -38,8 +38,8 @@
       ]
     },
     {
-      "start": 18,
-      "es": "Data Engineer Academy. Llevo casi una década como ingeniero de datos en empresas como Amazon, Lyft, startups. Y",
+      "start": 20,
+      "es": "Llevo casi una década como ingeniero de datos en empresas como Amazon, Lyft, startups.",
       "note": "\"I've been a data engineer FOR almost a decade\" = «llevo casi una década siendo...». El present perfect con \"for\" es el «llevo + tiempo» del español.",
       "vocab": [
         { "word": "decade", "meaning": "década, diez años" },
@@ -48,15 +48,15 @@
     },
     {
       "start": 25,
-      "es": "hoy lo que quiero tratar es muy de base, de verdad, solo lo básico: qué es la ingeniería de datos y cómo puedes",
+      "es": "Y hoy lo que quiero tratar es muy de base, de verdad, solo lo básico: qué es la ingeniería de datos y cómo puedes entrar en el sector.",
       "vocab": [
         { "word": "foundational", "meaning": "de base, fundamental" },
         { "word": "the basics", "meaning": "lo básico" }
       ]
     },
     {
-      "start": 31,
-      "es": "entrar en el sector. Así que vamos al grano. Voy a compartir mi pantalla.",
+      "start": 33,
+      "es": "Así que vamos al grano. Voy a compartir mi pantalla.",
       "tip": "\"to jump right in\" = «meterse de lleno, ir al grano». Lo ha dicho dos veces en medio minuto.",
       "vocab": [
         { "word": "to jump right in", "meaning": "ir al grano, meterse de lleno" },
@@ -65,12 +65,12 @@
     },
     {
       "start": 36,
-      "es": "Vamos allá. Entonces, ¿qué es la ingeniería de datos? La analogía que me gusta usar es la de una",
+      "es": "Vamos allá. Entonces, ¿qué es la ingeniería de datos? La analogía que me gusta usar es la de una casa.",
       "vocab": [{ "word": "analogy", "meaning": "analogía, comparación" }]
     },
     {
       "start": 43,
-      "es": "casa. Básicamente, cuando construyes una casa tienes varias capas, ¿verdad? Tienes",
+      "es": "Básicamente, cuando construyes una casa tienes varias capas, ¿verdad?",
       "note": "\"right?\" al final de la frase es el «¿verdad?» o «¿no?» del español. Lo va a decir unas cien veces.",
       "vocab": [
         { "word": "to build", "meaning": "construir (build → built → built)" },
@@ -79,7 +79,7 @@
     },
     {
       "start": 48,
-      "es": "la capa de arriba, los suelos, las paredes, la decoración de dentro de la casa, ¿verdad?",
+      "es": "Tienes la capa de arriba, los suelos, las paredes, la decoración de dentro de la casa, ¿verdad?",
       "watch": "\"floor\" es a la vez «suelo» y «planta» de un edificio. Aquí son los suelos.",
       "vocab": [
         { "word": "floor", "meaning": "suelo; también planta (de un edificio)" },
@@ -97,7 +97,7 @@
     },
     {
       "start": 60,
-      "es": "el cableado, todo lo que en realidad no ves pero que es importantísimo para que la casa funcione. Y",
+      "es": "el cableado, todo lo que en realidad no ves pero que es importantísimo para que la casa funcione.",
       "tip": "\"to run\" aquí no es «correr»: es «funcionar» o «llevar algo». To make the house run, to run a business.",
       "vocab": [
         { "word": "wiring", "meaning": "cableado, instalación eléctrica" },
@@ -106,13 +106,14 @@
     },
     {
       "start": 67,
-      "es": "así que esa es la analogía que me gusta usar: los ingenieros de datos son los que hacen las tuberías y el cableado de debajo para",
+      "es": "Y esa es la analogía que me gusta usar: los ingenieros de datos son los que hacen las tuberías y el cableado de debajo para",
+      "watch": "Dice \"that's the analogy I like to use IS\", con un \"is\" de más al final. Se le cruzan dos formas de decirlo. Fíjate, pero no lo copies.",
       "vocab": [{ "word": "data engineer", "meaning": "ingeniero de datos" }]
     },
     {
       "start": 74,
       "es": "asegurarse de que todo el sistema funcione. En realidad no lo ves. Y los datos, en",
-      "note": "\"to make sure (that)\" = «asegurarse de que». Aquí se parte entre una línea y otra: \"to make / sure\".",
+      "note": "\"to make sure (that)\" = «asegurarse de que». Aquí se parte entre una frase y otra: \"to make / sure\".",
       "vocab": [
         { "word": "to make sure", "meaning": "asegurarse de" },
         { "word": "the whole", "meaning": "todo el, el entero" }
@@ -126,26 +127,26 @@
     },
     {
       "start": 86,
-      "es": "Y básicamente hace... hace falta para que funcione casi todo, ¿no? Necesitas datos para llevar tu negocio, para tomar",
+      "es": "Y básicamente hace... hace falta para que funcione casi todo, ¿no? Necesitas datos para llevar tu negocio, para tomar decisiones, ¿no?",
       "tip": "\"pretty much\" = «casi, prácticamente». Nada que ver con «bonito».",
       "watch": "\"it's— it's needed\": arranca, se corta y repite. Es normal hablando sin guion, no es un fallo de gramática.",
       "vocab": [
         { "word": "pretty much", "meaning": "casi, prácticamente" },
+        { "word": "to make a decision", "meaning": "tomar una decisión" }
+      ]
+    },
+    {
+      "start": 96,
+      "es": "Y la analogía aquí es que si un dato es un trocito de canica, ¿vale?",
+      "watch": "Dice \"if A DATA is\", con artículo. En inglés \"data\" no lleva \"a\": sería \"if data is\" o \"if a piece of data is\". Fíjate, pero no lo copies.",
+      "vocab": [
+        { "word": "a piece of", "meaning": "un trozo de, una pieza de" },
         { "word": "to run a business", "meaning": "llevar un negocio" }
       ]
     },
     {
-      "start": 94,
-      "es": "decisiones, ¿no? Y la analogía aquí es que si un dato es un trocito de",
-      "watch": "Dice \"if A DATA is\", con artículo. En inglés \"data\" no lleva \"a\": sería \"if data is\" o \"if a piece of data is\". Fíjate, pero no lo copies.",
-      "vocab": [
-        { "word": "to make a decision", "meaning": "tomar una decisión" },
-        { "word": "a piece of", "meaning": "un trozo de, una pieza de" }
-      ]
-    },
-    {
-      "start": 102,
-      "es": "canica, ¿vale? Como una canica pequeña, una bolita.",
+      "start": 104,
+      "es": "Como una canica pequeña, una bolita.",
       "note": "\"marble\" es «canica» (la bolita de cristal) y también «mármol». Aquí es la canica.",
       "vocab": [
         { "word": "marble", "meaning": "canica; mármol" },
@@ -154,18 +155,21 @@
     },
     {
       "start": 107,
-      "es": "407 millones —debería ser millones— de terabytes de datos se crean cada",
+      "es": "407 millones —debería ser millones— de terabytes de datos se crean cada día.",
       "tip": "\"it should be million\" es él corrigiéndose en voz alta a mitad de frase.",
       "watch": "Nunca digas \"407 millions\". Cuando va detrás de un número, \"million\" NO lleva -s: two million, 407 million.",
-      "vocab": [{ "word": "million", "meaning": "millón (sin -s tras un número)" }]
+      "vocab": [
+        { "word": "million", "meaning": "millón (sin -s tras un número)" },
+        { "word": "every single day", "meaning": "cada santo día, todos los días" }
+      ]
     },
     {
-      "start": 112,
-      "es": "día. Para que te hagas una idea: si un terabyte es una bolita, ¿vale?, cada",
+      "start": 113,
+      "es": "Para que te hagas una idea: si un terabyte es una bolita, ¿vale?, cada",
       "note": "\"every single day\" = «cada santo día». El \"single\" está solo para enfatizar.",
       "vocab": [
         { "word": "for context", "meaning": "para que te hagas una idea" },
-        { "word": "every single day", "meaning": "cada santo día, todos los días" }
+        { "word": "terabyte", "meaning": "terabyte (un billón de bytes)" }
       ]
     },
     {
@@ -179,12 +183,12 @@
     },
     {
       "start": 127,
-      "es": "Así que cada día que pasa: estadio, estadio, estadio, estadio. Y lo",
+      "es": "Así que cada día que pasa: estadio, estadio, estadio, estadio.",
       "vocab": [{ "word": "to pass", "meaning": "pasar (el tiempo)" }]
     },
     {
-      "start": 133,
-      "es": "importante es que —y aquí viene lo fuerte— a partir de esos datos podemos crear más datos. Eso ya es un poco más avanzado. Pero",
+      "start": 132,
+      "es": "Y lo importante es que —y aquí viene lo fuerte— a partir de esos datos podemos crear más datos. Eso ya es un poco más avanzado.",
       "tip": "\"here's the crazy part\" = «y ahora viene lo fuerte». Sirve para meter el dato llamativo.",
       "vocab": [
         { "word": "crazy", "meaning": "loco; aquí: fuerte, increíble" },
@@ -193,7 +197,7 @@
     },
     {
       "start": 141,
-      "es": "a estas alturas te estarás preguntando: vale, pero ¿qué son los datos? Los datos son cualquier cosa, cualquier cosa que se pueda medir en números o en texto o lo que sea.",
+      "es": "Pero a estas alturas te estarás preguntando: vale, pero ¿qué son los datos? Los datos son cualquier cosa, cualquier cosa que se pueda medir en números o en texto o lo que sea.",
       "note": "\"you might be asking yourself\" = «te estarás preguntando». Aquí \"might\" es una suposición, no un permiso.",
       "vocab": [
         { "word": "at this point", "meaning": "a estas alturas" },
@@ -202,15 +206,15 @@
     },
     {
       "start": 149,
-      "es": "Por ejemplo, cuando abres el móvil y miras la app de salud, todo eso son datos. Mira: aquí está cuántos",
+      "es": "Por ejemplo, cuando abres el móvil y miras la app de salud, todo eso son datos.",
       "vocab": [
         { "word": "to open up", "meaning": "abrir" },
         { "word": "health", "meaning": "salud" }
       ]
     },
     {
-      "start": 155,
-      "es": "pasos he dado, aquí los kilómetros que ando, aquí cuál es mi frecuencia cardiaca. Todo",
+      "start": 154,
+      "es": "Mira: aquí está cuántos pasos he dado, aquí los kilómetros que ando, aquí cuál es mi frecuencia cardiaca. Todo eso son datos.",
       "note": "\"to take steps\" = «dar pasos». En inglés los pasos se «toman», no se «dan».",
       "vocab": [
         { "word": "step", "meaning": "paso" },
@@ -218,8 +222,8 @@
       ]
     },
     {
-      "start": 160,
-      "es": "eso son datos. Por ejemplo, cuando grabo este video de aquí para YouTube, si lo convertimos en una transcripción, esa",
+      "start": 161,
+      "es": "Por ejemplo, cuando grabo este video de aquí para YouTube, si lo convertimos en una transcripción, esa transcripción son datos.",
       "tip": "\"to make something into something\" = «convertir algo en algo».",
       "vocab": [
         { "word": "to record", "meaning": "grabar" },
@@ -227,8 +231,8 @@
       ]
     },
     {
-      "start": 168,
-      "es": "transcripción son datos. Este video de YouTube tiene datos. Cuánto dura un video de YouTube, cuántos minutos, cuánta gente lo vio, cuánta",
+      "start": 169,
+      "es": "Este video de YouTube tiene datos. Cuánto dura un video de YouTube, cuántos minutos, cuánta gente lo vio, cuánta",
       "note": "\"How long is it?\" = «¿cuánto dura?». Para la duración se usa \"long\", no \"time\".",
       "vocab": [
         { "word": "how long", "meaning": "cuánto dura, cuánto tiempo" },
@@ -237,19 +241,19 @@
     },
     {
       "start": 175,
-      "es": "gente lo guardó, hizo clic... todo eso son datos. Y los datos se están creando",
+      "es": "gente lo guardó, hizo clic... todo eso son datos. Y los datos se están creando literalmente mientras hablamos.",
+      "tip": "\"as we're speaking\" = «mientras hablamos, ahora mismo». Aquí \"as\" significa «mientras».",
       "vocab": [
         { "word": "to save", "meaning": "guardar" },
-        { "word": "to click", "meaning": "hacer clic" }
+        { "word": "as", "meaning": "mientras (aquí)" }
       ]
     },
     {
-      "start": 180,
-      "es": "literalmente mientras hablamos. Y solo para que veas la escala de los datos —esto es",
-      "tip": "\"as we're speaking\" = «mientras hablamos, ahora mismo». Aquí \"as\" significa «mientras».",
+      "start": 184,
+      "es": "Y solo para que veas la escala de los datos —esto es",
       "vocab": [
-        { "word": "as", "meaning": "mientras (aquí)" },
-        { "word": "scale", "meaning": "escala, magnitud" }
+        { "word": "scale", "meaning": "escala, magnitud" },
+        { "word": "to give you", "meaning": "darte, enseñarte" }
       ]
     },
     {
@@ -263,7 +267,7 @@
     },
     {
       "start": 193,
-      "es": "No sé cuánto era hace 10 años, pero me imagino que seguramente era menos de un terabyte de datos. Así que",
+      "es": "No sé cuánto era hace 10 años, pero me imagino que seguramente era menos de un terabyte de datos.",
       "tip": "\"10 years ago\" = «hace 10 años». \"ago\" va SIEMPRE detrás del tiempo, nunca delante.",
       "vocab": [
         { "word": "ago", "meaning": "hace (tiempo): two years ago" },
@@ -272,7 +276,7 @@
     },
     {
       "start": 199,
-      "es": "está creciendo 500 veces en una década, más o menos. Es lo que me imagino, pero miraré los números y... y veré de verdad cuáles son las cifras exactas.",
+      "es": "Así que está creciendo 500 veces en una década, más o menos. Es lo que me imagino, pero miraré los números y... y veré de verdad cuáles son las cifras exactas.",
       "note": "\"500x\" se lee \"five hundred times\": 500 veces.",
       "tip": "\"to look something up\" = «buscar un dato». No es «mirar hacia arriba».",
       "vocab": [

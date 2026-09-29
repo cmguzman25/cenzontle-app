@@ -173,7 +173,7 @@
     "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
     "order": 1,
     "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
-    "description": "Presenta la ingeniería de datos con la analogía de una casa: lo que no se ve son las tuberías. Y explica qué son los datos con un estadio lleno de canicas. 0:00 – 3:26."
+    "description": "Presenta la ingeniería de datos con la analogía de una casa: lo que no se ve son las tuberías. Y explica qué son los datos con un estadio lleno de canicas. 0:00 – 3:27."
   },
   {
     "id": "data-eng-02",
@@ -184,7 +184,7 @@
     "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
     "order": 2,
     "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
-    "description": "La diferencia entre ingeniero de datos, analista y científico de datos. Y la herramienta clave: el ETL, que es al dato lo que las tuberías al agua. 3:26 – 6:36."
+    "description": "La diferencia entre ingeniero de datos, analista y científico de datos. Y la herramienta clave: el ETL, que es al dato lo que las tuberías al agua. 3:27 – 6:36."
   },
   {
     "id": "data-eng-03",
@@ -195,7 +195,7 @@
     "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
     "order": 3,
     "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
-    "description": "El ingeniero de software crea los datos; el de datos los hace usables. Y empiezan los problemas: demasiado dato, y encima hay que fiarse de él. 6:36 – 9:24."
+    "description": "El ingeniero de software crea los datos; el de datos los hace usables. Y empiezan los problemas: demasiado dato, y encima hay que fiarse de él. 6:36 – 9:25."
   },
   {
     "id": "data-eng-04",
@@ -206,7 +206,7 @@
     "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
     "order": 4,
     "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
-    "description": "En una empresa grande el mismo dato pasa por veinte equipos: ¿cuál es el bueno? Y tres ejemplos del día a día: el fraude con la tarjeta, el inventario de Costco y YouTube. 9:24 – 11:44."
+    "description": "En una empresa grande el mismo dato pasa por veinte equipos: ¿cuál es el bueno? Y tres ejemplos del día a día: el fraude con la tarjeta, el inventario de Costco y YouTube. 9:25 – 11:44."
   },
   {
     "id": "data-eng-05",

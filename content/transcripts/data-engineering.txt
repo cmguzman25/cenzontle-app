@@ -1,126 +1,126 @@
-0:00 All right, what is data engineering? So today we're going to discuss an intro to
-0:05 data engineering. We're going to talk about the tools that they use, and more importantly, we're going to talk about
-0:10 how you can break into the industry, either as a data analyst or a data engineer. So let's jump right into it. My name is Chris Garzone, I'm the CEO of
-0:18 Data Engineer Academy. I've been a data engineer for almost a decade at companies like Amazon, Lyft, startups. And
-0:25 today what I want to discuss is really foundational, really just the basics: what is data engineering and how can you
-0:31 break into the industry? So let's jump right in. I'm going to share my screen.
-0:36 Let's go. So what is data engineering? The analogy that I like to use is that of a
-0:43 house. So basically, when you build a house you have multiple layers, right? You
-0:48 have the top layer, the floors, the walls, the decorations inside the house, right?
+0:00 All right, what is data engineering? So today we're going to discuss an intro to data engineering.
+0:06 We're going to talk about the tools that they use, and more importantly, we're going to talk about
+0:10 how you can break into the industry, either as a data analyst or a data engineer. So let's jump right into it. My name is Chris Garzone, I'm the CEO of Data Engineer Academy.
+0:20 I've been a data engineer for almost a decade at companies like Amazon, Lyft, startups.
+0:25 And today what I want to discuss is really foundational, really just the basics: what is data engineering and how can you break into the industry?
+0:33 So let's jump right in. I'm going to share my screen.
+0:36 Let's go. So what is data engineering? The analogy that I like to use is that of a house.
+0:43 So basically, when you build a house you have multiple layers, right?
+0:48 You have the top layer, the floors, the walls, the decorations inside the house, right?
 0:54 And so the one piece that is kind of underneath the house are the pipes,
-1:00 the wirings, everything that you don't really see but that are really, really important for making the house run. And
-1:07 so that's the analogy I like to use is: data engineers are kind of doing the pipes and the wirings underneath to make
+1:00 the wirings, everything that you don't really see but that are really, really important for making the house run.
+1:07 And so that's the analogy I like to use is: data engineers are kind of doing the pipes and the wirings underneath to make
 1:14 sure that the whole system runs. You don't really see it. And so the data in
 1:20 this case is the water or the electricity, right? If you want to think about it that way.
-1:26 And essentially it's— it's needed to run pretty much everything, right? You need data to run your business, to make
-1:34 decisions, right? And the analogy here is that if a data is a small piece of
-1:42 marble, right? Like it's a little marble, it's a little ball.
-1:47 407 million— it should be million— terabytes of data are created every
-1:52 single day. So just for context, if one terabyte is one little ball, right, every
+1:26 And essentially it's— it's needed to run pretty much everything, right? You need data to run your business, to make decisions, right?
+1:36 And the analogy here is that if a data is a small piece of marble, right?
+1:44 Like it's a little marble, it's a little ball.
+1:47 407 million— it should be million— terabytes of data are created every single day.
+1:53 So just for context, if one terabyte is one little ball, right, every
 1:59 single day we can fill up entire stadium of data, of marbles. That's a lot of data.
-2:07 So every single day that passes: stadium, stadium, stadium, stadium. And so what's
-2:13 important is that— and here's the crazy part— from that data we can create more data. That's a little more advanced. But
-2:21 at this point you might be asking yourself, okay, but what is data? Data is anything, anything that gets calculated in numbers or text or whatever the case
-2:29 is. So for example, when you open up your phone and you look at your health app, all that is data. Hey, here's how many
-2:35 steps I took, here's the amount of miles I walk, here's what my heart rate is. All
-2:40 that is data. For example, when I record this video right here for YouTube, if we make it into a transcript, that
-2:48 transcript is data. This YouTube video has data. How long is a YouTube video, how many minutes, how many people watched, how
-2:55 many people saved, clicked— all that is data. And so data is getting created
-3:00 literally as we're speaking. And just to give you the scale of data— this is
-3:06 really important to show— it's probably going to keep growing faster. I think right now it's 407 million terabytes. I
-3:13 don't know what it was 10 years ago, but I can probably guess that it was probably under a terabyte of data. So
-3:19 it's growing 500x in probably a decade. That's my guess, but I'll look up the numbers and— and really see what exact
-3:26 stats are. So if that's data, in data engineering, what exactly is the role of a data engineer?
-3:35 So there's a difference between a data engineer, a data scientist, a data analyst. I'm sure you've wondered and seen those
-3:42 terms. The best way I can describe it is that if the data engineer is the one building the pipes and the wirings, the
+2:07 So every single day that passes: stadium, stadium, stadium, stadium.
+2:12 And so what's important is that— and here's the crazy part— from that data we can create more data. That's a little more advanced.
+2:21 But at this point you might be asking yourself, okay, but what is data? Data is anything, anything that gets calculated in numbers or text or whatever the case is.
+2:29 So for example, when you open up your phone and you look at your health app, all that is data.
+2:34 Hey, here's how many steps I took, here's the amount of miles I walk, here's what my heart rate is. All that is data.
+2:41 For example, when I record this video right here for YouTube, if we make it into a transcript, that transcript is data.
+2:49 This YouTube video has data. How long is a YouTube video, how many minutes, how many people watched, how
+2:55 many people saved, clicked— all that is data. And so data is getting created literally as we're speaking.
+3:04 And just to give you the scale of data— this is
+3:06 really important to show— it's probably going to keep growing faster. I think right now it's 407 million terabytes.
+3:13 I don't know what it was 10 years ago, but I can probably guess that it was probably under a terabyte of data.
+3:19 So it's growing 500x in probably a decade. That's my guess, but I'll look up the numbers and— and really see what exact stats are.
+3:27 So if that's data, in data engineering, what exactly is the role of a data engineer?
+3:35 So there's a difference between a data engineer, a data scientist, a data analyst. I'm sure you've wondered and seen those terms.
+3:42 The best way I can describe it is that if the data engineer is the one building the pipes and the wirings, the
 3:48 data analysts and the data scientists are going in and actually analyzing the data.
 3:53 So again, without getting too technical, too jargony, right, the data engineers are responsible for building the pipelines that create that data infrastructure.
 4:04 Right, and then the data analyst comes in and says, okay, what is the business insight? Right, so that's— that's kind of
 4:11 the distinction between the two. If you want to stay with the house analogy, a data engineer is building the pipes and the wires, a data analyst is coming in
 4:18 and— and decorating the room for example, or making it pretty. But again, the— but the main thing I want you to take away
 4:26 from this is that the data engineers make the data
-4:34 usable, and a data analyst or data scientist analyze that data now that it's usable. Okay, so that's
-4:45 it. And there's a plethora of reasons a business might want to use data, right, but for the most part it's to use the data for business insight, to benefit the business in some way, right.
-4:57 So, key concepts you need to know to enter the world of data engineering right now. The tools are pretty simple,
-5:04 right? There's some programming languages such as SQL, Python, and there's some conceptual things such as data modeling,
-5:11 system design, cloud. It sounds a little complicated; once you go into each one, it's not. But again, that's a conversation
-5:17 for a whole different video. But if you're looking into getting into data engineering, this is a pretty good road map actually for you to— to try to enter
-5:25 the space. One important tool that I want you to really take away from this video though is something called an ETL
-5:32 pipeline. So ETL stands for extract, transform and load, and what we're really talking about here is taking the data,
+4:34 usable, and a data analyst or data scientist analyze that data now that it's usable. Okay, so that's it.
+4:45 And there's a plethora of reasons a business might want to use data, right, but for the most part it's to use the data for business insight, to benefit the business in some way, right.
+4:57 So, key concepts you need to know to enter the world of data engineering right now. The tools are pretty simple, right?
+5:04 There's some programming languages such as SQL, Python, and there's some conceptual things such as data modeling, system design, cloud.
+5:12 It sounds a little complicated; once you go into each one, it's not. But again, that's a conversation for a whole different video.
+5:19 But if you're looking into getting into data engineering, this is a pretty good road map actually for you to— to try to enter the space.
+5:26 One important tool that I want you to really take away from this video though is something called an ETL pipeline.
+5:33 So ETL stands for extract, transform and load, and what we're really talking about here is taking the data,
 5:40 morphing the data, moving it to somewhere else. And you might be wondering, why are we doing this? Uh, well, at its core it's
 5:48 also kind of what we're doing, you know, with water, right? We're taking the water from some location, we may be
 5:54 transforming it so that it can actually move through a pipeline, and then we're feeding that water through a, you know,
-6:02 whatever: your shower, your toilet, your sink, right? So at the end of the day, that's all we're doing with data. Where
-6:09 it goes— it might go to different places for different reasons, right, just like water in a house. And so I'm going keep playing with this house analogy
-6:17 basically. But that's what the ETL— that's what that concept means: it's taking the data, extracting the data, transforming the data and then loading the data
-6:25 somewhere else. And— and that's— that's pretty much going to be 60, 70, 80% of a data engineer day-to-day. They're going to be messing around with the data basically.
+6:02 whatever: your shower, your toilet, your sink, right? So at the end of the day, that's all we're doing with data.
+6:09 Where it goes— it might go to different places for different reasons, right, just like water in a house. And so I'm going keep playing with this house analogy basically.
+6:18 But that's what the ETL— that's what that concept means: it's taking the data, extracting the data, transforming the data and then loading the data somewhere else.
+6:26 And— and that's— that's pretty much going to be 60, 70, 80% of a data engineer day-to-day. They're going to be messing around with the data basically.
 6:36 So at this point you might be wondering, okay, that's great, but how is this different than a software engineer?
-6:41 Right, I thought software engineers deal with data and write code and do all this technical stuff. They do, but there's a
-6:46 slight difference. So let's say you're on YouTube right now. A software engineer might have built the interface that
-6:53 you're seeing, right? So all these buttons, and you know, the fact that the YouTube logo is red— like all those things a
+6:41 Right, I thought software engineers deal with data and write code and do all this technical stuff. They do, but there's a slight difference.
+6:47 So let's say you're on YouTube right now. A software engineer might have built the interface that you're seeing, right?
+6:55 So all these buttons, and you know, the fact that the YouTube logo is red— like all those things a
 7:00 software engineer might have built that, right. And so what is interesting though
 7:05 is that whatever the software engineer built— maybe it's a mobile app, maybe it's a web page, right, whatever it
-7:11 is— that application is creating data, right? So now it's going even one layer
-7:18 deeper. It's like they're creating the data, but then the data engineer is responsible for doing an ETL, so extracting, loading, transforming the data.
+7:11 is— that application is creating data, right? So now it's going even one layer deeper.
+7:18 It's like they're creating the data, but then the data engineer is responsible for doing an ETL, so extracting, loading, transforming the data.
 7:25 And so, you know, if you want to think about it that way, software engineers actually create— create the data, data engineers
-7:32 actually make it usable, right, via an ETL pipeline, whatever the cases. And so you
-7:38 know, if you want to build a— a— a web page for example, you're probably looking at something a software engineer does, or
+7:32 actually make it usable, right, via an ETL pipeline, whatever the cases.
+7:37 And so you know, if you want to build a— a— a web page for example, you're probably looking at something a software engineer does, or
 7:45 you know, specifically a front-end engineer does. And so hopefully that gives you a little more of an understanding between the differen— between the two.
 7:53 Yes, there's going to be overlaps, and honestly in most tech roles there's overlaps— overlap with multiple tech roles.
 8:00 You know, this should give you a clear idea of like different lanes between a software engineer and a data engineer. And so let's keep going, because
 8:08 the biggest challenge that data engineers face today— which is why the field is growing so quickly, by the way—
 8:14 is that there's just so much data. Again, we talked about it here, where there's a stadium of data getting created every
-8:21 single day, and it's just grown exponentially. By the way, the challenge that comes from it is: how do we handle
-8:29 all the data? And typically when Apple, your— your Mac store asks you, hey, how many gigabytes of data do you want— you
-8:36 know, there's only a finite amount of data that your computer can hold. And so now the challenge is: hey, how do we store
-8:43 this data cost effectively? How do we actually analyze the data and make business insights with such large
-8:50 amounts of data that not just is getting created on a daily basis, but has already been created historically, right? So
-8:56 that's called historical data. Dealing with that data is one thing, but then making sure that the data quality is
-9:02 actually accurate is a whole different challenge, right? So data engineers need to figure out, okay, am I seeing the— the
-9:10 right data? And is this making sense when I give, you know, my boss some advice saying like, hey, this is what the data says? Well, you better make sure the data
-9:18 is correct, right? And so on top of that, this goes with the concept called the
-9:24 source of truth. So what that means is, if you're working for a big tech company for example, you might get data, right,
+8:21 single day, and it's just grown exponentially. By the way, the challenge that comes from it is: how do we handle all the data?
+8:30 And typically when Apple, your— your Mac store asks you, hey, how many gigabytes of data do you want— you
+8:36 know, there's only a finite amount of data that your computer can hold. And so now the challenge is: hey, how do we store this data cost effectively?
+8:46 How do we actually analyze the data and make business insights with such large
+8:50 amounts of data that not just is getting created on a daily basis, but has already been created historically, right? So that's called historical data.
+8:58 Dealing with that data is one thing, but then making sure that the data quality is
+9:02 actually accurate is a whole different challenge, right? So data engineers need to figure out, okay, am I seeing the— the right data?
+9:11 And is this making sense when I give, you know, my boss some advice saying like, hey, this is what the data says? Well, you better make sure the data is correct, right?
+9:20 And so on top of that, this goes with the concept called the source of truth.
+9:25 So what that means is, if you're working for a big tech company for example, you might get data, right,
 9:31 from one team, and you might decide to make a business decision on this data. Here's the problem with a really, really
 9:37 big company: that data probably just went through like 20 different teams, right? And so it's kind of like, I'm a sales
 9:44 manager and I'm like, hey, let me look at this dashboard to make sure my people are doing their thing, and then I
 9:50 realized, oh wait a second, this dashboard got data from this place that might not be accurate. So now I have to go figure
-9:57 out what other data exists, so I figure out, okay, what is the right data, what is the source of truth? So those
-10:04 challenges in the world of data engineering is becoming bigger and bigger and bigger as more data gets
-10:09 created. So if you're still confused, let me give you some real world applications really, really
-10:15 quick, because again, data is around us everywhere all the time, every single company, every single application. That's
-10:22 really what you should take away. Amex— if you try to swipe your Amex card at 2 in the morning, you might get an alert saying, hey,
+9:57 out what other data exists, so I figure out, okay, what is the right data, what is the source of truth?
+10:03 So those challenges in the world of data engineering is becoming bigger and bigger and bigger as more data gets created.
+10:10 So if you're still confused, let me give you some real world applications really, really
+10:15 quick, because again, data is around us everywhere all the time, every single company, every single application.
+10:22 That's really what you should take away. Amex— if you try to swipe your Amex card at 2 in the morning, you might get an alert saying, hey,
 10:30 there might be some fraud going on. Why? Because there's machine learning algorithms— again, totally different topic—
-10:36 but there's AI, machine learning saying, hey, this transaction looks a little suspicious, let's block this transaction
-10:43 because it looks off, right? So I'm sure you guys have all experienced that at this point, right, some sort of fraud text
-10:49 from your bank. The reality is that data engineers played a big role in creating the foundation for that to be able to
-10:57 happen, right? And so, same thing with Costco. Right, how do you think they do so much inventory turnover? Is because
-11:04 they're able to track at an item level how much inventory they have, how much they're going to be selling next month,
-11:12 how much they want to keep selling, etc, etc. And so that helps them really, really, really forecast sales accurately. So
-11:19 again, that's data. And then of course YouTube— again, if you're watching this right now, YouTube is collecting data
-11:25 second by second that you're watching this video, right? So even the comment section that you see below, that's data. Every comment that you write, YouTube is
-11:32 collecting that piece of data. So needless to say, data is everywhere, and data engineers are actually enabling all
-11:39 of that movement of data. That is pretty crazy. So with that said, you're watching
+10:36 but there's AI, machine learning saying, hey, this transaction looks a little suspicious, let's block this transaction because it looks off, right?
+10:45 So I'm sure you guys have all experienced that at this point, right, some sort of fraud text from your bank.
+10:50 The reality is that data engineers played a big role in creating the foundation for that to be able to happen, right?
+10:58 And so, same thing with Costco. Right, how do you think they do so much inventory turnover?
+11:03 Is because they're able to track at an item level how much inventory they have, how much they're going to be selling next month,
+11:12 how much they want to keep selling, etc, etc. And so that helps them really, really, really forecast sales accurately. So again, that's data.
+11:20 And then of course YouTube— again, if you're watching this right now, YouTube is collecting data
+11:25 second by second that you're watching this video, right? So even the comment section that you see below, that's data. Every comment that you write, YouTube is collecting that piece of data.
+11:35 So needless to say, data is everywhere, and data engineers are actually enabling all of that movement of data.
+11:41 That is pretty crazy. So with that said, you're watching
 11:44 this based on who you are. You might be thinking, what can I do in my career? Well, simple. If you're new, we highly recommend
-11:52 again, based on data, right, because Data Engineer Academy has helped hundreds of people at this point— we recommend you breaking into the field as a data
-11:58 analyst. It's not that hard, it takes about three to six months depending on how much time you have. And really you can get away with doing this with like
+11:52 again, based on data, right, because Data Engineer Academy has helped hundreds of people at this point— we recommend you breaking into the field as a data analyst.
+11:58 It's not that hard, it takes about three to six months depending on how much time you have. And really you can get away with doing this with like
 12:05 one language, one coding language, and it's a great way for you to break into the industry and then go branch off into whatever it is you want to do, whether
-12:13 it's a data engineer and an ML engineer, data scientist. It's a great way for you to break into the industry and then go from there. Same thing if you're
-12:21 experienced, right? You might be an IT professional, you might be wondering, hey, can I become a data engineer? It's like the question. The answer is yes, right,
+12:13 it's a data engineer and an ML engineer, data scientist. It's a great way for you to break into the industry and then go from there. Same thing if you're experienced, right?
+12:22 You might be an IT professional, you might be wondering, hey, can I become a data engineer? It's like the question. The answer is yes, right,
 12:28 especially if you have tech background. But what's interesting about this is that then you can go and specialize afterwards. So for example, underneath a
-12:35 data engineer you can be dealing with, you know, the cloud afterwards, like exclusively the cloud, AWS, Azure. Uh, you
-12:42 could be dealing with things called devops and solutions architect, and that's a whole different video. But you know, chances are you have paths open to
+12:35 data engineer you can be dealing with, you know, the cloud afterwards, like exclusively the cloud, AWS, Azure.
+12:41 Uh, you could be dealing with things called devops and solutions architect, and that's a whole different video. But you know, chances are you have paths open to
 12:51 you depending on where you are right now, whether it's a data analyst or data engineer. Because it brings me to the next topic, right? If you become a data
 13:00 engineer, what can you do afterwards? Well, there's so many things you can do afterwards, but there's also so many tangential fields that you can go into.
-13:09 Obviously the biggest one is AI, right? We see ChatGPT, we see machine learning. The reason I have this here is because I don't really think people realize how
-13:18 old machine learning is. There's actually a great video of Jeff Bezos talking about him in 1999 being able to recommend books to their users
-13:29 through something called machine learning, or personalized recommendations. And so machine learning has been around for 30 years at this point. It's just
-13:37 that we're able to crunch data quicker, more data, faster data at scale, so that we see these recommendations in real
-13:46 time. If you open up your Spotify, listen to five songs, you'll get another recommendation for a song right away based on those five songs you just
-13:54 listened to. And so that— the speed at which it's happening is really, really impressive nowadays. So again, you can go
-14:03 into AI, you can go to machine learning, something called edge computing— I'll create another video for that another day. Uh, but that's really, really new as
-14:11 well. Where do we go from here? What do you do if you're a data engineer? Well, the good news is there's tons of books.
+13:09 Obviously the biggest one is AI, right? We see ChatGPT, we see machine learning. The reason I have this here is because I don't really think people realize how old machine learning is.
+13:20 There's actually a great video of Jeff Bezos talking about him in 1999 being able to recommend books to their users
+13:29 through something called machine learning, or personalized recommendations. And so machine learning has been around for 30 years at this point.
+13:36 It's just that we're able to crunch data quicker, more data, faster data at scale, so that we see these recommendations in real time.
+13:46 If you open up your Spotify, listen to five songs, you'll get another recommendation for a song right away based on those five songs you just listened to.
+13:55 And so that— the speed at which it's happening is really, really impressive nowadays. So again, you can go
+14:03 into AI, you can go to machine learning, something called edge computing— I'll create another video for that another day. Uh, but that's really, really new as well.
+14:11 Where do we go from here? What do you do if you're a data engineer? Well, the good news is there's tons of books.
 14:17 I'm not going to recommend any, but you can probably just look one up and see where you go from there. Same thing with courses. Reddit community— I love the
-14:24 Reddit community, I think they're actually really, really helpful as well. Same thing with Stack Overflow. Also just
-14:29 go to our website— shameless plug— do some free SQL training, so it's absolutely free, dataengineeracademy.com. And if
-14:37 you have any other questions, just put it in the comment and we'll see how we can help you progress your career forward, uh, to the best of our ability. So cheers and
-14:45 good luck.
+14:24 Reddit community, I think they're actually really, really helpful as well. Same thing with Stack Overflow.
+14:29 Also just go to our website— shameless plug— do some free SQL training, so it's absolutely free, dataengineeracademy.com.
+14:37 And if you have any other questions, just put it in the comment and we'll see how we can help you progress your career forward, uh, to the best of our ability.
+14:44 So cheers and good luck.

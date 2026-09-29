@@ -3,7 +3,7 @@
   "youtubeId": "jHJNuylT2-Q",
   "title": "¿Y en qué se diferencia de un programador?",
   "level": "B2",
-  "description": "El ingeniero de software crea los datos; el de datos los hace usables. Y empiezan los problemas: demasiado dato, y encima hay que fiarse de él. 6:36 – 9:24.",
+  "description": "El ingeniero de software crea los datos; el de datos los hace usables. Y empiezan los problemas: demasiado dato, y encima hay que fiarse de él. 6:36 – 9:25.",
   "transcript": "data-engineering.txt",
   "startAt": 396,
   "endAt": 564,
@@ -19,25 +19,25 @@
     },
     {
       "start": 401,
-      "es": "Ya, yo pensaba que los ingenieros de software trabajan con datos y escriben código y hacen todas estas cosas técnicas. Sí que lo hacen, pero hay una",
+      "es": "Ya, yo pensaba que los ingenieros de software trabajan con datos y escriben código y hacen todas estas cosas técnicas. Sí que lo hacen, pero hay una pequeña diferencia.",
       "note": "\"They do\" = «sí que lo hacen». Repetir el verbo \"do\" sirve para confirmar sin repetir toda la frase.",
       "vocab": [
         { "word": "to deal with", "meaning": "tratar con, trabajar con" },
-        { "word": "stuff", "meaning": "cosas, movidas (comodín)" }
+        { "word": "slight", "meaning": "leve, pequeño" }
       ]
     },
     {
-      "start": 406,
-      "es": "pequeña diferencia. Digamos que estás en YouTube ahora mismo. Un ingeniero de software puede que haya construido la interfaz que",
+      "start": 407,
+      "es": "Digamos que estás en YouTube ahora mismo. Un ingeniero de software puede que haya construido la interfaz que estás viendo, ¿no?",
       "note": "\"might have built\" = «puede que haya construido». Es una suposición sobre el pasado: might + have + participio.",
       "vocab": [
-        { "word": "slight", "meaning": "leve, pequeño" },
-        { "word": "let's say", "meaning": "digamos, pongamos" }
+        { "word": "let's say", "meaning": "digamos, pongamos" },
+        { "word": "interface", "meaning": "interfaz" }
       ]
     },
     {
-      "start": 413,
-      "es": "estás viendo, ¿no? Todos estos botones y, ya sabes, el hecho de que el logo de YouTube sea rojo... todas esas cosas, un",
+      "start": 415,
+      "es": "Todos estos botones y, ya sabes, el hecho de que el logo de YouTube sea rojo... todas esas cosas, un",
       "tip": "\"the fact that...\" = «el hecho de que...». Detrás va una frase entera.",
       "vocab": [
         { "word": "button", "meaning": "botón" },
@@ -61,26 +61,29 @@
     },
     {
       "start": 431,
-      "es": "esa aplicación está creando datos, ¿verdad? Así que ahora bajamos una capa",
-      "vocab": [{ "word": "application", "meaning": "aplicación" }]
+      "es": "esa aplicación está creando datos, ¿verdad? Así que ahora bajamos una capa más.",
+      "tip": "\"one layer deeper\" = «una capa más abajo». Fíjate: \"layer\" es la misma palabra que usó con la casa al principio.",
+      "vocab": [
+        { "word": "application", "meaning": "aplicación" },
+        { "word": "deeper", "meaning": "más profundo, más abajo" }
+      ]
     },
     {
       "start": 438,
-      "es": "más. Es como que ellos crean los datos, pero luego el ingeniero de datos es el responsable de hacer un ETL: extraer, cargar, transformar los datos.",
-      "tip": "\"one layer deeper\" = «una capa más abajo». Fíjate: \"layer\" es la misma palabra que usó con la casa al principio.",
+      "es": "Es como que ellos crean los datos, pero luego el ingeniero de datos es el responsable de hacer un ETL: extraer, cargar, transformar los datos.",
       "vocab": [
-        { "word": "deeper", "meaning": "más profundo, más abajo" },
-        { "word": "responsible for", "meaning": "responsable de" }
+        { "word": "responsible for", "meaning": "responsable de" },
+        { "word": "to create", "meaning": "crear" }
       ]
     },
     {
       "start": 445,
       "es": "Así que, si lo quieres ver así, los ingenieros de software crean... crean los datos, y los ingenieros de datos",
-      "vocab": [{ "word": "to create", "meaning": "crear" }]
+      "vocab": [{ "word": "to think about it that way", "meaning": "verlo así" }]
     },
     {
       "start": 452,
-      "es": "los hacen utilizables, ¿vale?, mediante un ETL pipeline, o lo que sea. Y",
+      "es": "los hacen utilizables, ¿vale?, mediante un ETL pipeline, o lo que sea.",
       "note": "\"via\" = «mediante, a través de». En americano se pronuncia «VÁI-a».",
       "watch": "Dice \"whatever the cases\". La expresión hecha es \"whatever the case is\" o \"whatever the case may be\".",
       "vocab": [
@@ -89,8 +92,8 @@
       ]
     },
     {
-      "start": 458,
-      "es": "si quieres construir una... una... una página web, por ejemplo, seguramente eso es algo que hace un ingeniero de software, o",
+      "start": 457,
+      "es": "Y si quieres construir una... una... una página web, por ejemplo, seguramente eso es algo que hace un ingeniero de software, o",
       "watch": "\"a— a— a web page\": repite el artículo tres veces mientras piensa. Es tartamudeo normal del habla, no un error.",
       "vocab": [{ "word": "for example", "meaning": "por ejemplo" }]
     },
@@ -138,7 +141,7 @@
     },
     {
       "start": 501,
-      "es": "día, y ha crecido exponencialmente. Por cierto, el reto que sale de ahí es: ¿cómo manejamos",
+      "es": "día, y ha crecido exponencialmente. Por cierto, el reto que sale de ahí es: ¿cómo manejamos todos esos datos?",
       "note": "\"by the way\" = «por cierto»: mete un comentario que no venía a cuento.",
       "vocab": [
         { "word": "by the way", "meaning": "por cierto" },
@@ -146,8 +149,8 @@
       ]
     },
     {
-      "start": 509,
-      "es": "todos esos datos? Y normalmente, cuando Apple, la... la tienda de Mac te pregunta: oye, ¿cuántos gigabytes de datos quieres?, pues",
+      "start": 510,
+      "es": "Y normalmente, cuando Apple, la... la tienda de Mac te pregunta: oye, ¿cuántos gigabytes de datos quieres?, pues",
       "vocab": [
         { "word": "typically", "meaning": "normalmente, por lo general" },
         { "word": "to ask someone", "meaning": "preguntarle a alguien" }
@@ -155,44 +158,44 @@
     },
     {
       "start": 516,
-      "es": "solo hay una cantidad limitada de datos que tu ordenador puede guardar. Y entonces el reto ahora es: oye, ¿cómo almacenamos",
+      "es": "solo hay una cantidad limitada de datos que tu ordenador puede guardar. Y entonces el reto ahora es: oye, ¿cómo almacenamos estos datos de forma rentable?",
       "note": "\"finite\" = «finito, limitado». Se pronuncia «FÁI-nait».",
+      "tip": "\"cost effectively\" = «de forma rentable, sin que salga caro». El adjetivo es \"cost-effective\".",
       "vocab": [
         { "word": "amount", "meaning": "cantidad (de algo incontable)" },
-        { "word": "to hold", "meaning": "guardar, contener" }
-      ]
-    },
-    {
-      "start": 523,
-      "es": "estos datos de forma rentable? ¿Cómo analizamos de verdad los datos y sacamos conclusiones de negocio con unas cantidades tan grandes",
-      "note": "\"cost effectively\" = «de forma rentable, sin que salga caro». El adjetivo es \"cost-effective\".",
-      "vocab": [
-        { "word": "cost-effective", "meaning": "rentable, económico" },
         { "word": "to store", "meaning": "almacenar" }
       ]
     },
     {
+      "start": 526,
+      "es": "¿Cómo analizamos de verdad los datos y sacamos conclusiones de negocio con unas cantidades tan grandes",
+      "vocab": [
+        { "word": "cost-effective", "meaning": "rentable, económico" },
+        { "word": "such large amounts", "meaning": "cantidades tan grandes" }
+      ]
+    },
+    {
       "start": 530,
-      "es": "de datos que no solo se están creando a diario, sino que ya se crearon en el pasado, ¿verdad? A eso",
+      "es": "de datos que no solo se están creando a diario, sino que ya se crearon en el pasado, ¿verdad? A eso se le llama datos históricos.",
       "tip": "\"on a daily basis\" = «a diario». Suena más formal que \"every day\".",
       "watch": "\"not just... but...\" = «no solo... sino...». En inglés más cuidado sería \"not only... but also...\".",
       "vocab": [
         { "word": "on a daily basis", "meaning": "a diario" },
-        { "word": "already", "meaning": "ya" }
+        { "word": "historical data", "meaning": "datos históricos" }
       ]
     },
     {
-      "start": 536,
-      "es": "se le llama datos históricos. Lidiar con esos datos es una cosa, pero luego asegurarse de que la calidad del dato",
+      "start": 538,
+      "es": "Lidiar con esos datos es una cosa, pero luego asegurarse de que la calidad del dato",
       "note": "\"X is one thing, but...\" = «una cosa es X, pero...». Sirve para contraponer dos dificultades.",
       "vocab": [
-        { "word": "historical data", "meaning": "datos históricos" },
+        { "word": "to deal with", "meaning": "lidiar con, ocuparse de" },
         { "word": "data quality", "meaning": "calidad del dato" }
       ]
     },
     {
       "start": 542,
-      "es": "sea realmente correcta es un reto completamente distinto, ¿no? Así que los ingenieros de datos tienen que averiguar: vale, ¿estoy viendo los... los",
+      "es": "sea realmente correcta es un reto completamente distinto, ¿no? Así que los ingenieros de datos tienen que averiguar: vale, ¿estoy viendo los... los datos correctos?",
       "note": "\"accurate\" = «exacto, correcto». Es la palabra clave de la calidad del dato.",
       "tip": "\"to figure out\" = «averiguar, sacar en claro». Verbo frasal utilísimo en el trabajo.",
       "vocab": [
@@ -201,8 +204,8 @@
       ]
     },
     {
-      "start": 550,
-      "es": "datos correctos? ¿Y tiene sentido esto cuando le doy a mi jefe un consejo diciéndole: oye, esto es lo que dicen los datos? Pues más te vale asegurarte de que los datos",
+      "start": 551,
+      "es": "¿Y tiene sentido esto cuando le doy a mi jefe un consejo diciéndole: oye, esto es lo que dicen los datos? Pues más te vale asegurarte de que los datos son correctos, ¿verdad?",
       "note": "\"to make sense\" = «tener sentido». En inglés el sentido se «hace», no se «tiene»: nunca \"have sense\".",
       "tip": "\"you better\" (de \"you'd better\") = «más te vale». Suena a aviso.",
       "watch": "\"advice\" es incontable: nunca \"advices\" ni \"an advice\". Para uno solo: \"a piece of advice\".",
@@ -212,10 +215,14 @@
       ]
     },
     {
-      "start": 558,
-      "es": "son correctos, ¿verdad? Y además de eso, esto enlaza con el concepto llamado la",
+      "start": 560,
+      "es": "Y además de eso, esto enlaza con el concepto llamado la fuente de la verdad.",
       "note": "\"on top of that\" = «además de eso, encima».",
-      "vocab": [{ "word": "on top of that", "meaning": "además de eso, encima" }]
+      "tip": "\"source of truth\" es un término del oficio: el sitio que se considera oficial para un dato. En español se dice igual, «fuente de la verdad».",
+      "vocab": [
+        { "word": "on top of that", "meaning": "además de eso, encima" },
+        { "word": "source of truth", "meaning": "fuente de la verdad (el dato oficial)" }
+      ]
     }
   ],
   "quiz": [

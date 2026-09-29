@@ -3,14 +3,14 @@
   "youtubeId": "jHJNuylT2-Q",
   "title": "Ingeniero, analista y el ETL",
   "level": "B1",
-  "description": "La diferencia entre ingeniero de datos, analista y científico de datos. Y la herramienta clave: el ETL, que es al dato lo que las tuberías al agua. 3:26 – 6:36.",
+  "description": "La diferencia entre ingeniero de datos, analista y científico de datos. Y la herramienta clave: el ETL, que es al dato lo que las tuberías al agua. 3:27 – 6:36.",
   "transcript": "data-engineering.txt",
   "startAt": 206,
   "endAt": 396,
   "annotations": [
     {
-      "start": 206,
-      "es": "las cifras exactas. Entonces, si eso son los datos, en la ingeniería de datos, ¿cuál es exactamente el papel de un ingeniero de datos?",
+      "start": 207,
+      "es": "Entonces, si eso son los datos, en la ingeniería de datos, ¿cuál es exactamente el papel de un ingeniero de datos?",
       "note": "\"the role of\" = «el papel de, la función de». Ojo: \"role\" es papel de rol, no papel de escribir (\"paper\").",
       "vocab": [
         { "word": "role", "meaning": "papel, función" },
@@ -19,7 +19,7 @@
     },
     {
       "start": 215,
-      "es": "Hay una diferencia entre un ingeniero de datos, un científico de datos y un analista de datos. Seguro que te lo has preguntado y has visto esos",
+      "es": "Hay una diferencia entre un ingeniero de datos, un científico de datos y un analista de datos. Seguro que te lo has preguntado y has visto esos términos.",
       "note": "\"I'm sure you've...\" = «seguro que has...». Muy típico para dar por hecho algo del oyente.",
       "vocab": [
         { "word": "difference", "meaning": "diferencia" },
@@ -28,7 +28,7 @@
     },
     {
       "start": 222,
-      "es": "términos. La mejor forma de explicarlo es que, si el ingeniero de datos es el que construye las tuberías y el cableado, los",
+      "es": "La mejor forma de explicarlo es que, si el ingeniero de datos es el que construye las tuberías y el cableado, los",
       "tip": "\"the best way I can describe it\" = «la mejor forma de explicarlo». Fíjate en que no dice \"explain\": \"to describe\" también vale.",
       "vocab": [
         { "word": "term", "meaning": "término, palabra técnica" },
@@ -83,11 +83,13 @@
     {
       "start": 266,
       "es": "de esto es que los ingenieros de datos hacen que los datos",
-      "vocab": [{ "word": "to make something + adjetivo", "meaning": "hacer que algo sea..." }]
+      "vocab": [
+        { "word": "to make something + adjetivo", "meaning": "hacer que algo sea..." }
+      ]
     },
     {
       "start": 274,
-      "es": "se puedan usar, y el analista o el científico de datos analizan esos datos ahora que ya se pueden usar. Vale, pues eso",
+      "es": "se puedan usar, y el analista o el científico de datos analizan esos datos ahora que ya se pueden usar. Vale, pues eso es.",
       "note": "\"usable\" = «utilizable, que se puede usar». El sufijo -able funciona igual que en español: readable, drinkable, usable.",
       "watch": "Dice \"a data analyst or data scientist ANALYZE\". Con sujeto en singular sería \"analyzes\". Es un despiste suyo: fíjate, pero no lo copies.",
       "vocab": [
@@ -97,7 +99,7 @@
     },
     {
       "start": 285,
-      "es": "es. Y hay un montón de razones por las que una empresa querría usar datos, ¿no?, pero en general es para usar los datos para sacar conclusiones de negocio, para beneficiar a la empresa de alguna forma.",
+      "es": "Y hay un montón de razones por las que una empresa querría usar datos, ¿no?, pero en general es para usar los datos para sacar conclusiones de negocio, para beneficiar a la empresa de alguna forma.",
       "note": "\"a plethora of\" es una palabra culta para «un montón de». Suena más formal que \"a lot of\".",
       "tip": "\"for the most part\" = «en general, en su mayoría».",
       "vocab": [
@@ -107,7 +109,7 @@
     },
     {
       "start": 297,
-      "es": "Bien, conceptos clave que necesitas saber para entrar en el mundo de la ingeniería de datos hoy en día. Las herramientas son bastante sencillas,",
+      "es": "Bien, conceptos clave que necesitas saber para entrar en el mundo de la ingeniería de datos hoy en día. Las herramientas son bastante sencillas, ¿vale?",
       "vocab": [
         { "word": "key concepts", "meaning": "conceptos clave" },
         { "word": "simple", "meaning": "sencillo, simple" }
@@ -115,7 +117,7 @@
     },
     {
       "start": 304,
-      "es": "¿vale? Hay algunos lenguajes de programación, como SQL y Python, y hay cosas más conceptuales, como el modelado de datos,",
+      "es": "Hay algunos lenguajes de programación, como SQL y Python, y hay cosas más conceptuales, como el modelado de datos, el diseño de sistemas, la nube.",
       "tip": "\"such as\" = «como, por ejemplo». Es la versión algo más formal de \"like\".",
       "vocab": [
         { "word": "such as", "meaning": "como, por ejemplo" },
@@ -123,8 +125,8 @@
       ]
     },
     {
-      "start": 311,
-      "es": "el diseño de sistemas, la nube. Suena un poco complicado; en cuanto te metes en cada uno, no lo es. Pero otra vez, eso es una conversación",
+      "start": 312,
+      "es": "Suena un poco complicado; en cuanto te metes en cada uno, no lo es. Pero otra vez, eso es una conversación para otro video entero.",
       "note": "\"once\" al principio de frase es «en cuanto, una vez que»: once you go into each one.",
       "vocab": [
         { "word": "once", "meaning": "en cuanto, una vez que" },
@@ -132,8 +134,8 @@
       ]
     },
     {
-      "start": 317,
-      "es": "para otro video entero. Pero si estás mirando de meterte en la ingeniería de datos, esto es una hoja de ruta bastante buena para... para intentar entrar en",
+      "start": 319,
+      "es": "Pero si estás mirando de meterte en la ingeniería de datos, esto es una hoja de ruta bastante buena para... para intentar entrar en el sector.",
       "tip": "\"road map\" es literalmente «mapa de carreteras», pero en el trabajo significa «hoja de ruta, plan».",
       "vocab": [
         { "word": "road map", "meaning": "hoja de ruta, plan" },
@@ -141,8 +143,8 @@
       ]
     },
     {
-      "start": 325,
-      "es": "el sector. Una herramienta importante que quiero que te lleves de verdad de este video es algo llamado un ETL",
+      "start": 326,
+      "es": "Una herramienta importante que quiero que te lleves de verdad de este video es algo llamado un ETL pipeline.",
       "note": "\"though\" al final de la frase es «eso sí, aunque». No es \"through\" (a través de): se pronuncian distinto.",
       "vocab": [
         { "word": "though", "meaning": "eso sí, sin embargo (al final)" },
@@ -150,8 +152,8 @@
       ]
     },
     {
-      "start": 332,
-      "es": "pipeline. ETL viene de extract, transform and load —extraer, transformar y cargar—, y de lo que hablamos aquí es de coger los datos,",
+      "start": 333,
+      "es": "ETL viene de extract, transform and load —extraer, transformar y cargar—, y de lo que hablamos aquí es de coger los datos,",
       "note": "\"to stand for\" = «significar, ser las siglas de». ETL stands for extract, transform, load.",
       "tip": "\"pipeline\" es la tubería. Un ETL pipeline es una tubería por la que pasan los datos.",
       "vocab": [
@@ -186,7 +188,7 @@
     },
     {
       "start": 362,
-      "es": "lo que sea: tu ducha, tu váter, tu fregadero, ¿no? Así que, al final del día, eso es todo lo que hacemos con los datos. Adónde",
+      "es": "lo que sea: tu ducha, tu váter, tu fregadero, ¿no? Así que, al final del día, eso es todo lo que hacemos con los datos.",
       "tip": "\"at the end of the day\" no es literal: es «al fin y al cabo, a fin de cuentas».",
       "vocab": [
         { "word": "at the end of the day", "meaning": "al fin y al cabo" },
@@ -195,7 +197,7 @@
     },
     {
       "start": 369,
-      "es": "van... pueden ir a sitios distintos por motivos distintos, ¿verdad?, igual que el agua en una casa. Y voy a seguir jugando con esta analogía de la casa,",
+      "es": "Adónde van... pueden ir a sitios distintos por motivos distintos, ¿verdad?, igual que el agua en una casa. Y voy a seguir jugando con esta analogía de la casa, básicamente.",
       "watch": "Dice \"I'm going keep playing\". Le falta el \"to\": \"I'm going TO keep playing\". Hablando rápido se come el \"to\"; escrito es un error.",
       "vocab": [
         { "word": "just like", "meaning": "igual que" },
@@ -203,16 +205,16 @@
       ]
     },
     {
-      "start": 377,
-      "es": "básicamente. Pero eso es lo que el ETL... eso es lo que significa ese concepto: coger los datos, extraer los datos, transformar los datos y luego cargar los datos",
+      "start": 378,
+      "es": "Pero eso es lo que el ETL... eso es lo que significa ese concepto: coger los datos, extraer los datos, transformar los datos y luego cargar los datos en otro sitio.",
       "vocab": [
         { "word": "to extract", "meaning": "extraer" },
         { "word": "to load", "meaning": "cargar" }
       ]
     },
     {
-      "start": 385,
-      "es": "en otro sitio. Y... y eso va a ser más o menos el 60, 70, 80% del día a día de un ingeniero de datos. Van a estar toqueteando los datos, básicamente.",
+      "start": 386,
+      "es": "Y... y eso va a ser más o menos el 60, 70, 80% del día a día de un ingeniero de datos. Van a estar toqueteando los datos, básicamente.",
       "note": "\"day-to-day\" = «el día a día». Con guiones funciona como adjetivo o sustantivo.",
       "tip": "\"to mess around with something\" = «toquetear, trastear con algo». Muy coloquial.",
       "vocab": [
