@@ -1,0 +1,292 @@
+{
+  "id": "data-eng-04",
+  "youtubeId": "jHJNuylT2-Q",
+  "title": "La fuente de la verdad y el mundo real",
+  "level": "B2",
+  "description": "En una empresa grande el mismo dato pasa por veinte equipos: ¿cuál es el bueno? Y tres ejemplos del día a día: el fraude con la tarjeta, el inventario de Costco y YouTube. 9:24 – 11:44.",
+  "transcript": "data-engineering.txt",
+  "startAt": 564,
+  "endAt": 704,
+  "annotations": [
+    {
+      "start": 564,
+      "es": "fuente de la verdad. Lo que eso significa es que, si trabajas para una empresa tecnológica grande, por ejemplo, puede que recibas datos, ¿vale?,",
+      "note": "\"source of truth\" es un término del oficio: el sitio que se considera oficial para un dato. En español se dice igual, «fuente de la verdad».",
+      "vocab": [
+        { "word": "source of truth", "meaning": "fuente de la verdad (el dato oficial)" },
+        { "word": "to work for", "meaning": "trabajar para (una empresa)" }
+      ]
+    },
+    {
+      "start": 571,
+      "es": "de un equipo, y puede que decidas tomar una decisión de negocio con esos datos. El problema con una empresa muy, muy",
+      "tip": "\"you might get\" / \"you might decide\": otra vez \"might\" como suposición, «puede que».",
+      "vocab": [
+        { "word": "team", "meaning": "equipo" },
+        { "word": "business decision", "meaning": "decisión de negocio" }
+      ]
+    },
+    {
+      "start": 577,
+      "es": "grande es este: esos datos seguramente han pasado por unos 20 equipos distintos, ¿verdad? Y es como: soy un jefe de",
+      "note": "\"to go through\" = «pasar por». Aquí, pasar por las manos de 20 equipos.",
+      "tip": "\"like 20 teams\": aquí \"like\" es «unos, como unos». No es «gustar» ni «como».",
+      "vocab": [
+        { "word": "to go through", "meaning": "pasar por" },
+        { "word": "like (+ número)", "meaning": "unos, como unos" }
+      ]
+    },
+    {
+      "start": 584,
+      "es": "ventas y digo: oye, déjame mirar este panel para asegurarme de que mi gente hace lo suyo, y entonces",
+      "note": "\"I'm like, hey...\" = «y yo, en plan: oye...». Es la forma americana de introducir lo que uno dice o piensa.",
+      "tip": "\"to do their thing\" = «hacer lo suyo, ir a lo suyo».",
+      "vocab": [
+        { "word": "dashboard", "meaning": "panel, cuadro de mando" },
+        { "word": "to do your thing", "meaning": "hacer lo tuyo" }
+      ]
+    },
+    {
+      "start": 590,
+      "es": "me doy cuenta: ah, un momento, este panel ha cogido datos de un sitio que a lo mejor no es correcto. Así que ahora tengo que ponerme a averiguar",
+      "watch": "OJO, FALSO AMIGO: \"to realize\" NO es «realizar», es «darse cuenta». «Realizar» se dice \"to carry out\" o \"to do\".",
+      "tip": "\"wait a second\" = «espera un momento». También \"hold on\", \"hang on\".",
+      "vocab": [
+        { "word": "to realize", "meaning": "darse cuenta (¡no «realizar»!)" },
+        { "word": "wait a second", "meaning": "espera un momento" }
+      ]
+    },
+    {
+      "start": 597,
+      "es": "qué otros datos existen, para sacar en claro: vale, ¿cuál es el dato correcto?, ¿cuál es la fuente de la verdad? Así que esos",
+      "vocab": [
+        { "word": "to exist", "meaning": "existir" },
+        { "word": "the right data", "meaning": "el dato correcto, el bueno" }
+      ]
+    },
+    {
+      "start": 604,
+      "es": "retos en el mundo de la ingeniería de datos se están haciendo cada vez más y más grandes a medida que se crean más datos.",
+      "watch": "Dice \"those challenges IS becoming\". Con sujeto en plural sería \"ARE becoming\". Es un despiste suyo: fíjate, pero no lo copies.",
+      "tip": "\"bigger and bigger\" = «cada vez más grande». Repetir el comparativo es la forma de decir «cada vez más».",
+      "vocab": [
+        { "word": "bigger and bigger", "meaning": "cada vez más grande" },
+        { "word": "as", "meaning": "a medida que" }
+      ]
+    },
+    {
+      "start": 609,
+      "es": "Así que, si sigues hecho un lío, déjame darte algunos ejemplos del mundo real muy, muy",
+      "note": "\"real world applications\" = «aplicaciones del mundo real», o sea, ejemplos prácticos.",
+      "vocab": [
+        { "word": "confused", "meaning": "confundido, hecho un lío" },
+        { "word": "real world", "meaning": "el mundo real" }
+      ]
+    },
+    {
+      "start": 615,
+      "es": "rápido, porque otra vez: los datos están a nuestro alrededor todo el rato, en todas las empresas, en todas las aplicaciones. Eso es",
+      "tip": "\"all the time\" = «todo el rato, siempre». No confundir con \"at all times\", que es más formal.",
+      "vocab": [
+        { "word": "around us", "meaning": "a nuestro alrededor" },
+        { "word": "all the time", "meaning": "todo el rato" }
+      ]
+    },
+    {
+      "start": 622,
+      "es": "lo que de verdad deberías quedarte. American Express: si intentas pasar tu tarjeta Amex a las 2 de la mañana, puede que te salte un aviso diciendo: oye,",
+      "note": "\"Amex\" es como se llama de forma corta a American Express.",
+      "tip": "\"to swipe a card\" = «pasar la tarjeta» por el datáfono. \"Swipe\" es ese gesto de deslizar; es el mismo verbo del «swipe» del móvil.",
+      "vocab": [
+        { "word": "to swipe a card", "meaning": "pasar la tarjeta" },
+        { "word": "alert", "meaning": "aviso, alerta" }
+      ]
+    },
+    {
+      "start": 630,
+      "es": "puede que haya un fraude. ¿Por qué? Porque hay algoritmos de aprendizaje automático —otra vez, tema totalmente distinto—,",
+      "note": "\"there might be\" = «puede que haya». La suposición otra vez con \"might\".",
+      "vocab": [
+        { "word": "fraud", "meaning": "fraude" },
+        { "word": "machine learning", "meaning": "aprendizaje automático" }
+      ]
+    },
+    {
+      "start": 636,
+      "es": "pero hay una IA, aprendizaje automático, que dice: oye, esta transacción tiene una pinta un poco sospechosa, vamos a bloquear esta transacción",
+      "vocab": [
+        { "word": "transaction", "meaning": "transacción, operación" },
+        { "word": "suspicious", "meaning": "sospechoso" }
+      ]
+    },
+    {
+      "start": 643,
+      "es": "porque tiene mala pinta, ¿no? Seguro que todos habéis pasado por eso ya, ¿verdad?, algún mensaje de fraude",
+      "note": "\"it looks off\" = «tiene mala pinta, hay algo que no cuadra». Este \"off\" significa «raro, que no encaja».",
+      "tip": "\"you guys\" es cómo se dirige un americano a un grupo, valga para hombres o mujeres. Es «vosotros, chicos».",
+      "vocab": [
+        { "word": "to look off", "meaning": "tener mala pinta, no cuadrar" },
+        { "word": "you guys", "meaning": "vosotros, chicos" }
+      ]
+    },
+    {
+      "start": 649,
+      "es": "de vuestro banco. La realidad es que los ingenieros de datos tuvieron un papel importante a la hora de crear la base para que eso pueda",
+      "note": "\"to play a big role in\" = «tener un papel importante en». El papel se «juega», no se «tiene».",
+      "vocab": [
+        { "word": "to play a role", "meaning": "tener un papel, desempeñar un papel" },
+        { "word": "foundation", "meaning": "base, cimientos" }
+      ]
+    },
+    {
+      "start": 657,
+      "es": "pasar, ¿verdad? Y lo mismo con Costco. ¿Cómo crees que rotan tanto inventario? Pues porque",
+      "watch": "Dice \"Is because\", sin sujeto. Lo correcto es \"IT'S because\" o \"That's because\". Se lo come hablando rápido.",
+      "tip": "\"same thing with...\" = «lo mismo con...». Muy útil para encadenar ejemplos.",
+      "vocab": [
+        { "word": "inventory", "meaning": "inventario, existencias" },
+        { "word": "turnover", "meaning": "rotación (de existencias); también facturación" }
+      ]
+    },
+    {
+      "start": 664,
+      "es": "pueden seguir a nivel de artículo cuánto inventario tienen, cuánto van a vender el mes que viene,",
+      "note": "\"to track\" = «seguir la pista de, controlar». De ahí viene «tracking».",
+      "vocab": [
+        { "word": "to track", "meaning": "seguir la pista de, controlar" },
+        { "word": "item", "meaning": "artículo, producto" }
+      ]
+    },
+    {
+      "start": 672,
+      "es": "cuánto quieren seguir vendiendo, etcétera, etcétera. Y eso les ayuda a prever las ventas con mucha precisión. Así que",
+      "note": "\"to forecast\" = «prever, pronosticar». Es la misma palabra del tiempo: weather forecast.",
+      "vocab": [
+        { "word": "to forecast", "meaning": "prever, pronosticar" },
+        { "word": "accurately", "meaning": "con precisión, de forma exacta" }
+      ]
+    },
+    {
+      "start": 679,
+      "es": "otra vez, eso son datos. Y luego, claro, YouTube: otra vez, si estás viendo esto ahora mismo, YouTube está recogiendo datos",
+      "vocab": [
+        { "word": "to collect data", "meaning": "recoger datos" },
+        { "word": "of course", "meaning": "claro, por supuesto" }
+      ]
+    },
+    {
+      "start": 685,
+      "es": "segundo a segundo mientras ves este video, ¿verdad? Incluso la sección de comentarios que ves abajo, eso son datos. Cada comentario que escribes, YouTube",
+      "tip": "\"second by second\" = «segundo a segundo». El patrón «X by X» sirve para muchos: step by step, one by one, day by day.",
+      "vocab": [
+        { "word": "second by second", "meaning": "segundo a segundo" },
+        { "word": "comment section", "meaning": "sección de comentarios" }
+      ]
+    },
+    {
+      "start": 692,
+      "es": "está guardando ese dato. Así que ni que decir tiene: los datos están por todas partes, y los ingenieros de datos son los que hacen posible todo",
+      "note": "\"needless to say\" = «ni que decir tiene, huelga decir». Literalmente «no hace falta decirlo».",
+      "tip": "\"to enable\" = «hacer posible, habilitar». Muy usada en tecnología.",
+      "vocab": [
+        { "word": "needless to say", "meaning": "ni que decir tiene" },
+        { "word": "to enable", "meaning": "hacer posible, habilitar" }
+      ]
+    },
+    {
+      "start": 699,
+      "es": "ese movimiento de datos. Eso es una pasada. Dicho esto, estás viendo",
+      "note": "\"with that said\" = «dicho esto». Sirve para cerrar un tema y pasar al siguiente.",
+      "vocab": [
+        { "word": "with that said", "meaning": "dicho esto" },
+        { "word": "pretty crazy", "meaning": "una pasada, alucinante" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Qué problema plantea con los datos en una empresa muy grande?",
+      "options": [
+        "Que el dato pasó por unos 20 equipos y no sabes cuál es el bueno",
+        "Que no hay suficientes datos",
+        "Que los datos están en otro idioma"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "OJO, falso amigo: \"to realize\" significa...",
+      "options": ["realizar, hacer", "darse cuenta", "alquilar"],
+      "answer": 1
+    },
+    {
+      "q": "\"source of truth\" es...",
+      "options": [
+        "un buscador",
+        "el sitio que se toma como el dato oficial y bueno",
+        "una entrevista"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"to swipe a card\" significa...",
+      "options": ["romper la tarjeta", "pasar la tarjeta", "pedir una tarjeta nueva"],
+      "answer": 1
+    },
+    {
+      "q": "\"this transaction looks off\" significa...",
+      "options": [
+        "la transacción está apagada",
+        "la transacción tiene mala pinta, no cuadra",
+        "la transacción está cancelada"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"data engineers played a big role\" significa...",
+      "options": [
+        "jugaron un rato",
+        "tuvieron un papel importante",
+        "hicieron un papeleo grande"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"to forecast sales\" significa...",
+      "options": ["prever las ventas", "cerrar las ventas", "rebajar las ventas"],
+      "answer": 0
+    },
+    {
+      "q": "\"needless to say\" significa...",
+      "options": ["no hace falta decirlo, ni que decir tiene", "hay que decirlo", "dicho sea de paso"],
+      "answer": 0
+    },
+    {
+      "q": "Dice \"those challenges is becoming bigger\". ¿Qué está mal?",
+      "options": [
+        "Nada",
+        "Con sujeto plural va \"are becoming\"",
+        "Debería ser \"big\" y no \"bigger\""
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"bigger and bigger\" significa...",
+      "options": ["muy grande", "cada vez más grande", "el más grande"],
+      "answer": 1
+    },
+    {
+      "q": "\"I'm like, hey, let me look at this dashboard\" — ese \"I'm like\" es...",
+      "options": [
+        "«me gusta»",
+        "«soy parecido a»",
+        "«y yo, en plan:» — introduce lo que dice o piensa"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"with that said\" se usa para...",
+      "options": ["pedir la palabra", "cerrar un tema y pasar al siguiente", "repetir algo"],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "id": "data-eng-03",
+  "youtubeId": "jHJNuylT2-Q",
+  "title": "¿Y en qué se diferencia de un programador?",
+  "level": "B2",
+  "description": "El ingeniero de software crea los datos; el de datos los hace usables. Y empiezan los problemas: demasiado dato, y encima hay que fiarse de él. 6:36 – 9:24.",
+  "transcript": "data-engineering.txt",
+  "startAt": 396,
+  "endAt": 564,
+  "annotations": [
+    {
+      "start": 396,
+      "es": "Entonces, a estas alturas te estarás preguntando: vale, muy bien, pero ¿en qué se diferencia esto de un ingeniero de software?",
+      "watch": "Dice \"different THAN\". En inglés cuidado (y en británico) es \"different FROM\". \"Different than\" es muy americano y allí está aceptado.",
+      "vocab": [
+        { "word": "to be different from", "meaning": "ser distinto de" },
+        { "word": "software engineer", "meaning": "ingeniero de software, programador" }
+      ]
+    },
+    {
+      "start": 401,
+      "es": "Ya, yo pensaba que los ingenieros de software trabajan con datos y escriben código y hacen todas estas cosas técnicas. Sí que lo hacen, pero hay una",
+      "note": "\"They do\" = «sí que lo hacen». Repetir el verbo \"do\" sirve para confirmar sin repetir toda la frase.",
+      "vocab": [
+        { "word": "to deal with", "meaning": "tratar con, trabajar con" },
+        { "word": "stuff", "meaning": "cosas, movidas (comodín)" }
+      ]
+    },
+    {
+      "start": 406,
+      "es": "pequeña diferencia. Digamos que estás en YouTube ahora mismo. Un ingeniero de software puede que haya construido la interfaz que",
+      "note": "\"might have built\" = «puede que haya construido». Es una suposición sobre el pasado: might + have + participio.",
+      "vocab": [
+        { "word": "slight", "meaning": "leve, pequeño" },
+        { "word": "let's say", "meaning": "digamos, pongamos" }
+      ]
+    },
+    {
+      "start": 413,
+      "es": "estás viendo, ¿no? Todos estos botones y, ya sabes, el hecho de que el logo de YouTube sea rojo... todas esas cosas, un",
+      "tip": "\"the fact that...\" = «el hecho de que...». Detrás va una frase entera.",
+      "vocab": [
+        { "word": "button", "meaning": "botón" },
+        { "word": "the fact that", "meaning": "el hecho de que" }
+      ]
+    },
+    {
+      "start": 420,
+      "es": "ingeniero de software puede que las haya hecho él. Y lo interesante, eso sí, es",
+      "note": "\"though\" al final de la frase es «eso sí, aunque». No es \"through\".",
+      "vocab": [{ "word": "interesting", "meaning": "interesante" }]
+    },
+    {
+      "start": 425,
+      "es": "que lo que sea que haya construido el ingeniero de software —a lo mejor una app de móvil, a lo mejor una página web, lo que sea—",
+      "note": "\"whatever\" = «lo que sea». Lo repite mucho: whatever it is, whatever the case.",
+      "vocab": [
+        { "word": "whatever", "meaning": "lo que sea" },
+        { "word": "web page", "meaning": "página web" }
+      ]
+    },
+    {
+      "start": 431,
+      "es": "esa aplicación está creando datos, ¿verdad? Así que ahora bajamos una capa",
+      "vocab": [{ "word": "application", "meaning": "aplicación" }]
+    },
+    {
+      "start": 438,
+      "es": "más. Es como que ellos crean los datos, pero luego el ingeniero de datos es el responsable de hacer un ETL: extraer, cargar, transformar los datos.",
+      "tip": "\"one layer deeper\" = «una capa más abajo». Fíjate: \"layer\" es la misma palabra que usó con la casa al principio.",
+      "vocab": [
+        { "word": "deeper", "meaning": "más profundo, más abajo" },
+        { "word": "responsible for", "meaning": "responsable de" }
+      ]
+    },
+    {
+      "start": 445,
+      "es": "Así que, si lo quieres ver así, los ingenieros de software crean... crean los datos, y los ingenieros de datos",
+      "vocab": [{ "word": "to create", "meaning": "crear" }]
+    },
+    {
+      "start": 452,
+      "es": "los hacen utilizables, ¿vale?, mediante un ETL pipeline, o lo que sea. Y",
+      "note": "\"via\" = «mediante, a través de». En americano se pronuncia «VÁI-a».",
+      "watch": "Dice \"whatever the cases\". La expresión hecha es \"whatever the case is\" o \"whatever the case may be\".",
+      "vocab": [
+        { "word": "via", "meaning": "mediante, a través de" },
+        { "word": "usable", "meaning": "utilizable" }
+      ]
+    },
+    {
+      "start": 458,
+      "es": "si quieres construir una... una... una página web, por ejemplo, seguramente eso es algo que hace un ingeniero de software, o",
+      "watch": "\"a— a— a web page\": repite el artículo tres veces mientras piensa. Es tartamudeo normal del habla, no un error.",
+      "vocab": [{ "word": "for example", "meaning": "por ejemplo" }]
+    },
+    {
+      "start": 465,
+      "es": "en concreto un ingeniero de front-end. Y espero que eso te dé un poco más de idea de la difere... entre los dos.",
+      "note": "\"hopefully\" = «espero que, ojalá». Va al principio de la frase, no al final.",
+      "vocab": [
+        { "word": "hopefully", "meaning": "espero que, ojalá" },
+        { "word": "specifically", "meaning": "en concreto, específicamente" }
+      ]
+    },
+    {
+      "start": 473,
+      "es": "Sí, va a haber solapamientos, y sinceramente, en la mayoría de los puestos técnicos hay solapes... solape con varios puestos técnicos.",
+      "note": "\"overlap\" = «solape, coincidencia»: dos cosas que se montan una encima de otra.",
+      "vocab": [
+        { "word": "overlap", "meaning": "solape, coincidencia" },
+        { "word": "tech role", "meaning": "puesto técnico" }
+      ]
+    },
+    {
+      "start": 480,
+      "es": "Esto debería darte una idea clara de los distintos carriles entre un ingeniero de software y uno de datos. Y sigamos, porque",
+      "tip": "\"lane\" es el carril de la carretera. Usarlo para hablar de puestos («cada uno en su carril») es muy de inglés de oficina.",
+      "vocab": [
+        { "word": "lane", "meaning": "carril" },
+        { "word": "to keep going", "meaning": "seguir, continuar" }
+      ]
+    },
+    {
+      "start": 488,
+      "es": "el mayor reto al que se enfrentan los ingenieros de datos hoy —que es, por cierto, el motivo por el que el sector crece tan rápido—",
+      "note": "\"to face a challenge\" = «enfrentarse a un reto». Sin preposición: you face a challenge.",
+      "vocab": [
+        { "word": "challenge", "meaning": "reto, desafío" },
+        { "word": "field", "meaning": "campo, sector" }
+      ]
+    },
+    {
+      "start": 494,
+      "es": "es que hay muchísimos datos. Otra vez, lo hemos comentado aquí: hay un estadio de datos creándose cada",
+      "tip": "\"so much\" va con incontables y \"so many\" con contables. \"Data\" es incontable: so much data.",
+      "vocab": [{ "word": "so much", "meaning": "muchísimo (con incontables)" }]
+    },
+    {
+      "start": 501,
+      "es": "día, y ha crecido exponencialmente. Por cierto, el reto que sale de ahí es: ¿cómo manejamos",
+      "note": "\"by the way\" = «por cierto»: mete un comentario que no venía a cuento.",
+      "vocab": [
+        { "word": "by the way", "meaning": "por cierto" },
+        { "word": "to handle", "meaning": "manejar, gestionar" }
+      ]
+    },
+    {
+      "start": 509,
+      "es": "todos esos datos? Y normalmente, cuando Apple, la... la tienda de Mac te pregunta: oye, ¿cuántos gigabytes de datos quieres?, pues",
+      "vocab": [
+        { "word": "typically", "meaning": "normalmente, por lo general" },
+        { "word": "to ask someone", "meaning": "preguntarle a alguien" }
+      ]
+    },
+    {
+      "start": 516,
+      "es": "solo hay una cantidad limitada de datos que tu ordenador puede guardar. Y entonces el reto ahora es: oye, ¿cómo almacenamos",
+      "note": "\"finite\" = «finito, limitado». Se pronuncia «FÁI-nait».",
+      "vocab": [
+        { "word": "amount", "meaning": "cantidad (de algo incontable)" },
+        { "word": "to hold", "meaning": "guardar, contener" }
+      ]
+    },
+    {
+      "start": 523,
+      "es": "estos datos de forma rentable? ¿Cómo analizamos de verdad los datos y sacamos conclusiones de negocio con unas cantidades tan grandes",
+      "note": "\"cost effectively\" = «de forma rentable, sin que salga caro». El adjetivo es \"cost-effective\".",
+      "vocab": [
+        { "word": "cost-effective", "meaning": "rentable, económico" },
+        { "word": "to store", "meaning": "almacenar" }
+      ]
+    },
+    {
+      "start": 530,
+      "es": "de datos que no solo se están creando a diario, sino que ya se crearon en el pasado, ¿verdad? A eso",
+      "tip": "\"on a daily basis\" = «a diario». Suena más formal que \"every day\".",
+      "watch": "\"not just... but...\" = «no solo... sino...». En inglés más cuidado sería \"not only... but also...\".",
+      "vocab": [
+        { "word": "on a daily basis", "meaning": "a diario" },
+        { "word": "already", "meaning": "ya" }
+      ]
+    },
+    {
+      "start": 536,
+      "es": "se le llama datos históricos. Lidiar con esos datos es una cosa, pero luego asegurarse de que la calidad del dato",
+      "note": "\"X is one thing, but...\" = «una cosa es X, pero...». Sirve para contraponer dos dificultades.",
+      "vocab": [
+        { "word": "historical data", "meaning": "datos históricos" },
+        { "word": "data quality", "meaning": "calidad del dato" }
+      ]
+    },
+    {
+      "start": 542,
+      "es": "sea realmente correcta es un reto completamente distinto, ¿no? Así que los ingenieros de datos tienen que averiguar: vale, ¿estoy viendo los... los",
+      "note": "\"accurate\" = «exacto, correcto». Es la palabra clave de la calidad del dato.",
+      "tip": "\"to figure out\" = «averiguar, sacar en claro». Verbo frasal utilísimo en el trabajo.",
+      "vocab": [
+        { "word": "accurate", "meaning": "exacto, correcto" },
+        { "word": "to figure out", "meaning": "averiguar, sacar en claro" }
+      ]
+    },
+    {
+      "start": 550,
+      "es": "datos correctos? ¿Y tiene sentido esto cuando le doy a mi jefe un consejo diciéndole: oye, esto es lo que dicen los datos? Pues más te vale asegurarte de que los datos",
+      "note": "\"to make sense\" = «tener sentido». En inglés el sentido se «hace», no se «tiene»: nunca \"have sense\".",
+      "tip": "\"you better\" (de \"you'd better\") = «más te vale». Suena a aviso.",
+      "watch": "\"advice\" es incontable: nunca \"advices\" ni \"an advice\". Para uno solo: \"a piece of advice\".",
+      "vocab": [
+        { "word": "to make sense", "meaning": "tener sentido" },
+        { "word": "advice", "meaning": "consejo(s) — incontable" }
+      ]
+    },
+    {
+      "start": 558,
+      "es": "son correctos, ¿verdad? Y además de eso, esto enlaza con el concepto llamado la",
+      "note": "\"on top of that\" = «además de eso, encima».",
+      "vocab": [{ "word": "on top of that", "meaning": "además de eso, encima" }]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Según él, ¿cuál es la diferencia con un ingeniero de software?",
+      "options": [
+        "El de software crea los datos; el de datos los hace usables",
+        "El de software no toca datos nunca",
+        "No hay ninguna diferencia"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"They do, but there's a slight difference\" — ¿qué hace ese \"do\"?",
+      "options": [
+        "Confirma lo anterior: «sí que lo hacen»",
+        "Es una pregunta",
+        "Es un error"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"might have built\" significa...",
+      "options": [
+        "tenía que construirlo",
+        "puede que lo haya construido",
+        "quería construirlo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"to figure out\" significa...",
+      "options": ["dibujar una figura", "averiguar, sacar en claro", "calcular una cifra"],
+      "answer": 1
+    },
+    {
+      "q": "\"accurate\" significa...",
+      "options": ["rápido", "exacto, correcto", "acumulado"],
+      "answer": 1
+    },
+    {
+      "q": "\"advice\" (consejo) en inglés...",
+      "options": [
+        "es incontable: nunca \"advices\"",
+        "hace plural normal: advices",
+        "siempre lleva \"an\""
+      ],
+      "answer": 0
+    },
+    {
+      "q": "La forma correcta es...",
+      "options": [
+        "this has no sense",
+        "this makes no sense",
+        "this takes no sense"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"on a daily basis\" significa...",
+      "options": ["en la base de datos", "a diario", "en un día concreto"],
+      "answer": 1
+    },
+    {
+      "q": "\"historical data\" son...",
+      "options": [
+        "datos sobre historia",
+        "datos que ya se crearon en el pasado",
+        "datos famosos"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"cost effectively\" significa...",
+      "options": ["caro pero efectivo", "de forma rentable", "con coste efectivo en caja"],
+      "answer": 1
+    },
+    {
+      "q": "Con \"data\" (incontable) se dice...",
+      "options": ["so many data", "so much data", "so lot data"],
+      "answer": 1
+    },
+    {
+      "q": "\"different lanes\" entre dos puestos significa...",
+      "options": [
+        "carriles distintos: cada uno tiene su terreno",
+        "idiomas distintos",
+        "oficinas distintas"
+      ],
+      "answer": 0
+    }
+  ]
+}

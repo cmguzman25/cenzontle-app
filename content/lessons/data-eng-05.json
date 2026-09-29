@@ -1,0 +1,315 @@
+{
+  "id": "data-eng-05",
+  "youtubeId": "jHJNuylT2-Q",
+  "title": "Por dónde empezar y adónde se llega",
+  "level": "B1",
+  "description": "Su consejo: entra como analista de datos, que se hace en tres o seis meses, y luego te especializas. Y de ahí se sale a la nube, al devops o a la IA. 11:44 – 14:45.",
+  "transcript": "data-engineering.txt",
+  "startAt": 704,
+  "endAt": 890,
+  "annotations": [
+    {
+      "start": 704,
+      "es": "esto; según quién seas, a lo mejor estás pensando: ¿qué puedo hacer yo en mi carrera? Pues, sencillo. Si empiezas de cero, recomendamos mucho",
+      "note": "\"based on who you are\" = «según quién seas». \"Based on\" es «según, en función de».",
+      "vocab": [
+        { "word": "career", "meaning": "carrera profesional" },
+        { "word": "to highly recommend", "meaning": "recomendar mucho" }
+      ]
+    },
+    {
+      "start": 712,
+      "es": "—otra vez, basándonos en datos, ¿eh?, porque Data Engineer Academy ha ayudado ya a cientos de personas— recomendamos que entres en el sector como analista",
+      "watch": "Dice \"we recommend YOU BREAKING into the field\". Lo correcto es \"we recommend breaking\" o \"we recommend that you break\". Con \"recommend\" no se mete el pronombre así.",
+      "vocab": [
+        { "word": "hundreds of", "meaning": "cientos de" },
+        { "word": "at this point", "meaning": "a estas alturas, ya" }
+      ]
+    },
+    {
+      "start": 718,
+      "es": "de datos. No es tan difícil, lleva unos tres a seis meses según el tiempo que tengas. Y la verdad es que te puedes apañar con",
+      "note": "\"it takes three months\" = «lleva tres meses». Para el tiempo que cuesta algo se usa \"to take\".",
+      "tip": "\"you can get away with\" = «te puedes apañar con, te basta con». Literalmente «salirte con la tuya».",
+      "vocab": [
+        { "word": "to take (time)", "meaning": "llevar, tardar" },
+        { "word": "to get away with", "meaning": "apañarse con, bastarle a uno" }
+      ]
+    },
+    {
+      "start": 725,
+      "es": "un lenguaje, un lenguaje de programación, y es una forma estupenda de entrar en el sector y luego irte ramificando hacia lo que sea que quieras hacer, ya sea",
+      "note": "\"to branch off\" = «ramificarse, desviarse hacia otra rama». Viene de \"branch\" (rama).",
+      "vocab": [
+        { "word": "to branch off", "meaning": "ramificarse, desviarse" },
+        { "word": "a great way to", "meaning": "una forma estupenda de" }
+      ]
+    },
+    {
+      "start": 733,
+      "es": "ingeniero de datos, ingeniero de machine learning o científico de datos. Es una forma estupenda de entrar en el sector y luego tirar desde ahí. Lo mismo si tienes",
+      "watch": "Dice \"whether it's a data engineer AND an ML engineer\". Con \"whether\" va \"OR\": whether it's A or B. Se le ha escapado.",
+      "vocab": [
+        { "word": "whether", "meaning": "ya sea, si" },
+        { "word": "to go from there", "meaning": "tirar desde ahí, seguir desde ahí" }
+      ]
+    },
+    {
+      "start": 741,
+      "es": "experiencia, ¿no? A lo mejor eres un profesional de informática y te estás preguntando: oye, ¿puedo llegar a ser ingeniero de datos? Esa es la pregunta. La respuesta es sí,",
+      "tip": "\"to become\" = «llegar a ser, hacerse». No es \"to convert\".",
+      "vocab": [
+        { "word": "experienced", "meaning": "con experiencia" },
+        { "word": "to become", "meaning": "llegar a ser, hacerse" }
+      ]
+    },
+    {
+      "start": 748,
+      "es": "sobre todo si tienes formación técnica. Pero lo interesante de esto es que luego te puedes ir a especializar. Por ejemplo, por debajo de",
+      "watch": "Dice \"if you have tech background\", sin artículo. Lo correcto es \"A tech background\".",
+      "tip": "\"especially\" = «sobre todo, especialmente». Se pronuncia «es-PE-shali», sin la e inicial marcada.",
+      "vocab": [
+        { "word": "especially", "meaning": "sobre todo, especialmente" },
+        { "word": "background", "meaning": "formación, trayectoria previa" }
+      ]
+    },
+    {
+      "start": 755,
+      "es": "un ingeniero de datos puedes acabar dedicándote a la nube, en plan exclusivamente la nube: AWS, Azure. Eh,",
+      "note": "\"afterwards\" = «después, más adelante». Es la versión británica y formal de \"after that\".",
+      "vocab": [
+        { "word": "afterwards", "meaning": "después, más adelante" },
+        { "word": "exclusively", "meaning": "exclusivamente, solo" }
+      ]
+    },
+    {
+      "start": 762,
+      "es": "podrías dedicarte a cosas que se llaman devops y arquitecto de soluciones, y eso es otro video entero. Pero lo más probable es que tengas caminos abiertos",
+      "note": "\"chances are (that)...\" = «lo más probable es que...». Muy usado y muy natural.",
+      "vocab": [
+        { "word": "chances are", "meaning": "lo más probable es que" },
+        { "word": "path", "meaning": "camino, vía" }
+      ]
+    },
+    {
+      "start": 771,
+      "es": "según dónde estés ahora mismo, ya seas analista o ingeniero de datos. Porque eso me lleva al siguiente tema, ¿no? Si llegas a ser ingeniero",
+      "tip": "\"it brings me to the next topic\" = «eso me lleva al siguiente tema». Fórmula de presentador para encadenar.",
+      "vocab": [
+        { "word": "depending on", "meaning": "según, dependiendo de" },
+        { "word": "topic", "meaning": "tema" }
+      ]
+    },
+    {
+      "start": 780,
+      "es": "de datos, ¿qué puedes hacer después? Pues hay muchísimas cosas que puedes hacer después, pero también hay muchísimos campos colaterales a los que te puedes pasar.",
+      "note": "\"tangential\" = «tangencial, colateral»: campos que tocan de refilón con el tuyo.",
+      "vocab": [
+        { "word": "tangential", "meaning": "tangencial, colateral" },
+        { "word": "field", "meaning": "campo, ámbito" }
+      ]
+    },
+    {
+      "start": 789,
+      "es": "Obviamente el mayor es la IA, ¿verdad? Vemos ChatGPT, vemos machine learning. El motivo por el que tengo esto aquí es porque no creo que la gente se dé cuenta de lo",
+      "tip": "\"the reason I have this here is because...\" — en inglés muy cuidado se diría \"the reason is THAT...\", pero hablando todo el mundo dice \"is because\".",
+      "vocab": [
+        { "word": "obviously", "meaning": "obviamente, está claro que" },
+        { "word": "the reason", "meaning": "el motivo, la razón" }
+      ]
+    },
+    {
+      "start": 798,
+      "es": "antiguo que es el machine learning. De hecho, hay un video buenísimo de Jeff Bezos hablando de cómo él, en 1999, ya podía recomendar libros a sus usuarios",
+      "note": "\"how old is it?\" = «¿cuántos años tiene?». Aquí \"how old machine learning is\" = «lo viejo que es».",
+      "watch": "Otra vez \"actually\": «de hecho, en realidad». Nunca «actualmente».",
+      "vocab": [
+        { "word": "old", "meaning": "viejo, antiguo" },
+        { "word": "to recommend", "meaning": "recomendar" }
+      ]
+    },
+    {
+      "start": 809,
+      "es": "mediante algo llamado machine learning, o recomendaciones personalizadas. Así que el machine learning lleva ya 30 años entre nosotros. Lo que pasa es",
+      "note": "\"to be around\" = «llevar existiendo, estar por ahí desde hace tiempo». It's been around for 30 years.",
+      "vocab": [
+        { "word": "to be around", "meaning": "llevar existiendo, estar desde hace" },
+        { "word": "personalized", "meaning": "personalizado" }
+      ]
+    },
+    {
+      "start": 817,
+      "es": "que ahora somos capaces de procesar datos más rápido, más datos, datos más rápidos y a gran escala, de forma que vemos estas recomendaciones en tiempo",
+      "tip": "\"to crunch data\" = «procesar datos a lo bruto, machacar números». Muy de la jerga: number crunching.",
+      "vocab": [
+        { "word": "to crunch data", "meaning": "procesar datos, machacar números" },
+        { "word": "at scale", "meaning": "a gran escala" }
+      ]
+    },
+    {
+      "start": 826,
+      "es": "real. Si abres tu Spotify y escuchas cinco canciones, te llega enseguida otra recomendación de canción basada en esas cinco que acabas de",
+      "note": "\"right away\" = «enseguida, ahora mismo». Igual que \"immediately\" pero hablado.",
+      "tip": "\"you just listened to\" = «que acabas de escuchar». \"just\" + pasado = «acabar de».",
+      "vocab": [
+        { "word": "right away", "meaning": "enseguida, al momento" },
+        { "word": "just + pasado", "meaning": "acabar de (hacer algo)" }
+      ]
+    },
+    {
+      "start": 834,
+      "es": "escuchar. Y esa... la velocidad a la que está pasando es realmente impresionante hoy en día. Así que, otra vez, puedes meterte",
+      "note": "\"nowadays\" = «hoy en día». ESTA sí es la palabra para «actualmente», no \"actually\".",
+      "vocab": [
+        { "word": "speed", "meaning": "velocidad" },
+        { "word": "nowadays", "meaning": "hoy en día, actualmente" }
+      ]
+    },
+    {
+      "start": 843,
+      "es": "en la IA, puedes meterte en machine learning, en algo llamado edge computing —haré otro video sobre eso otro día—. Eh, pero eso es muy, muy nuevo",
+      "note": "\"edge computing\" es procesar los datos cerca de donde se generan, en vez de mandarlos todos a la nube. \"Edge\" es «borde, extremo».",
+      "vocab": [
+        { "word": "edge", "meaning": "borde, extremo" },
+        { "word": "another day", "meaning": "otro día" }
+      ]
+    },
+    {
+      "start": 851,
+      "es": "también. ¿Y por dónde seguimos? ¿Qué haces si eres ingeniero de datos? Pues la buena noticia es que hay montones de libros.",
+      "tip": "\"tons of\" = «montones de». Literalmente «toneladas de». Muy coloquial.",
+      "vocab": [
+        { "word": "tons of", "meaning": "montones de" },
+        { "word": "good news", "meaning": "buena noticia (incontable)" }
+      ]
+    },
+    {
+      "start": 857,
+      "es": "No voy a recomendar ninguno, pero seguramente puedes buscar uno y tirar desde ahí. Lo mismo con los cursos. La comunidad de Reddit: a mí me encanta la",
+      "watch": "\"news\" es incontable y lleva verbo en singular: \"the news IS good\". Nunca \"a news\".",
+      "vocab": [
+        { "word": "to look one up", "meaning": "buscar uno (un dato, un libro)" },
+        { "word": "course", "meaning": "curso" }
+      ]
+    },
+    {
+      "start": 864,
+      "es": "comunidad de Reddit, creo que son muy, muy útiles también. Lo mismo con Stack Overflow. Y también, sin más,",
+      "note": "\"as well\" = «también». Va al final de la frase; es más natural que \"too\" en este sitio.",
+      "vocab": [
+        { "word": "helpful", "meaning": "útil, que ayuda" },
+        { "word": "as well", "meaning": "también" }
+      ]
+    },
+    {
+      "start": 869,
+      "es": "entra en nuestra web —autopromoción descarada— y haz algo de formación gratis de SQL, es totalmente gratis, dataengineeracademy.com. Y si",
+      "note": "\"shameless plug\" = «autopromoción descarada». Se dice justo antes de recomendar lo tuyo, para reconocer que te estás vendiendo.",
+      "vocab": [
+        { "word": "shameless plug", "meaning": "autopromoción descarada" },
+        { "word": "free", "meaning": "gratis; también libre" }
+      ]
+    },
+    {
+      "start": 877,
+      "es": "tienes cualquier otra pregunta, ponla en los comentarios y vemos cómo podemos ayudarte a avanzar en tu carrera, eh, en la medida de lo posible. Así que un saludo y",
+      "note": "\"to the best of our ability\" = «en la medida de nuestras posibilidades».",
+      "tip": "\"cheers\" en americano es «un saludo, hasta luego». En británico también es «gracias» y el «¡salud!» del brindis.",
+      "vocab": [
+        { "word": "to the best of our ability", "meaning": "en la medida de lo posible" },
+        { "word": "cheers", "meaning": "un saludo; salud; gracias (UK)" }
+      ]
+    },
+    {
+      "start": 885,
+      "es": "mucha suerte.",
+      "vocab": [{ "word": "good luck", "meaning": "buena suerte, mucha suerte" }]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "¿Por dónde recomienda empezar si eres nuevo?",
+      "options": [
+        "Directamente como ingeniero de datos",
+        "Como analista de datos, en tres a seis meses",
+        "Haciendo un máster de dos años"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"it takes about three to six months\" — ¿qué verbo se usa para «llevar/tardar»?",
+      "options": ["to make", "to take", "to carry"],
+      "answer": 1
+    },
+    {
+      "q": "\"you can get away with one language\" significa...",
+      "options": [
+        "te puedes apañar con un solo lenguaje",
+        "te tienes que ir con un lenguaje",
+        "tienes que evitar un lenguaje"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"chances are you have paths open\" significa...",
+      "options": [
+        "lo más probable es que tengas caminos abiertos",
+        "tienes que arriesgarte",
+        "las oportunidades están cerradas"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"machine learning has been around for 30 years\" significa...",
+      "options": [
+        "estuvo de moda hace 30 años",
+        "lleva 30 años existiendo",
+        "dará la vuelta en 30 años"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"to crunch data\" significa...",
+      "options": ["borrar datos", "procesar datos a lo bruto", "comprimir un archivo"],
+      "answer": 1
+    },
+    {
+      "q": "\"right away\" significa...",
+      "options": ["por el buen camino", "enseguida, al momento", "a la derecha"],
+      "answer": 1
+    },
+    {
+      "q": "«Hoy en día» se dice...",
+      "options": ["actually", "nowadays", "at the day"],
+      "answer": 1
+    },
+    {
+      "q": "\"tons of books\" significa...",
+      "options": ["libros muy pesados", "montones de libros", "libros de tonos"],
+      "answer": 1
+    },
+    {
+      "q": "\"a shameless plug\" es...",
+      "options": [
+        "un enchufe roto",
+        "autopromoción descarada",
+        "una recomendación anónima"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Dice \"whether it's a data engineer AND an ML engineer\". ¿Qué falla?",
+      "options": ["Nada", "Con \"whether\" va \"OR\", no \"and\"", "Sobra \"whether\""],
+      "answer": 1
+    },
+    {
+      "q": "\"news\" (noticias) en inglés...",
+      "options": [
+        "es incontable y lleva verbo en singular",
+        "siempre va en plural: the news are",
+        "se dice \"a news\""
+      ],
+      "answer": 0
+    }
+  ]
+}

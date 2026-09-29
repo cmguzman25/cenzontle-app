@@ -1,0 +1,306 @@
+{
+  "id": "data-eng-02",
+  "youtubeId": "jHJNuylT2-Q",
+  "title": "Ingeniero, analista y el ETL",
+  "level": "B1",
+  "description": "La diferencia entre ingeniero de datos, analista y científico de datos. Y la herramienta clave: el ETL, que es al dato lo que las tuberías al agua. 3:26 – 6:36.",
+  "transcript": "data-engineering.txt",
+  "startAt": 206,
+  "endAt": 396,
+  "annotations": [
+    {
+      "start": 206,
+      "es": "las cifras exactas. Entonces, si eso son los datos, en la ingeniería de datos, ¿cuál es exactamente el papel de un ingeniero de datos?",
+      "note": "\"the role of\" = «el papel de, la función de». Ojo: \"role\" es papel de rol, no papel de escribir (\"paper\").",
+      "vocab": [
+        { "word": "role", "meaning": "papel, función" },
+        { "word": "exactly", "meaning": "exactamente" }
+      ]
+    },
+    {
+      "start": 215,
+      "es": "Hay una diferencia entre un ingeniero de datos, un científico de datos y un analista de datos. Seguro que te lo has preguntado y has visto esos",
+      "note": "\"I'm sure you've...\" = «seguro que has...». Muy típico para dar por hecho algo del oyente.",
+      "vocab": [
+        { "word": "difference", "meaning": "diferencia" },
+        { "word": "to wonder", "meaning": "preguntarse" }
+      ]
+    },
+    {
+      "start": 222,
+      "es": "términos. La mejor forma de explicarlo es que, si el ingeniero de datos es el que construye las tuberías y el cableado, los",
+      "tip": "\"the best way I can describe it\" = «la mejor forma de explicarlo». Fíjate en que no dice \"explain\": \"to describe\" también vale.",
+      "vocab": [
+        { "word": "term", "meaning": "término, palabra técnica" },
+        { "word": "to describe", "meaning": "describir, explicar" }
+      ]
+    },
+    {
+      "start": 228,
+      "es": "analistas de datos y los científicos de datos son los que entran y analizan los datos de verdad.",
+      "note": "\"to go in\" aquí es «entrar (a hacer algo)», en el sentido de ponerse manos a la obra.",
+      "vocab": [
+        { "word": "to analyze", "meaning": "analizar" },
+        { "word": "actually", "meaning": "en realidad, de verdad" }
+      ]
+    },
+    {
+      "start": 233,
+      "es": "Otra vez, sin ponernos demasiado técnicos, demasiado de jerga, ¿vale?, los ingenieros de datos son los responsables de construir las tuberías que crean esa infraestructura de datos.",
+      "tip": "\"jargony\" viene de \"jargon\" (jerga). Se ha inventado el adjetivo: «jergoso». En inglés hablado se hacen adjetivos así a menudo.",
+      "watch": "OJO con \"actually\": NO es «actualmente». Es «en realidad, de verdad». «Actualmente» se dice \"currently\" o \"nowadays\".",
+      "vocab": [
+        { "word": "jargon", "meaning": "jerga, lenguaje técnico" },
+        { "word": "responsible for", "meaning": "responsable de" }
+      ]
+    },
+    {
+      "start": 244,
+      "es": "Y entonces llega el analista de datos y dice: vale, ¿cuál es la conclusión para el negocio? Y eso es... eso es más o menos",
+      "note": "\"insight\" no tiene una traducción exacta: es la conclusión útil que sacas de mirar los datos. «Hallazgo, conclusión, lectura».",
+      "vocab": [
+        { "word": "insight", "meaning": "conclusión útil, hallazgo" },
+        { "word": "to come in", "meaning": "entrar, llegar (a la escena)" }
+      ]
+    },
+    {
+      "start": 251,
+      "es": "la distinción entre los dos. Si te quieres quedar con la analogía de la casa: el ingeniero de datos construye las tuberías y los cables, y el analista de datos llega",
+      "vocab": [
+        { "word": "distinction", "meaning": "distinción, diferencia" },
+        { "word": "to stay with", "meaning": "quedarse con, seguir con" }
+      ]
+    },
+    {
+      "start": 258,
+      "es": "y... y decora la habitación, por ejemplo, o la deja bonita. Pero otra vez, lo... lo principal que quiero que te lleves",
+      "tip": "\"to take away from this\" = «llevarse de esto», en el sentido de la idea que te queda. De ahí viene \"takeaway\": la conclusión.",
+      "vocab": [
+        { "word": "to take away", "meaning": "llevarse (una idea)" },
+        { "word": "the main thing", "meaning": "lo principal" }
+      ]
+    },
+    {
+      "start": 266,
+      "es": "de esto es que los ingenieros de datos hacen que los datos",
+      "vocab": [{ "word": "to make something + adjetivo", "meaning": "hacer que algo sea..." }]
+    },
+    {
+      "start": 274,
+      "es": "se puedan usar, y el analista o el científico de datos analizan esos datos ahora que ya se pueden usar. Vale, pues eso",
+      "note": "\"usable\" = «utilizable, que se puede usar». El sufijo -able funciona igual que en español: readable, drinkable, usable.",
+      "watch": "Dice \"a data analyst or data scientist ANALYZE\". Con sujeto en singular sería \"analyzes\". Es un despiste suyo: fíjate, pero no lo copies.",
+      "vocab": [
+        { "word": "usable", "meaning": "utilizable, que se puede usar" },
+        { "word": "now that", "meaning": "ahora que" }
+      ]
+    },
+    {
+      "start": 285,
+      "es": "es. Y hay un montón de razones por las que una empresa querría usar datos, ¿no?, pero en general es para usar los datos para sacar conclusiones de negocio, para beneficiar a la empresa de alguna forma.",
+      "note": "\"a plethora of\" es una palabra culta para «un montón de». Suena más formal que \"a lot of\".",
+      "tip": "\"for the most part\" = «en general, en su mayoría».",
+      "vocab": [
+        { "word": "a plethora of", "meaning": "un montón de (formal)" },
+        { "word": "for the most part", "meaning": "en general, en su mayoría" }
+      ]
+    },
+    {
+      "start": 297,
+      "es": "Bien, conceptos clave que necesitas saber para entrar en el mundo de la ingeniería de datos hoy en día. Las herramientas son bastante sencillas,",
+      "vocab": [
+        { "word": "key concepts", "meaning": "conceptos clave" },
+        { "word": "simple", "meaning": "sencillo, simple" }
+      ]
+    },
+    {
+      "start": 304,
+      "es": "¿vale? Hay algunos lenguajes de programación, como SQL y Python, y hay cosas más conceptuales, como el modelado de datos,",
+      "tip": "\"such as\" = «como, por ejemplo». Es la versión algo más formal de \"like\".",
+      "vocab": [
+        { "word": "such as", "meaning": "como, por ejemplo" },
+        { "word": "data modeling", "meaning": "modelado de datos" }
+      ]
+    },
+    {
+      "start": 311,
+      "es": "el diseño de sistemas, la nube. Suena un poco complicado; en cuanto te metes en cada uno, no lo es. Pero otra vez, eso es una conversación",
+      "note": "\"once\" al principio de frase es «en cuanto, una vez que»: once you go into each one.",
+      "vocab": [
+        { "word": "once", "meaning": "en cuanto, una vez que" },
+        { "word": "cloud", "meaning": "la nube" }
+      ]
+    },
+    {
+      "start": 317,
+      "es": "para otro video entero. Pero si estás mirando de meterte en la ingeniería de datos, esto es una hoja de ruta bastante buena para... para intentar entrar en",
+      "tip": "\"road map\" es literalmente «mapa de carreteras», pero en el trabajo significa «hoja de ruta, plan».",
+      "vocab": [
+        { "word": "road map", "meaning": "hoja de ruta, plan" },
+        { "word": "to look into", "meaning": "mirar de, informarse sobre" }
+      ]
+    },
+    {
+      "start": 325,
+      "es": "el sector. Una herramienta importante que quiero que te lleves de verdad de este video es algo llamado un ETL",
+      "note": "\"though\" al final de la frase es «eso sí, aunque». No es \"through\" (a través de): se pronuncian distinto.",
+      "vocab": [
+        { "word": "though", "meaning": "eso sí, sin embargo (al final)" },
+        { "word": "the space", "meaning": "el sector, el campo" }
+      ]
+    },
+    {
+      "start": 332,
+      "es": "pipeline. ETL viene de extract, transform and load —extraer, transformar y cargar—, y de lo que hablamos aquí es de coger los datos,",
+      "note": "\"to stand for\" = «significar, ser las siglas de». ETL stands for extract, transform, load.",
+      "tip": "\"pipeline\" es la tubería. Un ETL pipeline es una tubería por la que pasan los datos.",
+      "vocab": [
+        { "word": "to stand for", "meaning": "ser las siglas de, significar" },
+        { "word": "pipeline", "meaning": "tubería, canalización (de datos)" }
+      ]
+    },
+    {
+      "start": 340,
+      "es": "transformarlos y moverlos a otro sitio. Y te estarás preguntando: ¿y por qué hacemos esto? Pues, en el fondo, es también",
+      "note": "\"to morph\" es «transformar, cambiar de forma». Viene de metamorphosis.",
+      "tip": "\"at its core\" = «en el fondo, en esencia».",
+      "vocab": [
+        { "word": "to morph", "meaning": "transformar, cambiar de forma" },
+        { "word": "at its core", "meaning": "en el fondo, en esencia" }
+      ]
+    },
+    {
+      "start": 348,
+      "es": "más o menos lo que hacemos, ya sabes, con el agua, ¿no? Cogemos el agua de algún sitio, a lo mejor la",
+      "watch": "\"you know\" metido en medio no es «ya sabes» de verdad: es puro relleno mientras piensa, como el «o sea» del español.",
+      "vocab": [{ "word": "location", "meaning": "sitio, ubicación" }]
+    },
+    {
+      "start": 354,
+      "es": "transformamos para que pueda circular por una tubería, y luego llevamos esa agua hasta, pues eso,",
+      "note": "\"so that\" = «para que». Detrás va sujeto + verbo: so that it can move.",
+      "vocab": [
+        { "word": "so that", "meaning": "para que" },
+        { "word": "to feed", "meaning": "alimentar; aquí: llevar, conducir" }
+      ]
+    },
+    {
+      "start": 362,
+      "es": "lo que sea: tu ducha, tu váter, tu fregadero, ¿no? Así que, al final del día, eso es todo lo que hacemos con los datos. Adónde",
+      "tip": "\"at the end of the day\" no es literal: es «al fin y al cabo, a fin de cuentas».",
+      "vocab": [
+        { "word": "at the end of the day", "meaning": "al fin y al cabo" },
+        { "word": "sink", "meaning": "fregadero, lavabo" }
+      ]
+    },
+    {
+      "start": 369,
+      "es": "van... pueden ir a sitios distintos por motivos distintos, ¿verdad?, igual que el agua en una casa. Y voy a seguir jugando con esta analogía de la casa,",
+      "watch": "Dice \"I'm going keep playing\". Le falta el \"to\": \"I'm going TO keep playing\". Hablando rápido se come el \"to\"; escrito es un error.",
+      "vocab": [
+        { "word": "just like", "meaning": "igual que" },
+        { "word": "different reasons", "meaning": "motivos distintos" }
+      ]
+    },
+    {
+      "start": 377,
+      "es": "básicamente. Pero eso es lo que el ETL... eso es lo que significa ese concepto: coger los datos, extraer los datos, transformar los datos y luego cargar los datos",
+      "vocab": [
+        { "word": "to extract", "meaning": "extraer" },
+        { "word": "to load", "meaning": "cargar" }
+      ]
+    },
+    {
+      "start": 385,
+      "es": "en otro sitio. Y... y eso va a ser más o menos el 60, 70, 80% del día a día de un ingeniero de datos. Van a estar toqueteando los datos, básicamente.",
+      "note": "\"day-to-day\" = «el día a día». Con guiones funciona como adjetivo o sustantivo.",
+      "tip": "\"to mess around with something\" = «toquetear, trastear con algo». Muy coloquial.",
+      "vocab": [
+        { "word": "day-to-day", "meaning": "el día a día" },
+        { "word": "to mess around with", "meaning": "trastear con, toquetear" }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Según él, ¿qué hace el ingeniero de datos y qué hace el analista?",
+      "options": [
+        "El ingeniero analiza y el analista construye",
+        "El ingeniero hace que los datos se puedan usar; el analista los analiza",
+        "Los dos hacen exactamente lo mismo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "\"ETL\" son las siglas de...",
+      "options": [
+        "Extract, Transform, Load",
+        "Engineering, Testing, Learning",
+        "Export, Translate, Link"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "\"to stand for\" significa...",
+      "options": ["estar de pie", "ser las siglas de", "apoyar a alguien"],
+      "answer": 1
+    },
+    {
+      "q": "OJO al falso amigo: \"actually\" significa...",
+      "options": ["actualmente", "en realidad, de verdad", "activamente"],
+      "answer": 1
+    },
+    {
+      "q": "\"at the end of the day\" en una conversación significa...",
+      "options": ["por la noche", "al fin y al cabo", "cuando acabe el trabajo"],
+      "answer": 1
+    },
+    {
+      "q": "\"a plethora of reasons\" significa...",
+      "options": ["ninguna razón", "una razón concreta", "un montón de razones"],
+      "answer": 2
+    },
+    {
+      "q": "\"the main thing I want you to take away\" — \"take away\" aquí es...",
+      "options": [
+        "comida para llevar",
+        "quitarle algo a alguien",
+        "la idea que quiere que te quedes"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "\"business insight\" es...",
+      "options": [
+        "la conclusión útil que sacas de los datos",
+        "el interior de la oficina",
+        "una reunión de negocios"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Dice \"I'm going keep playing\". ¿Qué le falta?",
+      "options": ["Nada", "El \"to\": I'm going TO keep playing", "El sujeto"],
+      "answer": 1
+    },
+    {
+      "q": "\"so that it can move through a pipeline\" — \"so that\" significa...",
+      "options": ["así que", "para que", "tan que"],
+      "answer": 1
+    },
+    {
+      "q": "¿Qué porcentaje del día a día de un ingeniero de datos dice que es el ETL?",
+      "options": ["Un 10-20%", "Un 60-80%", "Casi nada"],
+      "answer": 1
+    },
+    {
+      "q": "\"to mess around with the data\" significa...",
+      "options": [
+        "ensuciar los datos a propósito",
+        "trastear, toquetear los datos",
+        "perder los datos"
+      ],
+      "answer": 1
+    }
+  ]
+}

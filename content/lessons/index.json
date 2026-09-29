@@ -163,5 +163,60 @@
     "order": 3,
     "categories": ["Tecnología", "Datos", "Charlas", "Trabajo"],
     "description": "No se dibuja para presumir, se dibuja para entenderse. Con el ejemplo de encargar una casa sin planos. 6:39 – 9:24."
+  },
+  {
+    "id": "data-eng-01",
+    "title": "La casa, las tuberías y las canicas",
+    "level": "B1",
+    "youtubeId": "jHJNuylT2-Q",
+    "seriesId": "data-engineering",
+    "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
+    "order": 1,
+    "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
+    "description": "Presenta la ingeniería de datos con la analogía de una casa: lo que no se ve son las tuberías. Y explica qué son los datos con un estadio lleno de canicas. 0:00 – 3:26."
+  },
+  {
+    "id": "data-eng-02",
+    "title": "Ingeniero, analista y el ETL",
+    "level": "B1",
+    "youtubeId": "jHJNuylT2-Q",
+    "seriesId": "data-engineering",
+    "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
+    "order": 2,
+    "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
+    "description": "La diferencia entre ingeniero de datos, analista y científico de datos. Y la herramienta clave: el ETL, que es al dato lo que las tuberías al agua. 3:26 – 6:36."
+  },
+  {
+    "id": "data-eng-03",
+    "title": "¿Y en qué se diferencia de un programador?",
+    "level": "B2",
+    "youtubeId": "jHJNuylT2-Q",
+    "seriesId": "data-engineering",
+    "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
+    "order": 3,
+    "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
+    "description": "El ingeniero de software crea los datos; el de datos los hace usables. Y empiezan los problemas: demasiado dato, y encima hay que fiarse de él. 6:36 – 9:24."
+  },
+  {
+    "id": "data-eng-04",
+    "title": "La fuente de la verdad y el mundo real",
+    "level": "B2",
+    "youtubeId": "jHJNuylT2-Q",
+    "seriesId": "data-engineering",
+    "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
+    "order": 4,
+    "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
+    "description": "En una empresa grande el mismo dato pasa por veinte equipos: ¿cuál es el bueno? Y tres ejemplos del día a día: el fraude con la tarjeta, el inventario de Costco y YouTube. 9:24 – 11:44."
+  },
+  {
+    "id": "data-eng-05",
+    "title": "Por dónde empezar y adónde se llega",
+    "level": "B1",
+    "youtubeId": "jHJNuylT2-Q",
+    "seriesId": "data-engineering",
+    "seriesTitle": "What is Data Engineering? (Data Engineer Academy)",
+    "order": 5,
+    "categories": ["Tecnología", "Datos", "Inglés americano", "Trabajo"],
+    "description": "Su consejo: entra como analista de datos, que se hace en tres o seis meses, y luego te especializas. Y de ahí se sale a la nube, al devops o a la IA. 11:44 – 14:45."
   }
 ]
