@@ -896,6 +896,47 @@ export default function LessonView({
     [isLoggedIn, lesson.id, words],
   );
 
+  /**
+   * Quita una palabra del banco desde el panel de abajo.
+   *
+   * Sombrear el texto otra vez ya sirve para quitarla, pero no siempre se
+   * puede: si lo guardado empieza a media palabra (un "'m going to share" mal
+   * copiado), el resaltado no llega a salir en la transcripción y no hay dónde
+   * pulsar. Desde el chip siempre se puede.
+   *
+   * El ajuste de audio no se toca: es de la lección y de todos, y la palabra
+   * puede volver a guardarse mañana.
+   */
+  const forgetWord = useCallback(
+    (word: SavedWord) => {
+      const key = word.word.toLowerCase();
+
+      // Si quitamos la palabra que se estaba ajustando, el panel sobra.
+      setTuning((current) =>
+        current?.kind === "word" && current.word.toLowerCase() === key
+          ? null
+          : current,
+      );
+
+      // Actualización optimista: la UI responde al instante.
+      setWords((current) => current.filter((w) => w.word.toLowerCase() !== key));
+
+      if (!isLoggedIn) return;
+
+      removeWord(word.word).then((result) => {
+        if (result.ok) return;
+        setSaveError(result.error);
+        // Si el borrado no llegó al servidor, la palabra vuelve a su sitio.
+        setWords((current) =>
+          current.some((w) => w.word.toLowerCase() === key)
+            ? current
+            : [...current, word],
+        );
+      });
+    },
+    [isLoggedIn],
+  );
+
   /** Guarda (o quita) el texto que el usuario acaba de sombrear. */
   const applySelection = useCallback(() => {
     if (!selection) return;
@@ -1324,8 +1365,23 @@ export default function LessonView({
                 const confirmed =
                   timings[timingKey(w.sentenceId, w.word, 0)]?.confirmed ??
                   false;
+                // La que se está cuadrando ahora mismo va en ámbar fuerte, así
+                // que su hover tiene que oscurecer, no aclarar.
+                const isTuning =
+                  tuning?.kind === "word" &&
+                  tuning.word.toLowerCase() === w.word.toLowerCase();
                 return (
-                  <li key={w.word.toLowerCase()}>
+                  // La ✕ va al lado del play, no dentro: un botón no puede
+                  // llevar otro botón dentro, así que la píldora es el `li`.
+                  <li
+                    key={w.word.toLowerCase()}
+                    className={[
+                      "flex items-center rounded-full text-sm transition-colors",
+                      isTuning
+                        ? "bg-amber-300 dark:bg-amber-500/50"
+                        : "bg-amber-100 dark:bg-amber-500/20",
+                    ].join(" ")}
+                  >
                     <button
                       type="button"
                       disabled={!playable}
@@ -1338,11 +1394,10 @@ export default function LessonView({
                         .filter(Boolean)
                         .join(" · ")}
                       className={[
-                        "rounded-full px-2.5 py-1 text-sm transition-colors disabled:cursor-default",
-                        tuning?.kind === "word" &&
-                        tuning.word.toLowerCase() === w.word.toLowerCase()
-                          ? "bg-amber-300 dark:bg-amber-500/50"
-                          : "bg-amber-100 enabled:hover:bg-amber-200 dark:bg-amber-500/20 dark:enabled:hover:bg-amber-500/30",
+                        "rounded-l-full py-1 pl-2.5 pr-1 transition-colors disabled:cursor-default",
+                        isTuning
+                          ? "enabled:hover:bg-amber-400 dark:enabled:hover:bg-amber-500/70"
+                          : "enabled:hover:bg-amber-200 dark:enabled:hover:bg-amber-500/30",
                       ].join(" ")}
                     >
                       {playable && <span className="mr-1 text-xs">▶</span>}
@@ -1355,6 +1410,16 @@ export default function LessonView({
                           ✓
                         </span>
                       )}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => forgetWord(w)}
+                      title={`Quitar «${w.word}» del banco`}
+                      aria-label={`Quitar ${w.word} del banco`}
+                      className="rounded-r-full py-1 pl-1 pr-2.5 text-xs text-amber-900/40 transition-colors hover:bg-red-200 hover:text-red-700 dark:text-amber-100/40 dark:hover:bg-red-900/60 dark:hover:text-red-300"
+                    >
+                      ✕
                     </button>
                   </li>
                 );
