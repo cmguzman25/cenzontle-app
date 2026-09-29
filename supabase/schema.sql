@@ -45,6 +45,11 @@ create table if not exists public.word_audio (
   sentence_id integer not null,
   -- Siempre en minúsculas: "Written" y "written" son el mismo trozo de audio.
   term        text not null,
+  -- Cuál de las apariciones dentro de la frase, contando desde 0. Una misma
+  -- expresión puede salir dos veces en la misma frase ("we're going to talk
+  -- about ... we're going to talk about") y cada una suena en otro segundo.
+  -- Sin esto compartían fila y al pulsar una sonaba la otra.
+  occurrence  integer not null default 0,
   audio_start numeric not null,
   audio_end   numeric not null,
   -- Visto bueno: lo marca el usuario a mano cuando el trozo suena bien.
@@ -53,12 +58,32 @@ create table if not exists public.word_audio (
   updated_by  uuid references auth.users (id) on delete set null,
   updated_at  timestamptz not null default now(),
 
-  primary key (lesson_id, sentence_id, term)
+  primary key (lesson_id, sentence_id, term, occurrence)
 );
 
 -- Para bases de datos creadas antes de que existiera el visto bueno.
 alter table public.word_audio
   add column if not exists confirmed boolean not null default false;
+
+-- Para bases de datos creadas antes de que la clave llevara la aparición. Los
+-- ajustes que ya existían se quedan en la primera (0), que es lo que eran en
+-- la práctica: hasta ahora solo se podía guardar una por frase y palabra.
+alter table public.word_audio
+  add column if not exists occurrence integer not null default 0;
+
+do $$
+begin
+  if exists (
+    select 1 from pg_constraint
+    where conrelid = 'public.word_audio'::regclass
+      and conname = 'word_audio_pkey'
+      and pg_get_constraintdef(oid) = 'PRIMARY KEY (lesson_id, sentence_id, term)'
+  ) then
+    alter table public.word_audio drop constraint word_audio_pkey;
+    alter table public.word_audio
+      add primary key (lesson_id, sentence_id, term, occurrence);
+  end if;
+end $$;
 
 alter table public.word_audio enable row level security;
 

@@ -53,15 +53,39 @@ function charOffsets(parts: string[]): number[] {
   return starts;
 }
 
+/**
+ * Cuál de las apariciones es cada resaltado, contando desde 0 y por expresión.
+ *
+ * Se cuenta por expresión y no sobre el total de resaltados: en una frase con
+ * "and more" y dos "we're going to talk about", la segunda de estas es su
+ * aparición 1, no la 2 de la frase. La clave va en minúsculas, igual que se
+ * guarda el ajuste de audio.
+ *
+ * Recibe la salida de `split` con grupo de captura, donde los índices impares
+ * son las coincidencias. Para los pares devuelve 0, que no se usa.
+ */
+export function markOccurrences(parts: string[]): number[] {
+  const seen = new Map<string, number>();
+
+  return parts.map((part, index) => {
+    if (index % 2 !== 1) return 0;
+    const key = part.trim().toLowerCase();
+    const count = seen.get(key) ?? 0;
+    seen.set(key, count + 1);
+    return count;
+  });
+}
+
 type Props = {
   text: string;
   /** Salida de `buildHighlightPattern`. */
   pattern: RegExp | null;
   /**
-   * Si se pasa, pulsar un resaltado avisa con el texto y en qué carácter del
-   * texto empieza: así se distinguen dos apariciones de la misma palabra.
+   * Si se pasa, pulsar un resaltado avisa con el texto, en qué carácter
+   * empieza y cuál de las apariciones es (contando desde 0): así se
+   * distinguen dos apariciones de la misma palabra dentro de la misma frase.
    */
-  onMarkClick?: (term: string, at: number) => void;
+  onMarkClick?: (term: string, at: number, occurrence: number) => void;
 };
 
 /** Pinta el texto resaltando los trozos que están en el banco de palabras. */
@@ -77,15 +101,16 @@ export default function HighlightedText({
 
   // Sigue siendo un `mark` y no un `button`: hay que poder sombrear el texto
   // con el ratón por encima, que es como se guardan y se quitan palabras.
-  function handleClick(term: string, at: number) {
+  function handleClick(term: string, at: number, occurrence: number) {
     if (!onMarkClick) return;
     // Si hay algo sombreado el usuario está seleccionando, no pidiendo audio.
     const selection = window.getSelection();
     if (selection && !selection.isCollapsed) return;
-    onMarkClick(term, at);
+    onMarkClick(term, at, occurrence);
   }
 
   const starts = charOffsets(parts);
+  const occurrences = markOccurrences(parts);
 
   return (
     <>
@@ -93,7 +118,7 @@ export default function HighlightedText({
         index % 2 === 1 ? (
           <mark
             key={index}
-            onClick={() => handleClick(part, starts[index])}
+            onClick={() => handleClick(part, starts[index], occurrences[index])}
             title={onMarkClick ? "Escuchar este trozo" : undefined}
             className={[
               "rounded bg-amber-100 text-inherit underline decoration-amber-400 decoration-2 underline-offset-4 dark:bg-amber-500/20",

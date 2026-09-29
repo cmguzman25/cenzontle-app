@@ -68,7 +68,9 @@ export default async function LessonPage({
     // Ajustes de audio que ya hizo cualquiera en esta lección.
     supabase
       .from("word_audio")
-      .select("sentence_id, term, audio_start, audio_end, confirmed, updated_by")
+      .select(
+        "sentence_id, term, occurrence, audio_start, audio_end, confirmed, updated_by",
+      )
       .eq("lesson_id", lesson.id),
     // Cuántas vueltas le ha dado el usuario a esta parte.
     supabase
@@ -94,6 +96,7 @@ export default async function LessonPage({
         {
           sentenceId: row.sentence_id as number,
           term: row.term as string,
+          occurrence: Number(row.occurrence) || 0,
           from,
           to,
           confirmed: Boolean(row.confirmed),

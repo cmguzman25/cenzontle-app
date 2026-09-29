@@ -43,6 +43,8 @@ import {
  * que el de las palabras. Lleva guiones bajos a propósito: ninguna palabra de
  * la transcripción puede llamarse así, y no hace falta otra tabla para algo
  * que se guarda y se lee exactamente igual (lección + frase + tramo).
+ *
+ * Va siempre en la aparición 0: una frase solo se ajusta una vez.
  */
 const SENTENCE_TERM = "__frase__";
 
@@ -72,6 +74,12 @@ export type SharedTiming = {
   sentenceId: number;
   /** En minúsculas, como se guarda. */
   term: string;
+  /**
+   * Cuál de las apariciones dentro de la frase, contando desde 0. Una misma
+   * expresión puede salir dos veces en la misma frase y cada una suena en
+   * otro segundo.
+   */
+  occurrence: number;
   from: number;
   to: number;
   /** Alguien le dio el visto bueno: suena bien tal cual. */
@@ -83,9 +91,20 @@ export type SharedTiming = {
 /** Lo que sabemos del trozo de una palabra: dónde suena y si está aprobado. */
 type Timing = Range & { confirmed: boolean; updatedBy: string | null };
 
-/** Clave de un ajuste dentro de la lección: frase + palabra en minúsculas. */
-function timingKey(sentenceId: number, term: string): string {
-  return `${sentenceId}|${term.trim().toLowerCase()}`;
+/**
+ * Clave de un ajuste dentro de la lección: frase + palabra en minúsculas +
+ * cuál de sus apariciones.
+ *
+ * La aparición es imprescindible. Sin ella, en una frase como "we're going to
+ * talk about ... we're going to talk about" las dos compartían ajuste y al
+ * pulsar la primera sonaba la segunda.
+ */
+function timingKey(
+  sentenceId: number,
+  term: string,
+  occurrence: number,
+): string {
+  return `${sentenceId}|${term.trim().toLowerCase()}|${occurrence}`;
 }
 
 type Props = {
@@ -136,7 +155,7 @@ export default function LessonView({
   const [timings, setTimings] = useState<Record<string, Timing>>(() =>
     Object.fromEntries(
       initialTimings.map((t) => [
-        timingKey(t.sentenceId, t.term),
+        timingKey(t.sentenceId, t.term, t.occurrence),
         {
           from: t.from,
           to: t.to,
@@ -156,6 +175,16 @@ export default function LessonView({
     /** Con lo que se guarda: la palabra, o `SENTENCE_TERM` si es la frase. */
     term: string;
     sentenceId: number;
+    /**
+     * Cuál de las apariciones de `term` en la frase se está ajustando,
+     * contando desde 0. La frase entera y las palabras del banco van en la 0.
+     */
+    occurrence: number;
+    /**
+     * En qué carácter de la frase empieza, para poder volver a estimar el
+     * tramo de ESTA aparición al pulsar "reiniciar".
+     */
+    at?: number;
     range: Range;
     /** `true` cuando los segundos están guardados y no son la estimación. */
     tuned: boolean;
@@ -244,7 +273,7 @@ export default function LessonView({
   const sentences = useMemo(
     () =>
       lesson.sentences.map((s) => {
-        const tuned = timings[timingKey(s.id, SENTENCE_TERM)];
+        const tuned = timings[timingKey(s.id, SENTENCE_TERM, 0)];
         return tuned ? { ...s, start: tuned.from, end: tuned.to } : s;
       }),
     [lesson.sentences, timings],
@@ -266,7 +295,7 @@ export default function LessonView({
     () =>
       new Set(
         lesson.sentences
-          .filter((s) => timings[timingKey(s.id, SENTENCE_TERM)])
+          .filter((s) => timings[timingKey(s.id, SENTENCE_TERM, 0)])
           .map((s) => s.id),
       ),
     [lesson.sentences, timings],
@@ -431,11 +460,13 @@ export default function LessonView({
       /** La palabra, o `SENTENCE_TERM` si lo que se movió es la frase. */
       term: string,
       sentenceId: number,
+      /** Cuál de sus apariciones en la frase, contando desde 0. */
+      occurrence: number,
       timing: Timing | null,
       /** El visto bueno se guarda ya; las flechas pueden esperar. */
       now = false,
     ) => {
-      const shared = timingKey(sentenceId, term);
+      const shared = timingKey(sentenceId, term, occurrence);
 
       setTimings((current) => {
         if (timing) return { ...current, [shared]: timing };
@@ -460,6 +491,7 @@ export default function LessonView({
           lessonId: lesson.id,
           sentenceId,
           term,
+          occurrence,
           from: timing?.from ?? null,
           to: timing?.to ?? null,
           confirmed: timing?.confirmed ?? false,
@@ -500,7 +532,7 @@ export default function LessonView({
     setTimings((current) => {
       const next: Record<string, Timing> = {};
       for (const t of result.timings) {
-        next[timingKey(t.sentenceId, t.term)] = {
+        next[timingKey(t.sentenceId, t.term, t.occurrence)] = {
           from: t.from,
           to: t.to,
           confirmed: t.confirmed,
@@ -561,14 +593,18 @@ export default function LessonView({
   /**
    * Escucha solo el trozo donde suena una palabra guardada y abre el ajuste.
    *
-   * El ajuste es de esta frase, no de la palabra: la misma expresión sale en
-   * varias frases y en cada una suena en otro segundo. Si no hay ajuste para
-   * esta frase (o el guardado cae fuera de ella, de cuando se guardaban por
-   * palabra), vamos a la estimación, que la transcripción no trae tiempos por
-   * palabra. Si ni siquiera podemos situarla, suena la frase entera.
+   * El ajuste es de esta aparición concreta, no de la palabra: la misma
+   * expresión sale en varias frases —y a veces dos veces en la misma— y cada
+   * aparición suena en otro segundo. Si no hay ajuste para ella (o el guardado
+   * cae fuera de la frase, de cuando se guardaban por palabra), vamos a la
+   * estimación, que la transcripción no trae tiempos por palabra. Si ni
+   * siquiera podemos situarla, suena la frase entera.
+   *
+   * Desde el banco de palabras se pulsa sin posición: allí no hay dos
+   * apariciones que distinguir, así que va siempre a la primera (la 0).
    */
   const playWord = useCallback(
-    (term: string, sentenceId: number, at?: number) => {
+    (term: string, sentenceId: number, at?: number, occurrence = 0) => {
       const sentence = sentenceById.get(sentenceId);
       if (!sentence) return;
 
@@ -577,7 +613,7 @@ export default function LessonView({
         (w) => w.word.toLowerCase() === term.toLowerCase(),
       );
 
-      const stored = timings[timingKey(sentenceId, term)] ?? null;
+      const stored = timings[timingKey(sentenceId, term, occurrence)] ?? null;
       // Un ajuste que no suena dentro de su frase es de otra: no vale.
       const tuned = stored && overlapsSentence(sentence, stored) ? stored : null;
 
@@ -593,6 +629,8 @@ export default function LessonView({
         word: saved?.word ?? term,
         term: saved?.word ?? term,
         sentenceId: sentence.id,
+        occurrence,
+        at,
         range,
         tuned: tuned != null,
         // Nos interesa avisar de que el trabajo ya venía hecho de fuera.
@@ -619,11 +657,12 @@ export default function LessonView({
       const sentence = sentenceById.get(id);
       if (!sentence) return;
 
-      const stored = timings[timingKey(id, SENTENCE_TERM)] ?? null;
+      const stored = timings[timingKey(id, SENTENCE_TERM, 0)] ?? null;
       const range = { from: sentence.start, to: sentence.end };
 
       setTuning({
         kind: "sentence",
+        occurrence: 0,
         word: sentence.en,
         term: SENTENCE_TERM,
         sentenceId: id,
@@ -666,7 +705,7 @@ export default function LessonView({
           : { from: Math.max(next.from, next.to - EDGE_PREVIEW), to: next.to };
       playRange(sentence, preview);
       // Mover las flechas no toca el visto bueno: eso lo decide el botón.
-      queueTimingSave(tuning.term, tuning.sentenceId, {
+      queueTimingSave(tuning.term, tuning.sentenceId, tuning.occurrence, {
         ...next,
         confirmed: tuning.confirmed,
         updatedBy: userId,
@@ -696,11 +735,12 @@ export default function LessonView({
         confirmed: false,
       });
       playRange(original, back);
-      queueTimingSave(tuning.term, tuning.sentenceId, null);
+      queueTimingSave(tuning.term, tuning.sentenceId, tuning.occurrence, null);
       return;
     }
 
-    const range = estimateWordRange(sentence, tuning.word) ?? {
+    // Con `at`: volvemos a la estimación de ESTA aparición, no de la primera.
+    const range = estimateWordRange(sentence, tuning.word, tuning.at) ?? {
       from: sentence.start,
       to: sentence.end,
     };
@@ -712,7 +752,7 @@ export default function LessonView({
       confirmed: false,
     });
     playRange(sentence, range);
-    queueTimingSave(tuning.term, tuning.sentenceId, null);
+    queueTimingSave(tuning.term, tuning.sentenceId, tuning.occurrence, null);
   }, [originalById, playRange, queueTimingSave, sentenceById, tuning]);
 
   /**
@@ -726,6 +766,7 @@ export default function LessonView({
     queueTimingSave(
       tuning.term,
       tuning.sentenceId,
+      tuning.occurrence,
       { ...tuning.range, confirmed, updatedBy: userId },
       true,
     );
@@ -1279,8 +1320,10 @@ export default function LessonView({
                 // Sin la frase (palabras viejas) el chip no lleva a ningún sitio.
                 const playable = sentenceById.has(w.sentenceId);
                 // El ✓ solo sale si alguien le dio el visto bueno a mano.
+                // El chip lleva a la primera aparición, así que el ✓ es el suyo.
                 const confirmed =
-                  timings[timingKey(w.sentenceId, w.word)]?.confirmed ?? false;
+                  timings[timingKey(w.sentenceId, w.word, 0)]?.confirmed ??
+                  false;
                 return (
                   <li key={w.word.toLowerCase()}>
                     <button

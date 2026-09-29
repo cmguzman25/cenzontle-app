@@ -79,8 +79,17 @@ type Props = {
   /** Frases cuyo tiempo ya cuadró alguien a mano. */
   tunedIds: Set<number>;
   onSelect: (sentence: Sentence) => void;
-  /** Pulsar una palabra guardada: suena solo ese trozo del audio. */
-  onPlayWord: (term: string, sentenceId: number, at?: number) => void;
+  /**
+   * Pulsar una palabra guardada: suena solo ese trozo del audio. `at` y
+   * `occurrence` dicen cuál de las apariciones se ha pulsado, que en una frase
+   * donde la expresión sale dos veces no suenan en el mismo segundo.
+   */
+  onPlayWord: (
+    term: string,
+    sentenceId: number,
+    at?: number,
+    occurrence?: number,
+  ) => void;
   onToggleLoop: (id: number) => void;
   /** Abre (o cierra) el ajuste de tiempo de la frase entera. */
   onToggleTune: (id: number) => void;
@@ -261,8 +270,8 @@ export default function Transcript({
                   <HighlightedText
                     text={sentence.en}
                     pattern={highlight}
-                    onMarkClick={(term, at) =>
-                      onPlayWord(term, sentence.id, at)
+                    onMarkClick={(term, at, occurrence) =>
+                      onPlayWord(term, sentence.id, at, occurrence)
                     }
                   />
                 </p>

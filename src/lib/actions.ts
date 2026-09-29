@@ -48,6 +48,12 @@ export async function saveSharedWordTiming(input: {
   lessonId: string;
   sentenceId: number;
   term: string;
+  /**
+   * Cuál de las apariciones dentro de la frase, contando desde 0. La misma
+   * expresión puede salir dos veces en una frase y cada una suena en otro
+   * segundo: sin esto las dos compartirían fila.
+   */
+  occurrence: number;
   from: number | null;
   to: number | null;
   /** Visto bueno del usuario: el trozo suena bien tal cual. */
@@ -67,6 +73,7 @@ export async function saveSharedWordTiming(input: {
     lesson_id: input.lessonId,
     sentence_id: input.sentenceId,
     term,
+    occurrence: Math.max(0, Math.trunc(input.occurrence)),
   };
 
   if (input.from == null || input.to == null) {
@@ -84,7 +91,7 @@ export async function saveSharedWordTiming(input: {
       updated_by: user.id,
       updated_at: new Date().toISOString(),
     },
-    { onConflict: "lesson_id,sentence_id,term" },
+    { onConflict: "lesson_id,sentence_id,term,occurrence" },
   );
 
   if (error) return { ok: false, error: error.message };
@@ -95,6 +102,8 @@ export async function saveSharedWordTiming(input: {
 export type LessonTiming = {
   sentenceId: number;
   term: string;
+  /** Cuál de las apariciones dentro de la frase, contando desde 0. */
+  occurrence: number;
   from: number;
   to: number;
   confirmed: boolean;
@@ -125,7 +134,9 @@ export async function getLessonTimings(
 
   const { data, error } = await supabase
     .from("word_audio")
-    .select("sentence_id, term, audio_start, audio_end, confirmed, updated_by")
+    .select(
+      "sentence_id, term, occurrence, audio_start, audio_end, confirmed, updated_by",
+    )
     .eq("lesson_id", lessonId);
 
   if (error) return { ok: false, error: error.message };
@@ -139,6 +150,7 @@ export async function getLessonTimings(
       {
         sentenceId: row.sentence_id as number,
         term: row.term as string,
+        occurrence: Number(row.occurrence) || 0,
         from,
         to,
         confirmed: Boolean(row.confirmed),
