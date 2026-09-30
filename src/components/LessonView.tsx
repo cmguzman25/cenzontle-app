@@ -35,6 +35,7 @@ import {
   clampSentenceRange,
   estimateWordRange,
   overlapsSentence,
+  pickActiveSentence,
   type Range,
 } from "@/lib/word-timing";
 
@@ -407,8 +408,11 @@ export default function LessonView({
       // Retomando: mantenemos la frase guardada hasta que el video arranque.
       if (resumeTargetRef.current != null) return;
 
-      const current = sentences.find(
-        (s) => seconds >= s.start && seconds < s.end,
+      // Ojo: no vale con la primera frase que encaje. Ver `pickActiveSentence`.
+      const current = pickActiveSentence(
+        sentences,
+        seconds,
+        activeIdRef.current,
       );
       if (!current) return;
 

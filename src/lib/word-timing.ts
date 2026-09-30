@@ -9,6 +9,57 @@ const MIN_LENGTH = 0.9;
 export type Range = { from: number; to: number };
 
 /**
+ * Margen para no soltar la frase que ya está sonando.
+ *
+ * El reproductor avisa de la hora cada ~200 ms, así que el primer aviso
+ * después de un salto puede llegar unas décimas ANTES del inicio de la frase a
+ * la que acabamos de saltar.
+ */
+const STICKY_ACTIVE = 0.5;
+
+/**
+ * Qué frase hay que resaltar en un segundo dado.
+ *
+ * No basta con coger la primera que encaje. Los tiempos se cuadran a mano y es
+ * normal que dos frases se solapen unas décimas; si además acabamos de saltar,
+ * el primer aviso del reproductor puede llegar justo antes del inicio. Con la
+ * regla ingenua el resaltado se iba a la frase de arriba y volvía enseguida:
+ * un salto feo que distrae.
+ *
+ * Las reglas, por orden:
+ *  1. La frase que ya está sonando se queda mientras el segundo siga siendo
+ *     suyo, con algo de margen por delante.
+ *  2. Si encajan varias, vale la última en empezar: si hemos entrado en una
+ *     frase nueva, es esa y no la que se está terminando.
+ *  3. Si no encaja ninguna (un hueco entre dos frases), devolvemos `null` y
+ *     quien llama se queda con la que tenía.
+ *
+ * Como efecto de propina, cuadrar los tiempos a mano no tiene que ser exacto.
+ */
+export function pickActiveSentence(
+  sentences: Sentence[],
+  seconds: number,
+  activeId: number | null,
+): Sentence | null {
+  if (activeId != null) {
+    const active = sentences.find((s) => s.id === activeId);
+    if (
+      active &&
+      seconds >= active.start - STICKY_ACTIVE &&
+      seconds < active.end
+    ) {
+      return active;
+    }
+  }
+
+  let current: Sentence | null = null;
+  for (const sentence of sentences) {
+    if (seconds >= sentence.start && seconds < sentence.end) current = sentence;
+  }
+  return current;
+}
+
+/**
  * Estima en qué segundos suena `term` dentro de la frase.
  *
  * La transcripción solo trae tiempos por frase, así que repartimos su duración
